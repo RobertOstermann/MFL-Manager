@@ -1,0 +1,233 @@
+LeVeon Bell	28.00	r
+Julio Jones	24.00	w
+Antonio Brown	23.00	w
+Aaron Rodgers	23.00	q
+Rob Gronkowski	22.00	t
+DeAndre Hopkins	22.00	w
+Tom Brady	22.00	q
+AJ Green	21.00	w
+Odell Beckham	21.00	w
+Russell Wilson	18.34	q
+Cam Newton	17.61	q
+Drew Brees	16.13	q
+Carson Wentz	16.04	q
+Mike Evans	16.00	w
+Kirk Cousins	15.62	q
+Matthew Stafford	15.32	q
+Matt Ryan	15.00	q
+Jordan Howard	15.00	r
+Jimmy Garoppolo	14.60	q
+Philip Rivers	14.38	q
+Ben Roethlisberger	14.21	q
+Andrew Luck	13.77	q
+Ezekiel Elliott	13.41	r
+Patrick Mahomes	12.91	q
+Marcus Mariota	12.06	q
+TY Hilton	12.00	w
+David Johnson	12.00	r
+Jared Goff	11.69	q
+Alex Smith	11.40	q
+Dak Prescott	11.06	q
+Saquan Barkley	11.02	r
+Blake Bortles	10.51	q
+Kareem Hunt	10.51	r
+Derek Carr	10.12	q
+Jacksonville	9.95	d
+Michael Thomas	9.80	w
+Allen Robinson	9.79	w
+Eli Manning	9.60	q
+Case Keenum	9.30	q
+Leonard Fournette	9.13	r
+Mitch Trubisky	8.74	q
+Devonta Freeman	8.55	r
+Tyrod Taylor	8.52	q
+Minnesota	8.48	d
+Adam Thielen	8.48	w
+Larry Fitzgerald	8.22	w
+Jerick McKinnon	8.21	r
+Amari Cooper	8.16	w
+Andy Dalton	8.09	q
+Los Angeles Rams	7.98	d
+Demaryius Thomas	7.91	w
+Jameis Winston	7.85	q
+Melvin Gordon	7.80	r
+Golden Tate	7.80	w
+JuJu Smith-Schuster	7.76	w
+Philadelphia 	7.60	d
+Keenan Allen	7.53	w
+Doug Baldwin	7.50	w
+Jarvis Landry	7.37	w
+Todd Gurley	7.31	r
+Dalvin Cook	7.31	r
+Los Angeles Chargers	7.26	d
+Josh Gordon	7.23	w
+Ryan Tannehill	7.23	q
+Davante Adams	7.21	w
+Deshaun Watson	7.07	q
+Joe Flacco	7.07	q
+Travis Kelce	7.06	t
+Zach Ertz	7.06	t
+Alvin Kamara	7.00	r
+Stefon Diggs	7.00	w
+Tyreek Hill	7.00	w
+Corey Davis	6.98	w
+Denver	6.93	d
+Marvin Jones	6.86	w
+Houston	6.86	d
+Evan Engram	6.82	t
+Brandin Cooks	6.80	w
+New Orleans	6.77	d
+Carolina	6.68	d
+Baltimore	6.68	d
+Pittsburgh	6.64	d
+Chris Hogan	6.64	w
+Kansas City	6.52	d
+Michael Crabtree	6.52	w
+Sam Bradford	6.50	q
+New England	6.50	d
+Greg Zuerlein	6.46	k
+Jamison Crowder	6.38	w
+Greg Olsen	6.38	t
+Atlanta	6.35	d
+Josh McCown	6.29	q
+Sammy Watkins	6.28	w
+Justin Tucker	6.17	k
+Robert Woods	6.14	w
+Chicago	6.08	d
+Jimmy Graham	6.08	t
+Seattle	6.05	d
+Robby Anderson	6.04	w
+Baker Mayfield	6.03	q
+Green Bay	6.01	d
+Arizona	5.92	d
+Stephen Gostkowski	5.90	k
+Emmanuel Sanders	5.86	w
+Marquise Goodwin	5.84	w
+Cincinnati	5.83	d
+Tennessee	5.74	d
+Devin Funchess	5.74	w
+San Francisco	5.65	d
+Matt Bryant	5.64	k
+Buffalo	5.54	d
+Wil Lutz	5.53	k
+Kyle Rudolph	5.52	t
+Cooper Kupp	5.52	w
+Robbie Gould	5.46	k
+Will Fuller	5.46	w
+Jake Elliott	5.37	k
+Alshon Jeffrey	5.32	w
+Chris Boswell	5.31	k
+New York Giants	5.31	d
+Pierre Garcon	5.28	w
+Matt Prater	5.23	k
+Detroit	5.20	d
+Adam Vinatieri	5.19	k
+Harrison Butker	5.19	k
+Nelson Agholor	5.19	w
+Jordy Nelson	5.17	w
+Graham Gano	5.13	k
+Washington	5.13	d
+Tampa Bay	5.09	d
+Ryan Succop	5.07	k
+Sterling Shepard	5.04	w
+Dallas	5.02	d
+Cleveland	5.02	d
+Trey Burton	4.96	t
+Miami	4.96	d
+Dan Bailey	4.96	k
+Kenny Stills	4.92	w
+Oakland	4.91	d
+Mason Crosby	4.90	k
+Daniel Carlson	4.86	k
+DJ Moore	4.84	w
+Kaimi Fairbairn	4.80	k
+New York Jets	4.80	d
+Dalanie Walker	4.78	t
+Mike Williams	4.74	w
+Dustin Hopkins	4.71	k
+Julian Edelman	4.68	w
+Brandon McManus	4.65	k
+Randall Cobb	4.65	w
+Stephen Hauschka	4.63	k
+Caleb Sturgis	4.59	k
+Kelvin Benjamin	4.57	w
+David Njoku	4.48	t
+Kenny Golladay	4.48	w
+Chandler Catanzaro	4.42	k
+Sebastian Janikowski	4.42	k
+Jordan Reed	4.39	t
+Carlos Hyde	4.36	r
+Marqise Lee	4.36	w
+Cody Parkey	4.33	k
+Cameron Meredith	4.33	w
+Chris Thompson	4.32	r
+Duke Johnson Jr.	4.29	r
+Tyler Lockett	4.26	w
+Cairo Santos	4.22	k
+Rishard Matthews	4.19	w
+Devante Parker	4.13	w
+Kai Forbath	4.11	k
+Chris Godwin	4.10	w
+Randy Bullock	4.08	k
+Marlon Mack	4.07	r
+George Kittle	4.07	t
+Peyton Barber	4.01	r
+Anthony Miller	4.01	w
+Nick Chubb	3.92	r
+DeSean Jackson	3.90	w
+Josh Doctson	3.86	w
+Michael Gallup	3.84	w
+Jordan Wilkins	3.84	r
+Chandler Catanzaro	3.83	k
+Allen Hurns	3.81	w
+Mohamed Sanu	3.77	w
+Jack Doyle	3.74	t
+Danny Amendola	3.72	w
+John Ross	3.68	w
+Courtland Sutton	3.64	w
+OJ Howard	3.63	t
+Dede Westbrook	3.59	w
+Ty Montgomery	3.56	r
+Tyrell Williams	3.55	w
+Cameron Brate	3.51	t
+Paul Richardson	3.51	w
+Bilal Powell	3.50	r
+Ted Ginn	3.47	w
+Dez Bryant	3.43	w
+Keelan Cole	3.39	w
+Eddy Pineiro	3.38	k
+Latavius Murray	3.35	r
+Mike Wallace	3.35	w
+Zane Gonzalez	3.29	k
+Giovani Bernard	3.29	r
+Charles Clay	3.23	t
+Theo Riddick	3.14	r
+Jared Cook	3.05	t
+LeGarrette Blount	3.05	r
+Nyheim Hines	3.02	r
+Austin Seferian-Jenkins	2.99	t
+Aldrick Rosas	2.93	k
+Corey Clement	2.84	r
+James White	2.83	r
+Ricky Seals-Jones	2.75	t
+Devontae Booker	2.71	r
+Benjamin Watson	2.63	t
+Eric Ebron	2.57	t
+Tyler Eifert	2.53	t
+Samaje Perine	2.44	r
+Mike Gesicki	2.41	t
+Phil Dawson	2.39	k
+Matt Breida	2.38	r
+Austin Hooper	2.33	t
+Vance McDonald	2.33	t
+Frank Gore	2.30	r
+Chris Ivory	2.27	r
+Jake Butt	2.15	t
+Spencer Ware	2.15	r
+Doug Martin	2.06	r
+Hayden Hurst	2.05	t
+Antonio Gates	2.00	t
+Vernon Davis	1.91	t
+Luke Wilson	1.84	t
+Tyler Kroft	1.78	t
+Adam Shaheen	1.72	t
