@@ -33,3 +33,21 @@ C:\Users\Robbert\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\ob
 C:\Users\Robbert\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL Manager.csproj.CopyComplete
 C:\Users\Robbert\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL Manager.exe
 C:\Users\Robbert\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL Manager.pdb
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\bin\Debug\MFL Manager.exe.config
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\bin\Debug\MFL Manager.exe
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\bin\Debug\MFL Manager.pdb
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\bin\Debug\Newtonsoft.Json.dll
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\bin\Debug\Newtonsoft.Json.xml
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL Manager.csprojAssemblyReference.cache
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL_Manager.CapEditor.resources
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL_Manager.Manager.resources
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL_Manager.PlayerEditor.resources
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL_Manager.Properties.Resources.resources
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL_Manager.WebsiteInformation.resources
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL Manager.csproj.GenerateResource.cache
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL Manager.csproj.CoreCompileInputs.cache
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL Manager.csproj.CopyComplete
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL Manager.exe
+C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL Manager.pdb

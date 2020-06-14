@@ -18,7 +18,7 @@ namespace MFL_Manager
             ApiAssistant.InitializeClient();
         }
         //Public should allow for access across all classes.
-        public PlayerDatabase playerDatabase;
+        public PlayerDatabase PlayerDatabase;
 
         public int TeamId;
 
@@ -33,7 +33,7 @@ namespace MFL_Manager
         /// <param name="e"></param>
         private void uxNew_Click(object sender, EventArgs e)
         {
-            playerDatabase = new PlayerDatabase();
+            PlayerDatabase = new PlayerDatabase();
             EnableButtons();
             ClearListBoxes();
             UpdateCapInformation();
@@ -54,7 +54,7 @@ namespace MFL_Manager
                 string filename = uxOpenFileDialog.FileName;
                 try
                 {
-                    playerDatabase = new PlayerDatabase(filename);
+                    PlayerDatabase = new PlayerDatabase(filename);
                     EnableButtons();
                     LoadListBoxes();
                     UpdateCapInformation();
@@ -81,7 +81,7 @@ namespace MFL_Manager
                 WebsiteInformation websiteInformation = new WebsiteInformation();
                 if (websiteInformation.ShowDialog() == DialogResult.OK)
                 {
-                    playerDatabase = new PlayerDatabase(websiteInformation.PlayerURL, websiteInformation.SalaryURL, websiteInformation.LeagueURL, websiteInformation.RosterURL);
+                    PlayerDatabase = new PlayerDatabase(websiteInformation.PlayerURL, websiteInformation.SalaryURL, websiteInformation.LeagueURL, websiteInformation.RosterURL);
                     EnableButtons();
                     LoadListBoxes();
                     UpdateCapInformation();
@@ -109,7 +109,7 @@ namespace MFL_Manager
 
                 try
                 {
-                    playerDatabase.SaveFile(uxSaveFileDialog.FileName);
+                    PlayerDatabase.SaveFile(uxSaveFileDialog.FileName);
                 }
                 catch
                 {
@@ -130,15 +130,15 @@ namespace MFL_Manager
                 PlayerInfo player = (PlayerInfo)SelectedListBox.SelectedItem;
                 if (player != null)
                 {
-                    playerDatabase.RemovePlayerFromTeam(player);
+                    PlayerDatabase.RemovePlayerFromTeam(player);
                     PlayerEditor playerEditor = new PlayerEditor(player);
                     if (playerEditor.ShowDialog() == DialogResult.OK)
                     {
 
-                        playerDatabase.AddPlayerToTeam(player);
+                        PlayerDatabase.AddPlayerToTeam(player);
                         LoadListBoxes();
                     }
-                    else playerDatabase.AddPlayerToTeam(player);
+                    else PlayerDatabase.AddPlayerToTeam(player);
                     UpdateCapInformation();
                 }
             }
@@ -155,7 +155,7 @@ namespace MFL_Manager
             PlayerEditor playerEditor = new PlayerEditor();
             if (playerEditor.ShowDialog() == DialogResult.OK)
             {
-                playerDatabase.AddPlayerInformation(playerEditor.Player);
+                PlayerDatabase.AddPlayerInformation(playerEditor.Player);
                 LoadListBoxes();
             }
         }
@@ -171,9 +171,9 @@ namespace MFL_Manager
                 PlayerInfo player = (PlayerInfo)SelectedListBox.SelectedItem;
                 if (player != null)
                 {
-                    if (player.MFLTeamID != 0) playerDatabase.RemovePlayerFromTeam(player);
+                    if (player.MFLTeamID != 0) PlayerDatabase.RemovePlayerFromTeam(player);
                     player.MFLTeamID = TeamId;
-                    playerDatabase.AddPlayerToTeam(player);
+                    PlayerDatabase.AddPlayerToTeam(player);
                     LoadListBoxes();
                     UpdateCapInformation();
                 }
@@ -191,7 +191,7 @@ namespace MFL_Manager
                 PlayerInfo player = (PlayerInfo)SelectedListBox.SelectedItem;
                 if (player != null)
                 {
-                    playerDatabase.RemovePlayerFromTeam(player);
+                    PlayerDatabase.RemovePlayerFromTeam(player);
                     player.MFLTeamID = 0;
                     LoadListBoxes();
                     UpdateCapInformation();
@@ -216,39 +216,39 @@ namespace MFL_Manager
         {
             if (uxRosterPlayers.Checked && uxFreeAgents.Checked)
             {
-                if (uxAllPlayers.Checked) playerDatabase.UpdateAllPlayerList();
-                else if (uxQuarterbacks.Checked) playerDatabase.FilterPlayerList('q');
-                else if (uxRunningBacks.Checked) playerDatabase.FilterPlayerList('r');
-                else if (uxReceivers.Checked) playerDatabase.FilterPlayerList('w');
-                else if (uxTightEnd.Checked) playerDatabase.FilterPlayerList('t');
-                else if (uxKickers.Checked) playerDatabase.FilterPlayerList('k');
-                else if (uxDefense.Checked) playerDatabase.FilterPlayerList('d');
+                if (uxAllPlayers.Checked) PlayerDatabase.UpdateAllPlayerList();
+                else if (uxQuarterbacks.Checked) PlayerDatabase.FilterPlayerList('q');
+                else if (uxRunningBacks.Checked) PlayerDatabase.FilterPlayerList('r');
+                else if (uxReceivers.Checked) PlayerDatabase.FilterPlayerList('w');
+                else if (uxTightEnd.Checked) PlayerDatabase.FilterPlayerList('t');
+                else if (uxKickers.Checked) PlayerDatabase.FilterPlayerList('k');
+                else if (uxDefense.Checked) PlayerDatabase.FilterPlayerList('d');
             }
             else if (uxRosterPlayers.Checked)
             {
-                if (uxAllPlayers.Checked) playerDatabase.FilterPlayerList('a', true);
-                else if (uxQuarterbacks.Checked) playerDatabase.FilterPlayerList('q', true);
-                else if (uxRunningBacks.Checked) playerDatabase.FilterPlayerList('r', true);
-                else if (uxReceivers.Checked) playerDatabase.FilterPlayerList('w', true);
-                else if (uxTightEnd.Checked) playerDatabase.FilterPlayerList('t', true);
-                else if (uxKickers.Checked) playerDatabase.FilterPlayerList('k', true);
-                else if (uxDefense.Checked) playerDatabase.FilterPlayerList('d', true);
+                if (uxAllPlayers.Checked) PlayerDatabase.FilterPlayerList('a', true);
+                else if (uxQuarterbacks.Checked) PlayerDatabase.FilterPlayerList('q', true);
+                else if (uxRunningBacks.Checked) PlayerDatabase.FilterPlayerList('r', true);
+                else if (uxReceivers.Checked) PlayerDatabase.FilterPlayerList('w', true);
+                else if (uxTightEnd.Checked) PlayerDatabase.FilterPlayerList('t', true);
+                else if (uxKickers.Checked) PlayerDatabase.FilterPlayerList('k', true);
+                else if (uxDefense.Checked) PlayerDatabase.FilterPlayerList('d', true);
             }
             else if (uxFreeAgents.Checked)
             {
-                if (uxAllPlayers.Checked) playerDatabase.FilterPlayerList('a', false);
-                else if (uxQuarterbacks.Checked) playerDatabase.FilterPlayerList('q', false);
-                else if (uxRunningBacks.Checked) playerDatabase.FilterPlayerList('r', false);
-                else if (uxReceivers.Checked) playerDatabase.FilterPlayerList('w', false);
-                else if (uxTightEnd.Checked) playerDatabase.FilterPlayerList('t', false);
-                else if (uxKickers.Checked) playerDatabase.FilterPlayerList('k', false);
-                else if (uxDefense.Checked) playerDatabase.FilterPlayerList('d', false);
+                if (uxAllPlayers.Checked) PlayerDatabase.FilterPlayerList('a', false);
+                else if (uxQuarterbacks.Checked) PlayerDatabase.FilterPlayerList('q', false);
+                else if (uxRunningBacks.Checked) PlayerDatabase.FilterPlayerList('r', false);
+                else if (uxReceivers.Checked) PlayerDatabase.FilterPlayerList('w', false);
+                else if (uxTightEnd.Checked) PlayerDatabase.FilterPlayerList('t', false);
+                else if (uxKickers.Checked) PlayerDatabase.FilterPlayerList('k', false);
+                else if (uxDefense.Checked) PlayerDatabase.FilterPlayerList('d', false);
             }
             else
             {
-                playerDatabase.PlayerList.Clear();
+                PlayerDatabase.PlayerList.Clear();
             }
-            playerDatabase.PlayerList.Sort();
+            PlayerDatabase.PlayerList.Sort();
             LoadPlayerListBox();
         }
         /// <summary>
@@ -257,7 +257,7 @@ namespace MFL_Manager
         /// <param name="TeamId"></param>
         private void SetCurrentTeam()
         {
-            if (playerDatabase.Teams.TryGetValue(TeamId, out TeamInfo team))
+            if (PlayerDatabase.Teams.TryGetValue(TeamId, out TeamInfo team))
             {
                 uxCurrentRoster.DataSource = null;
                 team.Players.Sort();
@@ -277,7 +277,7 @@ namespace MFL_Manager
         /// <param name="NewTeamId"></param>
         private void SetNewTeam(int NewTeamId)
         {
-            if (playerDatabase.Teams.TryGetValue(NewTeamId, out TeamInfo team))
+            if (PlayerDatabase.Teams.TryGetValue(NewTeamId, out TeamInfo team))
             {
                 TeamId = NewTeamId;
                 team.Players.Sort();
@@ -298,7 +298,7 @@ namespace MFL_Manager
         /// </summary>
         private void UpdateCapInformation()
         {
-            if (playerDatabase.Teams.TryGetValue(TeamId, out TeamInfo team))
+            if (PlayerDatabase.Teams.TryGetValue(TeamId, out TeamInfo team))
             {
                 lblSalary.Text = String.Format("{0:C}", team.Salary);
                 lblCapHit.Text = String.Format("{0:C}", team.CapHit);
@@ -308,7 +308,7 @@ namespace MFL_Manager
             {
                 lblSalary.Text = String.Format("{0:C}", 0.00);
                 lblCapHit.Text = String.Format("{0:C}", 0.00);
-                lblCapRoom.Text = String.Format("{0:C}", playerDatabase.CapRoom);
+                lblCapRoom.Text = String.Format("{0:C}", PlayerDatabase.CapRoom);
             }
         }
         /// <summary>
@@ -316,7 +316,7 @@ namespace MFL_Manager
         /// </summary>
         private void UpdateCapRoomLabel (TeamInfo team)
         {
-            double capAvailable = playerDatabase.CapRoom - team.Salary - team.CapHit;
+            double capAvailable = PlayerDatabase.CapRoom - team.Salary - team.CapHit;
             if (capAvailable < 0)
             {
                 lblCapRoom.ForeColor = Color.Red;
@@ -325,7 +325,7 @@ namespace MFL_Manager
             {
                 lblCapRoom.ForeColor = SystemColors.ControlText;
             }
-            lblCapRoom.Text = String.Format("{0:C}", playerDatabase.CapRoom - team.Salary - team.CapHit);
+            lblCapRoom.Text = String.Format("{0:C}", PlayerDatabase.CapRoom - team.Salary - team.CapHit);
         }
         /// <summary>
         /// Enables all buttons within the form.
@@ -375,7 +375,7 @@ namespace MFL_Manager
         {
             ClearListBoxes();
             FilterPlayers();
-            uxPlayers.DataSource = playerDatabase.PlayerList;
+            uxPlayers.DataSource = PlayerDatabase.PlayerList;
             SetCurrentTeam();
             UpdateCapInformation();
         }
@@ -386,7 +386,7 @@ namespace MFL_Manager
         private void LoadPlayerListBox()
         {
             ClearPlayerListBox();
-            uxPlayers.DataSource = playerDatabase.PlayerList;
+            uxPlayers.DataSource = PlayerDatabase.PlayerList;
         }
         /// <summary>
         /// Loads the current roster list boxes to reflect 
@@ -406,9 +406,9 @@ namespace MFL_Manager
         /// <param name="e"></param>
         private void uxPlayerNameLabel_Click(object sender, EventArgs e)
         {
-            playerDatabase.PlayerList.Sort((one, two) => string.Compare(one.Name, two.Name));
+            PlayerDatabase.PlayerList.Sort((one, two) => string.Compare(one.Name, two.Name));
             ClearPlayerListBox();
-            uxPlayers.DataSource = playerDatabase.PlayerList;  
+            uxPlayers.DataSource = PlayerDatabase.PlayerList;  
             SetLabel(uxPlayerNameLabel);
         }
         /// <summary>
@@ -418,9 +418,9 @@ namespace MFL_Manager
         /// <param name="e"></param>
         private void uxRankLabel_Click(object sender, EventArgs e)
         {            
-            playerDatabase.PlayerList.Sort((one, two) => one.FantasyProsRanking.CompareTo(two.FantasyProsRanking));
+            PlayerDatabase.PlayerList.Sort((one, two) => one.FantasyProsRanking.CompareTo(two.FantasyProsRanking));
             ClearPlayerListBox();
-            uxPlayers.DataSource = playerDatabase.PlayerList;
+            uxPlayers.DataSource = PlayerDatabase.PlayerList;
             SetLabel(uxRankLabel);
         }
         /// <summary>
@@ -430,9 +430,9 @@ namespace MFL_Manager
         /// <param name="e"></param>
         private void uxSalaryLabel_Click(object sender, EventArgs e)
         {
-            playerDatabase.PlayerList.Sort((one, two) => two.Salary.CompareTo(one.Salary));
+            PlayerDatabase.PlayerList.Sort((one, two) => two.Salary.CompareTo(one.Salary));
             ClearPlayerListBox();
-            uxPlayers.DataSource = playerDatabase.PlayerList;
+            uxPlayers.DataSource = PlayerDatabase.PlayerList;
             SetLabel(uxSalaryLabel);
         }
         /// <summary>
@@ -442,9 +442,9 @@ namespace MFL_Manager
         /// <param name="e"></param>
         private void uxContractYearLabel_Click(object sender, EventArgs e)
         {
-            playerDatabase.PlayerList.Sort((one, two) => string.Compare(two.ContractYear, one.ContractYear));
+            PlayerDatabase.PlayerList.Sort((one, two) => string.Compare(two.ContractYear, one.ContractYear));
             ClearPlayerListBox();
-            uxPlayers.DataSource = playerDatabase.PlayerList;
+            uxPlayers.DataSource = PlayerDatabase.PlayerList;
             SetLabel(uxContractYearLabel);
         }
         /// <summary>
@@ -603,7 +603,7 @@ namespace MFL_Manager
         /// <param name="e"></param>
         private void uxEditCapHit_Click(object sender, EventArgs e)
         {
-            if (playerDatabase.Teams.TryGetValue(TeamId, out TeamInfo team))
+            if (PlayerDatabase.Teams.TryGetValue(TeamId, out TeamInfo team))
             {
                 CapEditor capEditor = new CapEditor(team);
                 if (capEditor.ShowDialog() == DialogResult.OK)
@@ -624,7 +624,7 @@ namespace MFL_Manager
             CapEditor capEditor = new CapEditor();
             if (capEditor.ShowDialog() == DialogResult.OK)
             {
-                playerDatabase.CapRoom = capEditor.CapData;
+                PlayerDatabase.CapRoom = capEditor.CapData;
                 UpdateCapInformation();
             }
         }
@@ -669,7 +669,7 @@ namespace MFL_Manager
                 string filename = uxOpenFileDialog.FileName;
                 try
                 {
-                    playerDatabase.ReadPlayerRankings(filename);
+                    PlayerDatabase.ReadPlayerRankings(filename);
                     LoadListBoxes();
                 }
                 catch

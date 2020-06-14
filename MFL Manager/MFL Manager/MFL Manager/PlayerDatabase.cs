@@ -14,7 +14,7 @@ namespace MFL_Manager
 {
     public class PlayerDatabase
     {
-        public Dictionary<int, PlayerInfo> playerDictionary;
+        public Dictionary<int, PlayerInfo> PlayerDictionary;
         
         public List<PlayerInfo> PlayerList { get; private set; }
 
@@ -29,7 +29,7 @@ namespace MFL_Manager
         /// </summary>
         public PlayerDatabase()
         {
-            playerDictionary = new Dictionary<int, PlayerInfo>();
+            PlayerDictionary = new Dictionary<int, PlayerInfo>();
             PlayerList = new List<PlayerInfo>();
             Teams = new Dictionary<int, TeamInfo>();
             InitializeTeams();
@@ -42,7 +42,7 @@ namespace MFL_Manager
         /// <param name="filename">File location for the local player list.</param>
         public PlayerDatabase(string filename)
         {
-            playerDictionary = new Dictionary<int, PlayerInfo>();
+            PlayerDictionary = new Dictionary<int, PlayerInfo>();
             PlayerList = new List<PlayerInfo>();
             Teams = new Dictionary<int, TeamInfo>();
             CapRoom = 125.00;
@@ -58,7 +58,7 @@ namespace MFL_Manager
         public PlayerDatabase(string playerURL, string salaryURL, string leagueURL, string RosterURL)
         {
             //Add in more sources for more comprehensive information, such as rosters.
-            playerDictionary = new Dictionary<int, PlayerInfo>();
+            PlayerDictionary = new Dictionary<int, PlayerInfo>();
             PlayerList = new List<PlayerInfo>();
             Teams = new Dictionary<int, TeamInfo>();
             CapRoom = 125.00;
@@ -70,29 +70,29 @@ namespace MFL_Manager
         public void UpdateAllPlayerList()
         {
             PlayerList.Clear();
-            foreach (PlayerInfo i in playerDictionary.Values)
+            foreach (PlayerInfo i in PlayerDictionary.Values)
             {
                 PlayerList.Add(i);
             }
         }
         /// <summary>
-        /// Adds a given PlayerInfo object to the playerDictionary.
+        /// Adds a given PlayerInfo object to the PlayerDictionary.
         /// </summary>
         public void AddPlayerInformation(PlayerInfo player)
         {
-            if(playerDictionary.ContainsKey(player.Id))
+            if(PlayerDictionary.ContainsKey(player.Id))
             {
-                MessageBox.Show("Error - Player ID Invalid"); 
+                MessageBox.Show(@"Error - Player ID Invalid"); 
             }
             else
             {
-                playerDictionary.Add(player.Id, player);
+                PlayerDictionary.Add(player.Id, player);
                 AddPlayerToTeam(player);
             }
         }
         /// <summary>
         /// Initializes a new PlayerInfo object.
-        /// Adds the player to the playerDictionary if necessary.
+        /// Adds the player to the PlayerDictionary if necessary.
         /// </summary>
         /// <param name="name">Name</param>
         /// <param name="id">MFL id</param>
@@ -100,7 +100,7 @@ namespace MFL_Manager
         /// <param name="position">Position</param>
         public void AddPlayerInformation(string name, int id, string team, char position)
         {
-            if (playerDictionary.TryGetValue(id, out PlayerInfo player))
+            if (PlayerDictionary.TryGetValue(id, out PlayerInfo player))
             {
                 player.Name = name;
                 player.Team = team;
@@ -113,7 +113,7 @@ namespace MFL_Manager
                     Name = name,
                     Id = id,
                     Team = team,
-                    Position = Char.ToLower(position)
+                    Position = char.ToLower(position)
                 };
                 AddPlayerInformation(player);
             }
@@ -148,12 +148,9 @@ namespace MFL_Manager
         public void FilterPlayerList(char position)
         {
             PlayerList.Clear();
-            foreach (PlayerInfo player in playerDictionary.Values)
+            foreach (var player in PlayerDictionary.Values.Where(player => player.Position == position))
             {
-                if (player.Position == position)
-                {
-                    PlayerList.Add(player);
-                }
+                PlayerList.Add(player);
             }
         }
         /// <summary>
@@ -166,22 +163,16 @@ namespace MFL_Manager
             PlayerList.Clear();
             if (position == 'a')
             {
-                foreach (PlayerInfo player in playerDictionary.Values)
+                foreach (var player in PlayerDictionary.Values.Where(player => player.Roster == roster))
                 {
-                    if (player.Roster == roster)
-                    {
-                        PlayerList.Add(player);
-                    }
+                    PlayerList.Add(player);
                 }
             }
             else
             {
-                foreach (PlayerInfo player in playerDictionary.Values)
+                foreach (var player in PlayerDictionary.Values.Where(player => player.Position == position && player.Roster == roster))
                 {
-                    if (player.Position == position && player.Roster == roster)
-                    {
-                        PlayerList.Add(player);
-                    }
+                    PlayerList.Add(player);
                 }
             }
         }
@@ -197,12 +188,12 @@ namespace MFL_Manager
             string line;
             try
             {
-                using (StreamReader streamReader = new StreamReader(filename))
+                using (var streamReader = new StreamReader(filename))
                 {
                     InitializeTeams();
                     while (!streamReader.EndOfStream)
                     {
-                        PlayerInfo player = new PlayerInfo();
+                        var player = new PlayerInfo();
                         line = streamReader.ReadLine();
                         information = line.Split(delim);
                         player.Name = information[0];
@@ -219,7 +210,7 @@ namespace MFL_Manager
             }
             catch
             {
-                MessageBox.Show("Error reading " + filename);
+                MessageBox.Show($@"Error reading {filename}");
             }
         }
         /// <summary>
@@ -248,7 +239,7 @@ namespace MFL_Manager
                 }
                 foreach (ApiModel.ApiPlayerSalaryObject.ApiLeagueUnit.ApiLeagueUnitPlayer mflPlayer in apiSalary)
                 {
-                    if (playerDictionary.TryGetValue(mflPlayer.Id, out PlayerInfo player))
+                    if (PlayerDictionary.TryGetValue(mflPlayer.Id, out PlayerInfo player))
                     {
                         player.Salary = mflPlayer.Salary;
                         player.ContractYear = mflPlayer.ContractYear;
@@ -282,7 +273,7 @@ namespace MFL_Manager
                         foreach (XmlNode children in teams.ChildNodes)
                         {
                             int playerIdConverted = Convert.ToInt32(children.Attributes[0].InnerText);
-                            if (playerDictionary.TryGetValue(Convert.ToInt32(children.Attributes[0].InnerText), out PlayerInfo rosterPlayer))
+                            if (PlayerDictionary.TryGetValue(Convert.ToInt32(children.Attributes[0].InnerText), out PlayerInfo rosterPlayer))
                             {
                                 team.AddPlayer(rosterPlayer);
                             }
@@ -362,7 +353,7 @@ namespace MFL_Manager
                         //Need to get player information object!
                      
                         //Needs to be optimized!
-                        foreach (PlayerInfo player in playerDictionary.Values)
+                        foreach (PlayerInfo player in PlayerDictionary.Values)
                         {
                             string[] fullNamearray = player.Name.Split(delim);
 
@@ -428,7 +419,7 @@ namespace MFL_Manager
         {
             using (StreamWriter streamWriter = new StreamWriter(filename))
             {
-                foreach (PlayerInfo i in playerDictionary.Values)
+                foreach (PlayerInfo i in PlayerDictionary.Values)
                 {
                     streamWriter.WriteLine(i.Save());
                 }
