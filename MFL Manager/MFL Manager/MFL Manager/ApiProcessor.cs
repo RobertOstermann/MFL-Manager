@@ -56,7 +56,7 @@ namespace MFL_Manager
         /// Loads the team information from the MFL website.
         /// </summary>
         /// <param name="url">Website Address</param>
-        /// <returns>Team information list</returns>
+        /// <returns>NFLTeam information list</returns>
         public static async Task<List<ApiModel.ApiLeagueObject.ApiAllFranchiseObject.ApiFranchiseObject>> LoadTeamInformation(string url)
         {
             using (HttpResponseMessage response = await ApiAssistant.ApiClient.GetAsync(url))

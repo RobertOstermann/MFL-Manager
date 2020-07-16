@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using MFL_Manager.Models.ApiResponses.League;
 using MFL_Manager.Models.ApiResponses.Players;
 using MFL_Manager.Models.ApiResponses.Salary;
+using MFL_Manager.Models.CustomResponeses;
 
 namespace MFL_Manager
 {
@@ -22,10 +23,13 @@ namespace MFL_Manager
             InitializeComponent();
             ApiAssistant.InitializeClient();
             _mflController = mflController;
-            IEnumerable<Franchise> franchises = _mflController.GetFranchisesFromApi(new Uri("https://www54.myfantasyleague.com/2020/export?TYPE=league&L=30916&APIKEY=&JSON=1"));
-            IEnumerable<Player> players = _mflController.GetPlayersFromApi(new Uri("https://www54.myfantasyleague.com/2020/export?TYPE=players&L=30916&APIKEY=&DETAILS=&SINCE=&PLAYERS=&JSON=1"));
-            IEnumerable<Salary> salaries = _mflController.GetSalariesFromApi(new Uri("https://www54.myfantasyleague.com/2020/export?TYPE=salaries&L=30916&APIKEY=&JSON=1"));
-            //https://www54.myfantasyleague.com/2020/export?TYPE=rosters&L=30916&APIKEY=&FRANCHISE=&JSON=0
+
+            Uri playerUri = new Uri("https://www54.myfantasyleague.com/2020/export?TYPE=players&L=30916&APIKEY=&DETAILS=&SINCE=&PLAYERS=&JSON=1");
+            Uri franchiseUri = new Uri("https://www54.myfantasyleague.com/2020/export?TYPE=league&L=30916&APIKEY=&JSON=1");
+            Uri salaryUri = new Uri("https://www54.myfantasyleague.com/2020/export?TYPE=salaries&L=30916&APIKEY=&JSON=1");
+            Uri rosterUri = new Uri("https://www54.myfantasyleague.com/2020/export?TYPE=rosters&L=30916&APIKEY=&FRANCHISE=&JSON=0");
+
+            _mflController.GetApiInformation(playerUri, franchiseUri, salaryUri);
         }
         //Public should allow for access across all classes.
         public PlayerDatabase PlayerDatabase;
@@ -277,7 +281,7 @@ namespace MFL_Manager
             }
             else
             {
-                lblTeamName.Text = "MFL Team Name";
+                lblTeamName.Text = "MFL NFLTeam Name";
             }
             ResetListBoxes();
         }
@@ -622,7 +626,7 @@ namespace MFL_Manager
                     UpdateCapInformation();
                 }
             }
-            else MessageBox.Show("Error - Invalid Team");
+            else MessageBox.Show("Error - Invalid NFLTeam");
         }
         /// <summary>
         /// Edits the cap room available to all teams.

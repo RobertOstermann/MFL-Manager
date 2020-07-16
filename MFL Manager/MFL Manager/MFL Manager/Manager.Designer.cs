@@ -218,7 +218,7 @@
             this.uxTeam.Enabled = false;
             this.uxTeam.Name = "uxTeam";
             this.uxTeam.Size = new System.Drawing.Size(47, 20);
-            this.uxTeam.Text = "Team";
+            this.uxTeam.Text = "NFLTeam";
             // 
             // uxAFC
             // 
@@ -360,7 +360,7 @@
             this.lblTeamName.Name = "lblTeamName";
             this.lblTeamName.Size = new System.Drawing.Size(400, 58);
             this.lblTeamName.TabIndex = 3;
-            this.lblTeamName.Text = "MFL Team Name";
+            this.lblTeamName.Text = "MFL NFLTeam Name";
             this.lblTeamName.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // uxFilterOptions

@@ -70,6 +70,7 @@
     <Compile Include="Models\ApiResponses\Salary\Salary.cs" />
     <Compile Include="Models\ApiResponses\Salary\SalaryInformation.cs" />
     <Compile Include="Models\CustomResponeses\PlayerDto.cs" />
+    <Compile Include="Models\CustomResponeses\FranchiseDto.cs" />
     <Compile Include="Repositories\Interface\IMFLRepository.cs" />
     <Compile Include="Repositories\Implementation\RestApiRepository.cs" />
     <Compile Include="Repositories\Interface\IRestApiRepository.cs" />

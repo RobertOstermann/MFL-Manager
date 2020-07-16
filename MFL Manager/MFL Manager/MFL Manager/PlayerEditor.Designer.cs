@@ -307,7 +307,7 @@
             this.uxMFLTeam.Size = new System.Drawing.Size(188, 212);
             this.uxMFLTeam.TabIndex = 31;
             this.uxMFLTeam.TabStop = false;
-            this.uxMFLTeam.Text = "MFL Team";
+            this.uxMFLTeam.Text = "MFL NFLTeam";
             // 
             // uxRam
             // 

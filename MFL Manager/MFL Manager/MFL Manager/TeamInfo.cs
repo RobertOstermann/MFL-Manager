@@ -55,7 +55,7 @@ namespace MFL_Manager
             Salary -= player.Salary;
         }
         /// <summary>
-        /// Implements IComparable with comparisons between Team Id.
+        /// Implements IComparable with comparisons between NFLTeam Id.
         /// </summary>
         /// <param name="other"></param>
         /// <returns></returns>

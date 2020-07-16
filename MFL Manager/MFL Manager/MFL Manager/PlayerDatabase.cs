@@ -10,20 +10,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using MFL_Manager.Models.ApiResponses.Players;
+using MFL_Manager.Models.CustomResponeses;
 
 namespace MFL_Manager
 {
     public class PlayerDatabase
     {
-        public Dictionary<int, PlayerInfo> PlayerDictionary;
-        
+        //Overhaul-2020
+
+        public List<PlayerDto> Players { get; set; }
+
+        public List<FranchiseDto> Franchises { get; set; }
+
+        //Old
         public List<PlayerInfo> PlayerList { get; set; }
 
         //Current roster is stored for each team.
         public Dictionary<int, TeamInfo> Teams;
         
         public double CapRoom { get; set; }
-        
+
+        public Dictionary<int, PlayerInfo> PlayerDictionary;
+
         /// <summary>
         /// Initialize the PlayerDatabase.
         /// New PlayerDatabase is selected.
@@ -204,7 +212,7 @@ namespace MFL_Manager
                         player.ContractYear = information[4];
                         player.Salary = Convert.ToDouble(information[5]);
                         player.Position = information[6][0];
-                        //Adjust the MFL Team Id later!
+                        //Adjust the MFL NFLTeam Id later!
                         AddPlayerInformation(player);
                     }
                 }
@@ -397,8 +405,8 @@ namespace MFL_Manager
         /// <summary>
         /// Initializes the team names for a local list.
         /// </summary>
-        /// <param name="i">Team ID</param>
-        /// <returns>Team Name</returns>
+        /// <param name="i">NFLTeam ID</param>
+        /// <returns>NFLTeam Name</returns>
         private string InitializeTeamNames(int i)
         {
             if (i == 1) return "Tornados";

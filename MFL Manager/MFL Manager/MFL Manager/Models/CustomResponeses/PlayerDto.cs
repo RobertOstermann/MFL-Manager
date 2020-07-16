@@ -10,7 +10,7 @@ namespace MFL_Manager.Models.CustomResponeses
 
         public int Id { get; set; }
 
-        public string Team { get; set; }
+        public string NFLTeam { get; set; }
 
         public string MFLTeam { get; set; }
 
@@ -22,7 +22,7 @@ namespace MFL_Manager.Models.CustomResponeses
 
         public double Salary { get; set; }
 
-        public char Position { get; set; }
+        public string Position { get; set; }
 
         //Important information not yet implemented.
         public int ByeWeek { get; set; }
@@ -74,12 +74,12 @@ namespace MFL_Manager.Models.CustomResponeses
         /// <returns></returns>
         private string PositionString()
         {
-            if (Position == 'q') return "QB";
-            if (Position == 'r') return "RB";
-            if (Position == 'w') return "WR";
-            if (Position == 't') return "TE";
-            if (Position == 'k') return "K";
-            if (Position == 'd') return "DEF";
+            if (Position[0] == 'Q') return "QB";
+            if (Position[0] == 'R') return "RB";
+            if (Position[0] == 'W') return "WR";
+            if (Position[0] == 'T') return "TE";
+            if (Position[0] == 'K') return "K";
+            if (Position[0] == 'D') return "DEF";
             return "";
         }
         /// <summary>
@@ -91,23 +91,23 @@ namespace MFL_Manager.Models.CustomResponeses
         /// <returns>Integer indicating result of the comparison.</returns>
         public int CompareTo(PlayerDto other)
         {
-            if (Position.CompareTo(other.Position) == 0)
+            if (string.Equals(Position, other.Position))
             {
                 return other.Salary.CompareTo(Salary);
             }
 
-            if (Position == 'q') return -1;
-            if (other.Position == 'q') return 1;
-            if (Position == 'r') return -1;
-            if (other.Position == 'r') return 1;
-            if (Position == 'w') return -1;
-            if (other.Position == 'w') return 1;
-            if (Position == 't') return -1;
-            if (other.Position == 't') return 1;
-            if (Position == 'k') return -1;
-            if (other.Position == 'k') return 1;
-            if (Position == 'd') return -1;
-            return other.Position == 'd' ? 1 : 0;
+            if (Position[0] == 'Q') return -1;
+            if (other.Position[0] == 'Q') return 1;
+            if (Position[0] == 'R') return -1;
+            if (other.Position[0] == 'R') return 1;
+            if (Position[0] == 'W') return -1;
+            if (other.Position[0] == 'W') return 1;
+            if (Position[0] == 'T') return -1;
+            if (other.Position[0] == 'T') return 1;
+            if (Position[0] == 'K') return -1;
+            if (other.Position[0] == 'K') return 1;
+            if (Position[0] == 'D') return -1;
+            return other.Position[0] == 'D' ? 1 : 0;
         }
     }
 }

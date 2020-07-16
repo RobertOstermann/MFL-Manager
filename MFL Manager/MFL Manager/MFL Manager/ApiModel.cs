@@ -16,7 +16,7 @@ namespace MFL_Manager
     {
         /// <summary>
         /// MFL Players JSON
-        /// Provides - Name, ID, Position, NFL Team
+        /// Provides - Name, ID, Position, NFL NFLTeam
         /// </summary>
         public ApiAllPlayerObject Players { get; set; }
 
@@ -63,7 +63,7 @@ namespace MFL_Manager
 
         /// <summary>
         /// MFL League JSON
-        /// Provides - Franchise Name, Franchise ID, Franchise Division
+        /// Provides - Franchise Name, Franchise ID, Franchise DivisionId
         /// </summary>
         public ApiLeagueObject League { get; set; }
 
