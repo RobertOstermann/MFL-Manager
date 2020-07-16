@@ -17,7 +17,7 @@ namespace MFL_Manager
     {
         public Dictionary<int, PlayerInfo> PlayerDictionary;
         
-        public List<PlayerInfo> PlayerList { get; private set; }
+        public List<PlayerInfo> PlayerList { get; set; }
 
         //Current roster is stored for each team.
         public Dictionary<int, TeamInfo> Teams;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,15 +8,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MFL_Manager.Models.ApiResponses.League;
+using MFL_Manager.Models.ApiResponses.Players;
+using MFL_Manager.Models.ApiResponses.Salary;
 
 namespace MFL_Manager
 {
     public partial class Manager : Form
     {
-        public Manager()
+        private readonly MFLController _mflController;
+        public Manager(MFLController mflController)
         {
             InitializeComponent();
             ApiAssistant.InitializeClient();
+            _mflController = mflController;
+            IEnumerable<Franchise> franchises = _mflController.GetFranchisesFromApi(new Uri("https://www54.myfantasyleague.com/2020/export?TYPE=league&L=30916&APIKEY=&JSON=1"));
+            IEnumerable<Player> players = _mflController.GetPlayersFromApi(new Uri("https://www54.myfantasyleague.com/2020/export?TYPE=players&L=30916&APIKEY=&DETAILS=&SINCE=&PLAYERS=&JSON=1"));
+            IEnumerable<Salary> salaries = _mflController.GetSalariesFromApi(new Uri("https://www54.myfantasyleague.com/2020/export?TYPE=salaries&L=30916&APIKEY=&JSON=1"));
+            //https://www54.myfantasyleague.com/2020/export?TYPE=rosters&L=30916&APIKEY=&FRANCHISE=&JSON=0
         }
         //Public should allow for access across all classes.
         public PlayerDatabase PlayerDatabase;

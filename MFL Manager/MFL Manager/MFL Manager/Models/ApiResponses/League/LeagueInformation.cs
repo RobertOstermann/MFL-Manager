@@ -15,6 +15,6 @@ namespace MFL_Manager.Models.ApiResponses.League
         public string SalaryCap { get; set; }
 
         [JsonProperty("divisions")]
-        public List<Division> Divisions { get; set; }
+        public DivisionInformation DivisionInformation { get; set; }
     }
 }

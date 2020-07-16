@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MFL_Manager.Repositories.Implementation;
+using MFL_Manager.Repositories.Interface;
 
 namespace MFL_Manager
 {
@@ -16,7 +18,7 @@ namespace MFL_Manager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Manager());
+            Application.Run(new Manager(new MFLController(new MFLRepository(new RestApiRepository()), new PlayerDatabase())));
         }
     }
 }

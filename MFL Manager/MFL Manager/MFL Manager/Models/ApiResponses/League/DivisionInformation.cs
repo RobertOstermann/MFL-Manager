@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace MFL_Manager.Models.ApiResponses.League
 {
@@ -8,6 +9,6 @@ namespace MFL_Manager.Models.ApiResponses.League
         public string Count { get; set; }
 
         [JsonProperty("division")]
-        public Division Division { get; set; }
+        public List<Division> Division { get; set; }
     }
 }
