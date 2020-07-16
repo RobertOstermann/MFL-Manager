@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using MFL_Manager.Models.ApiResponses.Players;
 
 namespace MFL_Manager
 {
@@ -225,16 +226,16 @@ namespace MFL_Manager
             try
             {
                 //Player information necessary for retrieval
-                List<ApiModel.ApiAllPlayerObject.ApiPlayerObject> apiPlayers = await ApiProcessor.LoadPlayerInformation(playerURL);
+                List<Player> apiPlayers = await ApiProcessor.LoadPlayerInformation(playerURL);
                 List<ApiModel.ApiPlayerSalaryObject.ApiLeagueUnit.ApiLeagueUnitPlayer> apiSalary = await ApiProcessor.LoadSalaryInformation(salaryURL);
                 List<ApiModel.ApiLeagueObject.ApiAllFranchiseObject.ApiFranchiseObject> apiTeams = await ApiProcessor.LoadTeamInformation(leagueURL);
                 List<XmlNode> apiRosters = ApiProcessor.LoadRosterInformation(rosterURL);
 
-                foreach (ApiModel.ApiAllPlayerObject.ApiPlayerObject mflPlayer in apiPlayers)
+                foreach (Player mflPlayer in apiPlayers)
                 {
                     if (ReadPlayerPosition(mflPlayer.Position, out char position))
                     {
-                        AddPlayerInformation(mflPlayer.Name, mflPlayer.Id, mflPlayer.Team, position);
+                        AddPlayerInformation(mflPlayer.PlayerName, Convert.ToInt32(mflPlayer.PlayerId), mflPlayer.NFLTeam, position);
                     }
                 }
                 foreach (ApiModel.ApiPlayerSalaryObject.ApiLeagueUnit.ApiLeagueUnitPlayer mflPlayer in apiSalary)
@@ -265,6 +266,7 @@ namespace MFL_Manager
                     }
                 }
                 //Xml because JSON parsing was not successful.
+                
                 foreach (XmlNode teams in apiRosters)
                 {
                     int teamIdConverted = Convert.ToInt32(teams.Attributes[0].InnerText.TrimStart(new char[] { '0' }));

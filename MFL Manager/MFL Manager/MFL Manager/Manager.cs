@@ -81,7 +81,7 @@ namespace MFL_Manager
                 WebsiteInformation websiteInformation = new WebsiteInformation();
                 if (websiteInformation.ShowDialog() == DialogResult.OK)
                 {
-                    PlayerDatabase = new PlayerDatabase(websiteInformation.PlayerURL, websiteInformation.SalaryURL, websiteInformation.LeagueURL, websiteInformation.RosterURL);
+                    PlayerDatabase = new PlayerDatabase(websiteInformation.PlayerUrl, websiteInformation.SalaryUrl, websiteInformation.LeagueUrl, websiteInformation.RosterUrl);
                     EnableButtons();
                     LoadListBoxes();
                     UpdateCapInformation();

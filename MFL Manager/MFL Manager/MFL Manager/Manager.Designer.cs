@@ -64,6 +64,8 @@
             this.uxSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.lblTeamName = new System.Windows.Forms.Label();
             this.uxFilterOptions = new System.Windows.Forms.GroupBox();
+            this.uxRosterPlayers = new System.Windows.Forms.CheckBox();
+            this.uxFreeAgents = new System.Windows.Forms.CheckBox();
             this.uxDefense = new System.Windows.Forms.RadioButton();
             this.uxKickers = new System.Windows.Forms.RadioButton();
             this.uxTightEnd = new System.Windows.Forms.RadioButton();
@@ -85,8 +87,6 @@
             this.uxContractYearLabel = new System.Windows.Forms.Label();
             this.lblSalaryLabel = new System.Windows.Forms.Label();
             this.lblSalary = new System.Windows.Forms.Label();
-            this.uxFreeAgents = new System.Windows.Forms.CheckBox();
-            this.uxRosterPlayers = new System.Windows.Forms.CheckBox();
             this.uxMenuStrip.SuspendLayout();
             this.uxFilterOptions.SuspendLayout();
             this.SuspendLayout();
@@ -217,7 +217,7 @@
             this.uxNFC});
             this.uxTeam.Enabled = false;
             this.uxTeam.Name = "uxTeam";
-            this.uxTeam.Size = new System.Drawing.Size(48, 20);
+            this.uxTeam.Size = new System.Drawing.Size(47, 20);
             this.uxTeam.Text = "Team";
             // 
             // uxAFC
@@ -337,7 +337,7 @@
             this.uxPlayers.ItemHeight = 17;
             this.uxPlayers.Location = new System.Drawing.Point(12, 85);
             this.uxPlayers.Name = "uxPlayers";
-            this.uxPlayers.Size = new System.Drawing.Size(400, 344);
+            this.uxPlayers.Size = new System.Drawing.Size(400, 378);
             this.uxPlayers.TabIndex = 1;
             this.uxPlayers.Click += new System.EventHandler(this.uxPlayers_Click);
             this.uxPlayers.DataSourceChanged += new System.EventHandler(this.uxPlayers_DataSourceChanged);
@@ -349,7 +349,7 @@
             this.uxCurrentRoster.ItemHeight = 17;
             this.uxCurrentRoster.Location = new System.Drawing.Point(665, 85);
             this.uxCurrentRoster.Name = "uxCurrentRoster";
-            this.uxCurrentRoster.Size = new System.Drawing.Size(400, 344);
+            this.uxCurrentRoster.Size = new System.Drawing.Size(400, 378);
             this.uxCurrentRoster.TabIndex = 2;
             this.uxCurrentRoster.Click += new System.EventHandler(this.uxCurrentRoster_Click);
             // 
@@ -382,6 +382,30 @@
             this.uxFilterOptions.TabIndex = 4;
             this.uxFilterOptions.TabStop = false;
             this.uxFilterOptions.Text = "Filter Options:";
+            // 
+            // uxRosterPlayers
+            // 
+            this.uxRosterPlayers.AutoSize = true;
+            this.uxRosterPlayers.Checked = true;
+            this.uxRosterPlayers.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.uxRosterPlayers.Location = new System.Drawing.Point(141, 49);
+            this.uxRosterPlayers.Name = "uxRosterPlayers";
+            this.uxRosterPlayers.Size = new System.Drawing.Size(94, 17);
+            this.uxRosterPlayers.TabIndex = 10;
+            this.uxRosterPlayers.Text = "Roster Players";
+            this.uxRosterPlayers.UseVisualStyleBackColor = true;
+            // 
+            // uxFreeAgents
+            // 
+            this.uxFreeAgents.AutoSize = true;
+            this.uxFreeAgents.Checked = true;
+            this.uxFreeAgents.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.uxFreeAgents.Location = new System.Drawing.Point(141, 22);
+            this.uxFreeAgents.Name = "uxFreeAgents";
+            this.uxFreeAgents.Size = new System.Drawing.Size(83, 17);
+            this.uxFreeAgents.TabIndex = 9;
+            this.uxFreeAgents.Text = "Free Agents";
+            this.uxFreeAgents.UseVisualStyleBackColor = true;
             // 
             // uxDefense
             // 
@@ -502,7 +526,7 @@
             // lblCapHitLabel
             // 
             this.lblCapHitLabel.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCapHitLabel.Location = new System.Drawing.Point(833, 467);
+            this.lblCapHitLabel.Location = new System.Drawing.Point(417, 497);
             this.lblCapHitLabel.Name = "lblCapHitLabel";
             this.lblCapHitLabel.Size = new System.Drawing.Size(106, 29);
             this.lblCapHitLabel.TabIndex = 19;
@@ -512,7 +536,7 @@
             // lblCapHit
             // 
             this.lblCapHit.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCapHit.Location = new System.Drawing.Point(945, 467);
+            this.lblCapHit.Location = new System.Drawing.Point(529, 497);
             this.lblCapHit.Name = "lblCapHit";
             this.lblCapHit.Size = new System.Drawing.Size(121, 29);
             this.lblCapHit.TabIndex = 20;
@@ -596,7 +620,7 @@
             // lblSalaryLabel
             // 
             this.lblSalaryLabel.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalaryLabel.Location = new System.Drawing.Point(833, 435);
+            this.lblSalaryLabel.Location = new System.Drawing.Point(12, 497);
             this.lblSalaryLabel.Name = "lblSalaryLabel";
             this.lblSalaryLabel.Size = new System.Drawing.Size(106, 29);
             this.lblSalaryLabel.TabIndex = 27;
@@ -606,36 +630,12 @@
             // lblSalary
             // 
             this.lblSalary.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalary.Location = new System.Drawing.Point(944, 435);
+            this.lblSalary.Location = new System.Drawing.Point(123, 497);
             this.lblSalary.Name = "lblSalary";
             this.lblSalary.Size = new System.Drawing.Size(121, 29);
             this.lblSalary.TabIndex = 28;
             this.lblSalary.Text = "$0.00 ";
             this.lblSalary.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // uxFreeAgents
-            // 
-            this.uxFreeAgents.AutoSize = true;
-            this.uxFreeAgents.Checked = true;
-            this.uxFreeAgents.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.uxFreeAgents.Location = new System.Drawing.Point(141, 22);
-            this.uxFreeAgents.Name = "uxFreeAgents";
-            this.uxFreeAgents.Size = new System.Drawing.Size(83, 17);
-            this.uxFreeAgents.TabIndex = 9;
-            this.uxFreeAgents.Text = "Free Agents";
-            this.uxFreeAgents.UseVisualStyleBackColor = true;
-            // 
-            // uxRosterPlayers
-            // 
-            this.uxRosterPlayers.AutoSize = true;
-            this.uxRosterPlayers.Checked = true;
-            this.uxRosterPlayers.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.uxRosterPlayers.Location = new System.Drawing.Point(141, 49);
-            this.uxRosterPlayers.Name = "uxRosterPlayers";
-            this.uxRosterPlayers.Size = new System.Drawing.Size(94, 17);
-            this.uxRosterPlayers.TabIndex = 10;
-            this.uxRosterPlayers.Text = "Roster Players";
-            this.uxRosterPlayers.UseVisualStyleBackColor = true;
             // 
             // Manager
             // 
@@ -663,7 +663,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.uxMenuStrip;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Manager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -40,7 +40,6 @@ C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\b
 C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\bin\Debug\System.Net.Http.Formatting.dll
 C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\bin\Debug\Newtonsoft.Json.xml
 C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\bin\Debug\System.Net.Http.Formatting.xml
-C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL Manager.csprojAssemblyReference.cache
 C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL_Manager.CapEditor.resources
 C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL_Manager.Manager.resources
 C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL_Manager.PlayerEditor.resources
@@ -51,3 +50,4 @@ C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\o
 C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL Manager.csproj.CopyComplete
 C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL Manager.exe
 C:\Users\RO081832\Source\Repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL Manager.pdb
+C:\Users\RO081832\source\repos\MFL-Manager\MFL Manager\MFL Manager\MFL Manager\obj\Debug\MFL Manager.csprojAssemblyReference.cache
