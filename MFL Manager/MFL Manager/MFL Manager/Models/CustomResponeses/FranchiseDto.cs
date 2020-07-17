@@ -18,9 +18,14 @@ namespace MFL_Manager.Models.CustomResponeses
 
         public string Division { get; set; }
 
-        public List<PlayerInfo> Players { get; set; }
+        public List<PlayerDto> Players { get; set; }
 
-        public double Salary { get; set; }
+        public double Salary {
+            get
+            {
+                return Players.Sum(player => player.Salary);
+            }
+        }
 
         public double CapHit { get; set; }
 
@@ -29,7 +34,7 @@ namespace MFL_Manager.Models.CustomResponeses
         /// </summary>
         public FranchiseDto()
         {
-            Players = new List<PlayerInfo>();
+            Players = new List<PlayerDto>();
         }
 
         /// <summary>
@@ -37,14 +42,13 @@ namespace MFL_Manager.Models.CustomResponeses
         /// Adds player salary to the team salary.
         /// </summary>
         /// <param name="player"></param>
-        public void AddPlayer(PlayerInfo player)
+        public void AddPlayer(PlayerDto player)
         {
             if (!player.Roster)
             {
                 player.Roster = true;
                 player.MFLTeamID = Id;
                 Players.Add(player);
-                Salary += player.Salary;
             }
         }
 
@@ -53,11 +57,10 @@ namespace MFL_Manager.Models.CustomResponeses
         /// Removes player salary from the team salary.
         /// </summary>
         /// <param name="player"></param>
-        public void RemovePlayer(PlayerInfo player)
+        public void RemovePlayer(PlayerDto player)
         {
             player.Roster = false;
             Players.Remove(player);
-            Salary -= player.Salary;
         }
 
         /// <summary>

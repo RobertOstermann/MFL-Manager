@@ -11,6 +11,8 @@ namespace MFL_Manager.Repositories.Interface
     {
         IEnumerable<FranchiseDto> GetFranchiseDtosFromApiData(LeagueInformation leagueInformation);
 
+        double GetSalaryCapFromApiData(LeagueInformation leagueInformation);
+
         IEnumerable<PlayerDto> GetPlayerDtosFromApiData(IEnumerable<Player> players, IEnumerable<Salary> salaries);
 
         IEnumerable<Player> GetPlayersFromApi(Uri uri);

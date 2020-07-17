@@ -18,6 +18,9 @@ namespace MFL_Manager
     public partial class Manager : Form
     {
         private readonly MFLController _mflController;
+
+        public int FranchiseId;
+
         public Manager(MFLController mflController)
         {
             InitializeComponent();
@@ -30,16 +33,34 @@ namespace MFL_Manager
             Uri rosterUri = new Uri("https://www54.myfantasyleague.com/2020/export?TYPE=rosters&L=30916&APIKEY=&FRANCHISE=&JSON=0");
 
             _mflController.GetApiInformation(playerUri, franchiseUri, salaryUri);
+
+            LeagueInformation leagueInformation = _mflController.GetLeagueInformation();
+            List<FranchiseDto> franchiseInformation = _mflController.GetFranchiseInformation().ToList();
+
+            foreach (var division in leagueInformation.DivisionInformation.Division)
+            {
+                ToolStripDropDownButton item = new ToolStripDropDownButton(division.DivisionName)
+                {
+                    ShowDropDownArrow = false
+                };
+                uxMFLTeam.DropDownItems.Add(item);
+                foreach (var franchise in franchiseInformation.Where(franchise => franchise.DivisionId == Convert.ToInt32(division.DivisionId)))
+                {
+                    ToolStripItem franchiseItem = new ToolStripMenuItem(franchise.Name, null, franchise_Click)
+                    {
+                        Name = "ux" + franchise.Id
+                    };
+                    item.DropDownItems.Add(franchiseItem);
+                }
+            }
+
+            //REMOVE
+            EnableButtons();
         }
-        //Public should allow for access across all classes.
-        public PlayerDatabase PlayerDatabase;
 
-        public int TeamId;
-
-        public ListBox SelectedListBox;
+        #region Button Clicks
 
         /// <summary>
-        /// Initializes a new player database.
         /// Enables all buttons. Clears the list boxes.
         /// Updates the cap information.
         /// </summary>
@@ -47,11 +68,35 @@ namespace MFL_Manager
         /// <param name="e"></param>
         private void uxNew_Click(object sender, EventArgs e)
         {
-            PlayerDatabase = new PlayerDatabase();
             EnableButtons();
             ClearListBoxes();
             UpdateCapInformation();
         }
+
+        private void franchise_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ToolStripItem item = (ToolStripItem) sender;
+                FranchiseId = Convert.ToInt32(item.Name.Substring(2));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        #endregion
+
+
+
+        //Public should allow for access across all classes.
+        public PlayerDatabase PlayerDatabase;
+
+        public int TeamId;
+
+        public ListBox SelectedListBox;
+
         /// <summary>
         /// Initializes a new player database.
         /// Shows a file dialog and loads a player list from the given file.
@@ -347,7 +392,7 @@ namespace MFL_Manager
         private void EnableButtons()
         {
             uxEdit.Enabled = true;
-            uxTeam.Enabled = true;
+            uxMFLTeam.Enabled = true;
             uxView.Enabled = true;
             uxRetrieve.Enabled = true;
             uxFilterOptions.Enabled = true;
@@ -513,100 +558,6 @@ namespace MFL_Manager
         {
             if (uxPlayers.DataSource == null) DisableLabels();
             else EnableLabels();
-        }
-
-        //Set the current roster to the chosen team.
-        /// <summary>
-        /// Sets the TeamID to the chosen team.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxTornados_Click(object sender, EventArgs e)
-        {
-            SetNewTeam(1);
-            //Adjust so that new teams can be added at will.
-            //uxTeam.DropDownItems.Add()
-        }
-        /// <summary>
-        /// Sets the TeamID to the chosen team.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxPenguins_Click(object sender, EventArgs e)
-        {
-            SetNewTeam(2);
-        }
-        /// <summary>
-        /// Sets the TeamID to the chosen team.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxBombers_Click(object sender, EventArgs e)
-        {
-            SetNewTeam(3);
-        }
-        /// <summary>
-        /// Sets the TeamID to the chosen team.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxDactyls_Click(object sender, EventArgs e)
-        {
-            SetNewTeam(4);
-        }
-        /// <summary>
-        /// Sets the TeamID to the chosen team.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxODBs_Click(object sender, EventArgs e)
-        {
-            SetNewTeam(5);
-        }
-        /// <summary>
-        /// Sets the TeamID to the chosen team.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxStormDynasty_Click(object sender, EventArgs e)
-        {
-            SetNewTeam(6); 
-        }
-        /// <summary>
-        /// Sets the TeamID to the chosen team.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxNikeStorm_Click(object sender, EventArgs e)
-        {
-            SetNewTeam(7);
-        }
-        /// <summary>
-        /// Sets the TeamID to the chosen team.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxGorillas_Click(object sender, EventArgs e)
-        {
-            SetNewTeam(8);
-        }
-        /// <summary>
-        /// Sets the TeamID to the chosen team.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxPower_Click(object sender, EventArgs e)
-        {
-            SetNewTeam(9);
-        }
-        /// <summary>
-        /// Sets the TeamID to the chosen team.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxRam_Click(object sender, EventArgs e)
-        {
-            SetNewTeam(10);
         }
 
         //Edit the cap information.

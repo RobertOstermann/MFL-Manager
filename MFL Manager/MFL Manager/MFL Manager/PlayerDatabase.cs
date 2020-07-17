@@ -18,32 +18,30 @@ namespace MFL_Manager
     {
         //Overhaul-2020
 
-        public List<PlayerDto> Players { get; set; }
+        public Dictionary<int, PlayerDto> Players { get; set; }
 
-        public List<FranchiseDto> Franchises { get; set; }
+        public Dictionary<int, FranchiseDto> Franchises { get; set; }
+
+        public double CapRoom { get; set; }
+
+        /// <summary>
+        /// Initialize the PlayerDatabase.
+        /// </summary>
+        public PlayerDatabase()
+        {
+            Players = new Dictionary<int, PlayerDto>();
+            Franchises = new Dictionary<int, FranchiseDto>();
+            CapRoom = 125.00;
+        }
 
         //Old
         public List<PlayerInfo> PlayerList { get; set; }
 
         //Current roster is stored for each team.
         public Dictionary<int, TeamInfo> Teams;
-        
-        public double CapRoom { get; set; }
 
         public Dictionary<int, PlayerInfo> PlayerDictionary;
 
-        /// <summary>
-        /// Initialize the PlayerDatabase.
-        /// New PlayerDatabase is selected.
-        /// </summary>
-        public PlayerDatabase()
-        {
-            PlayerDictionary = new Dictionary<int, PlayerInfo>();
-            PlayerList = new List<PlayerInfo>();
-            Teams = new Dictionary<int, TeamInfo>();
-            InitializeTeams();
-            CapRoom = 125.00;
-        }
         /// <summary>
         /// Initializes the PlayerDatabase.
         /// Load local list is selected.

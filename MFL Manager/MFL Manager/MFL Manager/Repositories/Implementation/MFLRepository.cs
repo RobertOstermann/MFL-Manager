@@ -43,6 +43,20 @@ namespace MFL_Manager.Repositories.Implementation
             return franchiseDtos;
         }
 
+        public double GetSalaryCapFromApiData(LeagueInformation leagueInformation)
+        {
+            double salaryCap = 125.00;
+            try
+            {
+                salaryCap = Convert.ToDouble(leagueInformation.SalaryCap);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return salaryCap;
+        }
+
         public IEnumerable<PlayerDto> GetPlayerDtosFromApiData(IEnumerable<Player> players, IEnumerable<Salary> salaries)
         {
             List<PlayerDto> playerDtos = new List<PlayerDto>();
@@ -72,27 +86,6 @@ namespace MFL_Manager.Repositories.Implementation
             }
 
             return playerDtos;
-        }
-
-        private string GetPlayerPosition(string position)
-        {
-            switch (position)
-            {
-                case "QB":
-                    return "Quarterback";
-                case "RB":
-                    return "Running Back";
-                case "WR":
-                    return "Wide Receiver";
-                case "TE":
-                    return "Tight End";
-                case "PK":
-                    return "Kicker";
-                case "Def":
-                    return "Defense";
-                default:
-                    return "Invalid";
-            }
         }
 
         #region Api Requests
@@ -162,5 +155,26 @@ namespace MFL_Manager.Repositories.Implementation
         }
 
         #endregion
+
+        private string GetPlayerPosition(string position)
+        {
+            switch (position)
+            {
+                case "QB":
+                    return "Quarterback";
+                case "RB":
+                    return "Running Back";
+                case "WR":
+                    return "Wide Receiver";
+                case "TE":
+                    return "Tight End";
+                case "PK":
+                    return "Kicker";
+                case "Def":
+                    return "Defense";
+                default:
+                    return "Invalid";
+            }
+        }
     }
 }
