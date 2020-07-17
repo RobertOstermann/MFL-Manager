@@ -1,0 +1,11 @@
+Name,Owner,Id,DivisionId,Division,Salary,CapHit
+Tornados,,1,0,AFC,0,0
+Penguins,,2,0,AFC,0,0
+72 Fins or 07 Pats?,,3,0,AFC,0,0
+Dactyls,,4,0,AFC,0,0
+ODB's,,5,0,AFC,0,0
+Storm Dynasty,,6,1,NFC,0,0
+Nike Storm,,7,1,NFC,0,0
+Gorillas,,8,1,NFC,0,0
+Power,,9,1,NFC,0,0
+Shit Squad,,10,1,NFC,0,0

@@ -35,6 +35,7 @@ namespace MFL_Manager.Models.CustomResponeses
         public FranchiseDto()
         {
             Players = new List<PlayerDto>();
+            CapHit = 0;
         }
 
         /// <summary>

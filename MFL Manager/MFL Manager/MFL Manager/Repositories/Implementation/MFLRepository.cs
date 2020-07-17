@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Security.Principal;
 using MFL_Manager.Models.ApiResponses.League;
@@ -14,9 +16,13 @@ namespace MFL_Manager.Repositories.Implementation
     public class MFLRepository : IMFLRepository
     {
         private readonly IRestApiRepository _restApiRepository;
-        public MFLRepository(IRestApiRepository restApiRepository)
+
+        private readonly IFileRepository _fileRepository;
+
+        public MFLRepository(IRestApiRepository restApiRepository, IFileRepository fileRepository)
         {
             _restApiRepository = restApiRepository;
+            _fileRepository = fileRepository;
         }
 
         public IEnumerable<FranchiseDto> GetFranchiseDtosFromApiData(LeagueInformation leagueInformation)
@@ -152,6 +158,30 @@ namespace MFL_Manager.Repositories.Implementation
                 return null;
 
             throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region Local Requests
+
+        public IEnumerable<PlayerDto> GetPlayersFromFile()
+        {
+            return _fileRepository.LoadPlayerInformation();
+        }
+
+        public IEnumerable<FranchiseDto> GetFranchisesFromFile()
+        {
+            return _fileRepository.LoadFranchiseInformation();
+        }
+
+        public void SavePlayersToFile(IEnumerable<PlayerDto> players)
+        {
+            _fileRepository.SavePlayerInformation(players);
+        }
+
+        public void SaveFranchisesToFile(IEnumerable<FranchiseDto> franchises)
+        {
+            _fileRepository.SaveFranchiseInformation(franchises);
         }
 
         #endregion

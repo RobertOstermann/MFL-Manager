@@ -22,5 +22,13 @@ namespace MFL_Manager.Repositories.Interface
         IEnumerable<Salary> GetSalariesFromApi(Uri uri);
 
         IEnumerable<Salary> GetRostersFromApi(Uri uri);
+
+        IEnumerable<PlayerDto> GetPlayersFromFile();
+
+        IEnumerable<FranchiseDto> GetFranchisesFromFile();
+
+        void SavePlayersToFile(IEnumerable<PlayerDto> players);
+
+        void SaveFranchisesToFile(IEnumerable<FranchiseDto> franchises);
     }
 }

@@ -26,39 +26,12 @@ namespace MFL_Manager
             InitializeComponent();
             ApiAssistant.InitializeClient();
             _mflController = mflController;
-
-            Uri playerUri = new Uri("https://www54.myfantasyleague.com/2020/export?TYPE=players&L=30916&APIKEY=&DETAILS=&SINCE=&PLAYERS=&JSON=1");
-            Uri franchiseUri = new Uri("https://www54.myfantasyleague.com/2020/export?TYPE=league&L=30916&APIKEY=&JSON=1");
-            Uri salaryUri = new Uri("https://www54.myfantasyleague.com/2020/export?TYPE=salaries&L=30916&APIKEY=&JSON=1");
-            Uri rosterUri = new Uri("https://www54.myfantasyleague.com/2020/export?TYPE=rosters&L=30916&APIKEY=&FRANCHISE=&JSON=0");
-
-            _mflController.GetApiInformation(playerUri, franchiseUri, salaryUri);
-
-            LeagueInformation leagueInformation = _mflController.GetLeagueInformation();
-            List<FranchiseDto> franchiseInformation = _mflController.GetFranchiseInformation().ToList();
-
-            foreach (var division in leagueInformation.DivisionInformation.Division)
-            {
-                ToolStripDropDownButton item = new ToolStripDropDownButton(division.DivisionName)
-                {
-                    ShowDropDownArrow = false
-                };
-                uxMFLTeam.DropDownItems.Add(item);
-                foreach (var franchise in franchiseInformation.Where(franchise => franchise.DivisionId == Convert.ToInt32(division.DivisionId)))
-                {
-                    ToolStripItem franchiseItem = new ToolStripMenuItem(franchise.Name, null, franchise_Click)
-                    {
-                        Name = "ux" + franchise.Id
-                    };
-                    item.DropDownItems.Add(franchiseItem);
-                }
-            }
-
-            //REMOVE
-            EnableButtons();
+            FranchiseId = 1;
         }
 
         #region Button Clicks
+
+        #region Handle Information
 
         /// <summary>
         /// Enables all buttons. Clears the list boxes.
@@ -70,64 +43,25 @@ namespace MFL_Manager
         {
             EnableButtons();
             ClearListBoxes();
-            UpdateCapInformation();
+            //Update Cap Information
         }
-
-        private void franchise_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ToolStripItem item = (ToolStripItem) sender;
-                FranchiseId = Convert.ToInt32(item.Name.Substring(2));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-        }
-
-        #endregion
-
-
-
-        //Public should allow for access across all classes.
-        public PlayerDatabase PlayerDatabase;
-
-        public int TeamId;
-
-        public ListBox SelectedListBox;
 
         /// <summary>
-        /// Initializes a new player database.
-        /// Shows a file dialog and loads a player list from the given file.
+        /// Loads player and franchise information.
         /// Enables all buttons. Clears the list boxes. Updates the cap information.
-        /// Shows an error message for unreadable files.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void uxLocal_Click(object sender, EventArgs e)
         {
-            uxOpenFileDialog.FileName = null;
-            if (uxOpenFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string filename = uxOpenFileDialog.FileName;
-                try
-                {
-                    PlayerDatabase = new PlayerDatabase(filename);
-                    EnableButtons();
-                    LoadListBoxes();
-                    UpdateCapInformation();
-                }
-                catch
-                {
-                    ClearListBoxes();
-                    MessageBox.Show("Error opening " + filename);
-                }
-            }
+            _mflController.GetLocalInformation();
+            EnableButtons();
+            LoadListBoxes();
+            SetTeam();
         }
+
         /// <summary>
-        /// Shows a URL dialog and loads player information from the given source.
-        /// Replaces the PlayerDatabase.
+        /// Shows a URL dialog and loads player information from the given MFL API.
         /// Enables all buttons. Clears the list boxes. Updates the cap information.
         /// Shows an error message for unreadable files.
         /// </summary>
@@ -140,72 +74,78 @@ namespace MFL_Manager
                 WebsiteInformation websiteInformation = new WebsiteInformation();
                 if (websiteInformation.ShowDialog() == DialogResult.OK)
                 {
-                    PlayerDatabase = new PlayerDatabase(websiteInformation.PlayerUrl, websiteInformation.SalaryUrl, websiteInformation.LeagueUrl, websiteInformation.RosterUrl);
+                    Uri playerUri = new Uri(websiteInformation.PlayerUrl);
+                    Uri franchiseUri = new Uri(websiteInformation.LeagueUrl);
+                    Uri salaryUri = new Uri(websiteInformation.SalaryUrl);
+                    Uri rosterUri = new Uri(websiteInformation.RosterUrl);
+
+                    _mflController.GetApiInformation(playerUri, franchiseUri, salaryUri);
+
+                    LeagueInformation leagueInformation = _mflController.GetLeagueInformation();
+                    List<FranchiseDto> franchiseInformation = _mflController.GetFranchiseInformation().ToList();
+
+                    foreach (var division in leagueInformation.DivisionInformation.Division)
+                    {
+                        ToolStripDropDownButton item = new ToolStripDropDownButton(division.DivisionName)
+                        {
+                            ShowDropDownArrow = false
+                        };
+                        uxMFLTeam.DropDownItems.Add(item);
+                        foreach (var franchise in franchiseInformation.Where(franchise => franchise.DivisionId == Convert.ToInt32(division.DivisionId)))
+                        {
+                            ToolStripItem franchiseItem = new ToolStripMenuItem(franchise.Name, null, franchise_Click)
+                            {
+                                Name = "ux" + franchise.Id
+                            };
+                            item.DropDownItems.Add(franchiseItem);
+                        }
+                    }
                     EnableButtons();
                     LoadListBoxes();
-                    UpdateCapInformation();
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 ClearListBoxes();
-                MessageBox.Show("Invalid Website Address");
+                MessageBox.Show($@"Invalid Website Address with exception - {ex}");
             }
         }
+
         /// <summary>
-        /// Shows a save file dialog and saves the player list to a text file.
-        /// Shows an error message if the save is not successful.
+        /// Saves the player and franchise information.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void uxSave_Click(object sender, EventArgs e)
         {
-            if (uxSaveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                //Extension not working!
-                uxSaveFileDialog.DefaultExt = ".txt";
-                uxSaveFileDialog.AddExtension = true;
-
-                try
-                {
-                    PlayerDatabase.SaveFile(uxSaveFileDialog.FileName);
-                }
-                catch
-                {
-                    MessageBox.Show("Error Saving File");
-                }
-            }
+            _mflController.SaveInformation();
         }
+
+        #endregion
+
         /// <summary>
-        /// Utilizes PlayerEditor form to 
-        /// edit a player's values.
+        /// Selects a franchise and displays the franchise roster.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uxEditPlayer_Click(object sender, EventArgs e)
+        private void franchise_Click(object sender, EventArgs e)
         {
-            if (SelectedListBox != null)
+            try
             {
-                PlayerInfo player = (PlayerInfo)SelectedListBox.SelectedItem;
-                if (player != null)
-                {
-                    PlayerDatabase.RemovePlayerFromTeam(player);
-                    PlayerEditor playerEditor = new PlayerEditor(player);
-                    if (playerEditor.ShowDialog() == DialogResult.OK)
-                    {
-
-                        PlayerDatabase.AddPlayerToTeam(player);
-                        LoadListBoxes();
-                    }
-                    else PlayerDatabase.AddPlayerToTeam(player);
-                    UpdateCapInformation();
-                }
+                ToolStripItem item = (ToolStripItem) sender;
+                FranchiseId = Convert.ToInt32(item.Name.Substring(2));
+                SetTeam();
             }
-            else MessageBox.Show("Error - Invalid Player");
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
+
+        #region Players
+
         /// <summary>
-        /// Utilizes the PlayerEditor form to 
-        /// create a player.
+        /// Utilizes the PlayerEditor form to create a player.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -214,10 +154,38 @@ namespace MFL_Manager
             PlayerEditor playerEditor = new PlayerEditor();
             if (playerEditor.ShowDialog() == DialogResult.OK)
             {
-                PlayerDatabase.AddPlayerInformation(playerEditor.Player);
+                _mflController.AddPlayer(playerEditor.Player);
                 LoadListBoxes();
             }
         }
+
+        /// <summary>
+        /// Utilizes PlayerEditor form to edit a player's values.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uxEditPlayer_Click(object sender, EventArgs e)
+        {
+            if (SelectedListBox != null)
+            {
+                PlayerDto player = (PlayerDto)SelectedListBox.SelectedItem;
+                if (player != null)
+                {
+                    _mflController.RemovePlayerFromTeam(player);
+                    PlayerEditor playerEditor = new PlayerEditor(player);
+                    if (playerEditor.ShowDialog() == DialogResult.OK)
+                    {
+
+                        _mflController.AddPlayerToTeam(player);
+                        LoadListBoxes();
+                    }
+                    else _mflController.AddPlayerToTeam(player);
+                    SetTeam();
+                }
+            }
+            else MessageBox.Show(@"Error - Invalid Player");
+        }
+
         /// <summary>
         /// Adds the selected player to an MFL team.
         /// </summary>
@@ -225,19 +193,17 @@ namespace MFL_Manager
         /// <param name="e"></param>
         private void uxAddPlayer_Click(object sender, EventArgs e)
         {
-            if (SelectedListBox != null)
+            PlayerDto player = (PlayerDto) SelectedListBox?.SelectedItem;
+            if (player != null)
             {
-                PlayerInfo player = (PlayerInfo)SelectedListBox.SelectedItem;
-                if (player != null)
-                {
-                    if (player.MFLTeamID != 0) PlayerDatabase.RemovePlayerFromTeam(player);
-                    player.MFLTeamID = TeamId;
-                    PlayerDatabase.AddPlayerToTeam(player);
-                    LoadListBoxes();
-                    UpdateCapInformation();
-                }
+                if (player.MFLTeamID != 0) _mflController.RemovePlayerFromTeam(player);
+                player.MFLTeamID = FranchiseId;
+                _mflController.AddPlayerToTeam(player);
+                LoadListBoxes();
+                SetTeam();
             }
         }
+
         /// <summary>
         /// Removes the selected player from an MFL team.
         /// </summary>
@@ -245,147 +211,46 @@ namespace MFL_Manager
         /// <param name="e"></param>
         private void uxRemovePlayer_Click(object sender, EventArgs e)
         {
-            if (SelectedListBox != null)
+            PlayerDto player = (PlayerDto) SelectedListBox?.SelectedItem;
+            if (player != null)
             {
-                PlayerInfo player = (PlayerInfo)SelectedListBox.SelectedItem;
-                if (player != null)
-                {
-                    PlayerDatabase.RemovePlayerFromTeam(player);
-                    player.MFLTeamID = 0;
-                    LoadListBoxes();
-                    UpdateCapInformation();
-                }
+                _mflController.RemovePlayerFromTeam(player);
+                player.MFLTeamID = 0;
+                LoadListBoxes();
+                SetTeam();
             }
         }
-        /// <summary>
-        /// Filters the players based upon user specifications.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxFilterPlayer_Click(object sender, EventArgs e)
-        {
-            FilterPlayers();
-        }
-        /// <summary>
-        /// Filters the players based upon user specifications.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void FilterPlayers()
-        {
-            if (uxRosterPlayers.Checked && uxFreeAgents.Checked)
-            {
-                if (uxAllPlayers.Checked) PlayerDatabase.UpdateAllPlayerList();
-                else if (uxQuarterbacks.Checked) PlayerDatabase.FilterPlayerList('q');
-                else if (uxRunningBacks.Checked) PlayerDatabase.FilterPlayerList('r');
-                else if (uxReceivers.Checked) PlayerDatabase.FilterPlayerList('w');
-                else if (uxTightEnd.Checked) PlayerDatabase.FilterPlayerList('t');
-                else if (uxKickers.Checked) PlayerDatabase.FilterPlayerList('k');
-                else if (uxDefense.Checked) PlayerDatabase.FilterPlayerList('d');
-            }
-            else if (uxRosterPlayers.Checked)
-            {
-                if (uxAllPlayers.Checked) PlayerDatabase.FilterPlayerList('a', true);
-                else if (uxQuarterbacks.Checked) PlayerDatabase.FilterPlayerList('q', true);
-                else if (uxRunningBacks.Checked) PlayerDatabase.FilterPlayerList('r', true);
-                else if (uxReceivers.Checked) PlayerDatabase.FilterPlayerList('w', true);
-                else if (uxTightEnd.Checked) PlayerDatabase.FilterPlayerList('t', true);
-                else if (uxKickers.Checked) PlayerDatabase.FilterPlayerList('k', true);
-                else if (uxDefense.Checked) PlayerDatabase.FilterPlayerList('d', true);
-            }
-            else if (uxFreeAgents.Checked)
-            {
-                if (uxAllPlayers.Checked) PlayerDatabase.FilterPlayerList('a', false);
-                else if (uxQuarterbacks.Checked) PlayerDatabase.FilterPlayerList('q', false);
-                else if (uxRunningBacks.Checked) PlayerDatabase.FilterPlayerList('r', false);
-                else if (uxReceivers.Checked) PlayerDatabase.FilterPlayerList('w', false);
-                else if (uxTightEnd.Checked) PlayerDatabase.FilterPlayerList('t', false);
-                else if (uxKickers.Checked) PlayerDatabase.FilterPlayerList('k', false);
-                else if (uxDefense.Checked) PlayerDatabase.FilterPlayerList('d', false);
-            }
-            else
-            {
-                PlayerDatabase.PlayerList.Clear();
-            }
-            PlayerDatabase.PlayerList.Sort();
-            LoadPlayerListBox();
-        }
-        /// <summary>
-        /// Sets the current team.
-        /// </summary>
-        /// <param name="TeamId"></param>
-        private void SetCurrentTeam()
-        {
-            if (PlayerDatabase.Teams.TryGetValue(TeamId, out TeamInfo team))
-            {
-                uxCurrentRoster.DataSource = null;
-                team.Players.Sort();
-                uxCurrentRoster.DataSource = team.Players;
-                lblTeamName.Text = team.Name;
-                UpdateCapInformation();
-            }
-            else
-            {
-                lblTeamName.Text = "MFL NFLTeam Name";
-            }
-            ResetListBoxes();
-        }
-        /// <summary>
-        /// Sets a new team based upon provided team id.
-        /// </summary>
-        /// <param name="NewTeamId"></param>
-        private void SetNewTeam(int NewTeamId)
-        {
-            if (PlayerDatabase.Teams.TryGetValue(NewTeamId, out TeamInfo team))
-            {
-                TeamId = NewTeamId;
-                team.Players.Sort();
-                uxCurrentRoster.DataSource = null;
-                uxCurrentRoster.DataSource = team.Players;
-                lblTeamName.Text = team.Name;
-                UpdateCapInformation();
-            }
-            else
-            {
-                lblTeamName.Text = "Error";
-            }
-            ResetListBoxes();
-        }
+
+        #endregion
+
+        #endregion
+
+        #region Methods
+
         /// <summary>
         /// Updates the cap information to reflect
         /// the information stored in the player database.
         /// </summary>
-        private void UpdateCapInformation()
+        private void SetTeam()
         {
-            if (PlayerDatabase.Teams.TryGetValue(TeamId, out TeamInfo team))
-            {
-                lblSalary.Text = String.Format("{0:C}", team.Salary);
-                lblCapHit.Text = String.Format("{0:C}", team.CapHit);
-                UpdateCapRoomLabel(team);
-            }
-            else
-            {
-                lblSalary.Text = String.Format("{0:C}", 0.00);
-                lblCapHit.Text = String.Format("{0:C}", 0.00);
-                lblCapRoom.Text = String.Format("{0:C}", PlayerDatabase.CapRoom);
-            }
+            FranchiseDto franchise = _mflController.GetFranchiseInformation(FranchiseId);
+            double capAvailable = _mflController.GetCapInformation() - franchise.Salary - franchise.CapHit;
+
+            lblSalary.Text = $@"{franchise.Salary:C}";
+            lblCapHit.Text = $@"{franchise.CapHit:C}";
+            lblCapRoom.ForeColor = capAvailable < 0 ? Color.Red : SystemColors.ControlText;
+            lblCapRoom.Text = $@"{_mflController.GetCapInformation() - franchise.Salary - franchise.CapHit:C}";
+            lblTeamName.Text = franchise.Name;
+
+            franchise.Players.Sort();
+
+            uxCurrentRoster.DataSource = null;
+            uxCurrentRoster.DataSource = franchise.Players;
+
+            uxPlayers.ClearSelected();
+            uxCurrentRoster.ClearSelected();
         }
-        /// <summary>
-        /// Alters the cap room label color.
-        /// </summary>
-        private void UpdateCapRoomLabel (TeamInfo team)
-        {
-            double capAvailable = PlayerDatabase.CapRoom - team.Salary - team.CapHit;
-            if (capAvailable < 0)
-            {
-                lblCapRoom.ForeColor = Color.Red;
-            }
-            else
-            {
-                lblCapRoom.ForeColor = SystemColors.ControlText;
-            }
-            lblCapRoom.Text = String.Format("{0:C}", PlayerDatabase.CapRoom - team.Salary - team.CapHit);
-        }
+
         /// <summary>
         /// Enables all buttons within the form.
         /// </summary>
@@ -401,31 +266,11 @@ namespace MFL_Manager
             uxRemovePlayer.Enabled = true;
             uxChangePlayer.Enabled = true;
         }
-        /// <summary>
-        /// Clears the list boxes within the form.
-        /// </summary>
-        private void ClearListBoxes()
-        {
-            ClearPlayerListBox();
-            ClearRosterListBox();
-            SetCurrentTeam();
-            UpdateCapInformation();
-        }
-        /// <summary>
-        /// Clears the players list box within the form.
-        /// </summary>
-        private void ClearPlayerListBox()
-        {
-            ResetAllLabels();
-            uxPlayers.DataSource = null;
-        }
-        /// <summary>
-        /// Clears the players list box within the form.
-        /// </summary>
-        private void ClearRosterListBox()
-        {
-            uxCurrentRoster.DataSource = null;
-        }
+
+        #endregion
+
+        #region List Box Manipulation
+
         /// <summary>
         /// Loads the list boxes to reflect
         /// the information stored in the player database.
@@ -434,28 +279,124 @@ namespace MFL_Manager
         {
             ClearListBoxes();
             FilterPlayers();
-            uxPlayers.DataSource = PlayerDatabase.PlayerList;
-            SetCurrentTeam();
-            UpdateCapInformation();
+            SetTeam();
         }
+
         /// <summary>
-        /// Loads the filtered list boxes to reflect 
-        /// the information stored in the player database.
+        /// Clears the list boxes within the form.
         /// </summary>
-        private void LoadPlayerListBox()
+        private void ClearListBoxes()
         {
+            ResetAllLabels();
+            uxPlayers.DataSource = null;
+            uxCurrentRoster.DataSource = null;
+        }
+
+        /// <summary>
+        /// Filters the players based upon user specifications.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uxFilterPlayer_Click(object sender, EventArgs e)
+        {
+            FilterPlayers();
+        }
+
+        private void FilterPlayers()
+        {
+            List<PlayerDto> players = _mflController.GetPlayerInformation().ToList();
+
+            if (uxQuarterbacks.Checked)
+                players = players.Where(p => p.Position[0] == 'Q').ToList();
+            if (uxRunningBacks.Checked)
+                players = players.Where(p => p.Position[0] == 'R').ToList();
+            if (uxReceivers.Checked)
+                players = players.Where(p => p.Position[0] == 'W').ToList();
+            if (uxTightEnd.Checked)
+                players = players.Where(p => p.Position[0] == 'T').ToList();
+            if (uxKickers.Checked)
+                players = players.Where(p => p.Position[0] == 'K').ToList();
+            if (uxDefense.Checked)
+                players = players.Where(p => p.Position[0] == 'D').ToList();
+
+            if (!uxRosterPlayers.Checked)
+                players = players.Where(p => !p.Roster).ToList();
+            if (!uxFreeAgents.Checked)
+                players = players.Where(p => p.Roster).ToList();
+
+            players.Sort();
             ClearPlayerListBox();
-            uxPlayers.DataSource = PlayerDatabase.PlayerList;
+            uxPlayers.DataSource = players;
         }
+
         /// <summary>
-        /// Loads the current roster list boxes to reflect 
-        /// the information stored in the player database.
+        /// Ensures only one list box is selected.
         /// </summary>
-        private void LoadRosterListBox()
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uxPlayers_Click(object sender, EventArgs e)
         {
-            ClearRosterListBox();
-            SetCurrentTeam();
+            uxCurrentRoster.ClearSelected();
+            SelectedListBox = uxPlayers;
         }
+
+        /// <summary>
+        /// Ensures only one list box is selected.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uxCurrentRoster_Click(object sender, EventArgs e)
+        {
+            uxPlayers.ClearSelected();
+            SelectedListBox = uxCurrentRoster;
+        }
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Public should allow for access across all classes.
+        public PlayerDatabase PlayerDatabase;
+
+        public int TeamId;
+
+        public ListBox SelectedListBox;
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        /// <summary>
+        /// Clears the players list box within the form.
+        /// </summary>
+        private void ClearPlayerListBox()
+        {
+            ResetAllLabels();
+            uxPlayers.DataSource = null;
+        }
+
+
+
 
         //Sort players by chosen attribute.
         /// <summary>
@@ -574,7 +515,7 @@ namespace MFL_Manager
                 if (capEditor.ShowDialog() == DialogResult.OK)
                 {
                     team.CapHit = capEditor.CapData;
-                    UpdateCapInformation();
+                    SetTeam();
                 }
             }
             else MessageBox.Show("Error - Invalid NFLTeam");
@@ -590,39 +531,8 @@ namespace MFL_Manager
             if (capEditor.ShowDialog() == DialogResult.OK)
             {
                 PlayerDatabase.CapRoom = capEditor.CapData;
-                UpdateCapInformation();
+                SetTeam();
             }
-        }
-        //Alters the active list box.
-        /// <summary>
-        /// Ensures only one list box is selected.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxPlayers_Click(object sender, EventArgs e)
-        {
-            uxCurrentRoster.ClearSelected();
-            SelectedListBox = uxPlayers;
-        }
-        /// <summary>
-        /// Ensures only one list box is selected.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxCurrentRoster_Click(object sender, EventArgs e)
-        {
-            uxPlayers.ClearSelected();
-            SelectedListBox = uxCurrentRoster;
-        }
-        /// <summary>
-        /// Ensures only one list box is selected.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ResetListBoxes()
-        {
-            uxPlayers.ClearSelected();
-            uxCurrentRoster.ClearSelected();
         }
 
         //Retrieve additional information.
@@ -640,7 +550,7 @@ namespace MFL_Manager
                 catch
                 {
                     ClearListBoxes();
-                    MessageBox.Show("Error opening " + filename);
+                    MessageBox.Show(@"Error opening " + filename);
                 }
             }
         }

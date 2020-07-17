@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MFL_Manager.Models.CustomResponeses;
 
 namespace MFL_Manager
 {
     public partial class PlayerEditor : Form
     {
-        public PlayerInfo Player { get; private set; }
+        public PlayerDto Player { get; }
 
         /// <summary>
         /// Initailize the Component.
@@ -22,14 +16,14 @@ namespace MFL_Manager
         {
             InitializeComponent();
             uxID.Enabled = true;
-            Player = new PlayerInfo();
+            Player = new PlayerDto();
         }
         /// <summary>
         /// Initialize the Component.
         /// Edit player is selected.
         /// </summary>
         /// <param name="player"></param>
-        public PlayerEditor(PlayerInfo player)
+        public PlayerEditor(PlayerDto player)
         {
             InitializeComponent();
             Player = player;
@@ -57,31 +51,31 @@ namespace MFL_Manager
         private int SubmitTeam()
         {
             if (uxTornados.Checked) return 1;
-            else if (uxPenguins.Checked) return 2;
-            else if (uxBombers.Checked) return 3;
-            else if (uxDactyls.Checked) return 4;
-            else if (uxOdbs.Checked) return 5;
-            else if (uxStormDynasty.Checked) return 6;
-            else if (uxNikeStorm.Checked) return 7;
-            else if (uxGorillas.Checked) return 8;
-            else if (uxPower.Checked) return 9;
-            else if (uxRam.Checked) return 10;
-            return 0;
+            if (uxPenguins.Checked) return 2;
+            if (uxBombers.Checked) return 3;
+            if (uxDactyls.Checked) return 4;
+            if (uxOdbs.Checked) return 5;
+            if (uxStormDynasty.Checked) return 6;
+            if (uxNikeStorm.Checked) return 7;
+            if (uxGorillas.Checked) return 8;
+            if (uxPower.Checked) return 9;
+            return uxRam.Checked ? 10 : 0;
         }
+
         /// <summary>
         /// Determines the position of the check boxes.
         /// </summary>
         /// <returns></returns>
-        private char SubmitPosition()
+        private string SubmitPosition()
         {
-            if (uxQuarterbacks.Checked) return 'q';
-            else if (uxRunningBacks.Checked) return 'r';
-            else if (uxReceivers.Checked) return 'w';
-            else if (uxTightEnd.Checked) return 't';
-            else if (uxKicker.Checked) return 'k';
-            else if (uxDefense.Checked) return 'd';
-            return 'n';
+            if (uxQuarterbacks.Checked) return "Quarterback";
+            if (uxRunningBacks.Checked) return "Running Back";
+            if (uxReceivers.Checked) return "Wide Receiver";
+            if (uxTightEnd.Checked) return "Tight End";
+            if (uxKicker.Checked) return "Kicker";
+            return uxDefense.Checked ? "Defense" : "Not Available";
         }
+
         /// <summary>
         /// Updates the values within the form.
         /// </summary>
@@ -90,93 +84,86 @@ namespace MFL_Manager
             uxPlayerName.Text = Player.Name;
             uxID.Value = Player.Id;
             uxSalary.Value = Convert.ToDecimal(Player.Salary);
-            uxContractYear.Text = Player.ContractYear.ToString();
+            uxContractYear.Text = Player.ContractYear;
             uxAge.Value = Player.Age;
             UpdatePosition();
             UpdateTeam();
         }
+
         /// <summary>
         /// Updates the position check boxes.
         /// </summary>
         private void UpdatePosition()
         {
-            if (Player.Position == 'q')
+            if (Player.Position != null)
             {
-                uxQuarterbacks.Checked = true;
-            }
-            else if (Player.Position == 'r')
-            {
-                uxRunningBacks.Checked = true;
-            }
-            else if (Player.Position == 'w')
-            {
-                uxReceivers.Checked = true;
-            }
-            else if (Player.Position == 't')
-            {
-                uxTightEnd.Checked = true;
-            }
-            else if (Player.Position == 'k')
-            {
-                uxKicker.Checked = true;
-            }
-            else if (Player.Position == 'd')
-            {
-                uxDefense.Checked = true;
-            }
-            else
-            {
-                uxNoPosition.Checked = true;
+                switch (Player.Position[0])
+                {
+                    case 'Q':
+                        uxQuarterbacks.Checked = true;
+                        break;
+                    case 'R':
+                        uxRunningBacks.Checked = true;
+                        break;
+                    case 'W':
+                        uxReceivers.Checked = true;
+                        break;
+                    case 'T':
+                        uxTightEnd.Checked = true;
+                        break;
+                    case 'K':
+                        uxKicker.Checked = true;
+                        break;
+                    case 'D':
+                        uxDefense.Checked = true;
+                        break;
+                    default:
+                        uxNoPosition.Checked = true;
+                        break;
+                }
             }
         }
+
         /// <summary>
         /// Updates the team check boxes.
         /// </summary>
         private void UpdateTeam()
         {
-            if (Player.MFLTeamID == 1)
+            switch (Player.MFLTeamID)
             {
-                uxTornados.Checked = true;
-            }
-            else if (Player.MFLTeamID == 2)
-            {
-                uxPenguins.Checked = true;
-            }
-            else if (Player.MFLTeamID == 3)
-            {
-                uxBombers.Checked = true;
-            }
-            else if (Player.MFLTeamID == 4)
-            {
-                uxDactyls.Checked = true;
-            }
-            else if (Player.MFLTeamID == 5)
-            {
-                uxOdbs.Checked = true;
-            }
-            else if (Player.MFLTeamID == 6)
-            {
-                uxStormDynasty.Checked = true;
-            }
-            else if (Player.MFLTeamID == 7)
-            {
-                uxNikeStorm.Checked = true;
-            }
-            else if (Player.MFLTeamID == 8)
-            {
-                uxGorillas.Checked = true;
-            }
-            else if (Player.MFLTeamID == 9)
-            {
-                uxPower.Checked = true;
-            }
-            else if (Player.MFLTeamID == 10)
-            {
-                uxRam.Checked = true;
-            }
-            else
-            {
-                uxNoTeam.Checked = true;
+                case 1:
+                    uxTornados.Checked = true;
+                    break;
+                case 2:
+                    uxPenguins.Checked = true;
+                    break;
+                case 3:
+                    uxBombers.Checked = true;
+                    break;
+                case 4:
+                    uxDactyls.Checked = true;
+                    break;
+                case 5:
+                    uxOdbs.Checked = true;
+                    break;
+                case 6:
+                    uxStormDynasty.Checked = true;
+                    break;
+                case 7:
+                    uxNikeStorm.Checked = true;
+                    break;
+                case 8:
+                    uxGorillas.Checked = true;
+                    break;
+                case 9:
+                    uxPower.Checked = true;
+                    break;
+                case 10:
+                    uxRam.Checked = true;
+                    break;
+                default:
+                    uxNoTeam.Checked = true;
+                    break;
             }
         }
     }
