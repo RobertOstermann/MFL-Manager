@@ -202,8 +202,8 @@
             // 
             this.uxMFLTeam.Enabled = false;
             this.uxMFLTeam.Name = "uxMFLTeam";
-            this.uxMFLTeam.Size = new System.Drawing.Size(83, 24);
-            this.uxMFLTeam.Text = "MFLTeam";
+            this.uxMFLTeam.Size = new System.Drawing.Size(88, 24);
+            this.uxMFLTeam.Text = "MFL Team";
             // 
             // uxRetrieve
             // 
