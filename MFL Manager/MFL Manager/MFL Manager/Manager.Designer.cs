@@ -195,7 +195,7 @@
             // uxQuestion
             // 
             this.uxQuestion.Name = "uxQuestion";
-            this.uxQuestion.Size = new System.Drawing.Size(216, 26);
+            this.uxQuestion.Size = new System.Drawing.Size(91, 26);
             this.uxQuestion.Text = "?";
             // 
             // uxMFLTeam
@@ -227,7 +227,7 @@
             this.uxPlayers.FormattingEnabled = true;
             this.uxPlayers.ItemHeight = 22;
             this.uxPlayers.Location = new System.Drawing.Point(16, 105);
-            this.uxPlayers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxPlayers.Margin = new System.Windows.Forms.Padding(4);
             this.uxPlayers.Name = "uxPlayers";
             this.uxPlayers.Size = new System.Drawing.Size(532, 444);
             this.uxPlayers.TabIndex = 1;
@@ -240,7 +240,7 @@
             this.uxCurrentRoster.FormattingEnabled = true;
             this.uxCurrentRoster.ItemHeight = 22;
             this.uxCurrentRoster.Location = new System.Drawing.Point(887, 105);
-            this.uxCurrentRoster.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxCurrentRoster.Margin = new System.Windows.Forms.Padding(4);
             this.uxCurrentRoster.Name = "uxCurrentRoster";
             this.uxCurrentRoster.Size = new System.Drawing.Size(532, 444);
             this.uxCurrentRoster.TabIndex = 2;
@@ -271,9 +271,9 @@
             this.uxFilterOptions.Controls.Add(this.uxFilterPlayer);
             this.uxFilterOptions.Enabled = false;
             this.uxFilterOptions.Location = new System.Drawing.Point(557, 105);
-            this.uxFilterOptions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxFilterOptions.Margin = new System.Windows.Forms.Padding(4);
             this.uxFilterOptions.Name = "uxFilterOptions";
-            this.uxFilterOptions.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxFilterOptions.Padding = new System.Windows.Forms.Padding(4);
             this.uxFilterOptions.Size = new System.Drawing.Size(321, 281);
             this.uxFilterOptions.TabIndex = 4;
             this.uxFilterOptions.TabStop = false;
@@ -285,7 +285,7 @@
             this.uxRosterPlayers.Checked = true;
             this.uxRosterPlayers.CheckState = System.Windows.Forms.CheckState.Checked;
             this.uxRosterPlayers.Location = new System.Drawing.Point(188, 60);
-            this.uxRosterPlayers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxRosterPlayers.Margin = new System.Windows.Forms.Padding(4);
             this.uxRosterPlayers.Name = "uxRosterPlayers";
             this.uxRosterPlayers.Size = new System.Drawing.Size(123, 21);
             this.uxRosterPlayers.TabIndex = 10;
@@ -298,7 +298,7 @@
             this.uxFreeAgents.Checked = true;
             this.uxFreeAgents.CheckState = System.Windows.Forms.CheckState.Checked;
             this.uxFreeAgents.Location = new System.Drawing.Point(188, 27);
-            this.uxFreeAgents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxFreeAgents.Margin = new System.Windows.Forms.Padding(4);
             this.uxFreeAgents.Name = "uxFreeAgents";
             this.uxFreeAgents.Size = new System.Drawing.Size(107, 21);
             this.uxFreeAgents.TabIndex = 9;
@@ -309,7 +309,7 @@
             // 
             this.uxDefense.AutoSize = true;
             this.uxDefense.Location = new System.Drawing.Point(9, 226);
-            this.uxDefense.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxDefense.Margin = new System.Windows.Forms.Padding(4);
             this.uxDefense.Name = "uxDefense";
             this.uxDefense.Size = new System.Drawing.Size(82, 21);
             this.uxDefense.TabIndex = 6;
@@ -320,7 +320,7 @@
             // 
             this.uxKickers.AutoSize = true;
             this.uxKickers.Location = new System.Drawing.Point(9, 193);
-            this.uxKickers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxKickers.Margin = new System.Windows.Forms.Padding(4);
             this.uxKickers.Name = "uxKickers";
             this.uxKickers.Size = new System.Drawing.Size(75, 21);
             this.uxKickers.TabIndex = 5;
@@ -331,7 +331,7 @@
             // 
             this.uxTightEnd.AutoSize = true;
             this.uxTightEnd.Location = new System.Drawing.Point(9, 160);
-            this.uxTightEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxTightEnd.Margin = new System.Windows.Forms.Padding(4);
             this.uxTightEnd.Name = "uxTightEnd";
             this.uxTightEnd.Size = new System.Drawing.Size(97, 21);
             this.uxTightEnd.TabIndex = 4;
@@ -342,7 +342,7 @@
             // 
             this.uxReceivers.AutoSize = true;
             this.uxReceivers.Location = new System.Drawing.Point(9, 127);
-            this.uxReceivers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxReceivers.Margin = new System.Windows.Forms.Padding(4);
             this.uxReceivers.Name = "uxReceivers";
             this.uxReceivers.Size = new System.Drawing.Size(128, 21);
             this.uxReceivers.TabIndex = 3;
@@ -353,7 +353,7 @@
             // 
             this.uxRunningBacks.AutoSize = true;
             this.uxRunningBacks.Location = new System.Drawing.Point(9, 94);
-            this.uxRunningBacks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxRunningBacks.Margin = new System.Windows.Forms.Padding(4);
             this.uxRunningBacks.Name = "uxRunningBacks";
             this.uxRunningBacks.Size = new System.Drawing.Size(124, 21);
             this.uxRunningBacks.TabIndex = 2;
@@ -364,7 +364,7 @@
             // 
             this.uxQuarterbacks.AutoSize = true;
             this.uxQuarterbacks.Location = new System.Drawing.Point(9, 60);
-            this.uxQuarterbacks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxQuarterbacks.Margin = new System.Windows.Forms.Padding(4);
             this.uxQuarterbacks.Name = "uxQuarterbacks";
             this.uxQuarterbacks.Size = new System.Drawing.Size(115, 21);
             this.uxQuarterbacks.TabIndex = 1;
@@ -376,7 +376,7 @@
             this.uxAllPlayers.AutoSize = true;
             this.uxAllPlayers.Checked = true;
             this.uxAllPlayers.Location = new System.Drawing.Point(9, 27);
-            this.uxAllPlayers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxAllPlayers.Margin = new System.Windows.Forms.Padding(4);
             this.uxAllPlayers.Name = "uxAllPlayers";
             this.uxAllPlayers.Size = new System.Drawing.Size(95, 21);
             this.uxAllPlayers.TabIndex = 0;
@@ -388,7 +388,7 @@
             // 
             this.uxFilterPlayer.Enabled = false;
             this.uxFilterPlayer.Location = new System.Drawing.Point(159, 193);
-            this.uxFilterPlayer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxFilterPlayer.Margin = new System.Windows.Forms.Padding(4);
             this.uxFilterPlayer.Name = "uxFilterPlayer";
             this.uxFilterPlayer.Size = new System.Drawing.Size(163, 59);
             this.uxFilterPlayer.TabIndex = 8;
@@ -400,7 +400,7 @@
             // 
             this.uxRemovePlayer.Enabled = false;
             this.uxRemovePlayer.Location = new System.Drawing.Point(557, 463);
-            this.uxRemovePlayer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxRemovePlayer.Margin = new System.Windows.Forms.Padding(4);
             this.uxRemovePlayer.Name = "uxRemovePlayer";
             this.uxRemovePlayer.Size = new System.Drawing.Size(321, 50);
             this.uxRemovePlayer.TabIndex = 11;
@@ -412,7 +412,7 @@
             // 
             this.uxAddPlayer.Enabled = false;
             this.uxAddPlayer.Location = new System.Drawing.Point(557, 405);
-            this.uxAddPlayer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxAddPlayer.Margin = new System.Windows.Forms.Padding(4);
             this.uxAddPlayer.Name = "uxAddPlayer";
             this.uxAddPlayer.Size = new System.Drawing.Size(321, 50);
             this.uxAddPlayer.TabIndex = 10;
@@ -424,7 +424,7 @@
             // 
             this.uxChangePlayer.Enabled = false;
             this.uxChangePlayer.Location = new System.Drawing.Point(557, 521);
-            this.uxChangePlayer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uxChangePlayer.Margin = new System.Windows.Forms.Padding(4);
             this.uxChangePlayer.Name = "uxChangePlayer";
             this.uxChangePlayer.Size = new System.Drawing.Size(321, 50);
             this.uxChangePlayer.TabIndex = 18;
@@ -486,7 +486,7 @@
             this.uxPlayerNameLabel.Size = new System.Drawing.Size(63, 24);
             this.uxPlayerNameLabel.TabIndex = 23;
             this.uxPlayerNameLabel.Text = "Name";
-            this.uxPlayerNameLabel.Click += new System.EventHandler(this.uxPlayerNameLabel_Click);
+            this.uxPlayerNameLabel.Click += new System.EventHandler(this.uxSortLabel_Click);
             // 
             // uxSalaryLabel
             // 
@@ -498,7 +498,7 @@
             this.uxSalaryLabel.Size = new System.Drawing.Size(82, 24);
             this.uxSalaryLabel.TabIndex = 24;
             this.uxSalaryLabel.Text = "Salary";
-            this.uxSalaryLabel.Click += new System.EventHandler(this.uxSalaryLabel_Click);
+            this.uxSalaryLabel.Click += new System.EventHandler(this.uxSortLabel_Click);
             // 
             // uxRankLabel
             // 
@@ -511,7 +511,7 @@
             this.uxRankLabel.Size = new System.Drawing.Size(64, 24);
             this.uxRankLabel.TabIndex = 25;
             this.uxRankLabel.Text = "Rank";
-            this.uxRankLabel.Click += new System.EventHandler(this.uxRankLabel_Click);
+            this.uxRankLabel.Click += new System.EventHandler(this.uxSortLabel_Click);
             // 
             // uxContractYearLabel
             // 
@@ -524,7 +524,7 @@
             this.uxContractYearLabel.Size = new System.Drawing.Size(60, 24);
             this.uxContractYearLabel.TabIndex = 26;
             this.uxContractYearLabel.Text = "Year";
-            this.uxContractYearLabel.Click += new System.EventHandler(this.uxContractYearLabel_Click);
+            this.uxContractYearLabel.Click += new System.EventHandler(this.uxSortLabel_Click);
             // 
             // lblSalaryLabel
             // 

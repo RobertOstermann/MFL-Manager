@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MFL_Manager.Models.ApiResponses.League;
-using MFL_Manager.Models.ApiResponses.Players;
-using MFL_Manager.Models.ApiResponses.Salary;
 using MFL_Manager.Models.CustomResponeses;
 
 namespace MFL_Manager
@@ -20,6 +12,8 @@ namespace MFL_Manager
         private readonly MFLController _mflController;
 
         public int FranchiseId;
+
+        public ListBox SelectedListBox;
 
         public Manager(MFLController mflController)
         {
@@ -82,9 +76,6 @@ namespace MFL_Manager
 
                     _mflController.GetApiInformation(playerUri, franchiseUri, salaryUri);
 
-                    List<DivisionDto> divisionInformation = _mflController.GetDivisionInformation().ToList();
-                    List<FranchiseDto> franchiseInformation = _mflController.GetFranchiseInformation().ToList();
-
                     SetDivisionDropDownItems();
 
                     EnableButtons();
@@ -142,6 +133,26 @@ namespace MFL_Manager
                 _mflController.SetCapInformation(capEditor.CapData);
                 SetTeam();
             }
+        }
+
+        /// <summary>
+        /// Edits the cap hit of the current team.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uxEditCapHit_Click(object sender, EventArgs e)
+        {
+            FranchiseDto franchise = _mflController.GetFranchiseInformation(FranchiseId);
+            if (franchise != null)
+            {
+                CapEditor capEditor = new CapEditor(franchise);
+                if (capEditor.ShowDialog() == DialogResult.OK)
+                {
+                    franchise.CapHit = capEditor.CapData;
+                    SetTeam();
+                }
+            }
+            else MessageBox.Show(@"Error - Invalid NFLTeam");
         }
 
         #region Players
@@ -359,7 +370,20 @@ namespace MFL_Manager
                 players = players.Where(p => p.Roster).ToList();
 
             players.Sort();
-            ClearPlayerListBox();
+
+            if (uxPlayerNameLabel.ForeColor != SystemColors.ControlText)
+                players.Sort((one, two) => string.CompareOrdinal(one.Name, two.Name));
+
+            if (uxRankLabel.ForeColor != SystemColors.ControlText)
+                players.Sort((one, two) => one.FantasyProsRanking.CompareTo(two.FantasyProsRanking));
+
+            if (uxSalaryLabel.ForeColor != SystemColors.ControlText)
+                players.Sort((one, two) => two.Salary.CompareTo(one.Salary));
+
+            if(uxContractYearLabel.ForeColor != SystemColors.ControlText)
+                players.Sort((one, two) => string.CompareOrdinal(two.ContractYear, one.ContractYear));
+
+            uxPlayers.DataSource = null;
             uxPlayers.DataSource = players;
         }
 
@@ -393,24 +417,22 @@ namespace MFL_Manager
         /// Sets a label to indicate sorting precedence.
         /// </summary>
         /// <param name="label"></param>
-        private void SetLabel(Label label)
+        private void SetLabel(Control label)
         {
             label.ForeColor = Color.DeepSkyBlue;
         }
+
         /// <summary>
         /// Resets all font borders and colors to original format.
         /// </summary>
         private void ResetAllLabels()
         {
-            //Name
             uxPlayerNameLabel.ForeColor = SystemColors.ControlText;
-            //ID
             uxRankLabel.ForeColor = SystemColors.ControlText;
-            //Salary
             uxSalaryLabel.ForeColor = SystemColors.ControlText;
-            //Contract Year
             uxContractYearLabel.ForeColor = SystemColors.ControlText;
         }
+
         /// <summary>
         /// Enables all labels.
         /// </summary>
@@ -421,6 +443,7 @@ namespace MFL_Manager
             uxSalaryLabel.Enabled = true;
             uxContractYearLabel.Enabled = true;
         }
+
         /// <summary>
         /// Disables all labels.
         /// </summary>
@@ -431,6 +454,7 @@ namespace MFL_Manager
             uxSalaryLabel.Enabled = false;
             uxContractYearLabel.Enabled = false;
         }
+
         /// <summary>
         /// Enables or Disable labels depending
         /// upon the DataSource of uxPlayers.
@@ -443,114 +467,25 @@ namespace MFL_Manager
             else EnableLabels();
         }
 
-        #endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //Public should allow for access across all classes.
-        public PlayerDatabase PlayerDatabase;
-
-        public int TeamId;
-
-        public ListBox SelectedListBox;
-
-        
-        
-        
-        
-        
-
-
-
-
-        //Sort players by chosen attribute.
         /// <summary>
         /// Sorts by player name.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uxPlayerNameLabel_Click(object sender, EventArgs e)
+        private void uxSortLabel_Click(object sender, EventArgs e)
         {
-            PlayerDatabase.PlayerList.Sort((one, two) => string.Compare(one.Name, two.Name));
-            ClearPlayerListBox();
-            uxPlayers.DataSource = PlayerDatabase.PlayerList;  
-            SetLabel(uxPlayerNameLabel);
+            ResetAllLabels();
+            SetLabel(sender as Control);
+            FilterPlayers();
         }
-        /// <summary>
-        /// Sorts by player id.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxRankLabel_Click(object sender, EventArgs e)
-        {            
-            PlayerDatabase.PlayerList.Sort((one, two) => one.FantasyProsRanking.CompareTo(two.FantasyProsRanking));
-            ClearPlayerListBox();
-            uxPlayers.DataSource = PlayerDatabase.PlayerList;
-            SetLabel(uxRankLabel);
-        }
-        /// <summary>
-        /// Sorts by player salary.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxSalaryLabel_Click(object sender, EventArgs e)
-        {
-            PlayerDatabase.PlayerList.Sort((one, two) => two.Salary.CompareTo(one.Salary));
-            ClearPlayerListBox();
-            uxPlayers.DataSource = PlayerDatabase.PlayerList;
-            SetLabel(uxSalaryLabel);
-        }
-        /// <summary>
-        /// Sorts by player contract.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxContractYearLabel_Click(object sender, EventArgs e)
-        {
-            PlayerDatabase.PlayerList.Sort((one, two) => string.Compare(two.ContractYear, one.ContractYear));
-            ClearPlayerListBox();
-            uxPlayers.DataSource = PlayerDatabase.PlayerList;
-            SetLabel(uxContractYearLabel);
-        }
-        
 
-        //Edit the cap information.
+        #endregion
+
         /// <summary>
-        /// Edits the cap hit of the current team.
+        /// Retrieve Fantasy Pros player rankings.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uxEditCapHit_Click(object sender, EventArgs e)
-        {
-            if (PlayerDatabase.Teams.TryGetValue(TeamId, out TeamInfo team))
-            {
-                CapEditor capEditor = new CapEditor(team);
-                if (capEditor.ShowDialog() == DialogResult.OK)
-                {
-                    team.CapHit = capEditor.CapData;
-                    SetTeam();
-                }
-            }
-            else MessageBox.Show("Error - Invalid NFLTeam");
-        }
-        
-
-        //Retrieve additional information.
         private void uxPlayerRankings_Click(object sender, EventArgs e)
         {
             uxOpenFileDialog.FileName = null;
@@ -559,7 +494,7 @@ namespace MFL_Manager
                 string filename = uxOpenFileDialog.FileName;
                 try
                 {
-                    PlayerDatabase.ReadPlayerRankings(filename);
+                    //PlayerDatabase.ReadPlayerRankings(filename);
                     LoadListBoxes();
                 }
                 catch
