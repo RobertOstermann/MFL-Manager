@@ -11,9 +11,11 @@ namespace MFL_Manager.Repositories.Interface
     {
         IEnumerable<FranchiseDto> GetFranchiseDtosFromApiData(LeagueInformation leagueInformation);
 
-        double GetSalaryCapFromApiData(LeagueInformation leagueInformation);
-
         IEnumerable<PlayerDto> GetPlayerDtosFromApiData(IEnumerable<Player> players, IEnumerable<Salary> salaries);
+
+        IEnumerable<DivisionDto> GetDivisionDtosFromApiData(IEnumerable<Division> divisions);
+
+        double GetSalaryCapFromApiData(LeagueInformation leagueInformation);
 
         IEnumerable<Player> GetPlayersFromApi(Uri uri);
 
@@ -27,8 +29,12 @@ namespace MFL_Manager.Repositories.Interface
 
         IEnumerable<FranchiseDto> GetFranchisesFromFile();
 
+        IEnumerable<DivisionDto> GetDivisionsFromFile();
+
         void SavePlayersToFile(IEnumerable<PlayerDto> players);
 
         void SaveFranchisesToFile(IEnumerable<FranchiseDto> franchises);
+
+        void SaveDivisionsToFile(IEnumerable<DivisionDto> divisions);
     }
 }

@@ -49,20 +49,6 @@ namespace MFL_Manager.Repositories.Implementation
             return franchiseDtos;
         }
 
-        public double GetSalaryCapFromApiData(LeagueInformation leagueInformation)
-        {
-            double salaryCap = 125.00;
-            try
-            {
-                salaryCap = Convert.ToDouble(leagueInformation.SalaryCap);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-            return salaryCap;
-        }
-
         public IEnumerable<PlayerDto> GetPlayerDtosFromApiData(IEnumerable<Player> players, IEnumerable<Salary> salaries)
         {
             List<PlayerDto> playerDtos = new List<PlayerDto>();
@@ -92,6 +78,35 @@ namespace MFL_Manager.Repositories.Implementation
             }
 
             return playerDtos;
+        }
+
+        public IEnumerable<DivisionDto> GetDivisionDtosFromApiData(IEnumerable<Division> divisions)
+        {
+            List<DivisionDto> divisionDtos = new List<DivisionDto>();
+
+            var divisionInformation = divisions.Select(d => new DivisionDto()
+            {
+                Name = d.DivisionName,
+                Id = Convert.ToInt32(d.DivisionId)
+            });
+
+            divisionDtos.AddRange(divisionInformation);
+
+            return divisionDtos;
+        }
+
+        public double GetSalaryCapFromApiData(LeagueInformation leagueInformation)
+        {
+            double salaryCap = 125.00;
+            try
+            {
+                salaryCap = Convert.ToDouble(leagueInformation.SalaryCap);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return salaryCap;
         }
 
         #region Api Requests
@@ -174,6 +189,11 @@ namespace MFL_Manager.Repositories.Implementation
             return _fileRepository.LoadFranchiseInformation();
         }
 
+        public IEnumerable<DivisionDto> GetDivisionsFromFile()
+        {
+            return _fileRepository.LoaDivisionInformation();
+        }
+
         public void SavePlayersToFile(IEnumerable<PlayerDto> players)
         {
             _fileRepository.SavePlayerInformation(players);
@@ -182,6 +202,11 @@ namespace MFL_Manager.Repositories.Implementation
         public void SaveFranchisesToFile(IEnumerable<FranchiseDto> franchises)
         {
             _fileRepository.SaveFranchiseInformation(franchises);
+        }
+
+        public void SaveDivisionsToFile(IEnumerable<DivisionDto> divisions)
+        {
+            _fileRepository.SaveDivisionInformation(divisions);
         }
 
         #endregion

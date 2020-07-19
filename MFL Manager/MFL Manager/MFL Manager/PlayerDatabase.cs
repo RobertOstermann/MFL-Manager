@@ -22,6 +22,8 @@ namespace MFL_Manager
 
         public Dictionary<int, FranchiseDto> Franchises { get; set; }
 
+        public Dictionary<int, DivisionDto> Divisions { get; set; }
+
         public double CapRoom { get; set; }
 
         /// <summary>

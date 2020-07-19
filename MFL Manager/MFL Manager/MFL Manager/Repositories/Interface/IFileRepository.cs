@@ -13,8 +13,12 @@ namespace MFL_Manager.Repositories.Interface
 
         IEnumerable<FranchiseDto> LoadFranchiseInformation();
 
+        IEnumerable<DivisionDto> LoaDivisionInformation();
+
         void SavePlayerInformation(IEnumerable<PlayerDto> players);
 
         void SaveFranchiseInformation(IEnumerable<FranchiseDto> franchises);
+
+        void SaveDivisionInformation(IEnumerable<DivisionDto> divisions);
     }
 }

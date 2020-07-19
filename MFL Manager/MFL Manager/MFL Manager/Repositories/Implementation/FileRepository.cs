@@ -39,6 +39,18 @@ namespace MFL_Manager.Repositories.Implementation
             return fileData;
         }
 
+        public IEnumerable<DivisionDto> LoaDivisionInformation()
+        {
+            if (string.IsNullOrWhiteSpace(_filePath))
+                return new List<DivisionDto>();
+
+            string path = _filePath + "DivisionInformation.txt";
+
+            var fileData = LoadInformation<DivisionDto>(path);
+
+            return fileData;
+        }
+
         private IEnumerable<T> LoadInformation<T>(string path)
         {
             var fileData = new List<T>();
@@ -71,6 +83,13 @@ namespace MFL_Manager.Repositories.Implementation
             string path = _filePath + "FranchiseInformation.txt";
 
             SaveInformation(path, franchises);
+        }
+
+        public void SaveDivisionInformation(IEnumerable<DivisionDto> divisions)
+        {
+            string path = _filePath + "DivisionInformation.txt";
+
+            SaveInformation(path, divisions);
         }
 
         private void SaveInformation<T>(string path, IEnumerable<T> information)

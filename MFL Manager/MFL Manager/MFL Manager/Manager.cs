@@ -55,6 +55,7 @@ namespace MFL_Manager
         private void uxLocal_Click(object sender, EventArgs e)
         {
             _mflController.GetLocalInformation();
+            SetDivisionDropDownItems();
             EnableButtons();
             LoadListBoxes();
             SetTeam();
@@ -81,25 +82,11 @@ namespace MFL_Manager
 
                     _mflController.GetApiInformation(playerUri, franchiseUri, salaryUri);
 
-                    LeagueInformation leagueInformation = _mflController.GetLeagueInformation();
+                    List<DivisionDto> divisionInformation = _mflController.GetDivisionInformation().ToList();
                     List<FranchiseDto> franchiseInformation = _mflController.GetFranchiseInformation().ToList();
 
-                    foreach (var division in leagueInformation.DivisionInformation.Division)
-                    {
-                        ToolStripDropDownButton item = new ToolStripDropDownButton(division.DivisionName)
-                        {
-                            ShowDropDownArrow = false
-                        };
-                        uxMFLTeam.DropDownItems.Add(item);
-                        foreach (var franchise in franchiseInformation.Where(franchise => franchise.DivisionId == Convert.ToInt32(division.DivisionId)))
-                        {
-                            ToolStripItem franchiseItem = new ToolStripMenuItem(franchise.Name, null, franchise_Click)
-                            {
-                                Name = "ux" + franchise.Id
-                            };
-                            item.DropDownItems.Add(franchiseItem);
-                        }
-                    }
+                    SetDivisionDropDownItems();
+
                     EnableButtons();
                     LoadListBoxes();
                 }
@@ -139,6 +126,21 @@ namespace MFL_Manager
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Edits the cap room available to all teams.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uxEditCapRoom_Click(object sender, EventArgs e)
+        {
+            CapEditor capEditor = new CapEditor();
+            if (capEditor.ShowDialog() == DialogResult.OK)
+            {
+                _mflController.SetCapInformation(capEditor.CapData);
+                SetTeam();
             }
         }
 
@@ -251,6 +253,29 @@ namespace MFL_Manager
             uxCurrentRoster.ClearSelected();
         }
 
+        private void SetDivisionDropDownItems()
+        {
+            List<DivisionDto> divisionInformation = _mflController.GetDivisionInformation().ToList();
+            List<FranchiseDto> franchiseInformation = _mflController.GetFranchiseInformation().ToList();
+
+            foreach (var division in divisionInformation)
+            {
+                ToolStripDropDownButton item = new ToolStripDropDownButton(division.Name)
+                {
+                    ShowDropDownArrow = false
+                };
+                uxMFLTeam.DropDownItems.Add(item);
+                foreach (var franchise in franchiseInformation.Where(franchise => franchise.DivisionId == division.Id))
+                {
+                    ToolStripItem franchiseItem = new ToolStripMenuItem(franchise.Name, null, franchise_Click)
+                    {
+                        Name = "ux" + franchise.Id
+                    };
+                    item.DropDownItems.Add(franchiseItem);
+                }
+            }
+        }
+
         /// <summary>
         /// Enables all buttons within the form.
         /// </summary>
@@ -290,6 +315,15 @@ namespace MFL_Manager
             ResetAllLabels();
             uxPlayers.DataSource = null;
             uxCurrentRoster.DataSource = null;
+        }
+
+        /// <summary>
+        /// Clears the players list box within the form.
+        /// </summary>
+        private void ClearPlayerListBox()
+        {
+            ResetAllLabels();
+            uxPlayers.DataSource = null;
         }
 
         /// <summary>
@@ -353,100 +387,8 @@ namespace MFL_Manager
 
         #endregion
 
+        #region Sort With Labels
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //Public should allow for access across all classes.
-        public PlayerDatabase PlayerDatabase;
-
-        public int TeamId;
-
-        public ListBox SelectedListBox;
-
-        
-        
-        
-        
-        
-        
-        
-
-
-        /// <summary>
-        /// Clears the players list box within the form.
-        /// </summary>
-        private void ClearPlayerListBox()
-        {
-            ResetAllLabels();
-            uxPlayers.DataSource = null;
-        }
-
-
-
-
-        //Sort players by chosen attribute.
-        /// <summary>
-        /// Sorts by player name.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxPlayerNameLabel_Click(object sender, EventArgs e)
-        {
-            PlayerDatabase.PlayerList.Sort((one, two) => string.Compare(one.Name, two.Name));
-            ClearPlayerListBox();
-            uxPlayers.DataSource = PlayerDatabase.PlayerList;  
-            SetLabel(uxPlayerNameLabel);
-        }
-        /// <summary>
-        /// Sorts by player id.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxRankLabel_Click(object sender, EventArgs e)
-        {            
-            PlayerDatabase.PlayerList.Sort((one, two) => one.FantasyProsRanking.CompareTo(two.FantasyProsRanking));
-            ClearPlayerListBox();
-            uxPlayers.DataSource = PlayerDatabase.PlayerList;
-            SetLabel(uxRankLabel);
-        }
-        /// <summary>
-        /// Sorts by player salary.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxSalaryLabel_Click(object sender, EventArgs e)
-        {
-            PlayerDatabase.PlayerList.Sort((one, two) => two.Salary.CompareTo(one.Salary));
-            ClearPlayerListBox();
-            uxPlayers.DataSource = PlayerDatabase.PlayerList;
-            SetLabel(uxSalaryLabel);
-        }
-        /// <summary>
-        /// Sorts by player contract.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxContractYearLabel_Click(object sender, EventArgs e)
-        {
-            PlayerDatabase.PlayerList.Sort((one, two) => string.Compare(two.ContractYear, one.ContractYear));
-            ClearPlayerListBox();
-            uxPlayers.DataSource = PlayerDatabase.PlayerList;
-            SetLabel(uxContractYearLabel);
-        }
         /// <summary>
         /// Sets a label to indicate sorting precedence.
         /// </summary>
@@ -501,6 +443,92 @@ namespace MFL_Manager
             else EnableLabels();
         }
 
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Public should allow for access across all classes.
+        public PlayerDatabase PlayerDatabase;
+
+        public int TeamId;
+
+        public ListBox SelectedListBox;
+
+        
+        
+        
+        
+        
+
+
+
+
+        //Sort players by chosen attribute.
+        /// <summary>
+        /// Sorts by player name.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uxPlayerNameLabel_Click(object sender, EventArgs e)
+        {
+            PlayerDatabase.PlayerList.Sort((one, two) => string.Compare(one.Name, two.Name));
+            ClearPlayerListBox();
+            uxPlayers.DataSource = PlayerDatabase.PlayerList;  
+            SetLabel(uxPlayerNameLabel);
+        }
+        /// <summary>
+        /// Sorts by player id.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uxRankLabel_Click(object sender, EventArgs e)
+        {            
+            PlayerDatabase.PlayerList.Sort((one, two) => one.FantasyProsRanking.CompareTo(two.FantasyProsRanking));
+            ClearPlayerListBox();
+            uxPlayers.DataSource = PlayerDatabase.PlayerList;
+            SetLabel(uxRankLabel);
+        }
+        /// <summary>
+        /// Sorts by player salary.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uxSalaryLabel_Click(object sender, EventArgs e)
+        {
+            PlayerDatabase.PlayerList.Sort((one, two) => two.Salary.CompareTo(one.Salary));
+            ClearPlayerListBox();
+            uxPlayers.DataSource = PlayerDatabase.PlayerList;
+            SetLabel(uxSalaryLabel);
+        }
+        /// <summary>
+        /// Sorts by player contract.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uxContractYearLabel_Click(object sender, EventArgs e)
+        {
+            PlayerDatabase.PlayerList.Sort((one, two) => string.Compare(two.ContractYear, one.ContractYear));
+            ClearPlayerListBox();
+            uxPlayers.DataSource = PlayerDatabase.PlayerList;
+            SetLabel(uxContractYearLabel);
+        }
+        
+
         //Edit the cap information.
         /// <summary>
         /// Edits the cap hit of the current team.
@@ -520,20 +548,7 @@ namespace MFL_Manager
             }
             else MessageBox.Show("Error - Invalid NFLTeam");
         }
-        /// <summary>
-        /// Edits the cap room available to all teams.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxEditCapRoom_Click(object sender, EventArgs e)
-        {
-            CapEditor capEditor = new CapEditor();
-            if (capEditor.ShowDialog() == DialogResult.OK)
-            {
-                PlayerDatabase.CapRoom = capEditor.CapData;
-                SetTeam();
-            }
-        }
+        
 
         //Retrieve additional information.
         private void uxPlayerRankings_Click(object sender, EventArgs e)

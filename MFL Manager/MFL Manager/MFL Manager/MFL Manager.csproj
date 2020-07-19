@@ -81,6 +81,7 @@
     <Compile Include="Models\ApiResponses\Salary\SalaryRequest.cs" />
     <Compile Include="Models\ApiResponses\Salary\Salary.cs" />
     <Compile Include="Models\ApiResponses\Salary\SalaryInformation.cs" />
+    <Compile Include="Models\CustomResponeses\DivisionDto.cs" />
     <Compile Include="Models\CustomResponeses\PlayerDto.cs" />
     <Compile Include="Models\CustomResponeses\FranchiseDto.cs" />
     <Compile Include="Repositories\Implementation\FileRepository.cs" />

@@ -21,7 +21,6 @@ namespace MFL_Manager
 
         private readonly IMFLRepository _mflRepository;
         private readonly PlayerDatabase _database;
-        private LeagueInformation _leagueInformation;
 
         public MFLController(IMFLRepository mflRepository, PlayerDatabase database)
         {
@@ -33,11 +32,6 @@ namespace MFL_Manager
 
         #region Franchises
 
-        public LeagueInformation GetLeagueInformation()
-        {
-            return _leagueInformation;
-        }
-
         public IEnumerable<FranchiseDto> GetFranchiseInformation()
         {
             return _database.Franchises.Values;
@@ -48,9 +42,19 @@ namespace MFL_Manager
             return (from franchise in _database.Franchises where franchise.Key == id select franchise.Value).FirstOrDefault();
         }
 
+        public IEnumerable<DivisionDto> GetDivisionInformation()
+        {
+            return _database.Divisions.Values;
+        }
+
         public double GetCapInformation()
         {
             return _database.CapRoom;
+        }
+
+        public void SetCapInformation(double capRoom)
+        {
+            _database.CapRoom = capRoom;
         }
 
         #endregion
@@ -102,23 +106,25 @@ namespace MFL_Manager
         public void GetApiInformation(Uri playerUri, Uri franchiseUri, Uri salaryUri)
         {
             IEnumerable<Player> players = _mflRepository.GetPlayersFromApi(playerUri);
-            _leagueInformation = _mflRepository.GetLeagueInformationFromApi(franchiseUri);
             IEnumerable<Salary> salaries = _mflRepository.GetSalariesFromApi(salaryUri);
+            LeagueInformation leagueInformation = _mflRepository.GetLeagueInformationFromApi(franchiseUri);
 
             List<PlayerDto> playerDtos = _mflRepository.GetPlayerDtosFromApiData(players, salaries).ToList();
-            List<FranchiseDto> franchiseDtos = _mflRepository.GetFranchiseDtosFromApiData(_leagueInformation).ToList();
+            List<FranchiseDto> franchiseDtos = _mflRepository.GetFranchiseDtosFromApiData(leagueInformation).ToList();
+            List<DivisionDto> divisionDtos = _mflRepository.GetDivisionDtosFromApiData(leagueInformation.DivisionInformation.Division).ToList();
 
-            StoreInformationInDatabase(playerDtos, franchiseDtos);
+            StoreInformationInDatabase(playerDtos, franchiseDtos, divisionDtos);
 
-            _database.CapRoom = _mflRepository.GetSalaryCapFromApiData(_leagueInformation);
+            _database.CapRoom = _mflRepository.GetSalaryCapFromApiData(leagueInformation);
         }
 
         public void GetLocalInformation()
         {
             List<PlayerDto> playerDtos = _mflRepository.GetPlayersFromFile().ToList();
             List<FranchiseDto> franchiseDtos = _mflRepository.GetFranchisesFromFile().ToList();
+            List<DivisionDto> divisionDtos = _mflRepository.GetDivisionsFromFile().ToList();
 
-            StoreInformationInDatabase(playerDtos, franchiseDtos);
+            StoreInformationInDatabase(playerDtos, franchiseDtos, divisionDtos);
 
             _database.CapRoom = 125.00;
         }
@@ -127,12 +133,14 @@ namespace MFL_Manager
         {
             _mflRepository.SavePlayersToFile(_database.Players.Values);
             _mflRepository.SaveFranchisesToFile(_database.Franchises.Values);
+            _mflRepository.SaveDivisionsToFile(_database.Divisions.Values);
         }
 
-        private void StoreInformationInDatabase(IEnumerable<PlayerDto> playerDtos, IEnumerable<FranchiseDto> franchiseDtos)
+        private void StoreInformationInDatabase(IEnumerable<PlayerDto> playerDtos, IEnumerable<FranchiseDto> franchiseDtos, IEnumerable<DivisionDto> divisionDtos)
         {
             _database.Players = new Dictionary<int, PlayerDto>();
             _database.Franchises = new Dictionary<int, FranchiseDto>();
+            _database.Divisions = new Dictionary<int, DivisionDto>();
 
             foreach (var player in playerDtos)
             {
@@ -142,6 +150,11 @@ namespace MFL_Manager
             foreach (var franchise in franchiseDtos)
             {
                 _database.Franchises.Add(franchise.Id, franchise);
+            }
+
+            foreach (var division in divisionDtos)
+            {
+                _database.Divisions.Add(division.Id, division);
             }
         }
 
