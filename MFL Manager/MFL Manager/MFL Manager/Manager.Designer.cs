@@ -254,7 +254,7 @@
             this.lblTeamName.Name = "lblTeamName";
             this.lblTeamName.Size = new System.Drawing.Size(533, 71);
             this.lblTeamName.TabIndex = 3;
-            this.lblTeamName.Text = "MFL NFLTeam Name";
+            this.lblTeamName.Text = "MFL Team Name";
             this.lblTeamName.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // uxFilterOptions
