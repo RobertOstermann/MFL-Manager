@@ -49,6 +49,10 @@ namespace MFL_Manager.Models.CustomResponeses
             {
                 player.Roster = true;
                 player.MFLTeamID = Id;
+            }
+
+            if (player.MFLTeamID == Id)
+            {
                 Players.Add(player);
             }
         }

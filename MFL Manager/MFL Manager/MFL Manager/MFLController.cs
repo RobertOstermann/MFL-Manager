@@ -142,11 +142,6 @@ namespace MFL_Manager
             _database.Franchises = new Dictionary<int, FranchiseDto>();
             _database.Divisions = new Dictionary<int, DivisionDto>();
 
-            foreach (var player in playerDtos)
-            {
-                _database.Players.Add(player.Id, player);
-            }
-
             foreach (var franchise in franchiseDtos)
             {
                 _database.Franchises.Add(franchise.Id, franchise);
@@ -155,6 +150,12 @@ namespace MFL_Manager
             foreach (var division in divisionDtos)
             {
                 _database.Divisions.Add(division.Id, division);
+            }
+
+            foreach (var player in playerDtos)
+            {
+                _database.Players.Add(player.Id, player);
+                AddPlayerToTeam(player);
             }
         }
 

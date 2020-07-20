@@ -45,7 +45,7 @@ Name,Id,NFLTeam,MFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,ByeWeek,Pr
 "Watson, Ben",7422,FA,,0,False,,1.72,Tight End,0,0,0,0,0,0,,0,0,0,,0,0
 "Schaub, Matt",7480,ATL,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Smith, Alex",7813,WAS,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
-"Rodgers, Aaron",7836,GBP,,0,False,2020,23,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
+"Rodgers, Aaron",7836,GBP,,8,True,2020,23,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Nugent, Mike",7859,FA,,0,False,,2.39,Kicker,0,0,0,0,0,0,,0,0,0,,0,0
 "Gore, Frank",7877,NYJ,,0,False,,2.3,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Sproles, Darren",7942,FA,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
@@ -175,15 +175,15 @@ Name,Id,NFLTeam,MFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,ByeWeek,Pr
 "Williams, Terrance",11211,FA,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Hunter, Justin",11212,FA,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Austin, Tavon",11213,FA,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
-"Allen, Keenan",11222,LAC,,0,False,2020,14,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
+"Allen, Keenan",11222,LAC,,6,True,2020,14,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Patterson, Cordarrelle",11225,CHI,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Stills, Kenny",11227,HOU,,0,False,,3.84,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Woods, Robert",11228,LAR,,0,False,,7.91,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
-"Hopkins, DeAndre",11232,ARI,,0,False,2020,24,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
+"Hopkins, DeAndre",11232,ARI,,5,True,2020,24,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Shepard, Russell",11237,FA,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Goodwin, Marquise",11239,PHI,,0,False,,4.01,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
-"Kelce, Travis",11244,KCC,,0,False,2020,14,Tight End,0,0,0,0,0,0,,0,0,0,,0,0
-"Ertz, Zach",11247,PHI,,0,False,2021,13,Tight End,0,0,0,0,0,0,,0,0,0,,0,0
+"Kelce, Travis",11244,KCC,,6,True,2020,14,Tight End,0,0,0,0,0,0,,0,0,0,,0,0
+"Ertz, Zach",11247,PHI,,4,True,2021,13,Tight End,0,0,0,0,0,0,,0,0,0,,0,0
 "Reed, Jordan",11248,FA,,0,False,,3.23,Tight End,0,0,0,0,0,0,,0,0,0,,0,0
 "Eifert, Tyler",11250,JAC,,0,False,,2.05,Tight End,0,0,0,0,0,0,,0,0,0,,0,0
 "Toilolo, Levine",11252,NYG,,0,False,,1.72,Tight End,0,0,0,0,0,0,,0,0,0,,0,0
@@ -211,18 +211,18 @@ Name,Id,NFLTeam,MFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,ByeWeek,Pr
 "Hill, Jeremy",11654,FA,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Hyde, Carlos",11657,SEA,,0,False,,3.14,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Thomas, De'Anthony",11659,BAL,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
-"Freeman, Devonta",11660,FA*,,0,False,2020,14,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
+"Freeman, Devonta",11660,FA*,,8,True,2020,14,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Crowell, Isaiah",11668,FA,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Watkins, Sammy",11670,KCC,,0,False,,5.19,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
-"Evans, Mike",11671,TBB,,0,False,2020,17,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
+"Evans, Mike",11671,TBB,,10,True,2020,17,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Lee, Marqise",11672,NEP,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Benjamin, Kelvin",11673,FA,,0,False,,4.57,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Cooks, Brandin",11674,HOU,,0,False,,8.04,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
-"Adams, Davante",11675,GBP,,0,False,2020,21,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
+"Adams, Davante",11675,GBP,,9,True,2020,21,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Matthews, Jordan",11676,FA,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Moncrief, Donte",11677,FA,,0,False,,4.92,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Robinson, Allen",11678,CHI,,0,False,,7.23,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
-"Beckham, Odell",11679,CLE,,0,False,2020,25,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
+"Beckham, Odell",11679,CLE,,6,True,2020,25,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Landry, Jarvis",11680,CLE,,0,False,,5.74,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Richardson, Paul",11681,FA,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Jones, T.J.",11686,FA,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
@@ -249,7 +249,7 @@ Name,Id,NFLTeam,MFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,ByeWeek,Pr
 "Hurns, Allen",11925,MIA,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Fowler, Bennie",11931,FA,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Boswell, Chris",11936,PIT,,0,False,,4.65,Kicker,0,0,0,0,0,0,,0,0,0,,0,0
-"Thielen, Adam",11938,MIN,,0,False,2020,17,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
+"Thielen, Adam",11938,MIN,,9,True,2020,17,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Santos, Cairo",11945,FA,,0,False,,4.11,Kicker,0,0,0,0,0,0,,0,0,0,,0,0
 "McManus, Brandon",11947,DEN,,0,False,,4.59,Kicker,0,0,0,0,0,0,,0,0,0,,0,0
 "Snead, Willie",11951,BAL,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
@@ -265,7 +265,7 @@ Name,Id,NFLTeam,MFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,ByeWeek,Pr
 "Mariota, Marcus",12141,LVR,,0,False,,8.52,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Hundley, Brett",12142,ARI,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Mannion, Sean",12145,MIN,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
-"Gurley, Todd",12150,ATL,,0,False,2020,8.79,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
+"Gurley, Todd",12150,ATL,,10,True,2020,8.79,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Gordon, Melvin",12151,DEN,,0,False,,8.21,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Coleman, Tevin",12152,SFO,,0,False,,6.04,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Yeldon, T.J.",12153,BUF,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
@@ -276,8 +276,8 @@ Name,Id,NFLTeam,MFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,ByeWeek,Pr
 "Artis-Payne, Cameron",12161,FA,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Davis, Mike",12164,CAR,,0,False,,2.15,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Rawls, Thomas",12169,FA,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
-"Johnson, David",12171,HOU,,0,False,2020,29,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
-"Cooper, Amari",12175,DAL,,0,False,2020,9,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
+"Johnson, David",12171,HOU,,7,True,2020,29,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
+"Cooper, Amari",12175,DAL,,3,True,2020,9,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Parker, DeVante",12176,MIA,,0,False,,4.13,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "White, Kevin",12177,FA,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Strong, Jaelen",12179,FA,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
@@ -285,7 +285,7 @@ Name,Id,NFLTeam,MFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,ByeWeek,Pr
 "Smith, Devin",12182,DAL,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Crowder, Jamison",12184,NYJ,,0,False,,4.48,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Hardy, Justin",12185,FA,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
-"Diggs, Stefon",12186,BUF,,0,False,2021,11,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
+"Diggs, Stefon",12186,BUF,,7,True,2021,11,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Lockett, Tyler",12187,SEA,,0,False,,7.37,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Dorsett, Phillip",12188,SEA,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Perriman, Breshad",12197,NYJ,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
@@ -345,7 +345,7 @@ Name,Id,NFLTeam,MFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,ByeWeek,Pr
 "Prosise, C.J.",12627,FA,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Collins, Alex",12628,FA,,0,False,,7.64,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Booker, Devontae",12629,LVR,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
-"Drake, Kenyan",12630,ARI,,0,False,2021,7.5,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
+"Drake, Kenyan",12630,ARI,,1,True,2021,7.5,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Perkins, Paul",12631,FA,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Dixon, Kenneth",12632,NYJ,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Howard, Jordan",12634,MIA,,0,False,,4.63,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
@@ -360,7 +360,7 @@ Name,Id,NFLTeam,MFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,ByeWeek,Pr
 "Doctson, Josh",12648,NYJ,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Boyd, Tyler",12650,CIN,,0,False,,7.13,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Miller, Braxton",12651,FA,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
-"Thomas, Michael",12652,NOS,,0,False,2020,21,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
+"Thomas, Michael",12652,NOS,,8,True,2020,21,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Higgins, Rashard",12656,CLE,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Sharpe, Tajae",12657,MIN,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Shepard, Sterling",12658,NYG,,0,False,,5.28,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
@@ -415,21 +415,21 @@ Name,Id,NFLTeam,MFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,ByeWeek,Pr
 "Tomlinson, Eric",13065,NYG,,0,False,,1.72,Tight End,0,0,0,0,0,0,,0,0,0,,0,0
 "Raymond, Kalif",13066,TEN,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "McKissic, J.D.",13108,WAS,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
-"Watson, Deshaun",13113,HOU,,0,False,2021,10,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
+"Watson, Deshaun",13113,HOU,,2,True,2021,10,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Kizer, DeShone",13114,FA,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Trubisky, Mitchell",13115,CHI,,0,False,,12.06,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
-"Mahomes, Patrick",13116,KCC,,0,False,2021,27,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
+"Mahomes, Patrick",13116,KCC,,6,True,2021,27,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Dobbs, Joshua",13119,JAC,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Webb, Davis",13120,BUF,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Kelly, Chad",13121,IND,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Rush, Cooper",13124,NYG,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Beathard, C.J.",13125,SFO,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Peterman, Nathan",13127,LVR,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
-"Cook, Dalvin",13128,MIN,,0,False,2020,7.31,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
-"Fournette, Leonard",13129,JAC,,0,False,2020,9.13,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
-"McCaffrey, Christian",13130,CAR,,0,False,2020,7.64,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
-"Mixon, Joe",13131,CIN,,0,False,2020,18,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
-"Kamara, Alvin",13132,NOS,,0,False,2020,26,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
+"Cook, Dalvin",13128,MIN,,2,True,2020,7.31,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
+"Fournette, Leonard",13129,JAC,,3,True,2020,9.13,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
+"McCaffrey, Christian",13130,CAR,,4,True,2020,7.64,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
+"Mixon, Joe",13131,CIN,,5,True,2020,18,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
+"Kamara, Alvin",13132,NOS,,2,True,2020,26,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Perine, Samaje",13133,CIN,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Foreman, D'Onta",13134,FA,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Gallman, Wayne",13135,NYG,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
@@ -440,12 +440,12 @@ Name,Id,NFLTeam,MFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,ByeWeek,Pr
 "Logan, T.J.",13142,TBB,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "McNichols, Jeremy",13143,FA,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "McGuire, Elijah",13144,KCC,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
-"Conner, James",13146,PIT,,0,False,2020,28,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
+"Conner, James",13146,PIT,,4,True,2020,28,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Ogunbowale, Dare",13148,TBB,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Davis, Corey",13153,TEN,,0,False,,5.46,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Williams, Mike",13154,LAC,,0,False,,6.8,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Ross, John",13155,CIN,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
-"Smith-Schuster, JuJu",13156,PIT,,0,False,2020,21.99,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
+"Smith-Schuster, JuJu",13156,PIT,,8,True,2020,21.99,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Samuel, Curtis",13157,CAR,,0,False,,5.86,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Westbrook, Dede",13158,JAC,,0,False,,5.84,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Scott, Artavis",13161,IND,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
@@ -495,7 +495,7 @@ Name,Id,NFLTeam,MFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,ByeWeek,Pr
 "Gonzalez, Zane",13347,ARI,,0,False,,2.93,Kicker,0,0,0,0,0,0,,0,0,0,,0,0
 "Moore, David",13348,SEA,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Butker, Harrison",13354,KCC,,0,False,,6.17,Kicker,0,0,0,0,0,0,,0,0,0,,0,0
-"Carson, Chris",13364,SEA,,0,False,2021,9.5,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
+"Carson, Chris",13364,SEA,,7,True,2021,9.5,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Carr, Austin",13367,NOS,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
 "Carter, Cethan",13369,CIN,,0,False,,1.72,Tight End,0,0,0,0,0,0,,0,0,0,,0,0
 "Hogan, Krishawn",13370,NOS,,0,False,,3.35,Wide Receiver,0,0,0,0,0,0,,0,0,0,,0,0
@@ -542,14 +542,14 @@ Name,Id,NFLTeam,MFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,ByeWeek,Pr
 "White, Mike",13598,NYJ,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Benkert, Kurt",13600,ATL,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Lauletta, Kyle",13601,PHI,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
-"Barkley, Saquon",13604,NYG,,0,False,2021,11.02,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
+"Barkley, Saquon",13604,NYG,,9,True,2021,11.02,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Guice, Derrius",13605,WAS,,0,False,,5.01,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Jones, Ronald",13606,TBB,,0,False,,4.29,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
-"Michel, Sony",13607,NEP,,0,False,2021,7,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
+"Michel, Sony",13607,NEP,,1,True,2021,7,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Penny, Rashaad",13608,SEA,,0,False,,5.23,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
-"Chubb, Nick",13610,CLE,,0,False,2021,22,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
+"Chubb, Nick",13610,CLE,,2,True,2021,22,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Adams, Josh",13611,NYJ,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
-"Johnson, Kerryon",13612,DET,,0,False,2021,13,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
+"Johnson, Kerryon",13612,DET,,5,True,2021,13,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Samuels, Jaylen",13613,PIT,,0,False,,2.83,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Lindsay, Phillip",13614,DEN,,0,False,,6.7,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Scarbrough, Bo",13615,DET,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
@@ -679,7 +679,7 @@ Name,Id,NFLTeam,MFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,ByeWeek,Pr
 "Finley, Ryan",14068,CIN,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Stick, Easton",14069,LAC,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Blough, David",14070,DET,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
-"Montgomery, David",14071,CHI,,0,False,2022,7,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
+"Montgomery, David",14071,CHI,,9,True,2022,7,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Snell, Benny",14072,PIT,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Jacobs, Josh",14073,LVR,,0,False,,7.25,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
 "Williams, Dexter",14074,GBP,,0,False,,2.06,Running Back,0,0,0,0,0,0,,0,0,0,,0,0
