@@ -82,6 +82,11 @@
     </Compile>
     <Compile Include="MFLController.cs" />
     <Compile Include="Models\ApiResponses\League\LeagueRequest.cs" />
+    <Compile Include="Models\ApiResponses\Players\Player Profile\Article.cs" />
+    <Compile Include="Models\ApiResponses\Players\Player Profile\News.cs" />
+    <Compile Include="Models\ApiResponses\Players\Player Profile\PlayerProfile.cs" />
+    <Compile Include="Models\ApiResponses\Players\Player Profile\PlayerProfilePlayer.cs" />
+    <Compile Include="Models\ApiResponses\Players\Player Profile\PlayerProfileRequest.cs" />
     <Compile Include="Models\ApiResponses\Players\PlayerRequest.cs" />
     <Compile Include="Models\ApiResponses\Salary\LeagueUnit.cs" />
     <Compile Include="Models\ApiResponses\Salary\SalaryRequest.cs" />

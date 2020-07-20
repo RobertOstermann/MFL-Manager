@@ -5,7 +5,6 @@ namespace MFL_Manager.Models.CustomResponeses
 {
     public class PlayerDto : IComparable<PlayerDto>
     {
-        //Data for every player.
         public string Name { get; set; }
 
         public int Id { get; set; }
@@ -24,35 +23,24 @@ namespace MFL_Manager.Models.CustomResponeses
 
         public string Position { get; set; }
 
+        //Access - playerProfile - specific id
+        public int Age { get; set; }
+
+        public string Weight { get; set; }
+
+        public string Height { get; set; }
+
+        //Draft data
+        public double ADP { get; set; }
+
+        public int FantasyProsRanking { get; set; }
+
         //Important information not yet implemented.
         public int ByeWeek { get; set; }
 
         public double PreviousScores { get; set; }
 
         public double ProjectedScores { get; set; }
-
-        //Access - playerProfile - specific id
-        public int Age { get; set; }
-
-        //Additional player information. (Access - players - specific id)
-        public int Weight { get; set; }
-
-        public int Height { get; set; }
-
-        public string College { get; set; }
-
-        public int DraftRound { get; set; }
-
-        public int DraftPick { get; set; }
-
-        public int DraftYear { get; set; }
-
-        public string Twitter { get; set; }
-
-        //Draft data
-        public double ADP { get; set; }
-
-        public int FantasyProsRanking { get; set; }
 
         /// <summary>
         /// Overrides the ToString() method for display in the listbox.
