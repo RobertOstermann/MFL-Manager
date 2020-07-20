@@ -25,8 +25,6 @@ namespace MFL_Manager
 
         #region Button Clicks
 
-        #region Handle Information
-
         /// <summary>
         /// Enables all buttons. Clears the list boxes.
         /// Updates the cap information.
@@ -99,8 +97,6 @@ namespace MFL_Manager
             _mflController.SaveInformation();
         }
 
-        #endregion
-
         /// <summary>
         /// Selects a franchise and displays the franchise roster.
         /// </summary>
@@ -154,8 +150,6 @@ namespace MFL_Manager
             }
             else MessageBox.Show(@"Error - Invalid NFLTeam");
         }
-
-        #region Players
 
         /// <summary>
         /// Utilizes the PlayerEditor form to create a player.
@@ -234,7 +228,29 @@ namespace MFL_Manager
             }
         }
 
-        #endregion
+        /// <summary>
+        /// Retrieve Fantasy Pros player rankings.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uxPlayerRankings_Click(object sender, EventArgs e)
+        {
+            uxOpenFileDialog.FileName = null;
+            if (uxOpenFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filename = uxOpenFileDialog.FileName;
+                try
+                {
+                    //PlayerDatabase.ReadPlayerRankings(filename);
+                    LoadListBoxes();
+                }
+                catch
+                {
+                    ClearListBoxes();
+                    MessageBox.Show(@"Error opening " + filename);
+                }
+            }
+        }
 
         #endregion
 
@@ -323,18 +339,9 @@ namespace MFL_Manager
         /// </summary>
         private void ClearListBoxes()
         {
-            ResetAllLabels();
+            //ResetAllLabels();
             uxPlayers.DataSource = null;
             uxCurrentRoster.DataSource = null;
-        }
-
-        /// <summary>
-        /// Clears the players list box within the form.
-        /// </summary>
-        private void ClearPlayerListBox()
-        {
-            ResetAllLabels();
-            uxPlayers.DataSource = null;
         }
 
         /// <summary>
@@ -419,18 +426,22 @@ namespace MFL_Manager
         /// <param name="label"></param>
         private void SetLabel(Control label)
         {
-            label.ForeColor = Color.DeepSkyBlue;
+            label.ForeColor = label.ForeColor == Color.DeepSkyBlue ? SystemColors.ControlText : Color.DeepSkyBlue;
         }
 
         /// <summary>
         /// Resets all font borders and colors to original format.
         /// </summary>
-        private void ResetAllLabels()
+        private void ResetAllLabels(Control label)
         {
-            uxPlayerNameLabel.ForeColor = SystemColors.ControlText;
-            uxRankLabel.ForeColor = SystemColors.ControlText;
-            uxSalaryLabel.ForeColor = SystemColors.ControlText;
-            uxContractYearLabel.ForeColor = SystemColors.ControlText;
+            if (label != uxPlayerNameLabel)
+                uxPlayerNameLabel.ForeColor = SystemColors.ControlText;
+            if (label != uxRankLabel)
+                uxRankLabel.ForeColor = SystemColors.ControlText;
+            if (label != uxSalaryLabel)
+                uxSalaryLabel.ForeColor = SystemColors.ControlText;
+            if (label != uxContractYearLabel)
+                uxContractYearLabel.ForeColor = SystemColors.ControlText;
         }
 
         /// <summary>
@@ -474,35 +485,11 @@ namespace MFL_Manager
         /// <param name="e"></param>
         private void uxSortLabel_Click(object sender, EventArgs e)
         {
-            ResetAllLabels();
+            ResetAllLabels(sender as Control);
             SetLabel(sender as Control);
             FilterPlayers();
         }
 
         #endregion
-
-        /// <summary>
-        /// Retrieve Fantasy Pros player rankings.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void uxPlayerRankings_Click(object sender, EventArgs e)
-        {
-            uxOpenFileDialog.FileName = null;
-            if (uxOpenFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string filename = uxOpenFileDialog.FileName;
-                try
-                {
-                    //PlayerDatabase.ReadPlayerRankings(filename);
-                    LoadListBoxes();
-                }
-                catch
-                {
-                    ClearListBoxes();
-                    MessageBox.Show(@"Error opening " + filename);
-                }
-            }
-        }
     }
 }

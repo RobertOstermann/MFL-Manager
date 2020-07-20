@@ -7,5 +7,5 @@ ODB's,,5,0,AFC,55,0
 Storm Dynasty,,6,1,NFC,80,0
 Nike Storm,,7,1,NFC,49.5,0
 Gorillas,,8,1,NFC,79.99,0
-Power,,9,1,NFC,56.019999999999996,0
+Power,,9,1,NFC,68.93,2.45
 Shit Squad,,10,1,NFC,25.79,0

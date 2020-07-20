@@ -28,8 +28,6 @@ namespace MFL_Manager
             _database = database;
         }
 
-        #region Database Access
-
         #region Franchises
 
         public IEnumerable<FranchiseDto> GetFranchiseInformation()
@@ -96,8 +94,6 @@ namespace MFL_Manager
                 franchise.RemovePlayer(player);
             }
         }
-
-        #endregion
 
         #endregion
 

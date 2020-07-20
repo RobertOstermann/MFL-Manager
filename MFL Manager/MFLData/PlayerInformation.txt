@@ -535,7 +535,7 @@ Name,Id,NFLTeam,MFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,ByeWeek,Pr
 "Mayfield, Baker",13590,CLE,,0,False,,16.5,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Rosen, Josh",13591,MIA,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Darnold, Sam",13592,NYJ,,0,False,,10.12,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
-"Jackson, Lamar",13593,BAL,,0,False,,12.91,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
+"Jackson, Lamar",13593,BAL,,9,True,,12.91,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Falk, Luke",13594,FA,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Rudolph, Mason",13595,PIT,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
 "Barrett, J.T.",13596,PIT,,0,False,,5.93,Quarterback,0,0,0,0,0,0,,0,0,0,,0,0
