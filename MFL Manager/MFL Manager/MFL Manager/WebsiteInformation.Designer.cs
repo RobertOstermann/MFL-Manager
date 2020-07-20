@@ -39,6 +39,8 @@
             this.uxSubmit = new System.Windows.Forms.Button();
             this.lblRosterInformation = new System.Windows.Forms.Label();
             this.uxRosterURL = new System.Windows.Forms.TextBox();
+            this.uxPlayerProfileURL = new System.Windows.Forms.TextBox();
+            this.lblPlayerProfile = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblPlayerInformation
@@ -98,7 +100,7 @@
             // uxAutofill
             // 
             this.uxAutofill.Font = new System.Drawing.Font("Consolas", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxAutofill.Location = new System.Drawing.Point(19, 232);
+            this.uxAutofill.Location = new System.Drawing.Point(17, 274);
             this.uxAutofill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxAutofill.Name = "uxAutofill";
             this.uxAutofill.Size = new System.Drawing.Size(369, 62);
@@ -111,7 +113,7 @@
             // 
             this.uxSubmit.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.uxSubmit.Font = new System.Drawing.Font("Consolas", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxSubmit.Location = new System.Drawing.Point(17, 298);
+            this.uxSubmit.Location = new System.Drawing.Point(17, 349);
             this.uxSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxSubmit.Name = "uxSubmit";
             this.uxSubmit.Size = new System.Drawing.Size(371, 62);
@@ -138,12 +140,32 @@
             this.uxRosterURL.Size = new System.Drawing.Size(369, 22);
             this.uxRosterURL.TabIndex = 9;
             // 
+            // uxPlayerProfileURL
+            // 
+            this.uxPlayerProfileURL.Location = new System.Drawing.Point(12, 240);
+            this.uxPlayerProfileURL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uxPlayerProfileURL.Name = "uxPlayerProfileURL";
+            this.uxPlayerProfileURL.Size = new System.Drawing.Size(369, 22);
+            this.uxPlayerProfileURL.TabIndex = 11;
+            // 
+            // lblPlayerProfile
+            // 
+            this.lblPlayerProfile.AutoSize = true;
+            this.lblPlayerProfile.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerProfile.Location = new System.Drawing.Point(13, 215);
+            this.lblPlayerProfile.Name = "lblPlayerProfile";
+            this.lblPlayerProfile.Size = new System.Drawing.Size(296, 23);
+            this.lblPlayerProfile.TabIndex = 10;
+            this.lblPlayerProfile.Text = "Player Profile API Website";
+            // 
             // WebsiteInformation
             // 
             this.AcceptButton = this.uxSubmit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 371);
+            this.ClientSize = new System.Drawing.Size(397, 422);
+            this.Controls.Add(this.uxPlayerProfileURL);
+            this.Controls.Add(this.lblPlayerProfile);
             this.Controls.Add(this.uxRosterURL);
             this.Controls.Add(this.lblRosterInformation);
             this.Controls.Add(this.uxSubmit);
@@ -178,5 +200,7 @@
         private System.Windows.Forms.Button uxSubmit;
         private System.Windows.Forms.Label lblRosterInformation;
         private System.Windows.Forms.TextBox uxRosterURL;
+        private System.Windows.Forms.TextBox uxPlayerProfileURL;
+        private System.Windows.Forms.Label lblPlayerProfile;
     }
 }

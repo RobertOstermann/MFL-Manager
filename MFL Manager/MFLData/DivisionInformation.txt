@@ -1,0 +1,3 @@
+Name,Id
+AFC,0
+NFC,1

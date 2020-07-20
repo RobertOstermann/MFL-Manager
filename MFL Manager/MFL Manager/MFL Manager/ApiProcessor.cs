@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Xml;
+using MFL_Manager.Models.ApiResponses.Players;
+using Newtonsoft.Json;
 
 namespace MFL_Manager
 {
@@ -21,19 +23,16 @@ namespace MFL_Manager
         /// </summary>
         /// <param name="url">Website Address</param>
         /// <returns>Player information list</returns>
-        public static async Task<List<ApiModel.ApiAllPlayerObject.ApiPlayerObject>> LoadPlayerInformation(string url)
+        public static async Task<List<Player>> LoadPlayerInformation(string url)
         {
             using (HttpResponseMessage response = await ApiAssistant.ApiClient.GetAsync(url))
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    ApiModel playerModel = await response.Content.ReadAsAsync<ApiModel>();
-                    return playerModel.Players.Player;
+                    PlayerInformation playerInformation = JsonConvert.DeserializeObject<PlayerInformation>(response.ToString());
+                    return playerInformation.Players;
                 }
-                else
-                {
-                    throw new Exception(response.ReasonPhrase);
-                }
+                throw new Exception(response.ReasonPhrase);
             }
         }
         /// <summary>
@@ -50,17 +49,14 @@ namespace MFL_Manager
                     ApiModel salaryModel = await response.Content.ReadAsAsync<ApiModel>();
                     return salaryModel.Salaries.LeagueUnit.Player;
                 }
-                else
-                {
-                    throw new Exception(response.ReasonPhrase);
-                }
+                throw new Exception(response.ReasonPhrase);
             }
         }
         /// <summary>
         /// Loads the team information from the MFL website.
         /// </summary>
         /// <param name="url">Website Address</param>
-        /// <returns>Team information list</returns>
+        /// <returns>NFLTeam information list</returns>
         public static async Task<List<ApiModel.ApiLeagueObject.ApiAllFranchiseObject.ApiFranchiseObject>> LoadTeamInformation(string url)
         {
             using (HttpResponseMessage response = await ApiAssistant.ApiClient.GetAsync(url))
@@ -70,10 +66,8 @@ namespace MFL_Manager
                     ApiModel teamModel = await response.Content.ReadAsAsync<ApiModel>();
                     return teamModel.League.Franchises.Franchise;
                 }
-                else
-                {
-                    throw new Exception(response.ReasonPhrase);
-                }
+
+                throw new Exception(response.ReasonPhrase);
             }
         }
 

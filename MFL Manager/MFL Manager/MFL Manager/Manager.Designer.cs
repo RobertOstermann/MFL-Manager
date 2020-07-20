@@ -43,19 +43,7 @@
             this.uxEditCapRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.uxView = new System.Windows.Forms.ToolStripMenuItem();
             this.uxQuestion = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxTeam = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxAFC = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxTornados = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxPenguins = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxBombers = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxDactyls = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxODBs = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxNFC = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxStormDynasty = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxNikeStorm = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxGorillas = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxPower = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxRam = new System.Windows.Forms.ToolStripMenuItem();
+            this.uxMFLTeam = new System.Windows.Forms.ToolStripMenuItem();
             this.uxRetrieve = new System.Windows.Forms.ToolStripMenuItem();
             this.uxPlayerRankings = new System.Windows.Forms.ToolStripMenuItem();
             this.uxPlayers = new System.Windows.Forms.ListBox();
@@ -64,6 +52,8 @@
             this.uxSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.lblTeamName = new System.Windows.Forms.Label();
             this.uxFilterOptions = new System.Windows.Forms.GroupBox();
+            this.uxRosterPlayers = new System.Windows.Forms.CheckBox();
+            this.uxFreeAgents = new System.Windows.Forms.CheckBox();
             this.uxDefense = new System.Windows.Forms.RadioButton();
             this.uxKickers = new System.Windows.Forms.RadioButton();
             this.uxTightEnd = new System.Windows.Forms.RadioButton();
@@ -85,8 +75,6 @@
             this.uxContractYearLabel = new System.Windows.Forms.Label();
             this.lblSalaryLabel = new System.Windows.Forms.Label();
             this.lblSalary = new System.Windows.Forms.Label();
-            this.uxFreeAgents = new System.Windows.Forms.CheckBox();
-            this.uxRosterPlayers = new System.Windows.Forms.CheckBox();
             this.uxMenuStrip.SuspendLayout();
             this.uxFilterOptions.SuspendLayout();
             this.SuspendLayout();
@@ -98,12 +86,12 @@
             this.uxFile,
             this.uxEdit,
             this.uxView,
-            this.uxTeam,
+            this.uxMFLTeam,
             this.uxRetrieve});
             this.uxMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.uxMenuStrip.Name = "uxMenuStrip";
-            this.uxMenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.uxMenuStrip.Size = new System.Drawing.Size(1078, 24);
+            this.uxMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.uxMenuStrip.Size = new System.Drawing.Size(1437, 28);
             this.uxMenuStrip.TabIndex = 0;
             // 
             // uxFile
@@ -113,14 +101,14 @@
             this.uxLoad,
             this.uxSave});
             this.uxFile.Name = "uxFile";
-            this.uxFile.Size = new System.Drawing.Size(37, 20);
+            this.uxFile.Size = new System.Drawing.Size(44, 24);
             this.uxFile.Text = "File";
             // 
             // uxNew
             // 
             this.uxNew.Name = "uxNew";
             this.uxNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.uxNew.Size = new System.Drawing.Size(141, 22);
+            this.uxNew.Size = new System.Drawing.Size(167, 26);
             this.uxNew.Text = "New";
             this.uxNew.Click += new System.EventHandler(this.uxNew_Click);
             // 
@@ -130,20 +118,20 @@
             this.uxLocal,
             this.uxMFL});
             this.uxLoad.Name = "uxLoad";
-            this.uxLoad.Size = new System.Drawing.Size(141, 22);
+            this.uxLoad.Size = new System.Drawing.Size(167, 26);
             this.uxLoad.Text = "Load";
             // 
             // uxLocal
             // 
             this.uxLocal.Name = "uxLocal";
-            this.uxLocal.Size = new System.Drawing.Size(102, 22);
+            this.uxLocal.Size = new System.Drawing.Size(119, 26);
             this.uxLocal.Text = "Local";
             this.uxLocal.Click += new System.EventHandler(this.uxLocal_Click);
             // 
             // uxMFL
             // 
             this.uxMFL.Name = "uxMFL";
-            this.uxMFL.Size = new System.Drawing.Size(102, 22);
+            this.uxMFL.Size = new System.Drawing.Size(119, 26);
             this.uxMFL.Text = "MFL";
             this.uxMFL.Click += new System.EventHandler(this.uxMFL_Click);
             // 
@@ -151,7 +139,7 @@
             // 
             this.uxSave.Name = "uxSave";
             this.uxSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.uxSave.Size = new System.Drawing.Size(141, 22);
+            this.uxSave.Size = new System.Drawing.Size(167, 26);
             this.uxSave.Text = "Save";
             this.uxSave.Click += new System.EventHandler(this.uxSave_Click);
             // 
@@ -164,34 +152,34 @@
             this.uxEditCapRoom});
             this.uxEdit.Enabled = false;
             this.uxEdit.Name = "uxEdit";
-            this.uxEdit.Size = new System.Drawing.Size(39, 20);
+            this.uxEdit.Size = new System.Drawing.Size(47, 24);
             this.uxEdit.Text = "Edit";
             // 
             // uxEditPlayer
             // 
             this.uxEditPlayer.Name = "uxEditPlayer";
-            this.uxEditPlayer.Size = new System.Drawing.Size(143, 22);
+            this.uxEditPlayer.Size = new System.Drawing.Size(171, 26);
             this.uxEditPlayer.Text = "Edit Player";
             this.uxEditPlayer.Click += new System.EventHandler(this.uxEditPlayer_Click);
             // 
             // uxCreatePlayer
             // 
             this.uxCreatePlayer.Name = "uxCreatePlayer";
-            this.uxCreatePlayer.Size = new System.Drawing.Size(143, 22);
+            this.uxCreatePlayer.Size = new System.Drawing.Size(171, 26);
             this.uxCreatePlayer.Text = "Create Player";
             this.uxCreatePlayer.Click += new System.EventHandler(this.uxCreatePlayer_Click);
             // 
             // uxEditCapHit
             // 
             this.uxEditCapHit.Name = "uxEditCapHit";
-            this.uxEditCapHit.Size = new System.Drawing.Size(143, 22);
+            this.uxEditCapHit.Size = new System.Drawing.Size(171, 26);
             this.uxEditCapHit.Text = "Cap Hit";
             this.uxEditCapHit.Click += new System.EventHandler(this.uxEditCapHit_Click);
             // 
             // uxEditCapRoom
             // 
             this.uxEditCapRoom.Name = "uxEditCapRoom";
-            this.uxEditCapRoom.Size = new System.Drawing.Size(143, 22);
+            this.uxEditCapRoom.Size = new System.Drawing.Size(171, 26);
             this.uxEditCapRoom.Text = "Cap Room";
             this.uxEditCapRoom.Click += new System.EventHandler(this.uxEditCapRoom_Click);
             // 
@@ -201,118 +189,21 @@
             this.uxQuestion});
             this.uxView.Enabled = false;
             this.uxView.Name = "uxView";
-            this.uxView.Size = new System.Drawing.Size(44, 20);
+            this.uxView.Size = new System.Drawing.Size(53, 24);
             this.uxView.Text = "View";
             // 
             // uxQuestion
             // 
             this.uxQuestion.Name = "uxQuestion";
-            this.uxQuestion.Size = new System.Drawing.Size(79, 22);
+            this.uxQuestion.Size = new System.Drawing.Size(91, 26);
             this.uxQuestion.Text = "?";
             // 
-            // uxTeam
+            // uxMFLTeam
             // 
-            this.uxTeam.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxAFC,
-            this.uxNFC});
-            this.uxTeam.Enabled = false;
-            this.uxTeam.Name = "uxTeam";
-            this.uxTeam.Size = new System.Drawing.Size(48, 20);
-            this.uxTeam.Text = "Team";
-            // 
-            // uxAFC
-            // 
-            this.uxAFC.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxTornados,
-            this.uxPenguins,
-            this.uxBombers,
-            this.uxDactyls,
-            this.uxODBs});
-            this.uxAFC.Name = "uxAFC";
-            this.uxAFC.Size = new System.Drawing.Size(97, 22);
-            this.uxAFC.Text = "AFC";
-            // 
-            // uxTornados
-            // 
-            this.uxTornados.Name = "uxTornados";
-            this.uxTornados.Size = new System.Drawing.Size(123, 22);
-            this.uxTornados.Text = "Tornados";
-            this.uxTornados.Click += new System.EventHandler(this.uxTornados_Click);
-            // 
-            // uxPenguins
-            // 
-            this.uxPenguins.Name = "uxPenguins";
-            this.uxPenguins.Size = new System.Drawing.Size(123, 22);
-            this.uxPenguins.Text = "Penguins";
-            this.uxPenguins.Click += new System.EventHandler(this.uxPenguins_Click);
-            // 
-            // uxBombers
-            // 
-            this.uxBombers.Name = "uxBombers";
-            this.uxBombers.Size = new System.Drawing.Size(123, 22);
-            this.uxBombers.Text = "Bombers";
-            this.uxBombers.Click += new System.EventHandler(this.uxBombers_Click);
-            // 
-            // uxDactyls
-            // 
-            this.uxDactyls.Name = "uxDactyls";
-            this.uxDactyls.Size = new System.Drawing.Size(123, 22);
-            this.uxDactyls.Text = "Dactyls";
-            this.uxDactyls.Click += new System.EventHandler(this.uxDactyls_Click);
-            // 
-            // uxODBs
-            // 
-            this.uxODBs.Name = "uxODBs";
-            this.uxODBs.Size = new System.Drawing.Size(123, 22);
-            this.uxODBs.Text = "ODB\'s";
-            this.uxODBs.Click += new System.EventHandler(this.uxODBs_Click);
-            // 
-            // uxNFC
-            // 
-            this.uxNFC.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxStormDynasty,
-            this.uxNikeStorm,
-            this.uxGorillas,
-            this.uxPower,
-            this.uxRam});
-            this.uxNFC.Name = "uxNFC";
-            this.uxNFC.Size = new System.Drawing.Size(97, 22);
-            this.uxNFC.Text = "NFC";
-            // 
-            // uxStormDynasty
-            // 
-            this.uxStormDynasty.Name = "uxStormDynasty";
-            this.uxStormDynasty.Size = new System.Drawing.Size(151, 22);
-            this.uxStormDynasty.Text = "Storm Dynasty";
-            this.uxStormDynasty.Click += new System.EventHandler(this.uxStormDynasty_Click);
-            // 
-            // uxNikeStorm
-            // 
-            this.uxNikeStorm.Name = "uxNikeStorm";
-            this.uxNikeStorm.Size = new System.Drawing.Size(151, 22);
-            this.uxNikeStorm.Text = "Nike Storm";
-            this.uxNikeStorm.Click += new System.EventHandler(this.uxNikeStorm_Click);
-            // 
-            // uxGorillas
-            // 
-            this.uxGorillas.Name = "uxGorillas";
-            this.uxGorillas.Size = new System.Drawing.Size(151, 22);
-            this.uxGorillas.Text = "Gorillas";
-            this.uxGorillas.Click += new System.EventHandler(this.uxGorillas_Click);
-            // 
-            // uxPower
-            // 
-            this.uxPower.Name = "uxPower";
-            this.uxPower.Size = new System.Drawing.Size(151, 22);
-            this.uxPower.Text = "Power";
-            this.uxPower.Click += new System.EventHandler(this.uxPower_Click);
-            // 
-            // uxRam
-            // 
-            this.uxRam.Name = "uxRam";
-            this.uxRam.Size = new System.Drawing.Size(151, 22);
-            this.uxRam.Text = "Spoiler Jones";
-            this.uxRam.Click += new System.EventHandler(this.uxRam_Click);
+            this.uxMFLTeam.Enabled = false;
+            this.uxMFLTeam.Name = "uxMFLTeam";
+            this.uxMFLTeam.Size = new System.Drawing.Size(88, 24);
+            this.uxMFLTeam.Text = "MFL Team";
             // 
             // uxRetrieve
             // 
@@ -320,13 +211,13 @@
             this.uxPlayerRankings});
             this.uxRetrieve.Enabled = false;
             this.uxRetrieve.Name = "uxRetrieve";
-            this.uxRetrieve.Size = new System.Drawing.Size(61, 20);
+            this.uxRetrieve.Size = new System.Drawing.Size(75, 24);
             this.uxRetrieve.Text = "Retrieve";
             // 
             // uxPlayerRankings
             // 
             this.uxPlayerRankings.Name = "uxPlayerRankings";
-            this.uxPlayerRankings.Size = new System.Drawing.Size(157, 22);
+            this.uxPlayerRankings.Size = new System.Drawing.Size(187, 26);
             this.uxPlayerRankings.Text = "Player Rankings";
             this.uxPlayerRankings.Click += new System.EventHandler(this.uxPlayerRankings_Click);
             // 
@@ -334,10 +225,11 @@
             // 
             this.uxPlayers.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxPlayers.FormattingEnabled = true;
-            this.uxPlayers.ItemHeight = 17;
-            this.uxPlayers.Location = new System.Drawing.Point(12, 85);
+            this.uxPlayers.ItemHeight = 22;
+            this.uxPlayers.Location = new System.Drawing.Point(16, 105);
+            this.uxPlayers.Margin = new System.Windows.Forms.Padding(4);
             this.uxPlayers.Name = "uxPlayers";
-            this.uxPlayers.Size = new System.Drawing.Size(400, 344);
+            this.uxPlayers.Size = new System.Drawing.Size(532, 444);
             this.uxPlayers.TabIndex = 1;
             this.uxPlayers.Click += new System.EventHandler(this.uxPlayers_Click);
             this.uxPlayers.DataSourceChanged += new System.EventHandler(this.uxPlayers_DataSourceChanged);
@@ -346,19 +238,21 @@
             // 
             this.uxCurrentRoster.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxCurrentRoster.FormattingEnabled = true;
-            this.uxCurrentRoster.ItemHeight = 17;
-            this.uxCurrentRoster.Location = new System.Drawing.Point(665, 85);
+            this.uxCurrentRoster.ItemHeight = 22;
+            this.uxCurrentRoster.Location = new System.Drawing.Point(887, 105);
+            this.uxCurrentRoster.Margin = new System.Windows.Forms.Padding(4);
             this.uxCurrentRoster.Name = "uxCurrentRoster";
-            this.uxCurrentRoster.Size = new System.Drawing.Size(400, 344);
+            this.uxCurrentRoster.Size = new System.Drawing.Size(532, 444);
             this.uxCurrentRoster.TabIndex = 2;
             this.uxCurrentRoster.Click += new System.EventHandler(this.uxCurrentRoster_Click);
             // 
             // lblTeamName
             // 
             this.lblTeamName.Font = new System.Drawing.Font("Stencil", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTeamName.Location = new System.Drawing.Point(665, 24);
+            this.lblTeamName.Location = new System.Drawing.Point(887, 30);
+            this.lblTeamName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTeamName.Name = "lblTeamName";
-            this.lblTeamName.Size = new System.Drawing.Size(400, 58);
+            this.lblTeamName.Size = new System.Drawing.Size(533, 71);
             this.lblTeamName.TabIndex = 3;
             this.lblTeamName.Text = "MFL Team Name";
             this.lblTeamName.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -376,19 +270,48 @@
             this.uxFilterOptions.Controls.Add(this.uxAllPlayers);
             this.uxFilterOptions.Controls.Add(this.uxFilterPlayer);
             this.uxFilterOptions.Enabled = false;
-            this.uxFilterOptions.Location = new System.Drawing.Point(418, 85);
+            this.uxFilterOptions.Location = new System.Drawing.Point(557, 105);
+            this.uxFilterOptions.Margin = new System.Windows.Forms.Padding(4);
             this.uxFilterOptions.Name = "uxFilterOptions";
-            this.uxFilterOptions.Size = new System.Drawing.Size(241, 228);
+            this.uxFilterOptions.Padding = new System.Windows.Forms.Padding(4);
+            this.uxFilterOptions.Size = new System.Drawing.Size(321, 281);
             this.uxFilterOptions.TabIndex = 4;
             this.uxFilterOptions.TabStop = false;
             this.uxFilterOptions.Text = "Filter Options:";
             // 
+            // uxRosterPlayers
+            // 
+            this.uxRosterPlayers.AutoSize = true;
+            this.uxRosterPlayers.Checked = true;
+            this.uxRosterPlayers.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.uxRosterPlayers.Location = new System.Drawing.Point(188, 60);
+            this.uxRosterPlayers.Margin = new System.Windows.Forms.Padding(4);
+            this.uxRosterPlayers.Name = "uxRosterPlayers";
+            this.uxRosterPlayers.Size = new System.Drawing.Size(123, 21);
+            this.uxRosterPlayers.TabIndex = 10;
+            this.uxRosterPlayers.Text = "Roster Players";
+            this.uxRosterPlayers.UseVisualStyleBackColor = true;
+            // 
+            // uxFreeAgents
+            // 
+            this.uxFreeAgents.AutoSize = true;
+            this.uxFreeAgents.Checked = true;
+            this.uxFreeAgents.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.uxFreeAgents.Location = new System.Drawing.Point(188, 27);
+            this.uxFreeAgents.Margin = new System.Windows.Forms.Padding(4);
+            this.uxFreeAgents.Name = "uxFreeAgents";
+            this.uxFreeAgents.Size = new System.Drawing.Size(107, 21);
+            this.uxFreeAgents.TabIndex = 9;
+            this.uxFreeAgents.Text = "Free Agents";
+            this.uxFreeAgents.UseVisualStyleBackColor = true;
+            // 
             // uxDefense
             // 
             this.uxDefense.AutoSize = true;
-            this.uxDefense.Location = new System.Drawing.Point(7, 184);
+            this.uxDefense.Location = new System.Drawing.Point(9, 226);
+            this.uxDefense.Margin = new System.Windows.Forms.Padding(4);
             this.uxDefense.Name = "uxDefense";
-            this.uxDefense.Size = new System.Drawing.Size(65, 17);
+            this.uxDefense.Size = new System.Drawing.Size(82, 21);
             this.uxDefense.TabIndex = 6;
             this.uxDefense.Text = "Defense";
             this.uxDefense.UseVisualStyleBackColor = true;
@@ -396,9 +319,10 @@
             // uxKickers
             // 
             this.uxKickers.AutoSize = true;
-            this.uxKickers.Location = new System.Drawing.Point(7, 157);
+            this.uxKickers.Location = new System.Drawing.Point(9, 193);
+            this.uxKickers.Margin = new System.Windows.Forms.Padding(4);
             this.uxKickers.Name = "uxKickers";
-            this.uxKickers.Size = new System.Drawing.Size(60, 17);
+            this.uxKickers.Size = new System.Drawing.Size(75, 21);
             this.uxKickers.TabIndex = 5;
             this.uxKickers.Text = "Kickers";
             this.uxKickers.UseVisualStyleBackColor = true;
@@ -406,9 +330,10 @@
             // uxTightEnd
             // 
             this.uxTightEnd.AutoSize = true;
-            this.uxTightEnd.Location = new System.Drawing.Point(7, 130);
+            this.uxTightEnd.Location = new System.Drawing.Point(9, 160);
+            this.uxTightEnd.Margin = new System.Windows.Forms.Padding(4);
             this.uxTightEnd.Name = "uxTightEnd";
-            this.uxTightEnd.Size = new System.Drawing.Size(76, 17);
+            this.uxTightEnd.Size = new System.Drawing.Size(97, 21);
             this.uxTightEnd.TabIndex = 4;
             this.uxTightEnd.Text = "Tight Ends";
             this.uxTightEnd.UseVisualStyleBackColor = true;
@@ -416,9 +341,10 @@
             // uxReceivers
             // 
             this.uxReceivers.AutoSize = true;
-            this.uxReceivers.Location = new System.Drawing.Point(7, 103);
+            this.uxReceivers.Location = new System.Drawing.Point(9, 127);
+            this.uxReceivers.Margin = new System.Windows.Forms.Padding(4);
             this.uxReceivers.Name = "uxReceivers";
-            this.uxReceivers.Size = new System.Drawing.Size(101, 17);
+            this.uxReceivers.Size = new System.Drawing.Size(128, 21);
             this.uxReceivers.TabIndex = 3;
             this.uxReceivers.Text = "Wide Receivers";
             this.uxReceivers.UseVisualStyleBackColor = true;
@@ -426,9 +352,10 @@
             // uxRunningBacks
             // 
             this.uxRunningBacks.AutoSize = true;
-            this.uxRunningBacks.Location = new System.Drawing.Point(7, 76);
+            this.uxRunningBacks.Location = new System.Drawing.Point(9, 94);
+            this.uxRunningBacks.Margin = new System.Windows.Forms.Padding(4);
             this.uxRunningBacks.Name = "uxRunningBacks";
-            this.uxRunningBacks.Size = new System.Drawing.Size(98, 17);
+            this.uxRunningBacks.Size = new System.Drawing.Size(124, 21);
             this.uxRunningBacks.TabIndex = 2;
             this.uxRunningBacks.Text = "Running Backs";
             this.uxRunningBacks.UseVisualStyleBackColor = true;
@@ -436,9 +363,10 @@
             // uxQuarterbacks
             // 
             this.uxQuarterbacks.AutoSize = true;
-            this.uxQuarterbacks.Location = new System.Drawing.Point(7, 49);
+            this.uxQuarterbacks.Location = new System.Drawing.Point(9, 60);
+            this.uxQuarterbacks.Margin = new System.Windows.Forms.Padding(4);
             this.uxQuarterbacks.Name = "uxQuarterbacks";
-            this.uxQuarterbacks.Size = new System.Drawing.Size(89, 17);
+            this.uxQuarterbacks.Size = new System.Drawing.Size(115, 21);
             this.uxQuarterbacks.TabIndex = 1;
             this.uxQuarterbacks.Text = "Quarterbacks";
             this.uxQuarterbacks.UseVisualStyleBackColor = true;
@@ -447,9 +375,10 @@
             // 
             this.uxAllPlayers.AutoSize = true;
             this.uxAllPlayers.Checked = true;
-            this.uxAllPlayers.Location = new System.Drawing.Point(7, 22);
+            this.uxAllPlayers.Location = new System.Drawing.Point(9, 27);
+            this.uxAllPlayers.Margin = new System.Windows.Forms.Padding(4);
             this.uxAllPlayers.Name = "uxAllPlayers";
-            this.uxAllPlayers.Size = new System.Drawing.Size(73, 17);
+            this.uxAllPlayers.Size = new System.Drawing.Size(95, 21);
             this.uxAllPlayers.TabIndex = 0;
             this.uxAllPlayers.TabStop = true;
             this.uxAllPlayers.Text = "All Players";
@@ -458,9 +387,10 @@
             // uxFilterPlayer
             // 
             this.uxFilterPlayer.Enabled = false;
-            this.uxFilterPlayer.Location = new System.Drawing.Point(119, 157);
+            this.uxFilterPlayer.Location = new System.Drawing.Point(159, 193);
+            this.uxFilterPlayer.Margin = new System.Windows.Forms.Padding(4);
             this.uxFilterPlayer.Name = "uxFilterPlayer";
-            this.uxFilterPlayer.Size = new System.Drawing.Size(122, 48);
+            this.uxFilterPlayer.Size = new System.Drawing.Size(163, 59);
             this.uxFilterPlayer.TabIndex = 8;
             this.uxFilterPlayer.Text = "Filter Players";
             this.uxFilterPlayer.UseVisualStyleBackColor = true;
@@ -469,9 +399,10 @@
             // uxRemovePlayer
             // 
             this.uxRemovePlayer.Enabled = false;
-            this.uxRemovePlayer.Location = new System.Drawing.Point(418, 376);
+            this.uxRemovePlayer.Location = new System.Drawing.Point(557, 463);
+            this.uxRemovePlayer.Margin = new System.Windows.Forms.Padding(4);
             this.uxRemovePlayer.Name = "uxRemovePlayer";
-            this.uxRemovePlayer.Size = new System.Drawing.Size(241, 41);
+            this.uxRemovePlayer.Size = new System.Drawing.Size(321, 50);
             this.uxRemovePlayer.TabIndex = 11;
             this.uxRemovePlayer.Text = "Remove Selected Player";
             this.uxRemovePlayer.UseVisualStyleBackColor = true;
@@ -480,9 +411,10 @@
             // uxAddPlayer
             // 
             this.uxAddPlayer.Enabled = false;
-            this.uxAddPlayer.Location = new System.Drawing.Point(418, 329);
+            this.uxAddPlayer.Location = new System.Drawing.Point(557, 405);
+            this.uxAddPlayer.Margin = new System.Windows.Forms.Padding(4);
             this.uxAddPlayer.Name = "uxAddPlayer";
-            this.uxAddPlayer.Size = new System.Drawing.Size(241, 41);
+            this.uxAddPlayer.Size = new System.Drawing.Size(321, 50);
             this.uxAddPlayer.TabIndex = 10;
             this.uxAddPlayer.Text = "Add Selected Player";
             this.uxAddPlayer.UseVisualStyleBackColor = true;
@@ -491,9 +423,10 @@
             // uxChangePlayer
             // 
             this.uxChangePlayer.Enabled = false;
-            this.uxChangePlayer.Location = new System.Drawing.Point(418, 423);
+            this.uxChangePlayer.Location = new System.Drawing.Point(557, 521);
+            this.uxChangePlayer.Margin = new System.Windows.Forms.Padding(4);
             this.uxChangePlayer.Name = "uxChangePlayer";
-            this.uxChangePlayer.Size = new System.Drawing.Size(241, 41);
+            this.uxChangePlayer.Size = new System.Drawing.Size(321, 50);
             this.uxChangePlayer.TabIndex = 18;
             this.uxChangePlayer.Text = "Edit Selected Player";
             this.uxChangePlayer.UseVisualStyleBackColor = true;
@@ -502,9 +435,10 @@
             // lblCapHitLabel
             // 
             this.lblCapHitLabel.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCapHitLabel.Location = new System.Drawing.Point(833, 467);
+            this.lblCapHitLabel.Location = new System.Drawing.Point(556, 612);
+            this.lblCapHitLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCapHitLabel.Name = "lblCapHitLabel";
-            this.lblCapHitLabel.Size = new System.Drawing.Size(106, 29);
+            this.lblCapHitLabel.Size = new System.Drawing.Size(141, 36);
             this.lblCapHitLabel.TabIndex = 19;
             this.lblCapHitLabel.Text = "Cap Hit";
             this.lblCapHitLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -512,9 +446,10 @@
             // lblCapHit
             // 
             this.lblCapHit.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCapHit.Location = new System.Drawing.Point(945, 467);
+            this.lblCapHit.Location = new System.Drawing.Point(705, 612);
+            this.lblCapHit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCapHit.Name = "lblCapHit";
-            this.lblCapHit.Size = new System.Drawing.Size(121, 29);
+            this.lblCapHit.Size = new System.Drawing.Size(161, 36);
             this.lblCapHit.TabIndex = 20;
             this.lblCapHit.Text = "$0.00 ";
             this.lblCapHit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -522,9 +457,10 @@
             // lblCapRoomLabel
             // 
             this.lblCapRoomLabel.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCapRoomLabel.Location = new System.Drawing.Point(810, 497);
+            this.lblCapRoomLabel.Location = new System.Drawing.Point(1080, 612);
+            this.lblCapRoomLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCapRoomLabel.Name = "lblCapRoomLabel";
-            this.lblCapRoomLabel.Size = new System.Drawing.Size(129, 29);
+            this.lblCapRoomLabel.Size = new System.Drawing.Size(172, 36);
             this.lblCapRoomLabel.TabIndex = 21;
             this.lblCapRoomLabel.Text = "Cap Room";
             this.lblCapRoomLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -532,9 +468,10 @@
             // lblCapRoom
             // 
             this.lblCapRoom.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCapRoom.Location = new System.Drawing.Point(945, 497);
+            this.lblCapRoom.Location = new System.Drawing.Point(1260, 612);
+            this.lblCapRoom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCapRoom.Name = "lblCapRoom";
-            this.lblCapRoom.Size = new System.Drawing.Size(121, 29);
+            this.lblCapRoom.Size = new System.Drawing.Size(161, 36);
             this.lblCapRoom.TabIndex = 22;
             this.lblCapRoom.Text = "$125.00 ";
             this.lblCapRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -544,26 +481,24 @@
             this.uxPlayerNameLabel.AutoSize = true;
             this.uxPlayerNameLabel.Enabled = false;
             this.uxPlayerNameLabel.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxPlayerNameLabel.Location = new System.Drawing.Point(9, 63);
-            this.uxPlayerNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.uxPlayerNameLabel.Location = new System.Drawing.Point(12, 78);
             this.uxPlayerNameLabel.Name = "uxPlayerNameLabel";
-            this.uxPlayerNameLabel.Size = new System.Drawing.Size(52, 19);
+            this.uxPlayerNameLabel.Size = new System.Drawing.Size(63, 24);
             this.uxPlayerNameLabel.TabIndex = 23;
             this.uxPlayerNameLabel.Text = "Name";
-            this.uxPlayerNameLabel.Click += new System.EventHandler(this.uxPlayerNameLabel_Click);
+            this.uxPlayerNameLabel.Click += new System.EventHandler(this.uxSortLabel_Click);
             // 
             // uxSalaryLabel
             // 
             this.uxSalaryLabel.AutoSize = true;
             this.uxSalaryLabel.Enabled = false;
             this.uxSalaryLabel.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxSalaryLabel.Location = new System.Drawing.Point(269, 63);
-            this.uxSalaryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.uxSalaryLabel.Location = new System.Drawing.Point(359, 78);
             this.uxSalaryLabel.Name = "uxSalaryLabel";
-            this.uxSalaryLabel.Size = new System.Drawing.Size(68, 19);
+            this.uxSalaryLabel.Size = new System.Drawing.Size(82, 24);
             this.uxSalaryLabel.TabIndex = 24;
             this.uxSalaryLabel.Text = "Salary";
-            this.uxSalaryLabel.Click += new System.EventHandler(this.uxSalaryLabel_Click);
+            this.uxSalaryLabel.Click += new System.EventHandler(this.uxSortLabel_Click);
             // 
             // uxRankLabel
             // 
@@ -571,13 +506,12 @@
             this.uxRankLabel.Enabled = false;
             this.uxRankLabel.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxRankLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.uxRankLabel.Location = new System.Drawing.Point(213, 63);
-            this.uxRankLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.uxRankLabel.Location = new System.Drawing.Point(284, 78);
             this.uxRankLabel.Name = "uxRankLabel";
-            this.uxRankLabel.Size = new System.Drawing.Size(53, 19);
+            this.uxRankLabel.Size = new System.Drawing.Size(64, 24);
             this.uxRankLabel.TabIndex = 25;
             this.uxRankLabel.Text = "Rank";
-            this.uxRankLabel.Click += new System.EventHandler(this.uxRankLabel_Click);
+            this.uxRankLabel.Click += new System.EventHandler(this.uxSortLabel_Click);
             // 
             // uxContractYearLabel
             // 
@@ -585,20 +519,20 @@
             this.uxContractYearLabel.Enabled = false;
             this.uxContractYearLabel.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxContractYearLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.uxContractYearLabel.Location = new System.Drawing.Point(355, 63);
-            this.uxContractYearLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.uxContractYearLabel.Location = new System.Drawing.Point(473, 78);
             this.uxContractYearLabel.Name = "uxContractYearLabel";
-            this.uxContractYearLabel.Size = new System.Drawing.Size(49, 19);
+            this.uxContractYearLabel.Size = new System.Drawing.Size(60, 24);
             this.uxContractYearLabel.TabIndex = 26;
             this.uxContractYearLabel.Text = "Year";
-            this.uxContractYearLabel.Click += new System.EventHandler(this.uxContractYearLabel_Click);
+            this.uxContractYearLabel.Click += new System.EventHandler(this.uxSortLabel_Click);
             // 
             // lblSalaryLabel
             // 
             this.lblSalaryLabel.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalaryLabel.Location = new System.Drawing.Point(833, 435);
+            this.lblSalaryLabel.Location = new System.Drawing.Point(16, 612);
+            this.lblSalaryLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSalaryLabel.Name = "lblSalaryLabel";
-            this.lblSalaryLabel.Size = new System.Drawing.Size(106, 29);
+            this.lblSalaryLabel.Size = new System.Drawing.Size(141, 36);
             this.lblSalaryLabel.TabIndex = 27;
             this.lblSalaryLabel.Text = "Salary";
             this.lblSalaryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -606,42 +540,19 @@
             // lblSalary
             // 
             this.lblSalary.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalary.Location = new System.Drawing.Point(944, 435);
+            this.lblSalary.Location = new System.Drawing.Point(164, 612);
+            this.lblSalary.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSalary.Name = "lblSalary";
-            this.lblSalary.Size = new System.Drawing.Size(121, 29);
+            this.lblSalary.Size = new System.Drawing.Size(161, 36);
             this.lblSalary.TabIndex = 28;
             this.lblSalary.Text = "$0.00 ";
             this.lblSalary.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // uxFreeAgents
-            // 
-            this.uxFreeAgents.AutoSize = true;
-            this.uxFreeAgents.Checked = true;
-            this.uxFreeAgents.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.uxFreeAgents.Location = new System.Drawing.Point(141, 22);
-            this.uxFreeAgents.Name = "uxFreeAgents";
-            this.uxFreeAgents.Size = new System.Drawing.Size(83, 17);
-            this.uxFreeAgents.TabIndex = 9;
-            this.uxFreeAgents.Text = "Free Agents";
-            this.uxFreeAgents.UseVisualStyleBackColor = true;
-            // 
-            // uxRosterPlayers
-            // 
-            this.uxRosterPlayers.AutoSize = true;
-            this.uxRosterPlayers.Checked = true;
-            this.uxRosterPlayers.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.uxRosterPlayers.Location = new System.Drawing.Point(141, 49);
-            this.uxRosterPlayers.Name = "uxRosterPlayers";
-            this.uxRosterPlayers.Size = new System.Drawing.Size(94, 17);
-            this.uxRosterPlayers.TabIndex = 10;
-            this.uxRosterPlayers.Text = "Roster Players";
-            this.uxRosterPlayers.UseVisualStyleBackColor = true;
-            // 
             // Manager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 535);
+            this.ClientSize = new System.Drawing.Size(1437, 658);
             this.Controls.Add(this.lblSalary);
             this.Controls.Add(this.lblSalaryLabel);
             this.Controls.Add(this.uxContractYearLabel);
@@ -663,7 +574,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.uxMenuStrip;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Manager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -692,19 +603,7 @@
         private System.Windows.Forms.ToolStripMenuItem uxEditCapHit;
         private System.Windows.Forms.ToolStripMenuItem uxEditCapRoom;
         private System.Windows.Forms.ToolStripMenuItem uxView;
-        private System.Windows.Forms.ToolStripMenuItem uxTeam;
-        private System.Windows.Forms.ToolStripMenuItem uxAFC;
-        private System.Windows.Forms.ToolStripMenuItem uxTornados;
-        private System.Windows.Forms.ToolStripMenuItem uxPenguins;
-        private System.Windows.Forms.ToolStripMenuItem uxBombers;
-        private System.Windows.Forms.ToolStripMenuItem uxDactyls;
-        private System.Windows.Forms.ToolStripMenuItem uxODBs;
-        private System.Windows.Forms.ToolStripMenuItem uxNFC;
-        private System.Windows.Forms.ToolStripMenuItem uxStormDynasty;
-        private System.Windows.Forms.ToolStripMenuItem uxNikeStorm;
-        private System.Windows.Forms.ToolStripMenuItem uxGorillas;
-        private System.Windows.Forms.ToolStripMenuItem uxPower;
-        private System.Windows.Forms.ToolStripMenuItem uxRam;
+        private System.Windows.Forms.ToolStripMenuItem uxMFLTeam;
         private System.Windows.Forms.ToolStripMenuItem uxRetrieve;
         private System.Windows.Forms.ToolStripMenuItem uxQuestion;
         private System.Windows.Forms.ListBox uxPlayers;

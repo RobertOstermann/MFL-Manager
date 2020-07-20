@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MFL_Manager.Models.CustomResponeses;
 
 namespace MFL_Manager
 {
@@ -20,19 +21,19 @@ namespace MFL_Manager
         public CapEditor()
         {
             InitializeComponent();
-            lblCapData.Text = "Cap Room";
+            lblCapData.Text = @"Cap Room";
         }
         /// <summary>
         /// Initializes the component.
         /// Sets the cap hit to the team cap hit.
         /// </summary>
         /// <param name="team"></param>
-        public CapEditor(TeamInfo team)
+        public CapEditor(FranchiseDto franchise)
         {
             InitializeComponent();
-            lblCapData.Text = "Cap Hit";
-            lblTeamName.Text = team.Name;
-            uxCapHit.Value = Convert.ToDecimal(team.CapHit);
+            lblCapData.Text = @"Cap Hit";
+            lblTeamName.Text = franchise.Name;
+            uxCapHit.Value = Convert.ToDecimal(franchise.CapHit);
         }
         /// <summary>
         /// Submits the information.
