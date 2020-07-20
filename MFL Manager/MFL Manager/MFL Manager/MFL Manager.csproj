@@ -74,6 +74,12 @@
     <Compile Include="CapEditor.Designer.cs">
       <DependentUpon>CapEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FreeAgency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FreeAgency.Designer.cs">
+      <DependentUpon>FreeAgency.cs</DependentUpon>
+    </Compile>
     <Compile Include="MFLController.cs" />
     <Compile Include="Models\ApiResponses\League\LeagueRequest.cs" />
     <Compile Include="Models\ApiResponses\Players\PlayerRequest.cs" />
@@ -109,11 +115,9 @@
     <Compile Include="PlayerEditor.Designer.cs">
       <DependentUpon>PlayerEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlayerInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Implementation\MFLRepository.cs" />
-    <Compile Include="TeamInfo.cs" />
     <Compile Include="WebsiteInformation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +126,9 @@
     </Compile>
     <EmbeddedResource Include="CapEditor.resx">
       <DependentUpon>CapEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FreeAgency.resx">
+      <DependentUpon>FreeAgency.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
