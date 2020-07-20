@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Principal;
 using MFL_Manager.Models.ApiResponses.League;
 using MFL_Manager.Models.ApiResponses.Players;
+using MFL_Manager.Models.ApiResponses.Players.Player_Profile;
 using MFL_Manager.Models.ApiResponses.Salary;
 using MFL_Manager.Models.CustomResponeses;
 using MFL_Manager.Repositories.Interface;
@@ -49,7 +50,7 @@ namespace MFL_Manager.Repositories.Implementation
             return franchiseDtos;
         }
 
-        public IEnumerable<PlayerDto> GetPlayerDtosFromApiData(IEnumerable<Player> players, IEnumerable<Salary> salaries)
+        public IEnumerable<PlayerDto> GetPlayerDtosFromApiData(IEnumerable<Player> players, IEnumerable<Salary> salaries, IEnumerable<PlayerProfile> playerProfiles)
         {
             List<PlayerDto> playerDtos = new List<PlayerDto>();
 
@@ -73,6 +74,22 @@ namespace MFL_Manager.Repositories.Implementation
                     {
                         player.Salary = Convert.ToDouble(salary.PlayerSalary);
                         player.ContractYear = salary.ContractYear;
+                    }
+                }
+            }
+
+            playerProfiles = playerProfiles.ToList();
+
+            foreach (var player in playerDtos)
+            {
+                foreach (var playerProfile in playerProfiles)
+                {
+                    if (player.Id == Convert.ToInt32(playerProfile.PlayerId))
+                    {
+                        player.ADP = playerProfile.Player.ADP;
+                        player.Age = Convert.ToInt32(playerProfile.Player.Age);
+                        player.Height = playerProfile.Player.Height;
+                        player.Weight = playerProfile.Player.Weight;
                     }
                 }
             }
@@ -111,6 +128,23 @@ namespace MFL_Manager.Repositories.Implementation
 
         #region Api Requests
 
+        public LeagueInformation GetLeagueInformationFromApi(Uri uri)
+        {
+            if (uri == null)
+                throw new ArgumentException("Player request null in MFL Repository");
+
+            var response = _restApiRepository.GetRequest(uri);
+
+            if (string.IsNullOrWhiteSpace(response))
+                throw new ArgumentException("League Request response returned null");
+
+            var data = JsonConvert.DeserializeObject<LeagueRequest>(response);
+
+            LeagueInformation leagueInformation = data.LeagueInformation;
+
+            return leagueInformation;
+        }
+
         public IEnumerable<Player> GetPlayersFromApi(Uri uri)
         {
             if (uri == null)
@@ -128,21 +162,25 @@ namespace MFL_Manager.Repositories.Implementation
             return players;
         }
 
-        public LeagueInformation GetLeagueInformationFromApi(Uri uri)
+        public IEnumerable<PlayerProfile> GetPlayerProfilesFromApi(Uri uri, IEnumerable<string> playerIds)
         {
             if (uri == null)
-                throw new ArgumentException("Player request null in MFL Repository");
+                throw new ArgumentException("Player Profile request null in MFL Repository");
 
-            var response = _restApiRepository.GetRequest(uri);
+            string playerIdString = string.Join(",", playerIds);
+
+            Uri playerProfileUri = new Uri($"{uri}&P={playerIdString}&JSON=1");
+
+            var response = _restApiRepository.GetRequest(playerProfileUri);
 
             if (string.IsNullOrWhiteSpace(response))
-                throw new ArgumentException("League Request response returned null");
+                return new List<PlayerProfile>();
 
-            var data = JsonConvert.DeserializeObject<LeagueRequest>(response);
+            var data = JsonConvert.DeserializeObject<PlayerProfileRequest>(response);
 
-            LeagueInformation leagueInformation = data.LeagueInformation;
+            IEnumerable<PlayerProfile> playerProfiles = data.PlayerProfileObject.PlayerProfiles;
 
-            return leagueInformation;
+            return playerProfiles;
         }
 
         public IEnumerable<Salary> GetSalariesFromApi(Uri uri)

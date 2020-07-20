@@ -50,6 +50,7 @@ namespace MFL_Manager
         /// <returns></returns>
         private int SubmitTeam()
         {
+            // Need to make this work for other leagues.
             if (uxTornados.Checked) return 1;
             if (uxPenguins.Checked) return 2;
             if (uxBombers.Checked) return 3;

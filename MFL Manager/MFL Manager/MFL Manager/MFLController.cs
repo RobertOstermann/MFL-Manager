@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MFL_Manager.Models.ApiResponses.League;
 using MFL_Manager.Models.ApiResponses.Players;
+using MFL_Manager.Models.ApiResponses.Players.Player_Profile;
 using MFL_Manager.Models.ApiResponses.Salary;
 using MFL_Manager.Models.CustomResponeses;
 using MFL_Manager.Repositories.Implementation;
@@ -99,19 +101,41 @@ namespace MFL_Manager
 
         #region Information Operations
 
-        public void GetApiInformation(Uri playerUri, Uri franchiseUri, Uri salaryUri)
+        public void GetApiInformation(Uri playerUri, Uri franchiseUri, Uri salaryUri, Uri playerProfileUri, Uri rosterUri = null)
         {
-            IEnumerable<Player> players = _mflRepository.GetPlayersFromApi(playerUri);
+            IEnumerable<Player> players = _mflRepository.GetPlayersFromApi(playerUri).ToList();
             IEnumerable<Salary> salaries = _mflRepository.GetSalariesFromApi(salaryUri);
             LeagueInformation leagueInformation = _mflRepository.GetLeagueInformationFromApi(franchiseUri);
 
-            List<PlayerDto> playerDtos = _mflRepository.GetPlayerDtosFromApiData(players, salaries).ToList();
+            // Takes a long time to execute. 
+            IEnumerable<PlayerProfile> playerProfiles = GetPlayerProfileApiInformation(playerProfileUri, players);
+
+            List<PlayerDto> playerDtos = _mflRepository.GetPlayerDtosFromApiData(players, salaries, playerProfiles).ToList();
             List<FranchiseDto> franchiseDtos = _mflRepository.GetFranchiseDtosFromApiData(leagueInformation).ToList();
             List<DivisionDto> divisionDtos = _mflRepository.GetDivisionDtosFromApiData(leagueInformation.DivisionInformation.Division).ToList();
 
             StoreInformationInDatabase(playerDtos, franchiseDtos, divisionDtos);
 
             _database.CapRoom = _mflRepository.GetSalaryCapFromApiData(leagueInformation);
+        }
+
+        private IEnumerable<PlayerProfile> GetPlayerProfileApiInformation(Uri playerProfileUri, IEnumerable<Player> players)
+        {
+            List<string> playerIds = players.Select(player => player.PlayerId).ToList();
+            List<PlayerProfile> profiles = new List<PlayerProfile>();
+            int numIterations = (int)Math.Ceiling(playerIds.Count() / 500.0);
+
+            for (int i = 0; i < numIterations; i++)
+            {
+                System.Threading.Thread.Sleep(250);
+                int startingIndex = i * 500;
+                IEnumerable<string> playerIdSubset = playerIds.Skip(startingIndex).Take(500);
+                IEnumerable<PlayerProfile> profileSubset =
+                    _mflRepository.GetPlayerProfilesFromApi(playerProfileUri, playerIdSubset);
+                profiles.AddRange(profileSubset);
+            }
+
+            return profiles;
         }
 
         public void GetLocalInformation()

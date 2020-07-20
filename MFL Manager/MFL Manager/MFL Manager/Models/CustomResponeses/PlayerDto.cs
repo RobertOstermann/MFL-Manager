@@ -31,7 +31,7 @@ namespace MFL_Manager.Models.CustomResponeses
         public string Height { get; set; }
 
         //Draft data
-        public double ADP { get; set; }
+        public string ADP { get; set; }
 
         public int FantasyProsRanking { get; set; }
 

@@ -7,8 +7,8 @@ namespace MFL_Manager.Models.ApiResponses.Players.Player_Profile
         [JsonProperty("name")]
         public string PlayerName { get; set; }
 
-        [JsonProperty("news")]
-        public News News { get; set; }
+        //[JsonProperty("news")]
+        //public News News { get; set; }
 
         [JsonProperty("player")]
         public PlayerProfilePlayer Player { get; set; }

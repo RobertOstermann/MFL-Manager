@@ -6,6 +6,6 @@ namespace MFL_Manager.Models.ApiResponses.Players.Player_Profile
     public class PlayerProfileRequest
     {
         [JsonProperty("playerProfiles")]
-        public List<PlayerProfile> PlayerProfiles { get; set; }
+        public PlayerProfileObject PlayerProfileObject { get; set; }
     }
 }

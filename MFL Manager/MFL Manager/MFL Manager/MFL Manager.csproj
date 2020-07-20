@@ -85,6 +85,7 @@
     <Compile Include="Models\ApiResponses\Players\Player Profile\Article.cs" />
     <Compile Include="Models\ApiResponses\Players\Player Profile\News.cs" />
     <Compile Include="Models\ApiResponses\Players\Player Profile\PlayerProfile.cs" />
+    <Compile Include="Models\ApiResponses\Players\Player Profile\PlayerProfileObject.cs" />
     <Compile Include="Models\ApiResponses\Players\Player Profile\PlayerProfilePlayer.cs" />
     <Compile Include="Models\ApiResponses\Players\Player Profile\PlayerProfileRequest.cs" />
     <Compile Include="Models\ApiResponses\Players\PlayerRequest.cs" />
