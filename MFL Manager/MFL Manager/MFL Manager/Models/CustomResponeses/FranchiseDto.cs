@@ -23,10 +23,7 @@ namespace MFL_Manager.Models.CustomResponeses
         public double Salary {
             get
             {
-                double sum = Players.Sum(player => player.Salary);
-                int num = 16 - Players.Count;
-                sum += num * 1.72;
-                return sum;
+                return Players.Sum(player => player.Salary);
             }
         }
 
