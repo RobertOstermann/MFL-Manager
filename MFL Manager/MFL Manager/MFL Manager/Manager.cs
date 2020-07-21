@@ -20,7 +20,7 @@ namespace MFL_Manager
             InitializeComponent();
             ApiAssistant.InitializeClient();
             _mflController = mflController;
-            FranchiseId = 1;
+            FranchiseId = 9;
         }
 
         #region Button Clicks
