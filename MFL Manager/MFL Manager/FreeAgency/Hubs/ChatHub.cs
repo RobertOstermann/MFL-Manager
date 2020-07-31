@@ -23,8 +23,9 @@ namespace FreeAgency.Hubs
         }
         public async Task SendBid(double amount)
         {
-            await Clients.All.SendAsync("ReceiveBid", currentBid, amount);
             currentBid += amount;
+            if (currentBid == 125) currentBid = 0;
+            await Clients.All.SendAsync("ReceiveBid", currentBid);
         }
     }
 }

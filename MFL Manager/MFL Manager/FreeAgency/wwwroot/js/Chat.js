@@ -14,9 +14,8 @@ connection.on("ReceiveMessage", function (user, message) {
     document.getElementById("messagesList").appendChild(li);
 });
 
-connection.on("ReceiveBid", function (currentBid, amount) {
-    var newBid = parseFloat(currentBid) + parseFloat(amount);
-    document.getElementById("currentBid").innerHTML = newBid.toFixed(2);
+connection.on("ReceiveBid", function (currentBid) {
+    document.getElementById("currentBid").innerHTML = currentBid.toFixed(2);
 })
 
 connection.start().then(function () {
