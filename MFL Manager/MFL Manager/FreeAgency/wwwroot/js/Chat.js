@@ -6,11 +6,10 @@ var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 document.getElementById("sendButton").disabled = true;
 document.getElementById("bidButton").disabled = true;
 
-connection.on("ReceiveMessage", function (user, message) {
+connection.on("ReceiveMessage", function (message) {
     var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    var encodedMsg = user + ": " + msg;
     var li = document.createElement("li");
-    li.textContent = encodedMsg;
+    li.textContent = msg;
     document.getElementById("messagesList").appendChild(li);
 });
 
@@ -19,9 +18,10 @@ connection.on("ReceiveBid", function (currentBid) {
 })
 
 connection.start().then(function () {
+    connection.invoke("GetMessages")
+    connection.invoke("GetBid");
     document.getElementById("sendButton").disabled = false;
     document.getElementById("bidButton").disabled = false;
-    document.getElementById("currentBid").innerHTML = connection.invoke("GetBid");
 }).catch(function (err) {
     return console.error(err.toString());
 });
