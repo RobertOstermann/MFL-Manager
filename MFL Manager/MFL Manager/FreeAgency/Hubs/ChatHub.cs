@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 
 namespace FreeAgency.Hubs
@@ -31,10 +32,23 @@ namespace FreeAgency.Hubs
         {
             await Clients.Caller.SendAsync("ReceiveBid", currentBid, 0.00);
         }
+
         public async Task SendBid(double amount)
         {
-            currentBid += amount;
-            await Clients.All.SendAsync("ReceiveBid", currentBid);
+            if (amount > currentBid)
+            {
+                currentBid = amount;
+                await Clients.All.SendAsync("ReceiveBid", currentBid);
+            }
+            else
+            {
+                //Send alert that bid was below current bid.
+            }
+            if (amount == 0)
+            {
+                currentBid = 0;
+                await Clients.All.SendAsync("ReceiveBid", currentBid);
+            }
         }
     }
 }
