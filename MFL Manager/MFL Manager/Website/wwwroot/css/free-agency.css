@@ -21,20 +21,24 @@
     margin-right: 1rem;
 }
 
+.chat-message, .chat-message-send {
+    font-size: large;
+}
+
 .chat-message-footer {
     height: 3.5rem;
 }
 
 .chat-message-identifier {
-    font-size: large;
+    font-size: medium;
 }
 
 .message-section {
     padding-top: 1rem;
 }
 
-.message-button {
-    font-family: 'Permanent Marker', sans-serif;
+.message-text, .message-button {
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Bid Section */
@@ -49,16 +53,16 @@
     margin-top: .5rem;
 }
 
-.bid-button {
-    font-family: 'Permanent Marker', sans-serif;
+.bid-button, .bid-text {
+    font-family: 'Roboto', sans-serif;
 }
 
-.commisioner-section {
+.commissioner-section {
     visibility: visible;
     padding-top: 0rem;
 }
 
-.commisioner-button {
+.commissioner-button {
     font-family: 'Permanent Marker', sans-serif;
 }
 

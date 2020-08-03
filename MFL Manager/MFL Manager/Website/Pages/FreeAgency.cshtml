@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="~/css/free-agency.css">
 
 <!-- Main Section -->
-<div class="container-fluid padding">
+<div class="container-fluid padding" onload="freeAgencyActive()">
     <div class="row padding">
         <!-- Chat Section -->
         <div class="col-lg-4 padding">
@@ -73,9 +73,9 @@
                     </select>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Message" aria-describedby="Message">
+                    <input type="text" class="form-control message-text" placeholder="Message" aria-describedby="Message">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-primary btn-lg message-button" type="button">Send Message</button>
+                        <button class="btn btn-outline-primary message-button" type="button">Send Message</button>
                     </div>
                 </div>
             </div>
@@ -96,20 +96,21 @@
                     </p>
                 </div>
             </div>
+            <!-- Submit Bid -->
             <div class="bid-section">
-                <h4 class="bid-label">Storm Dynasty: $12.91</h4>
+                <h4 class="bid-label" id="current-bid">Storm Dynasty: $12.91</h4>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <button class="btn btn-outline-danger bid-button" type="button">Opt Out</button>
+                        <button class="btn btn-outline-danger bid-button" type="button" id="opt-out">Opt Out</button>
                     </div>
-                    <input type="number" class="form-control" placeholder="0.00" step="0.50" min="0" aria-describedby="Current Bid">
+                    <input type="number" class="form-control" placeholder="0.00" step="0.50" min="0" id="bid-input">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-primary btn-lg bid-button" type="button">Submit Bid</button>
+                        <button class="btn btn-outline-primary bid-button" type="button" id="submit-bid">Submit Bid</button>
                     </div>
                 </div>
             </div>
-            <div class="commisioner-section">
-                <div class="btn btn-outline-success btn-lg btn-block commisioner-button" type="button">Start Free Agency</div>
+            <div class="commissioner-section">
+                <div class="btn btn-outline-success btn-lg btn-block commissioner-button" type="button">Start Free Agency</div>
             </div>
         </div>
         <!-- Free Agents Section -->

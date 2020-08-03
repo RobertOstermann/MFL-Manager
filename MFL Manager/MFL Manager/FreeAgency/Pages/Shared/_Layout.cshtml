@@ -22,14 +22,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+                        <li class="nav-item active" id="navbar-home">
+                            <a class="nav-link" id="navbar-home-link" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Index">Players</a>
+                        <li class="nav-item" id="navbar-players">
+                            <a class="nav-link" id="navbar-players-link" asp-area="" asp-page="/Index">Players</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Index">Free Agency</a>
+                        <li class="nav-item" id="navbar-free-agency">
+                            <a class="nav-link" id="navbar-free-agency-link" asp-area="" asp-page="/Index">Free Agency</a>
                         </li>
                     </ul>
                 </div>
@@ -58,7 +58,6 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
     <script src="~/js/signalr/dist/browser/signalr.js"></script>
     <script src="~/js/chat.js"></script>
 
