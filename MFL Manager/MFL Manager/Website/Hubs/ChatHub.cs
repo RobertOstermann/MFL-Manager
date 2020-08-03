@@ -10,13 +10,17 @@ namespace Website.Hubs
     {
         private static Queue<string> messages = new Queue<string>();
 
-        private static double currentBid = 0.00;
+        private static double leadBid = 0.00;
+
+        private string team = "Power";
 
         public async Task SendMessage(string user, string message)
         {
             string msg = user + ": " + message;
             messages.Enqueue(msg);
-            await Clients.All.SendAsync("ReceiveMessage", msg);
+            await Clients.Others.SendAsync("ReceiveMessage", team, msg);
+            // Could do this on method call in javascript.
+            await Clients.Caller.SendAsync("SendMessage", team, msg);
         }
 
         public async Task GetMessages()
@@ -29,24 +33,24 @@ namespace Website.Hubs
 
         public async Task GetBid()
         {
-            await Clients.Caller.SendAsync("ReceiveBid", currentBid, 0.00);
+            await Clients.Caller.SendAsync("ReceiveBid", leadBid, 0.00);
         }
 
-        public async Task SendBid(double amount)
+        public async Task SendBid(double bid)
         {
-            if (amount > currentBid)
+            if (bid > leadBid)
             {
-                currentBid = amount;
-                await Clients.All.SendAsync("ReceiveBid", currentBid);
+                leadBid = bid;
+                await Clients.All.SendAsync("ReceiveBid", team, leadBid);
             }
             else
             {
                 //Send alert that bid was below current bid.
             }
-            if (amount == 0)
+            if (bid == 0)
             {
-                currentBid = 0;
-                await Clients.All.SendAsync("ReceiveBid", currentBid);
+                leadBid = 0;
+                await Clients.All.SendAsync("ReceiveBid", leadBid);
             }
         }
     }
