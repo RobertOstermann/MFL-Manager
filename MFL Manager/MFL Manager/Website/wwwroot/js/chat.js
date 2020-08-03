@@ -17,6 +17,8 @@ function enableButtons() {
 // Retrieve bid, message, and free agency
 // information from the server.
 connection.start().then(function () {
+    connection.invoke("GetMessages");
+    connection.invoke("GetBid");
     enableButtons();
 })
 

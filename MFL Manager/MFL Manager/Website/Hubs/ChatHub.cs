@@ -3,45 +3,52 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Website.Models;
 
 namespace Website.Hubs
 {
     public class ChatHub : Hub
     {
-        private static Queue<string> messages = new Queue<string>();
+        private static Queue<Message> Messages = new Queue<Message>();
 
-        private static double leadBid = 0.00;
+        private static double LeadBid = 0.00;
 
-        private string team = "Power";
+        private static string LeadBidder = "None";
 
-        public async Task SendMessage(string team, string message)
+        private string Team = "Power";
+
+        public async Task SendMessage(string team, string text)
         {
-            // Need message class with team and message text.
-            messages.Enqueue(message);
-            await Clients.Others.SendAsync("ReceiveMessage", team, message);
-            // Could do this on method call in javascript.
-            await Clients.Caller.SendAsync("SendMessage", team, message);
+            // CHANGE
+            // Replace everyone if it is a direct message
+            Message message = new Message(team, text, "Everyone");
+
+            Messages.Enqueue(message);
+            await Clients.Others.SendAsync("ReceiveMessage", team, text);
+            await Clients.Caller.SendAsync("SendMessage", team, text);
         }
 
         public async Task GetMessages()
         {
-            foreach (string message in messages)
+            foreach (Message message in Messages)
             {
-                await Clients.Caller.SendAsync("ReceiveMessage", message);
+                if (message.Team.Equals(Team)) await Clients.Caller.SendAsync("SendMessage", message.Team, message.Text);
+                else await Clients.Others.SendAsync("ReceiveMessage", message.Team, message.Text);
             }
         }
 
         public async Task GetBid()
         {
-            await Clients.Caller.SendAsync("ReceiveBid", leadBid, 0.00);
+            await Clients.Caller.SendAsync("ReceiveBid", LeadBidder, LeadBid);
         }
 
         public async Task SendBid(double bid)
         {
-            if (bid > leadBid)
+            if (bid > LeadBid)
             {
-                leadBid = bid;
-                await Clients.All.SendAsync("ReceiveBid", team, leadBid);
+                LeadBid = bid;
+                LeadBidder = Team;
+                await Clients.All.SendAsync("ReceiveBid", Team, LeadBid);
             }
             else
             {
@@ -49,8 +56,8 @@ namespace Website.Hubs
             }
             if (bid == 0)
             {
-                leadBid = 0;
-                await Clients.All.SendAsync("ReceiveBid", leadBid);
+                LeadBid = 0;
+                await Clients.All.SendAsync("ReceiveBid", LeadBid);
             }
         }
     }
