@@ -49,6 +49,7 @@ connection.on("ReceiveMessage", function (user, message) {
     card.appendChild(cardFooter);
     // Add the card to the message box.
     chatBox.appendChild(card);
+    scrollToBottom("chat-box");
 });
 
 // Receive a sent a message from the server.
@@ -78,13 +79,20 @@ connection.on("SendMessage", function (user, message) {
     card.appendChild(cardFooter);
     // Add the card to the message box.
     chatBox.appendChild(card);
+    scrollToBottom("chat-box");
 });
 
+function scrollToBottom(id) {
+    var div = document.getElementById(id);
+    div.scrollTop = div.scrollHeight - div.clientHeight;
+}
+
 function sendMessage() {
+    // CHANGE
     // Need to implement user by team selection.
-    var user = "Power";
+    var team = $("#message-recipient").find("option:selected").text();
     var message = document.getElementById("message-input").value;
-    connection.invoke("SendMessage", user, message).catch(function (err) {
+    connection.invoke("SendMessage", team, message).catch(function (err) {
         return console.error(err.toString());
     })
     document.getElementById("message-input").value = "";

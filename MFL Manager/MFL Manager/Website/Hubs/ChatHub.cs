@@ -14,13 +14,13 @@ namespace Website.Hubs
 
         private string team = "Power";
 
-        public async Task SendMessage(string user, string message)
+        public async Task SendMessage(string team, string message)
         {
-            string msg = user + ": " + message;
-            messages.Enqueue(msg);
-            await Clients.Others.SendAsync("ReceiveMessage", team, msg);
+            // Need message class with team and message text.
+            messages.Enqueue(message);
+            await Clients.Others.SendAsync("ReceiveMessage", team, message);
             // Could do this on method call in javascript.
-            await Clients.Caller.SendAsync("SendMessage", team, msg);
+            await Clients.Caller.SendAsync("SendMessage", team, message);
         }
 
         public async Task GetMessages()
