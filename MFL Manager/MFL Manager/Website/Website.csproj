@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\players\Aaron Jones.jpg" />
+    <None Include="wwwroot\images\players\Chris Godwin.jpg" />
+    <None Include="wwwroot\images\players\Ezekiel Elliot.jpg" />
+    <None Include="wwwroot\images\players\Lamar Jackson.jpg" />
+    <None Include="wwwroot\images\teams\Bombers.gif" />
+    <None Include="wwwroot\images\teams\Dactyls.gif" />
+    <None Include="wwwroot\images\teams\FootballField.jpg" />
+    <None Include="wwwroot\images\teams\Gorillas.gif" />
+    <None Include="wwwroot\images\teams\NikeStorm.jpg" />
+    <None Include="wwwroot\images\teams\ODBs.jpg" />
+    <None Include="wwwroot\images\teams\Penguins.png" />
+    <None Include="wwwroot\images\teams\Power.gif" />
+    <None Include="wwwroot\images\teams\Ram.jpg" />
+    <None Include="wwwroot\images\teams\StormDynasty.png" />
+    <None Include="wwwroot\images\teams\Tornados.gif" />
+  </ItemGroup>
+
+</Project>

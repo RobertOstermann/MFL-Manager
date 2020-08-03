@@ -1,0 +1,43 @@
+﻿/* Welcome */
+
+.welcome {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+    .welcome hr {
+        border-top: 2px solid #b4b4b4;
+        width: 50%;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+
+.selectTeamPrompt {
+    font-size: 2rem;
+}
+
+/* Teams */
+
+.col {
+    padding-bottom: 2rem;
+}
+
+.card {
+    width: 15rem;
+    border-width: .2rem;
+}
+
+.card-padding {
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.card a {
+    text-decoration: none;
+    color: #222;
+}
+
+.card:hover {
+    border-color: #2b74ff;
+}
