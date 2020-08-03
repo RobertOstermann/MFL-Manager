@@ -33,7 +33,7 @@ namespace Website.Hubs
             foreach (Message message in Messages)
             {
                 if (message.Team.Equals(Team)) await Clients.Caller.SendAsync("SendMessage", message.Team, message.Text);
-                else await Clients.Others.SendAsync("ReceiveMessage", message.Team, message.Text);
+                else await Clients.Caller.SendAsync("ReceiveMessage", message.Team, message.Text);
             }
         }
 
