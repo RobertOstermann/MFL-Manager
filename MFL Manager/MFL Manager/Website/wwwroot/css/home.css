@@ -38,6 +38,10 @@
     color: #222;
 }
 
+.card a:hover {
+    cursor: pointer;
+}
+
 .card:hover {
     border-color: #2b74ff;
 }

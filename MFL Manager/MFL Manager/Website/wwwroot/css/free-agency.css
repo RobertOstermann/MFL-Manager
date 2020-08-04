@@ -22,7 +22,7 @@
 }
 
 .chat-message, .chat-message-send {
-    font-size: large;
+    font-size: medium;
 }
 
 .chat-message-footer {
@@ -30,11 +30,7 @@
 }
 
 .chat-message-identifier {
-    font-size: medium;
-}
-
-.message-section {
-    padding-top: 1rem;
+    font-size: small;
 }
 
 .message-text, .message-button {
@@ -42,10 +38,6 @@
 }
 
 /* Bid Section */
-
-.bid-section {
-    padding-top: 0rem;
-}
 
 .bid-label {
     text-align: center;
@@ -59,26 +51,9 @@
 
 .commissioner-section {
     visibility: visible;
-    padding-top: 0rem;
 }
 
 .commissioner-button {
     font-family: 'Permanent Marker', sans-serif;
 }
 
-/* Free Agent Section */
-
-.player-box {
-    /* Use Javascript to set the same size as player card */
-    height: 68vh;
-    padding-bottom: 2rem;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-
-.player-card {
-    margin-top: .5rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: .5rem;
-}

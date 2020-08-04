@@ -7,254 +7,101 @@
 <link rel="stylesheet" href="~/css/free-agency.css">
 
 <!-- Main Section -->
-<div class="container-fluid padding" onload="freeAgencyActive()">
+<div class="container-fluid padding">
     <div class="row padding">
         <!-- Chat Section -->
-        <div class="col-lg-4 padding">
-            <div class="card chat-box" id="chat-box">
-                <!-- Receive a direct message-->
-                <div class="card border-primary chat-message">
-                    <div class="card-body text-dark">
-                        <p class="card-text">
-                            I paid the price last year and look how that turned out. Chiefs get
-                            a championship and I don't even make the playoffs.
-                        </p>
+        <div class="col-xs-12 col-lg-6 col-xl-4 padding">
+            <div class="card mb-2 h-100">
+                <div class="card-body chat-box" id="chat-box">
+                    <!-- Receive a direct message-->
+                    <div class="card border-primary chat-message">
+                        <div class="card-body text-dark">
+                            <p class="card-text">
+                                I paid the price last year and look how that turned out. Chiefs get
+                                a championship and I don't even make the playoffs.
+                            </p>
+                        </div>
+                        <div class="card-footer text-primary chat-message-footer">
+                            <p class="chat-message-identifier">Storm Dynasty</p>
+                        </div>
                     </div>
-                    <div class="card-footer text-primary chat-message-footer">
-                        <p class="chat-message-identifier">Storm Dynasty</p>
+                    <!-- Send a direct message-->
+                    <div class="card border-primary chat-message-send">
+                        <div class="card-body">
+                            <p class="card-text">Unfortunately, it be like that sometimes.</p>
+                        </div>
+                        <div class="card-footer text-primary chat-message-footer">
+                            <p class="chat-message-identifier">Power</p>
+                        </div>
                     </div>
                 </div>
-                <!-- Send a direct message-->
-                <div class="card border-primary chat-message-send">
-                    <div class="card-body">
-                        <p class="card-text">Unfortunately, it be like that sometimes.</p>
+                <!-- Message input and submit button -->
+                <div class="card-footer">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text message-button">Send Message To: </label>
+                        </div>
+                        <select class="custom-select" id="message-recipient">
+                            <option selected>Everyone</option>
+                            <option value="1">Tornados</option>
+                            <option value="2">Penguins</option>
+                            <option value="3">Bombers</option>
+                            <option value="4">Dactyls</option>
+                            <option value="5">ODB's</option>
+                            <option value="6">Storm Dynasty</option>
+                            <option value="7">Nike Storm</option>
+                            <option value="8">Gorillas</option>
+                            <option value="9">Power</option>
+                            <option value="10">Ram</option>
+                        </select>
                     </div>
-                    <div class="card-footer text-primary chat-message-footer">
-                        <p class="chat-message-identifier">Power</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Chat Footer -->
-            <div class="message-section">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text message-button">Send Message To: </label>
-                    </div>
-                    <select class="custom-select" id="message-recipient">
-                        <option selected>Everyone</option>
-                        <option value="1">Tornados</option>
-                        <option value="2">Penguins</option>
-                        <option value="3">Bombers</option>
-                        <option value="4">Dactyls</option>
-                        <option value="5">ODB's</option>
-                        <option value="6">Storm Dynasty</option>
-                        <option value="7">Nike Storm</option>
-                        <option value="8">Gorillas</option>
-                        <option value="9">Power</option>
-                        <option value="10">Ram</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control message-text" placeholder="Message" id="message-input">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-primary message-button" type="button" id="submit-message">Send Message</button>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control message-text" placeholder="Message" id="message-input">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary message-button" type="button" id="submit-message">Send Message</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Bid Section -->
-        <div class="col-lg-4 padding">
-            <div class="card">
+        <div class="col-xs-12 col-lg-6 col-xl-4 padding">
+            <div class="card mb-2 h-100">
                 <img class="card-img-top" src="~/images/players/Lamar Jackson.jpg">
                 <div class="card-body">
                     <h4 class="card-title">Lamar Jackson</h4>
                     <h5 class="card-subtitle mb-2 text-muted">Power</h5>
-                    <p class="card-text">
-                        NFL Team: Ravens<br>
-                        Age: 23<br>
-                        Salary: $12.91<br>
-                        2019 Position Rank: 1<br>
-                        2019 Fantasy Average: 36.40
-                    </p>
                 </div>
-            </div>
-            <!-- Submit Bid -->
-            <div class="bid-section">
-                <h4 class="bid-label" id="current-bid">None: $0.00</h4>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <button class="btn btn-outline-danger bid-button" type="button" id="opt-out">Opt Out</button>
+                <!-- Bid input, opt out, and submit buttons -->
+                <div class="card-footer">
+                    <div class="bid-section">
+                        <h4 class="bid-label" id="current-bid">None: $0.00</h4>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-outline-danger bid-button" type="button" id="opt-out">Opt Out</button>
+                            </div>
+                            <input type="number" class="form-control" placeholder="0.00" step="0.50" min="0.00" id="bid-input">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-primary bid-button" type="button" id="submit-bid">Submit Bid</button>
+                            </div>
+                        </div>
                     </div>
-                    <input type="number" class="form-control" placeholder="0.00" step="0.50" min="0" id="bid-input">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-primary bid-button" type="button" id="submit-bid">Submit Bid</button>
+                    <div class="commissioner-section">
+                        <div class="btn btn-outline-success btn-lg btn-block commissioner-button" type="button">Start Free Agency</div>
                     </div>
                 </div>
-            </div>
-            <div class="commissioner-section">
-                <div class="btn btn-outline-success btn-lg btn-block commissioner-button" type="button">Start Free Agency</div>
             </div>
         </div>
-        <!-- Free Agents Section -->
-        <div class="col-lg-4 padding">
-            <div class="card player-box">
-                <div class="card-block">
-                    <div class="row">
-                        <div class="col">
-                            <div class="card player-card">
-                                <img class="card-img-top" src="~/images/players/Aaron Jones.jpg">
-                                <div class="card-body">
-                                    <h4 class="card-title">Aaron Jones</h4>
-                                    <h5 class="card-subtitle mb-2 text-muted">Tornados</h5>
-                                    <p class="card-text">
-                                        $7.91
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card player-card">
-                                <img class="card-img-top" src="~/images/players/Chris Godwin.jpg">
-                                <div class="card-body">
-                                    <h4 class="card-title">Chris Godwin</h4>
-                                    <h5 class="card-subtitle mb-2 text-muted">Penguins</h5>
-                                    <p class="card-text">
-                                        $7.91
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="card player-card">
-                                <img class="card-img-top" src="~/images/players/Ezekiel Elliot.jpg">
-                                <div class="card-body">
-                                    <h4 class="card-title">Ezekiel Elliot</h4>
-                                    <h5 class="card-subtitle mb-2 text-muted">Bombers</h5>
-                                    <p class="card-text">
-                                        $7.91
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card player-card">
-                                <img class="card-img-top" src="~/images/players/Lamar Jackson.jpg">
-                                <div class="card-body">
-                                    <h4 class="card-title">Lamar Jackson</h4>
-                                    <h5 class="card-subtitle mb-2 text-muted">Power</h5>
-                                    <p class="card-text">
-                                        $7.91
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="card player-card">
-                                <img class="card-img-top" src="~/images/players/Aaron Jones.jpg">
-                                <div class="card-body">
-                                    <h4 class="card-title">Aaron Jones</h4>
-                                    <h5 class="card-subtitle mb-2 text-muted">Tornados</h5>
-                                    <p class="card-text">
-                                        $7.91
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card player-card">
-                                <img class="card-img-top" src="~/images/players/Chris Godwin.jpg">
-                                <div class="card-body">
-                                    <h4 class="card-title">Chris Godwin</h4>
-                                    <h5 class="card-subtitle mb-2 text-muted">Penguins</h5>
-                                    <p class="card-text">
-                                        $7.91
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="card player-card">
-                                <img class="card-img-top" src="~/images/players/Ezekiel Elliot.jpg">
-                                <div class="card-body">
-                                    <h4 class="card-title">Ezekiel Elliot</h4>
-                                    <h5 class="card-subtitle mb-2 text-muted">Bombers</h5>
-                                    <p class="card-text">
-                                        $7.91
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card player-card">
-                                <img class="card-img-top" src="~/images/players/Lamar Jackson.jpg">
-                                <div class="card-body">
-                                    <h4 class="card-title">Lamar Jackson</h4>
-                                    <h5 class="card-subtitle mb-2 text-muted">Power</h5>
-                                    <p class="card-text">
-                                        $7.91
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="card player-card">
-                                <img class="card-img-top" src="~/images/players/Aaron Jones.jpg">
-                                <div class="card-body">
-                                    <h4 class="card-title">Aaron Jones</h4>
-                                    <h5 class="card-subtitle mb-2 text-muted">Tornados</h5>
-                                    <p class="card-text">
-                                        $7.91
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card player-card">
-                                <img class="card-img-top" src="~/images/players/Chris Godwin.jpg">
-                                <div class="card-body">
-                                    <h4 class="card-title">Chris Godwin</h4>
-                                    <h5 class="card-subtitle mb-2 text-muted">Penguins</h5>
-                                    <p class="card-text">
-                                        $7.91
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="card player-card">
-                                <img class="card-img-top" src="~/images/players/Ezekiel Elliot.jpg">
-                                <div class="card-body">
-                                    <h4 class="card-title">Ezekiel Elliot</h4>
-                                    <h5 class="card-subtitle mb-2 text-muted">Bombers</h5>
-                                    <p class="card-text">
-                                        $7.91
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card player-card">
-                                <img class="card-img-top" src="~/images/players/Lamar Jackson.jpg">
-                                <div class="card-body">
-                                    <h4 class="card-title">Lamar Jackson</h4>
-                                    <h5 class="card-subtitle mb-2 text-muted">Power</h5>
-                                    <p class="card-text">
-                                        $7.91
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Other Section-->
+        <div class="col-xs-12 col-xl-4 padding">
+            <div class="card mb-2 h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Phil Ho</h4>
+                    <p class="card-text">
+                        Phil is an Internet entrepreneur with
+                        almost 20 years of experience.
+                    </p>
+                    <a href="#" class="btn btn-outline-secondary">See Profile</a>
                 </div>
             </div>
         </div>

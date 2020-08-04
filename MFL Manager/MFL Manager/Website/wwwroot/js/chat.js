@@ -2,13 +2,23 @@
 
 var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
-// Disable bid options until team is selected.
-document.getElementById("opt-out").disabled = true;
-document.getElementById("bid-input").disabled = true;
-document.getElementById("submit-bid").disabled = true;
+function disableButtons() {
+    // Disable message options until team is selected.
+    document.getElementById("message-recipient").disabled = true;
+    document.getElementById("message-input").disabled = true;
+    document.getElementById("submit-message").disabled = true;
+    // Disable bid options until team is selected.
+    document.getElementById("opt-out").disabled = true;
+    document.getElementById("bid-input").disabled = true;
+    document.getElementById("submit-bid").disabled = true;
+}
 
-// Enable buttons once team is selected.
 function enableButtons() {
+    // Enable message options until team is selected.
+    document.getElementById("message-recipient").disabled = false;
+    document.getElementById("message-input").disabled = false;
+    document.getElementById("submit-message").disabled = false;
+    // Enable bid options until team is selected.
     document.getElementById("opt-out").disabled = false;
     document.getElementById("bid-input").disabled = false;
     document.getElementById("submit-bid").disabled = false;
@@ -17,10 +27,40 @@ function enableButtons() {
 // Retrieve bid, message, and free agency
 // information from the server.
 connection.start().then(function () {
+    connection.invoke("GetTeams")
     connection.invoke("GetMessages");
     connection.invoke("GetBid");
-    enableButtons();
+    disableButtons();
 })
+
+/* TEAM */
+connection.on("SetTeam", function () {
+    enableButtons();
+});
+
+connection.on("ReceiveSetTeam", function (team) {
+    document.getElementById(team).style.borderColor = "#03eb07";
+});
+
+
+function selectTeam(team) {
+    var card = document.getElementById(team);
+    if (card.style.borderColor != "#03eb07") {
+        connection.invoke("SetTeam", team).catch(function (err) {
+            return console.error(err.toString());
+        });
+    }
+    else {
+        alert("Team Not Available")
+    }
+}
+
+document.getElementById("select-team").addEventListener("click", function (event) {
+    
+    event.preventDefault();
+})
+
+
 
 /*  MESSAGE */
 
