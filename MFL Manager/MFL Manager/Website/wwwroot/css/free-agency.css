@@ -3,7 +3,6 @@
 /* Chat Section */
 
 .chat-box {
-    /* Use Javascript to set the same size as player card */
     height: 68vh;
     padding-bottom: 2rem;
     overflow-y: scroll;

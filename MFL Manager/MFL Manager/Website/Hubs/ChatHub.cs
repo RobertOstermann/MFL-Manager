@@ -24,12 +24,11 @@ namespace Website.Hubs
         public async Task SetTeam(string team)
         {
             Team = team;
+            // Change connection ID to persist across page changes.
             _connections.Add(team, Context.ConnectionId);
-            await Clients.Caller.SendAsync("SetTeam");
             await Clients.All.SendAsync("ReceiveSetTeam", team);
+            await Clients.Caller.SendAsync("SelectTeam", team);
         }
-
-        
 
         public async Task GetTeams()
         {

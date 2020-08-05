@@ -2,26 +2,19 @@
 
 var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
+var selectedTeam = false;
+
 function disableButtons() {
     // Disable message options until team is selected.
+    alert("Disable Group 1")
     document.getElementById("message-recipient").disabled = true;
     document.getElementById("message-input").disabled = true;
     document.getElementById("submit-message").disabled = true;
     // Disable bid options until team is selected.
+    alert("Disable Group 2")
     document.getElementById("opt-out").disabled = true;
     document.getElementById("bid-input").disabled = true;
     document.getElementById("submit-bid").disabled = true;
-}
-
-function enableButtons() {
-    // Enable message options until team is selected.
-    document.getElementById("message-recipient").disabled = false;
-    document.getElementById("message-input").disabled = false;
-    document.getElementById("submit-message").disabled = false;
-    // Enable bid options until team is selected.
-    document.getElementById("opt-out").disabled = false;
-    document.getElementById("bid-input").disabled = false;
-    document.getElementById("submit-bid").disabled = false;
 }
 
 // Retrieve bid, message, and free agency
@@ -30,37 +23,32 @@ connection.start().then(function () {
     connection.invoke("GetTeams")
     connection.invoke("GetMessages");
     connection.invoke("GetBid");
-    disableButtons();
 })
 
 /* TEAM */
-connection.on("SetTeam", function () {
-    enableButtons();
+connection.on("SelectTeam", function (team) {
+    var card = document.getElementById(team);
+    card.style.borderColor = "#03eb07";
+    selectedTeam = true;
 });
 
 connection.on("ReceiveSetTeam", function (team) {
-    document.getElementById(team).style.borderColor = "#03eb07";
+    var card = document.getElementById(team);
+    card.style.borderColor = "#e20000";
+    card.disabled = true;
 });
 
 
 function selectTeam(team) {
     var card = document.getElementById(team);
-    if (card.style.borderColor != "#03eb07") {
-        connection.invoke("SetTeam", team).catch(function (err) {
-            return console.error(err.toString());
-        });
-    }
-    else {
-        alert("Team Not Available")
+    if (!selectedTeam) {
+        if (!card.disabled) {
+            connection.invoke("SetTeam", team).catch(function (err) {
+                return console.error(err.toString());
+            });
+        }
     }
 }
-
-document.getElementById("select-team").addEventListener("click", function (event) {
-    
-    event.preventDefault();
-})
-
-
 
 /*  MESSAGE */
 
@@ -83,7 +71,6 @@ connection.on("ReceiveMessage", function (user, message) {
     var cardIdentifier = document.createElement("p");
     cardIdentifier.classList.add("chat-message-identifier");
     cardIdentifier.innerHTML = user;
-
     // Combine the elements of the card.
     cardBody.appendChild(cardText);
     cardFooter.appendChild(cardIdentifier);
@@ -113,7 +100,6 @@ connection.on("SendMessage", function (user, message) {
     var cardIdentifier = document.createElement("p");
     cardIdentifier.classList.add("chat-message-identifier");
     cardIdentifier.innerHTML = user;
-
     // Combine the elements of the card.
     cardBody.appendChild(cardText);
     cardFooter.appendChild(cardIdentifier);
