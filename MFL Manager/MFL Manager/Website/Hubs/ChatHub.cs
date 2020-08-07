@@ -14,7 +14,7 @@ namespace Website.Hubs
         private readonly static ConnectionMapping<string> _connections =
             new ConnectionMapping<string>();
 
-        private static Queue<Message> Messages = new Queue<Message>();
+        private static readonly Queue<Message> Messages = new Queue<Message>();
 
         private static double LeadBid = 0.00;
 

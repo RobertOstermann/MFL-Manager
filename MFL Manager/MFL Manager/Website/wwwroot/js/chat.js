@@ -20,7 +20,7 @@ function disableButtons() {
 // Retrieve bid, message, and free agency
 // information from the server.
 connection.start().then(function () {
-    connection.invoke("GetTeams")
+    connection.invoke("GetTeams");
     connection.invoke("GetMessages");
     connection.invoke("GetBid");
 })
