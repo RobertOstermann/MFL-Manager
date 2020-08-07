@@ -31,12 +31,10 @@ function enableButtons() {
 // Retrieve bid, message, and free agency
 // information from the server.
 connection.start().then(function () {
+    connection.invoke("GetCookie");
     connection.invoke("GetMessages");
     connection.invoke("GetBid");
 })
-
-
-
 
 /*  MESSAGE */
 
@@ -52,7 +50,7 @@ connection.on("ReceiveMessage", function (user, message) {
     cardBody.classList.add("card-body");
     var cardText = document.createElement("p");
     cardText.classList.add("card-text");
-    cardText.innerHTML = message;
+    cardText.innerHTML = msg;
     // Footer of card.
     var cardFooter = document.createElement("div");
     cardFooter.classList.add("card-footer", "chat-message-footer");
@@ -81,7 +79,7 @@ connection.on("SendMessage", function (user, message) {
     cardBody.classList.add("card-body");
     var cardText = document.createElement("p");
     cardText.classList.add("card-text");
-    cardText.innerHTML = message;
+    cardText.innerHTML = msg;
     // Footer of card.
     var cardFooter = document.createElement("div");
     cardFooter.classList.add("card-footer", "chat-message-footer");
@@ -104,11 +102,9 @@ function scrollToBottom(id) {
 }
 
 function sendMessage() {
-    // CHANGE
-    // Need to implement user by team selection.
-    var team = $("#message-recipient").find("option:selected").text();
+    var recipient = $("#message-recipient").find("option:selected").text();
     var message = document.getElementById("message-input").value;
-    connection.invoke("SendMessage", team, message).catch(function (err) {
+    connection.invoke("SendMessage", recipient, message).catch(function (err) {
         return console.error(err.toString());
     })
     document.getElementById("message-input").value = "";
