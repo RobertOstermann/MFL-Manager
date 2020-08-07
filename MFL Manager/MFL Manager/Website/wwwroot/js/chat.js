@@ -29,6 +29,9 @@ connection.start().then(function () {
 connection.on("SelectTeam", function (team) {
     var card = document.getElementById(team);
     card.style.borderColor = "#03eb07";
+    // Set cookie to identify team.
+    var TeamCookie = "TeamCookie=" + team;
+    document.cookie = TeamCookie;
     selectedTeam = true;
 });
 

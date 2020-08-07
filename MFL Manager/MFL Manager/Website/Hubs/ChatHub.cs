@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http.Connections.Features;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,9 @@ namespace Website.Hubs
 
         public async Task GetMessages()
         {
+            string cookie = Context.Features.Get<IHttpContextFeature>().HttpContext.Request.Cookies["TeamCookie"];
+            await Clients.Caller.SendAsync("SendMessage", cookie, "Cookie");
+
             foreach (Message message in Messages)
             {
                 if (message.Team.Equals(Team)) await Clients.Caller.SendAsync("SendMessage", message.Team, message.Text);
