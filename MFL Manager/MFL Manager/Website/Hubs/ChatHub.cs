@@ -51,10 +51,17 @@ namespace Website.Hubs
         public async Task GetTeams()
         {
             string teamId = Context.Features.Get<IHttpContextFeature>().HttpContext.Request.Cookies["TeamCookie"];
+            string userTeam = GetUserTeam();
             foreach (string team in _connections.Keys)
             {
-                if (!string.IsNullOrWhiteSpace(teamId) && teamId.Equals(team)) await Clients.Caller.SendAsync("SelectTeam", team.Replace(' ', '-'));
-                else await Clients.Caller.SendAsync("ReceiveSetTeam", team.Replace(' ', '-'));
+                if (!string.IsNullOrWhiteSpace(teamId) && teamId.Equals(team) && userTeam != null && userTeam.Equals(team.Replace('-', ' ')))
+                {
+                    await Clients.Caller.SendAsync("SelectTeam", team.Replace(' ', '-'));
+                }
+                else
+                {
+                    await Clients.Caller.SendAsync("ReceiveSetTeam", team.Replace(' ', '-'));
+                }
             }
         }
 
