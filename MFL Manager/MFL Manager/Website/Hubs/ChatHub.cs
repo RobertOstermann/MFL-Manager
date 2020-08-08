@@ -163,7 +163,7 @@ namespace Website.Hubs
                 if (bid == 0)
                 {
                     LeadBid = 0;
-                    await Clients.All.SendAsync("ReceiveBid", LeadBid);
+                    await Clients.All.SendAsync("ReceiveBid", "Reset", LeadBid);
                 }
             }
         }

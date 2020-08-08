@@ -188,8 +188,9 @@ document.getElementById("submit-message").addEventListener("click", function (ev
 // Receive a bid from the server.
 connection.on("ReceiveBid", function (team, bid) {
     var message = team + ": " + bid.toFixed(2);
+    var betterBid = parseFloat(bid) + 0.50;
     document.getElementById("current-bid").innerHTML = message;
-    document.getElementById("bid-input").value = bid.toFixed(2);
+    document.getElementById("bid-input").value = betterBid.toFixed(2);
 });
 
 // Send bid to the server.
