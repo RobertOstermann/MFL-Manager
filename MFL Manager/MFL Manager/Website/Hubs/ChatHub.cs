@@ -28,14 +28,13 @@ namespace Website.Hubs
                 string team = teamId.Replace('-', ' ');
                 if (_connections.TryAdd(team, Context.ConnectionId))
                 {
-                    Console.WriteLine("Adding Team");
+                    await Clients.Others.SendAsync("UpdateTeams");
                 }
                 else
                 {
                     await Clients.Caller.SendAsync("RemoveCookie");
                 }
             }
-            await Clients.Others.SendAsync("UpdateTeams");
         }
 
         public override Task OnDisconnectedAsync(Exception exception)
@@ -50,11 +49,10 @@ namespace Website.Hubs
 
         public async Task GetTeams()
         {
-            string teamId = Context.Features.Get<IHttpContextFeature>().HttpContext.Request.Cookies["TeamCookie"];
             string userTeam = GetUserTeam();
             foreach (string team in _connections.Keys)
             {
-                if (!string.IsNullOrWhiteSpace(teamId) && teamId.Equals(team) && userTeam != null && userTeam.Equals(team.Replace('-', ' ')))
+                if (userTeam != null && userTeam.Equals(team))
                 {
                     await Clients.Caller.SendAsync("SelectTeam", team.Replace(' ', '-'));
                 }
