@@ -3,7 +3,7 @@
 /* Chat Section */
 
 .chat-box {
-    height: 68vh;
+    height: 60vh;
     padding-bottom: 2rem;
     overflow-y: scroll;
 }
