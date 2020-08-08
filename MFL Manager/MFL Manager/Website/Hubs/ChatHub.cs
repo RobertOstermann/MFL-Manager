@@ -20,12 +20,22 @@ namespace Website.Hubs
 
         private static string LeadBidder = "None";
 
-        public void GetCookie()
+        public async void GetCookie()
         {
             string teamId = Context.Features.Get<IHttpContextFeature>().HttpContext.Request.Cookies["TeamCookie"];
-            string team = teamId.Replace('-', ' ');
-            _connections.TryAdd(team, Context.ConnectionId);
-            Clients.All.SendAsync("UpdateTeams");
+            if (!string.IsNullOrWhiteSpace(teamId))
+            {
+                string team = teamId.Replace('-', ' ');
+                if (_connections.TryAdd(team, Context.ConnectionId))
+                {
+                    Console.WriteLine("Adding Team");
+                }
+                else
+                {
+                    await Clients.Caller.SendAsync("RemoveCookie");
+                }
+            }
+            await Clients.Others.SendAsync("UpdateTeams");
         }
 
         public override Task OnDisconnectedAsync(Exception exception)
@@ -38,6 +48,16 @@ namespace Website.Hubs
             return base.OnDisconnectedAsync(exception);
         }
 
+        public async Task GetTeams()
+        {
+            string teamId = Context.Features.Get<IHttpContextFeature>().HttpContext.Request.Cookies["TeamCookie"];
+            foreach (string team in _connections.Keys)
+            {
+                if (!string.IsNullOrWhiteSpace(teamId) && teamId.Equals(team)) await Clients.Caller.SendAsync("SelectTeam", team.Replace(' ', '-'));
+                else await Clients.Caller.SendAsync("ReceiveSetTeam", team.Replace(' ', '-'));
+            }
+        }
+
         public async Task SetTeam(string teamId)
         {
             string team = teamId.Replace('-', ' ');
@@ -47,6 +67,7 @@ namespace Website.Hubs
                 {
                     await Clients.Others.SendAsync("ReceiveSetTeam", teamId);
                     await Clients.Caller.SendAsync("SelectTeam", teamId);
+                    await Clients.Caller.SendAsync("SetCookie", teamId);
                 }
             }
         }
@@ -61,20 +82,8 @@ namespace Website.Hubs
             }
         }
 
-        public async Task GetTeams()
-        {
-            string teamId = Context.Features.Get<IHttpContextFeature>().HttpContext.Request.Cookies["TeamCookie"];
-            foreach (string team in _connections.Keys)
-            {
-                if (teamId.Equals(team)) await Clients.Caller.SendAsync("SelectTeam", team.Replace(' ', '-'));
-                else await Clients.Caller.SendAsync("ReceiveSetTeam", team.Replace(' ', '-'));
-            }
-        }
-
         public async Task SendMessage(string recipient, string text)
         {
-            // CHANGE
-            // Replace everyone if it is a direct message
             string team = GetUserTeam();
             Message message = new Message(team, text, recipient);
             if (!string.IsNullOrWhiteSpace(team) && !string.IsNullOrWhiteSpace(recipient) && !string.IsNullOrWhiteSpace(text))

@@ -36,6 +36,11 @@ connection.start().then(function () {
     connection.invoke("GetBid");
 })
 
+connection.on("RemoveCookie", function () {
+    var TeamCookieDelete = "TeamCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = TeamCookieDelete;
+})
+
 /*  MESSAGE */
 
 // Receive a message from the server.

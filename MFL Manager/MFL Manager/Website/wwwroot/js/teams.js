@@ -5,6 +5,17 @@ var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 // Retrieve team information from the server.
 connection.start().then(function () {
     connection.invoke("GetCookie");
+    connection.invoke("GetTeams");
+})
+
+connection.on("SetCookie", function (team) {
+    var TeamCookie = "TeamCookie=" + team;
+    document.cookie = TeamCookie;
+})
+
+connection.on("RemoveCookie", function () {
+    var TeamCookieDelete = "TeamCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+    document.cookie = TeamCookieDelete;
 })
 
 connection.on("UpdateTeams", function () {
@@ -14,9 +25,6 @@ connection.on("UpdateTeams", function () {
 connection.on("SelectTeam", function (team) {
     var card = document.getElementById(team);
     card.style.borderColor = "rgb(3, 235, 7)";
-    // Set cookie to identify team.
-    var TeamCookie = "TeamCookie=" + team;
-    document.cookie = TeamCookie;
 });
 
 connection.on("ReceiveSetTeam", function (team) {
@@ -27,11 +35,6 @@ connection.on("ReceiveSetTeam", function (team) {
 connection.on("ReceiveRemoveTeam", function (team) {
     var card = document.getElementById(team);
     card.style.borderColor = "";
-})
-
-connection.on("RemoveCookie", function () {
-    var TeamCookieDelete = "TeamCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    document.cookie = TeamCookieDelete;
 })
 
 function selectTeam(team) {
