@@ -2,8 +2,6 @@
 
 var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
-var selectedTeam = false;
-
 // Retrieve team information from the server.
 connection.start().then(function () {
     connection.invoke("GetTeams");
@@ -13,26 +11,37 @@ connection.start().then(function () {
 
 connection.on("SelectTeam", function (team) {
     var card = document.getElementById(team);
-    card.style.borderColor = "#03eb07";
+    card.style.borderColor = "rgb(3, 235, 7)";
     // Set cookie to identify team.
     var TeamCookie = "TeamCookie=" + team;
     document.cookie = TeamCookie;
-    selectedTeam = true;
 });
 
 connection.on("ReceiveSetTeam", function (team) {
     var card = document.getElementById(team);
-    card.style.borderColor = "#e20000";
-    card.disabled = true;
+    card.style.borderColor = "rgb(226, 0, 0)";
 });
+
+connection.on("ReceiveRemoveTeam", function (team) {
+    var card = document.getElementById(team);
+    card.style.borderColor = "";
+    // Set cookie to identify team.
+    var TeamCookieDelete = "TeamCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = TeamCookieDelete;
+})
 
 function selectTeam(team) {
     var card = document.getElementById(team);
-    if (!selectedTeam) {
-        if (!card.disabled) {
+    if (card.style.borderColor != "rgb(3, 235, 7)") {
+        if (card.style.borderColor != "rgb(226, 0, 0)") {
             connection.invoke("SetTeam", team).catch(function (err) {
                 return console.error(err.toString());
             });
         }
+    }
+    else {
+        connection.invoke("RemoveTeam", team).catch(function (err) {
+            return console.error(err.toString());
+        });
     }
 }

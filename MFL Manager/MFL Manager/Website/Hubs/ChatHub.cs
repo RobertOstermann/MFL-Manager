@@ -30,16 +30,32 @@ namespace Website.Hubs
         public async Task SetTeam(string teamId)
         {
             string team = teamId.Replace('-', ' ');
-            _connections.AddOrUpdate(team, Context.ConnectionId, (key, oldValue) => Context.ConnectionId);
-            await Clients.All.SendAsync("ReceiveSetTeam", teamId);
-            await Clients.Caller.SendAsync("SelectTeam", teamId);
+            if (GetUserTeam() == null)
+            {
+                if (_connections.TryAdd(team, Context.ConnectionId))
+                {
+                    await Clients.Others.SendAsync("ReceiveSetTeam", teamId);
+                    await Clients.Caller.SendAsync("SelectTeam", teamId);
+                }
+            }
+        }
+
+        public async Task RemoveTeam(string teamId)
+        {
+            string team = teamId.Replace('-', ' ');
+            if (_connections.TryRemove(team, out string connection))
+            {
+                await Clients.All.SendAsync("ReceiveRemoveTeam", teamId);
+            }
         }
 
         public async Task GetTeams()
         {
+            string teamId = Context.Features.Get<IHttpContextFeature>().HttpContext.Request.Cookies["TeamCookie"];
             foreach (string team in _connections.Keys)
             {
-                await Clients.Caller.SendAsync("ReceiveSetTeam", team.Replace(' ', '-'));
+                if (teamId.Equals(team)) await Clients.Caller.SendAsync("SelectTeam", team.Replace(' ', '-'));
+                else await Clients.Caller.SendAsync("ReceiveSetTeam", team.Replace(' ', '-'));
             }
         }
 
