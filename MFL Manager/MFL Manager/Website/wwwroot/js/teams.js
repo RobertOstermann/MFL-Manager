@@ -4,9 +4,11 @@ var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
 // Retrieve team information from the server.
 connection.start().then(function () {
+    connection.invoke("GetCookie");
+})
+
+connection.on("UpdateTeams", function () {
     connection.invoke("GetTeams");
-    connection.invoke("GetMessages");
-    connection.invoke("GetBid");
 })
 
 connection.on("SelectTeam", function (team) {

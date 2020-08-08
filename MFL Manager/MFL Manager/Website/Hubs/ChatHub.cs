@@ -24,7 +24,18 @@ namespace Website.Hubs
         {
             string teamId = Context.Features.Get<IHttpContextFeature>().HttpContext.Request.Cookies["TeamCookie"];
             string team = teamId.Replace('-', ' ');
-            _connections.AddOrUpdate(team, Context.ConnectionId, (key, oldValue) => Context.ConnectionId);
+            _connections.TryAdd(team, Context.ConnectionId);
+            Clients.All.SendAsync("UpdateTeams");
+        }
+
+        public override Task OnDisconnectedAsync(Exception exception)
+        {
+            string team = GetUserTeam();
+            if (team != null)
+            {
+                _connections.TryRemove(team, out string connection);
+            }
+            return base.OnDisconnectedAsync(exception);
         }
 
         public async Task SetTeam(string teamId)
