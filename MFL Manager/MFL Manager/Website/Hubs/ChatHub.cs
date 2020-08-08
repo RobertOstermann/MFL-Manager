@@ -46,6 +46,7 @@ namespace Website.Hubs
             if (_connections.TryRemove(team, out string connection))
             {
                 await Clients.All.SendAsync("ReceiveRemoveTeam", teamId);
+                await Clients.Caller.SendAsync("RemoveCookie");
             }
         }
 

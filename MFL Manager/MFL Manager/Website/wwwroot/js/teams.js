@@ -25,7 +25,9 @@ connection.on("ReceiveSetTeam", function (team) {
 connection.on("ReceiveRemoveTeam", function (team) {
     var card = document.getElementById(team);
     card.style.borderColor = "";
-    // Set cookie to identify team.
+})
+
+connection.on("RemoveCookie", function () {
     var TeamCookieDelete = "TeamCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     document.cookie = TeamCookieDelete;
 })
