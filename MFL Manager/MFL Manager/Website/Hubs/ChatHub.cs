@@ -87,23 +87,40 @@ namespace Website.Hubs
             }
         }
 
+        public async Task CheckPermissions()
+        {
+            if (!string.IsNullOrWhiteSpace(GetUserTeam()))
+            {
+                await Clients.Caller.SendAsync("GrantPermissions");
+            }
+            else
+            {
+                await Clients.Caller.SendAsync("RevokePermissions");
+            }
+        }
+
         public async Task SendMessage(string recipient, string text)
         {
             string team = GetUserTeam();
             Message message = new Message(team, text, recipient);
-            if (!string.IsNullOrWhiteSpace(team) && !string.IsNullOrWhiteSpace(recipient) && !string.IsNullOrWhiteSpace(text))
+            if (!string.IsNullOrWhiteSpace(team) && !string.IsNullOrWhiteSpace(recipient) && !string.IsNullOrWhiteSpace(text) && !team.Equals(recipient))
             {
                 Messages.Enqueue(message);
-                if (recipient.Equals("Everyone")) await Clients.Others.SendAsync("ReceiveMessage", team, text);
-                else 
+                if (recipient.Equals("Everyone"))
+                {
+                    await Clients.Others.SendAsync("ReceiveMessage", team, text);
+                    await Clients.Caller.SendAsync("SendMessage", team, text);
+                }
+                else
                 {
                     if (_connections.TryGetValue(recipient, out string client))
                     {
                         // Change ReceiveMessage to ReceiveMessageDirect.
-                        await Clients.Client(client).SendAsync("ReceiveMessage", team, text);
+                        await Clients.Client(client).SendAsync("ReceiveMessageDirect", team, text);
+                        await Clients.Caller.SendAsync("SendMessageDirect", team + " to " + recipient, text);
                     }
                 }
-                await Clients.Caller.SendAsync("SendMessage", team, text);
+                
             }
         }
 
@@ -119,8 +136,11 @@ namespace Website.Hubs
                         if (message.Team.Equals(team)) await Clients.Caller.SendAsync("SendMessage", message.Team, message.Text);
                         else await Clients.Caller.SendAsync("ReceiveMessage", message.Team, message.Text);
                     }
-                    // Change ReceiveMessage to ReceiveMessageDirect.
-                    else if (message.Recipient.Equals(team)) await Clients.Caller.SendAsync("ReceiveMessage", message.Team, message.Text);
+                    else
+                    {
+                        if (message.Team.Equals(team)) await Clients.Caller.SendAsync("SendMessageDirect", message.Team + " to " + message.Recipient, message.Text);
+                        else if (message.Recipient.Equals(team)) await Clients.Caller.SendAsync("ReceiveMessageDirect", message.Team, message.Text);
+                    }
                 }
             }
         }
@@ -134,11 +154,11 @@ namespace Website.Hubs
                 {
                     LeadBid = bid;
                     LeadBidder = team;
-                    await Clients.All.SendAsync("ReceiveBid", team, LeadBid);
+                    await Clients.All.SendAsync("ReceiveBid", LeadBidder, LeadBid);
                 }
                 else
                 {
-                    //Send alert that bid was below current bid.
+                    //Clients.Client.SendAsync("InvalidBid");
                 }
                 if (bid == 0)
                 {
