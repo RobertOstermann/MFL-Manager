@@ -5,6 +5,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using Website.Models;
 
@@ -14,7 +15,7 @@ namespace Website.Hubs
     {
         private static ConcurrentDictionary<string, string> _connections = new ConcurrentDictionary<string, string>();
 
-        private static LinkedList<Player> _players = new LinkedList<Player>();
+        public static LinkedList<Player> _players = new LinkedList<Player>();
 
         private static LinkedListNode<Player> _node;
 
@@ -106,7 +107,7 @@ namespace Website.Hubs
             if (player != null)
             {
                 _node = _node.Previous;
-                await Clients.All.SendAsync("TestPlayer", player.Name);
+                await Clients.All.SendAsync("TestPlayer", player);
             }
             else
             {
@@ -119,7 +120,7 @@ namespace Website.Hubs
             Player player = _node?.Value;
             if (player != null)
             {
-                await Clients.All.SendAsync("TestPlayer", player.Name);
+                await Clients.All.SendAsync("TestPlayer", player);
             }
             else
             {
@@ -133,7 +134,7 @@ namespace Website.Hubs
             if (player != null)
             {
                 _node = _node.Next;
-                await Clients.All.SendAsync("TestPlayer", player.Name);
+                await Clients.All.SendAsync("TestPlayer", player);
             }
             else
             {
@@ -152,10 +153,10 @@ namespace Website.Hubs
             if (_players.Count == 0)
             {
                 List<Player> players = new List<Player>();
-                players.Add(new Player("Aaron Jones", "Tornados", "Packers", 25, 7.91, 2, 18.39));
-                players.Add(new Player("Chris Godwin", "Penguins", "Buccaneers", 24, 8.16, 2, 16.65));
-                players.Add(new Player("Ezekiel Elliot", "Bombers", "Cowboys", 25, 13.41, 4, 18.04));
-                players.Add(new Player("Lamar Jackson", "Power", "Ravens", 23, 12.91, 1, 36.40));
+                players.Add(new Player("Aaron Jones", "/images/players/Aaron Jones.jpg", "Tornados", "Packers", 25, 7.91, 2, 18.39));
+                players.Add(new Player("Chris Godwin", "/images/players/Chris Godwin.jpg", "Penguins", "Buccaneers", 24, 8.16, 2, 16.65));
+                players.Add(new Player("Ezekiel Elliot", "/images/players/Ezekiel Elliot.jpg", "Bombers", "Cowboys", 25, 13.41, 4, 18.04));
+                players.Add(new Player("Lamar Jackson", "/images/players/Lamar Jackson.jpg", "Power", "Ravens", 23, 12.91, 1, 36.40));
                 foreach (Player player in players)
                 {
                     AddPlayerToLinkedList(player);

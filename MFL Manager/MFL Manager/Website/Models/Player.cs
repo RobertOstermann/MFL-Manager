@@ -8,21 +8,11 @@ namespace Website.Models
 {
     public class Player
     {
-        private readonly string playerName;
-        public string Name {
-            get
-            {
-                return playerName.Replace('-', ' ');
-            }
-        }
+        public string Name { get; set; }
 
-        public string Id
-        {
-            get
-            {
-                return playerName.Replace(' ', '-');
-            }
-        }
+        public string Id { get; set; }
+
+        public string Src { get; set; }
 
         public string MFLTeam { get; set; }
 
@@ -38,14 +28,11 @@ namespace Website.Models
 
         public bool Signed { get; set; }
 
-        public Player(string player)
+        public Player(string player, string src, string mflTeam, string nflTeam, int age, double salary, int previousRank, double previousAverage, bool signed = false)
         {
-            playerName = player;
-        }
-
-        public Player(string player, string mflTeam, string nflTeam, int age, double salary, int previousRank, double previousAverage, bool signed = false)
-        {
-            playerName = player;
+            Name = player.Replace('-', ' ');
+            Id = player.Replace(' ', '-');
+            Src = src;
             MFLTeam = mflTeam;
             NFLTeam = nflTeam;
             Age = age;
