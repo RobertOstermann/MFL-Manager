@@ -14,11 +14,20 @@ namespace Website.Hubs
     {
         private static ConcurrentDictionary<string, string> _connections = new ConcurrentDictionary<string, string>();
 
-        private static readonly Queue<Message> Messages = new Queue<Message>();
+        private static LinkedList<Player> _players = new LinkedList<Player>();
 
-        private static double LeadBid = 0.00;
+        private static LinkedListNode<Player> _node;
 
-        private static string LeadBidder = "None";
+        private static readonly Queue<Message> _messages = new Queue<Message>();
+
+        private static double _leadBid = 0.00;
+
+        private static string _leadBidder = "None";
+
+        public void SetUpServer()
+        {
+            CreatePlayers();
+        }
 
         public async void GetCookie()
         {
@@ -46,6 +55,8 @@ namespace Website.Hubs
             }
             return base.OnDisconnectedAsync(exception);
         }
+
+        // TEAMS
 
         public async Task GetTeams()
         {
@@ -87,6 +98,86 @@ namespace Website.Hubs
             }
         }
 
+        // PLAYERS
+
+        public async Task GetPreviousPlayer()
+        {
+            Player player = _node?.Previous?.Value;
+            if (player != null)
+            {
+                _node = _node.Previous;
+                await Clients.All.SendAsync("TestPlayer", player.Name);
+            }
+            else
+            {
+                await Clients.All.SendAsync("TestPlayer", "NULL");
+            }
+        }
+
+        public async Task GetCurrentPlayer()
+        {
+            Player player = _node?.Value;
+            if (player != null)
+            {
+                await Clients.All.SendAsync("TestPlayer", player.Name);
+            }
+            else
+            {
+                await Clients.All.SendAsync("TestPlayer", "NULL");
+            }
+        }
+
+        public async Task GetNextPlayer()
+        {
+            Player player = _node?.Next?.Value;
+            if (player != null)
+            {
+                _node = _node.Next;
+                await Clients.All.SendAsync("TestPlayer", player.Name);
+            }
+            else
+            {
+                await Clients.All.SendAsync("TestPlayer", "NULL");
+            }
+        }
+
+        public async Task GetPlayers()
+        {
+            await Clients.Caller.SendAsync("SetPlayers", _players.ToArray());
+        }
+
+
+        private void CreatePlayers()
+        {
+            if (_players.Count == 0)
+            {
+                List<Player> players = new List<Player>();
+                players.Add(new Player("Aaron Jones", "Tornados", "Packers", 25, 7.91, 2, 18.39));
+                players.Add(new Player("Chris Godwin", "Penguins", "Buccaneers", 24, 8.16, 2, 16.65));
+                players.Add(new Player("Ezekiel Elliot", "Bombers", "Cowboys", 25, 13.41, 4, 18.04));
+                players.Add(new Player("Lamar Jackson", "Power", "Ravens", 23, 12.91, 1, 36.40));
+                foreach (Player player in players)
+                {
+                    AddPlayerToLinkedList(player);
+                }
+            }
+        }
+
+        private void AddPlayerToLinkedList(Player player)
+        {
+            if (_node == null)
+            {
+                _node = new LinkedListNode<Player>(player);
+                _players.AddFirst(_node);
+            }
+            else
+            {
+                _players.AddLast(player);
+            }
+        }
+
+        // FREE AGENCY
+
         public async Task CheckPermissions()
         {
             if (!string.IsNullOrWhiteSpace(GetUserTeam()))
@@ -105,7 +196,7 @@ namespace Website.Hubs
             Message message = new Message(team, text, recipient);
             if (!string.IsNullOrWhiteSpace(team) && !string.IsNullOrWhiteSpace(recipient) && !string.IsNullOrWhiteSpace(text) && !team.Equals(recipient))
             {
-                Messages.Enqueue(message);
+                _messages.Enqueue(message);
                 if (recipient.Equals("Everyone"))
                 {
                     await Clients.Others.SendAsync("ReceiveMessage", team, text);
@@ -129,7 +220,7 @@ namespace Website.Hubs
             string team = GetUserTeam();
             if (!string.IsNullOrWhiteSpace(team))
             {
-                foreach (Message message in Messages)
+                foreach (Message message in _messages)
                 {
                     if (message.Recipient.Equals("Everyone"))
                     {
@@ -150,11 +241,11 @@ namespace Website.Hubs
             string team = GetUserTeam();
             if (!string.IsNullOrWhiteSpace(team))
             {
-                if (bid > LeadBid)
+                if (bid > _leadBid)
                 {
-                    LeadBid = bid;
-                    LeadBidder = team;
-                    await Clients.All.SendAsync("ReceiveBid", LeadBidder, LeadBid);
+                    _leadBid = bid;
+                    _leadBidder = team;
+                    await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
                 }
                 else
                 {
@@ -162,16 +253,18 @@ namespace Website.Hubs
                 }
                 if (bid == 0)
                 {
-                    LeadBid = 0;
-                    await Clients.All.SendAsync("ReceiveBid", "Reset", LeadBid);
+                    _leadBid = 0;
+                    await Clients.All.SendAsync("ReceiveBid", "Reset", _leadBid);
                 }
             }
         }
 
         public async Task GetBid()
         {
-            await Clients.Caller.SendAsync("ReceiveBid", LeadBidder, LeadBid);
+            await Clients.Caller.SendAsync("ReceiveBid", _leadBidder, _leadBid);
         }
+
+        // ALL
 
         private string GetUserTeam()
         {

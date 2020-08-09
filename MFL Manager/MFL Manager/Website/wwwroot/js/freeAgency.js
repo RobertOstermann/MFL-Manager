@@ -5,6 +5,7 @@ var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 // Retrieve bid, message, and free agency
 // information from the server.
 connection.start().then(function () {
+    connection.invoke("SetUpServer");
     connection.invoke("GetCookie");
     connection.invoke("GetMessages");
     connection.invoke("GetBid");
@@ -14,7 +15,7 @@ connection.start().then(function () {
 connection.on("RemoveCookie", function () {
     var TeamCookieDelete = "TeamCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     document.cookie = TeamCookieDelete;
-})
+});
 
 connection.on("GrantPermissions", function () {
     // Enable message options until team is selected.
@@ -25,7 +26,7 @@ connection.on("GrantPermissions", function () {
     document.getElementById("opt-out").disabled = false;
     document.getElementById("bid-input").disabled = false;
     document.getElementById("submit-bid").disabled = false;
-})
+});
 
 connection.on("RevokePermissions", function () {
     // Disable message options until team is selected.
@@ -36,7 +37,7 @@ connection.on("RevokePermissions", function () {
     document.getElementById("opt-out").disabled = true;
     document.getElementById("bid-input").disabled = true;
     document.getElementById("submit-bid").disabled = true;
-})
+});
 
 /*  MESSAGE */
 
@@ -166,7 +167,7 @@ function sendMessage() {
     var message = document.getElementById("message-input").value;
     connection.invoke("SendMessage", recipient, message).catch(function (err) {
         return console.error(err.toString());
-    })
+    });
     document.getElementById("message-input").value = "";
 }
 
