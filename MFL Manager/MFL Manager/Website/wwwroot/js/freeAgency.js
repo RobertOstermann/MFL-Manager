@@ -194,9 +194,16 @@ document.getElementById("submit-message").addEventListener("click", function (ev
 /* PLAYER CARD */
 
 connection.on("SetPlayer", function (player) {
+    var card = document.getElementById("bid-player-card");
     var image = document.getElementById("player-image");
     var name = document.getElementById("player-name");
     var team = document.getElementById("player-team");
+    if (player.signed) {
+        card.style.borderColor = "rgb(226, 0, 0)";
+    }
+    else {
+        card.style.borderColor = "";
+    }
     image.src = player.src;
     name.innerHTML = player.name;
     team.innerHTML = player.mflTeam;
@@ -208,7 +215,10 @@ connection.on("SetPlayer", function (player) {
 // Receive a bid from the server.
 connection.on("ReceiveBid", function (team, bid) {
     var message = team + ": " + bid.toFixed(2);
-    var betterBid = Math.round(parseFloat(bid)) + 0.50;
+    var betterBid = Math.round(parseFloat(bid));
+    if (betterBid <= parseFloat(bid)) {
+        betterBid += 0.50;
+    }
     document.getElementById("current-bid").innerHTML = message;
     document.getElementById("bid-input").value = betterBid.toFixed(2);
 });
@@ -282,11 +292,20 @@ connection.on("CommissionerPermissions", function (inProgress) {
     });
     // Build the control button.
     var control = document.createElement("button");
-    control.classList.add("btn", "btn-outline-success", "btn-block", "commissioner-button")
-    control.type = "button";
-    control.id = "control";
-    control.innerHTML = "Start Free Agency";
-    control.addEventListener("click", startFreeAgency);
+    if (inProgress) {
+        control.classList.add("btn", "btn-outline-danger", "btn-block", "commissioner-button")
+        control.type = "button";
+        control.id = "control";
+        control.innerHTML = "Sold";
+        control.addEventListener("click", sold);
+    }
+    else {
+        control.classList.add("btn", "btn-outline-success", "btn-block", "commissioner-button")
+        control.type = "button";
+        control.id = "control";
+        control.innerHTML = "Start Free Agency";
+        control.addEventListener("click", startFreeAgency);
+    }
     // Combine the elements of the commissioner section.
     colOne.appendChild(previousPlayer);
     colTwo.appendChild(nextPlayer);

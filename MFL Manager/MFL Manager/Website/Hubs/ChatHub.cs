@@ -13,9 +13,11 @@ namespace Website.Hubs
 {
     public class ChatHub : Hub
     {
+        private static bool _isServerSetUp = false;
+
         private static ConcurrentDictionary<string, string> _connections = new ConcurrentDictionary<string, string>();
 
-        public static LinkedList<Player> _players = new LinkedList<Player>();
+        private static LinkedList<Player> _players = new LinkedList<Player>();
 
         private static LinkedListNode<Player> _node;
 
@@ -31,7 +33,11 @@ namespace Website.Hubs
 
         public void SetUpServer()
         {
-            CreatePlayers();
+            if (!_isServerSetUp)
+            {
+                _isServerSetUp = true;
+                CreatePlayers();
+            }
         }
 
         public async void GetCookie()
@@ -182,6 +188,10 @@ namespace Website.Hubs
                 {
                     await Clients.Caller.SendAsync("GrantBidPermissions");
                 }
+                else
+                {
+                    await Clients.Caller.SendAsync("RevokeBidPermissions");
+                }
             }
             else
             {
@@ -207,6 +217,8 @@ namespace Website.Hubs
             Player player = _node?.Previous?.Value;
             if (player != null)
             {
+                if (player.Signed) _bidInProgress = false;
+                else _bidInProgress = true;
                 _node = _node.Previous;
                 _leadBid = player.Salary;
                 _leadBidder = player.MFLTeam;
@@ -222,6 +234,8 @@ namespace Website.Hubs
                 Player player = _node?.Value;
                 if (player != null)
                 {
+                    if (player.Signed) _bidInProgress = false;
+                    else _bidInProgress = true;
                     await Clients.All.SendAsync("SetPlayer", player);
                     await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
                 }
@@ -233,6 +247,8 @@ namespace Website.Hubs
             Player player = _node?.Next?.Value;
             if (player != null)
             {
+                if (player.Signed) _bidInProgress = false;
+                else _bidInProgress = true;
                 _node = _node.Next;
                 _leadBid = player.Salary;
                 _leadBidder = player.MFLTeam;
@@ -246,10 +262,13 @@ namespace Website.Hubs
             Player player = _node?.Value;
             if (player != null)
             {
+                _bidInProgress = false;
                 player.Salary = _leadBid;
                 player.Signed = true;
+                player.MFLTeam = _leadBidder;
+                await Clients.All.SendAsync("UpdatePlayers", player);
+                await Clients.All.SendAsync("SetPlayer", player);
             }
-            await Clients.All.SendAsync("RevokeBidPermissions");
         }
 
         public async Task SendMessage(string recipient, string text)

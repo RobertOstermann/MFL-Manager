@@ -1,5 +1,9 @@
 ﻿/* Main Section */
 
+.card {
+    border-width: .2rem;
+}
+
 /* Chat Section */
 
 .chat-box {

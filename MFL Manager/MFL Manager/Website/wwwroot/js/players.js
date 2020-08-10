@@ -36,7 +36,10 @@ connection.on("SetPlayers", function (players) {
             // Build the player card.
             var card = document.createElement("div");
             card.classList.add("card");
-            card.id = i.toString();
+            card.id = players[playerNumber].id;
+            if (players[playerNumber].signed) {
+                card.style.borderColor = "rgb(226, 0, 0)";
+            }
             // Image of card.
             var image = document.createElement("img");
             image.classList.add("card-img-top");
@@ -52,11 +55,13 @@ connection.on("SetPlayers", function (players) {
             var subtitle = document.createElement("h5");
             subtitle.classList.add("card-subtitle", "mb-2", "text-muted");
             subtitle.innerHTML = players[playerNumber].mflTeam;
+            subtitle.id = players[playerNumber].id + "-mfl-team";
             // Paragraph of body of card.
             var paragraph = document.createElement("p");
             paragraph.classList.add("card-text");
             paragraph.innerHTML = "NFL Team: " +  players[playerNumber].nflTeam + "<br>Age: " + players[playerNumber].age + "<br>Salary: $" +  players[playerNumber].salary.toFixed(2) +
                 "<br>2019 Position Rank: " + players[playerNumber].previousRank + "<br>2019 Fantasy Average: " + players[playerNumber].previousAverage.toFixed(2);
+            paragraph.id = players[playerNumber].id + "-information";
             // Combine the elements of the card.
             body.appendChild(title);
             body.appendChild(subtitle);
@@ -70,29 +75,11 @@ connection.on("SetPlayers", function (players) {
     }
 })
 
-// Player Linked List Test
-
-connection.on("TestPlayer", function (player) {
-    document.getElementById("playerTest").innerHTML = JSON.stringify(player);
-});
-
-document.getElementById("previous").addEventListener("click", function (event) {
-    connection.invoke("GetPreviousPlayer").catch(function (err) {
-        return console.error(err.toString());
-    })
-    event.preventDefault();
-});
-
-document.getElementById("current").addEventListener("click", function (event) {
-    connection.invoke("GetCurrentPlayer").catch(function (err) {
-        return console.error(err.toString());
-    })
-    event.preventDefault();
-});
-
-document.getElementById("next").addEventListener("click", function (event) {
-    connection.invoke("GetNextPlayer").catch(function (err) {
-        return console.error(err.toString());
-    })
-    event.preventDefault();
+connection.on("UpdatePlayers", function (player) {
+    document.getElementById(player.id + "-mfl-team").innerHTML = player.mflTeam;
+    document.getElementById(player.id + "-information").innerHTML = "NFL Team: " + player.nflTeam + "<br>Age: " + player.age + "<br>Salary: $" + player.salary.toFixed(2) +
+        "<br>2019 Position Rank: " + player.previousRank + "<br>2019 Fantasy Average: " + player.previousAverage.toFixed(2);
+    if (player.signed) {
+        document.getElementById(player.id).style.borderColor = "rgb(226, 0, 0)";
+    }
 });

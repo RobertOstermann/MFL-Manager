@@ -1,1 +1,5 @@
 ﻿/* Player Cards */
+
+.card {
+    border-width: .2rem;
+}
