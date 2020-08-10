@@ -7,10 +7,11 @@ var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 connection.start().then(function () {
     connection.invoke("SetUpServer");
     connection.invoke("GetCookie");
+    connection.invoke("GetPlayer");
     connection.invoke("GetMessages");
     connection.invoke("GetBid");
     connection.invoke("CheckPermissions");
-})
+});
 
 connection.on("RemoveCookie", function () {
     var TeamCookieDelete = "TeamCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
@@ -185,13 +186,13 @@ document.getElementById("submit-message").addEventListener("click", function (ev
 
 /* PLAYER CARD */
 
-connection.on("NextPlayer", function (player) {
+connection.on("SetPlayer", function (player) {
     var image = document.getElementById("player-image");
     var name = document.getElementById("player-name");
     var team = document.getElementById("player-team");
     image.src = player.src;
     name.innerHTML = player.name;
-    team.innerHTML = player.team;
+    team.innerHTML = player.mflTeam;
 });
 
 /* BID */
@@ -218,17 +219,17 @@ document.getElementById("bid-input").addEventListener("keyup", function (event) 
         sendBid();
         event.preventDefault(); j
     }
-})
+});
 
 // Send bid with submit button.
 document.getElementById("submit-bid").addEventListener("click", function (event) {
     sendBid();
     event.preventDefault();
-})
+});
 
 /* Commissioner Control */
 
-connection.on("CommissionerPermissions", function () {
+connection.on("CommissionerPermissions", function (inProgress) {
     var cardFooter = document.getElementById("bid-card-footer");
     var commissionerSection = document.createElement("div");
     commissionerSection.id = "commissioner-section";
@@ -251,18 +252,38 @@ connection.on("CommissionerPermissions", function () {
     previousPlayer.type = "button";
     previousPlayer.id = "previous-player";
     previousPlayer.innerHTML = "Previous Player";
+    if (!inProgress) previousPlayer.disabled = true;
+    previousPlayer.addEventListener("click", function (event) {
+        connection.invoke("GetPreviousPlayer").catch(function (err) {
+            return console.error(err.toString());
+        });
+        event.preventDefault();
+    });
     // Build the next player button.
     var nextPlayer = document.createElement("button");
     nextPlayer.classList.add("btn", "btn-outline-dark", "btn-block", "commissioner-button");
     nextPlayer.type = "button";
     nextPlayer.id = "next-player";
     nextPlayer.innerHTML = "Next Player";
+    if (!inProgress) nextPlayer.disabled = true;
+    nextPlayer.addEventListener("click", function (event) {
+        connection.invoke("GetNextPlayer").catch(function (err) {
+            return console.error(err.toString());
+        });
+        event.preventDefault();
+    });
     // Build the control button.
     var control = document.createElement("button");
     control.classList.add("btn", "btn-outline-success", "btn-block", "commissioner-button")
     control.type = "button";
     control.id = "control";
     control.innerHTML = "Start Free Agency";
+    control.addEventListener("click", function (event) {
+         connection.invoke("StartFreeAgency").catch(function (err) {
+            return console.error(err.toString());
+        });
+        event.preventDefault();
+    });
     // Combine the elements of the commissioner section.
     colOne.appendChild(previousPlayer);
     colTwo.appendChild(nextPlayer);
@@ -275,8 +296,7 @@ connection.on("CommissionerPermissions", function () {
     cardFooter.appendChild(commissionerSection);
 });
 
-document.getElementById("control").addEventListener("click", function (event) {
-    var control = document.getElementById("control");
-    control.innerHTML = "TEST";
-    event.preventDefault();
-})
+connection.on("StartFreeAgency", function () {
+    document.getElementById("previous-player").disabled = false;
+    document.getElementById("next-player").disabled = false;
+});

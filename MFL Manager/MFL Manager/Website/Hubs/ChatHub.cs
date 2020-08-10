@@ -21,6 +21,8 @@ namespace Website.Hubs
 
         private static readonly Queue<Message> _messages = new Queue<Message>();
 
+        private static bool _inProgress = false;
+
         private static double _leadBid = 0.00;
 
         private static string _leadBidder = "None";
@@ -107,11 +109,7 @@ namespace Website.Hubs
             if (player != null)
             {
                 _node = _node.Previous;
-                await Clients.All.SendAsync("TestPlayer", player);
-            }
-            else
-            {
-                await Clients.All.SendAsync("TestPlayer", "NULL");
+                await Clients.All.SendAsync("SetPlayer", player);
             }
         }
 
@@ -134,7 +132,7 @@ namespace Website.Hubs
             if (player != null)
             {
                 _node = _node.Next;
-                await Clients.All.SendAsync("NextPlayer", player);
+                await Clients.All.SendAsync("SetPlayer", player);
             }
         }
 
@@ -175,6 +173,29 @@ namespace Website.Hubs
 
         // FREE AGENCY
 
+        public async Task StartFreeAgency()
+        {
+            _inProgress = true;
+            await Clients.Caller.SendAsync("StartFreeAgency");
+            Player player = _node?.Value;
+            if (player != null)
+            {
+                await Clients.All.SendAsync("SetPlayer", player);
+            }
+        }
+
+        public async Task GetPlayer()
+        {
+            if (_inProgress)
+            {
+                Player player = _node?.Value;
+                if (player != null)
+                {
+                    await Clients.All.SendAsync("SetPlayer", player);
+                }
+            }
+        }
+
         public async Task CheckPermissions()
         {
             string team = GetUserTeam();
@@ -183,7 +204,7 @@ namespace Website.Hubs
                 await Clients.Caller.SendAsync("GrantPermissions");
                 if (team.Equals("Storm Dynasty"))
                 {
-                    await Clients.Caller.SendAsync("CommissionerPermissions");
+                    await Clients.Caller.SendAsync("CommissionerPermissions", _inProgress);
                 }
             }
             else
