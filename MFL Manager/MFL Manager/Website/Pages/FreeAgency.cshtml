@@ -47,13 +47,13 @@
         <!-- Bid Section -->
         <div class="col-xs-12 col-lg-6 col-xl-4 padding">
             <div class="card mb-2 h-100">
-                <img class="card-img-top" src="~/images/players/Lamar Jackson.jpg">
+                <img class="card-img-top" src="~/images/players/Lamar Jackson.jpg" id="player-image">
                 <div class="card-body">
-                    <h4 class="card-title">Lamar Jackson</h4>
-                    <h5 class="card-subtitle mb-2 text-muted">Power</h5>
+                    <h4 class="card-title" id="player-name">Lamar Jackson</h4>
+                    <h5 class="card-subtitle mb-2 text-muted" id="player-team">Power</h5>
                 </div>
                 <!-- Bid input, opt out, and submit buttons -->
-                <div class="card-footer">
+                <div class="card-footer" id="bid-card-footer">
                     <div class="bid-section">
                         <h4 class="bid-label" id="current-bid">None: $0.00</h4>
                         <div class="input-group mb-3">
@@ -65,9 +65,6 @@
                                 <button class="btn btn-outline-primary bid-button" type="button" id="submit-bid">Submit Bid</button>
                             </div>
                         </div>
-                    </div>
-                    <div class="commissioner-section">
-                        <div class="btn btn-outline-success btn-lg btn-block commissioner-button" type="button">Start Free Agency</div>
                     </div>
                 </div>
             </div>

@@ -183,6 +183,16 @@ document.getElementById("submit-message").addEventListener("click", function (ev
     event.preventDefault();
 });
 
+/* PLAYER CARD */
+
+connection.on("NextPlayer", function (player) {
+    var image = document.getElementById("player-image");
+    var name = document.getElementById("player-name");
+    var team = document.getElementById("player-team");
+    image.src = player.src;
+    name.innerHTML = player.name;
+    team.innerHTML = player.team;
+});
 
 /* BID */
 
@@ -199,7 +209,7 @@ function sendBid() {
     var bid = parseFloat(document.getElementById("bid-input").value);
     connection.invoke("SendBid", bid).catch(function (err) {
         return console.error(err.toString());
-    })
+    });
 }
 
 // Send bid with enter button.
@@ -213,5 +223,60 @@ document.getElementById("bid-input").addEventListener("keyup", function (event) 
 // Send bid with submit button.
 document.getElementById("submit-bid").addEventListener("click", function (event) {
     sendBid();
+    event.preventDefault();
+})
+
+/* Commissioner Control */
+
+connection.on("CommissionerPermissions", function () {
+    var cardFooter = document.getElementById("bid-card-footer");
+    var commissionerSection = document.createElement("div");
+    commissionerSection.id = "commissioner-section";
+    // Build the first row.
+    var rowOne = document.createElement("div");
+    rowOne.classList.add("row", "mb-3");
+    var colOne = document.createElement("div");
+    colOne.classList.add("col");
+    var colTwo = document.createElement("div");
+    colTwo.classList.add("col");
+    // Build the second row.
+    var rowTwo = document.createElement("div");
+    rowTwo.classList.add("row", "mb-3");
+    var colThree = document.createElement("div");
+    colThree.classList.add("col");
+    colThree.id = "control-column";
+    // Build the previous player button.
+    var previousPlayer = document.createElement("button");
+    previousPlayer.classList.add("btn", "btn-outline-dark", "btn-block", "commissioner-button");
+    previousPlayer.type = "button";
+    previousPlayer.id = "previous-player";
+    previousPlayer.innerHTML = "Previous Player";
+    // Build the next player button.
+    var nextPlayer = document.createElement("button");
+    nextPlayer.classList.add("btn", "btn-outline-dark", "btn-block", "commissioner-button");
+    nextPlayer.type = "button";
+    nextPlayer.id = "next-player";
+    nextPlayer.innerHTML = "Next Player";
+    // Build the control button.
+    var control = document.createElement("button");
+    control.classList.add("btn", "btn-outline-success", "btn-block", "commissioner-button")
+    control.type = "button";
+    control.id = "control";
+    control.innerHTML = "Start Free Agency";
+    // Combine the elements of the commissioner section.
+    colOne.appendChild(previousPlayer);
+    colTwo.appendChild(nextPlayer);
+    rowOne.appendChild(colOne);
+    rowOne.appendChild(colTwo);
+    colThree.appendChild(control);
+    rowTwo.appendChild(colThree);
+    commissionerSection.appendChild(rowOne);
+    commissionerSection.appendChild(rowTwo);
+    cardFooter.appendChild(commissionerSection);
+});
+
+document.getElementById("control").addEventListener("click", function (event) {
+    var control = document.getElementById("control");
+    control.innerHTML = "TEST";
     event.preventDefault();
 })

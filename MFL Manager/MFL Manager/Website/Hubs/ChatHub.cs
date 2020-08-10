@@ -134,11 +134,7 @@ namespace Website.Hubs
             if (player != null)
             {
                 _node = _node.Next;
-                await Clients.All.SendAsync("TestPlayer", player);
-            }
-            else
-            {
-                await Clients.All.SendAsync("TestPlayer", "NULL");
+                await Clients.All.SendAsync("NextPlayer", player);
             }
         }
 
@@ -181,9 +177,14 @@ namespace Website.Hubs
 
         public async Task CheckPermissions()
         {
-            if (!string.IsNullOrWhiteSpace(GetUserTeam()))
+            string team = GetUserTeam();
+            if (!string.IsNullOrWhiteSpace(team))
             {
                 await Clients.Caller.SendAsync("GrantPermissions");
+                if (team.Equals("Storm Dynasty"))
+                {
+                    await Clients.Caller.SendAsync("CommissionerPermissions");
+                }
             }
             else
             {

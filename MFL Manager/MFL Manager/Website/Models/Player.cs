@@ -22,6 +22,8 @@ namespace Website.Models
 
         public double Salary { get; set; }
 
+        public double OriginalSalary { get; set; }
+
         public int PreviousRank { get; set; }
 
         public double PreviousAverage { get; set; }
@@ -37,6 +39,7 @@ namespace Website.Models
             NFLTeam = nflTeam;
             Age = age;
             Salary = salary;
+            OriginalSalary = salary;
             PreviousRank = previousRank;
             PreviousAverage = previousAverage;
             Signed = signed;
