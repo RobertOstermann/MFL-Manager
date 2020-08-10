@@ -21,7 +21,9 @@ namespace Website.Hubs
 
         private static readonly Queue<Message> _messages = new Queue<Message>();
 
-        private static bool _inProgress = false;
+        private static bool _freeAgencyInProgress = false;
+
+        private static bool _bidInProgress = false;
 
         private static double _leadBid = 0.00;
 
@@ -103,16 +105,6 @@ namespace Website.Hubs
 
         // PLAYERS
 
-        public async Task GetPreviousPlayer()
-        {
-            Player player = _node?.Previous?.Value;
-            if (player != null)
-            {
-                _node = _node.Previous;
-                await Clients.All.SendAsync("SetPlayer", player);
-            }
-        }
-
         public async Task GetCurrentPlayer()
         {
             Player player = _node?.Value;
@@ -126,15 +118,7 @@ namespace Website.Hubs
             }
         }
 
-        public async Task GetNextPlayer()
-        {
-            Player player = _node?.Next?.Value;
-            if (player != null)
-            {
-                _node = _node.Next;
-                await Clients.All.SendAsync("SetPlayer", player);
-            }
-        }
+        
 
         public async Task GetPlayers()
         {
@@ -175,24 +159,16 @@ namespace Website.Hubs
 
         public async Task StartFreeAgency()
         {
-            _inProgress = true;
+            _freeAgencyInProgress = true;
+            _bidInProgress = true;
             await Clients.Caller.SendAsync("StartFreeAgency");
             Player player = _node?.Value;
             if (player != null)
             {
+                _leadBid = player.Salary;
+                _leadBidder = player.MFLTeam;
                 await Clients.All.SendAsync("SetPlayer", player);
-            }
-        }
-
-        public async Task GetPlayer()
-        {
-            if (_inProgress)
-            {
-                Player player = _node?.Value;
-                if (player != null)
-                {
-                    await Clients.All.SendAsync("SetPlayer", player);
-                }
+                await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
             }
         }
 
@@ -201,16 +177,79 @@ namespace Website.Hubs
             string team = GetUserTeam();
             if (!string.IsNullOrWhiteSpace(team))
             {
-                await Clients.Caller.SendAsync("GrantPermissions");
-                if (team.Equals("Storm Dynasty"))
+                await Clients.Caller.SendAsync("GrantMessagePermissions");
+                if (_bidInProgress)
                 {
-                    await Clients.Caller.SendAsync("CommissionerPermissions", _inProgress);
+                    await Clients.Caller.SendAsync("GrantBidPermissions");
                 }
             }
             else
             {
-                await Clients.Caller.SendAsync("RevokePermissions");
+                await Clients.Caller.SendAsync("RevokeMessagePermissions");
+                await Clients.Caller.SendAsync("RevokeBidPermissions");
             }
+        }
+
+        public async Task CheckCommissionerPermissions()
+        {
+            string team = GetUserTeam();
+            if (!string.IsNullOrWhiteSpace(team))
+            {
+                if (team.Equals("Storm Dynasty"))
+                {
+                    await Clients.Caller.SendAsync("CommissionerPermissions", _freeAgencyInProgress);
+                }
+            }
+        }
+
+        public async Task GetPreviousPlayer()
+        {
+            Player player = _node?.Previous?.Value;
+            if (player != null)
+            {
+                _node = _node.Previous;
+                _leadBid = player.Salary;
+                _leadBidder = player.MFLTeam;
+                await Clients.All.SendAsync("SetPlayer", player);
+                await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
+            }
+        }
+
+        public async Task GetPlayer()
+        {
+            if (_freeAgencyInProgress)
+            {
+                Player player = _node?.Value;
+                if (player != null)
+                {
+                    await Clients.All.SendAsync("SetPlayer", player);
+                    await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
+                }
+            }
+        }
+
+        public async Task GetNextPlayer()
+        {
+            Player player = _node?.Next?.Value;
+            if (player != null)
+            {
+                _node = _node.Next;
+                _leadBid = player.Salary;
+                _leadBidder = player.MFLTeam;
+                await Clients.All.SendAsync("SetPlayer", player);
+                await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
+            }
+        }
+
+        public async Task PlayerSold()
+        {
+            Player player = _node?.Value;
+            if (player != null)
+            {
+                player.Salary = _leadBid;
+                player.Signed = true;
+            }
+            await Clients.All.SendAsync("RevokeBidPermissions");
         }
 
         public async Task SendMessage(string recipient, string text)

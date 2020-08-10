@@ -11,6 +11,7 @@ connection.start().then(function () {
     connection.invoke("GetMessages");
     connection.invoke("GetBid");
     connection.invoke("CheckPermissions");
+    connection.invoke("CheckCommissionerPermissions");
 });
 
 connection.on("RemoveCookie", function () {
@@ -18,22 +19,28 @@ connection.on("RemoveCookie", function () {
     document.cookie = TeamCookieDelete;
 });
 
-connection.on("GrantPermissions", function () {
+connection.on("GrantMessagePermissions", function () {
     // Enable message options until team is selected.
     document.getElementById("message-recipient").disabled = false;
     document.getElementById("message-input").disabled = false;
     document.getElementById("submit-message").disabled = false;
+});
+
+connection.on("GrantBidPermissions", function () {
     // Enable bid options until team is selected.
     document.getElementById("opt-out").disabled = false;
     document.getElementById("bid-input").disabled = false;
     document.getElementById("submit-bid").disabled = false;
 });
 
-connection.on("RevokePermissions", function () {
+connection.on("RevokeMessagePermissions", function () {
     // Disable message options until team is selected.
     document.getElementById("message-recipient").disabled = true;
     document.getElementById("message-input").disabled = true;
     document.getElementById("submit-message").disabled = true;
+});
+
+connection.on("RevokeBidPermissions", function () {
     // Disable bid options until team is selected.
     document.getElementById("opt-out").disabled = true;
     document.getElementById("bid-input").disabled = true;
@@ -193,6 +200,7 @@ connection.on("SetPlayer", function (player) {
     image.src = player.src;
     name.innerHTML = player.name;
     team.innerHTML = player.mflTeam;
+    connection.invoke("CheckPermissions");
 });
 
 /* BID */
@@ -200,7 +208,7 @@ connection.on("SetPlayer", function (player) {
 // Receive a bid from the server.
 connection.on("ReceiveBid", function (team, bid) {
     var message = team + ": " + bid.toFixed(2);
-    var betterBid = parseFloat(bid) + 0.50;
+    var betterBid = Math.round(parseFloat(bid)) + 0.50;
     document.getElementById("current-bid").innerHTML = message;
     document.getElementById("bid-input").value = betterBid.toFixed(2);
 });
@@ -278,12 +286,7 @@ connection.on("CommissionerPermissions", function (inProgress) {
     control.type = "button";
     control.id = "control";
     control.innerHTML = "Start Free Agency";
-    control.addEventListener("click", function (event) {
-         connection.invoke("StartFreeAgency").catch(function (err) {
-            return console.error(err.toString());
-        });
-        event.preventDefault();
-    });
+    control.addEventListener("click", startFreeAgency);
     // Combine the elements of the commissioner section.
     colOne.appendChild(previousPlayer);
     colTwo.appendChild(nextPlayer);
@@ -299,4 +302,24 @@ connection.on("CommissionerPermissions", function (inProgress) {
 connection.on("StartFreeAgency", function () {
     document.getElementById("previous-player").disabled = false;
     document.getElementById("next-player").disabled = false;
+    var control = document.getElementById("control");
+    control.classList.remove("btn-outline-success");
+    control.classList.add("btn-outline-danger");
+    control.innerHTML = "Sold";
+    control.removeEventListener("click", startFreeAgency);
+    control.addEventListener("click", sold);
 });
+
+function startFreeAgency() {
+    connection.invoke("StartFreeAgency").catch(function (err) {
+        return console.error(err.toString());
+    });
+    event.preventDefault();
+}
+
+function sold() {
+    connection.invoke("PlayerSold").catch(function (err) {
+        return console.error(err.toString());
+    });
+    event.preventDefault();
+}
