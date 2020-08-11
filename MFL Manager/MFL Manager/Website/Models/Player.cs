@@ -32,7 +32,7 @@ namespace Website.Models
 
         public bool Signed { get; set; }
 
-        public Player(string player, string src, string mflTeam, string nflTeam, int age, double salary, int previousRank, double previousAverage, bool signed = false)
+        public Player(string player, string src, string mflTeam, string nflTeam, double salary, int previousRank, double previousAverage, int age, bool signed = false)
         {
             Name = player.Replace('-', ' ');
             Id = player.Replace(' ', '-');
