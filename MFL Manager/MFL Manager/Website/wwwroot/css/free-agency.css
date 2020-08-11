@@ -14,14 +14,14 @@
 
 .chat-message {
     margin-top: 1rem;
-    margin-left: 1rem;
+    margin-left: 0.1rem;
     margin-right: 5rem;
 }
 
 .chat-message-send {
     margin-top: 1rem;
     margin-left: 5rem;
-    margin-right: 1rem;
+    margin-right: 0.1rem;
 }
 
 .chat-message, .chat-message-send {
@@ -29,7 +29,7 @@
 }
 
 .chat-message-footer {
-    height: 3.5rem;
+    
 }
 
 .chat-message-identifier {

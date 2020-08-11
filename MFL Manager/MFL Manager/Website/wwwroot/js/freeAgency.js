@@ -58,15 +58,15 @@ connection.on("ReceiveMessage", function (user, message) {
     card.classList.add("card", "chat-message");
     // Body of card.
     var cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
+    cardBody.classList.add("card-body", "py-2");
     var cardText = document.createElement("p");
     cardText.classList.add("card-text");
     cardText.innerHTML = msg;
     // Footer of card.
     var cardFooter = document.createElement("div");
-    cardFooter.classList.add("card-footer", "chat-message-footer");
+    cardFooter.classList.add("card-footer", "chat-message-footer", "py-2");
     var cardIdentifier = document.createElement("p");
-    cardIdentifier.classList.add("chat-message-identifier");
+    cardIdentifier.classList.add("chat-message-identifier", "my-0");
     cardIdentifier.innerHTML = user;
     // Combine the elements of the card.
     cardBody.appendChild(cardText);
@@ -87,15 +87,15 @@ connection.on("ReceiveMessageDirect", function (user, message) {
     card.classList.add("card", "border-primary", "chat-message");
     // Body of card.
     var cardBody = document.createElement("div");
-    cardBody.classList.add("card-body", "text-dark");
+    cardBody.classList.add("card-body", "text-dark", "py-2");
     var cardText = document.createElement("p");
     cardText.classList.add("card-text");
     cardText.innerHTML = msg;
     // Footer of card.
     var cardFooter = document.createElement("div");
-    cardFooter.classList.add("card-footer", "text-primary", "chat-message-footer");
+    cardFooter.classList.add("card-footer", "text-primary", "chat-message-footer", "py-2");
     var cardIdentifier = document.createElement("p");
-    cardIdentifier.classList.add("chat-message-identifier");
+    cardIdentifier.classList.add("chat-message-identifier", "my-0");
     cardIdentifier.innerHTML = user;
     // Combine the elements of the card.
     cardBody.appendChild(cardText);
@@ -116,15 +116,15 @@ connection.on("SendMessage", function (user, message) {
     card.classList.add("card", "chat-message-send");
     // Body of card.
     var cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
+    cardBody.classList.add("card-body", "py-2");
     var cardText = document.createElement("p");
     cardText.classList.add("card-text");
     cardText.innerHTML = msg;
     // Footer of card.
     var cardFooter = document.createElement("div");
-    cardFooter.classList.add("card-footer", "chat-message-footer");
+    cardFooter.classList.add("card-footer", "chat-message-footer", "py-2");
     var cardIdentifier = document.createElement("p");
-    cardIdentifier.classList.add("chat-message-identifier");
+    cardIdentifier.classList.add("chat-message-identifier", "my-0");
     cardIdentifier.innerHTML = user;
     // Combine the elements of the card.
     cardBody.appendChild(cardText);
@@ -145,15 +145,15 @@ connection.on("SendMessageDirect", function (user, message) {
     card.classList.add("card", "border-primary", "chat-message-send");
     // Body of card.
     var cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
+    cardBody.classList.add("card-body", "py-2");
     var cardText = document.createElement("p");
     cardText.classList.add("card-text");
     cardText.innerHTML = msg;
     // Footer of card.
     var cardFooter = document.createElement("div");
-    cardFooter.classList.add("card-footer", "text-primary", "chat-message-footer");
+    cardFooter.classList.add("card-footer", "text-primary", "chat-message-footer", "py-2");
     var cardIdentifier = document.createElement("p");
-    cardIdentifier.classList.add("chat-message-identifier");
+    cardIdentifier.classList.add("chat-message-identifier", "my-0");
     cardIdentifier.innerHTML = user;
     // Combine the elements of the card.
     cardBody.appendChild(cardText);
