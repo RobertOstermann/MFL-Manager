@@ -311,12 +311,6 @@ connection.on("CommissionerPermissions", function (inProgress) {
     colOne.classList.add("col");
     var colTwo = document.createElement("div");
     colTwo.classList.add("col");
-    // Build the second row.
-    var rowTwo = document.createElement("div");
-    rowTwo.classList.add("row", "mb-3");
-    var colThree = document.createElement("div");
-    colThree.classList.add("col");
-    colThree.id = "control-column";
     // Build the previous player button.
     var previousPlayer = document.createElement("button");
     previousPlayer.classList.add("btn", "btn-outline-dark", "btn-block", "commissioner-button");
@@ -343,29 +337,19 @@ connection.on("CommissionerPermissions", function (inProgress) {
         });
         event.preventDefault();
     });
-    // Build the control button.
-    var control = document.createElement("button");
+    // Build the second row.
+    var rowTwo;
     if (inProgress) {
-        control.classList.add("btn", "btn-outline-danger", "btn-block", "commissioner-button")
-        control.type = "button";
-        control.id = "control";
-        control.innerHTML = "Sold";
-        control.addEventListener("click", sold);
+        rowTwo = createInProgressFreeAgencySection();
     }
     else {
-        control.classList.add("btn", "btn-outline-success", "btn-block", "commissioner-button")
-        control.type = "button";
-        control.id = "control";
-        control.innerHTML = "Start Free Agency";
-        control.addEventListener("click", startFreeAgency);
+        rowTwo = createStartFreeAgencySection();
     }
     // Combine the elements of the commissioner section.
     colOne.appendChild(previousPlayer);
     colTwo.appendChild(nextPlayer);
     rowOne.appendChild(colOne);
     rowOne.appendChild(colTwo);
-    colThree.appendChild(control);
-    rowTwo.appendChild(colThree);
     commissionerSection.appendChild(rowOne);
     commissionerSection.appendChild(rowTwo);
     cardFooter.appendChild(commissionerSection);
@@ -374,16 +358,22 @@ connection.on("CommissionerPermissions", function (inProgress) {
 connection.on("StartFreeAgency", function () {
     document.getElementById("previous-player").disabled = false;
     document.getElementById("next-player").disabled = false;
-    var control = document.getElementById("control");
-    control.classList.remove("btn-outline-success");
-    control.classList.add("btn-outline-danger");
-    control.innerHTML = "Sold";
-    control.removeEventListener("click", startFreeAgency);
-    control.addEventListener("click", sold);
+    var commissionerSection = document.getElementById("commissioner-section")
+    var previousControl = document.getElementById("control-row-two");
+    var control = createInProgressFreeAgencySection();
+    commissionerSection.removeChild(previousControl);
+    commissionerSection.appendChild(control);
 });
 
 function startFreeAgency() {
     connection.invoke("StartFreeAgency").catch(function (err) {
+        return console.error(err.toString());
+    });
+    event.preventDefault();
+}
+
+function reset() {
+    connection.invoke("PlayerReset").catch(function (err) {
         return console.error(err.toString());
     });
     event.preventDefault();
@@ -394,4 +384,56 @@ function sold() {
         return console.error(err.toString());
     });
     event.preventDefault();
+}
+
+function createStartFreeAgencySection() {
+    // Build the row.
+    var rowTwo = document.createElement("div");
+    rowTwo.classList.add("row", "mb-3");
+    rowTwo.id = "control-row-two";
+    // Build the column.
+    var colOne = document.createElement("div");
+    colOne.classList.add("col");
+    colOne.id = "control-column";
+    // Build the button.
+    var control = document.createElement("button");
+    control.classList.add("btn", "btn-outline-success", "btn-block", "commissioner-button");
+    control.type = "button";
+    control.id = "control-start";
+    control.innerHTML = "Start Free Agency";
+    control.addEventListener("click", startFreeAgency);
+    colOne.appendChild(control);
+    rowTwo.appendChild(colOne);
+    return rowTwo;
+}
+
+function createInProgressFreeAgencySection() {
+    // Build the row.
+    var rowTwo = document.createElement("div");
+    rowTwo.classList.add("row", "mb-3");
+    rowTwo.id = "control-row-two";
+    // Build the columns.
+    var colOne = document.createElement("div");
+    colOne.classList.add("col");
+    var colTwo = document.createElement("div");
+    colTwo.classList.add("col");
+    // Build the reset button.
+    var controlReset = document.createElement("button");
+    controlReset.classList.add("btn", "btn-outline-warning", "btn-block", "commissioner-button");
+    controlReset.type = "button";
+    controlReset.id = "control-reset";
+    controlReset.innerHTML = "Reset";
+    controlReset.addEventListener("click", reset);
+    colOne.appendChild(controlReset);
+    // Build the sold button.
+    var controlSold = document.createElement("button");
+    controlSold.classList.add("btn", "btn-outline-danger", "btn-block", "commissioner-button");
+    controlSold.type = "button";
+    controlSold.id = "control-sold";
+    controlSold.innerHTML = "Sold";
+    controlSold.addEventListener("click", sold);
+    colTwo.appendChild(controlSold);
+    rowTwo.appendChild(colOne);
+    rowTwo.appendChild(colTwo);
+    return rowTwo;
 }

@@ -255,6 +255,23 @@ namespace Website.Hubs
             }
         }
 
+        public async Task PlayerReset()
+        {
+            Player player = _node?.Value;
+            if (player != null)
+            {
+                _bidInProgress = true;
+                player.Salary = player.OriginalSalary;
+                player.MFLTeam = player.OriginalRights;
+                player.Signed = false;
+                _leadBid = player.OriginalSalary;
+                _leadBidder = player.OriginalRights;
+                await Clients.All.SendAsync("UpdatePlayers", player);
+                await Clients.All.SendAsync("SetPlayer", player);
+                await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
+            }
+        }
+
         public async Task PlayerSold()
         {
             Player player = _node?.Value;
@@ -262,8 +279,8 @@ namespace Website.Hubs
             {
                 _bidInProgress = false;
                 player.Salary = _leadBid;
-                player.Signed = true;
                 player.MFLTeam = _leadBidder;
+                player.Signed = true;
                 await Clients.All.SendAsync("UpdatePlayers", player);
                 await Clients.All.SendAsync("SetPlayer", player);
             }
