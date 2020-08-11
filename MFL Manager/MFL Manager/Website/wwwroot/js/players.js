@@ -21,14 +21,17 @@ connection.on("SetPlayers", function (players) {
     if (players.length % 4 != 0) {
         divisions += 1;
     }
+    alert(divisions);
     var playerCards = document.getElementById("player-cards");
     for (var i = 0; i < divisions; i++) {
         var row = document.createElement("div");
         row.classList.add("row", "padding");
         // Add player cards to the row.
         for (var j = 0; j < 4; j++) {
-            var playerNumber = j + i * 1;
-            if (playerNumber >= players.length);
+            var playerNumber = j + i * 4;
+            if (playerNumber >= players.length) {
+                break;
+            }
             // Build the column.
             var column = document.createElement("div");
             column.classList.add("col-sm-6", "col-md-3");
