@@ -262,6 +262,9 @@ namespace Website.Hubs
 
         public async Task PlayerReset()
         {
+            _optOutIds.Clear();
+            await Clients.All.SendAsync("OptIn");
+            await Clients.All.SendAsync("UpdateOptOut", _optOutIds.ToArray());
             Player player = _node?.Value;
             if (player != null)
             {
