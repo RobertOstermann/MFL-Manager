@@ -287,10 +287,9 @@ namespace Website.Hubs
                 {
                     if (_connections.TryGetValue(recipient, out string client))
                     {
-                        // Change ReceiveMessage to ReceiveMessageDirect.
                         await Clients.Client(client).SendAsync("ReceiveMessageDirect", team, text);
-                        await Clients.Caller.SendAsync("SendMessageDirect", team + " to " + recipient, text);
                     }
+                    await Clients.Caller.SendAsync("SendMessageDirect", team + " to " + recipient, text);
                 }
                 
             }
