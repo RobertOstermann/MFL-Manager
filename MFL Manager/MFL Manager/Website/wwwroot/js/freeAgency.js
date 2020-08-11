@@ -419,7 +419,7 @@ function createInProgressFreeAgencySection() {
     colTwo.classList.add("col");
     // Build the reset button.
     var controlReset = document.createElement("button");
-    controlReset.classList.add("btn", "btn-outline-warning", "btn-block", "commissioner-button");
+    controlReset.classList.add("btn", "btn-warning", "btn-block", "commissioner-button");
     controlReset.type = "button";
     controlReset.id = "control-reset";
     controlReset.innerHTML = "Reset";
