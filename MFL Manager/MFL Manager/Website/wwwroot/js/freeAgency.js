@@ -239,6 +239,47 @@ document.getElementById("bid-input").addEventListener("keyup", function (event) 
     }
 });
 
+connection.on("OptOut", function () {
+    // Disable bid options while team is opted out.
+    document.getElementById("bid-input").disabled = true;
+    document.getElementById("submit-bid").disabled = true;
+    var optOut = document.getElementById("opt-out");
+    optOut.classList.remove("btn-outline-danger");
+    optOut.classList.add("btn-outline-success");
+    optOut.innerHTML = "Opt In";
+    optOut.removeEventListener("click", optOut);
+    optOut.addEventListener("click", optIn);
+});
+
+connection.on("OptIn", function () {
+    // Disable bid options while team is opted out.
+    document.getElementById("bid-input").disabled = false;
+    document.getElementById("submit-bid").disabled = false;
+    var optOut = document.getElementById("opt-out");
+    optOut.classList.remove("btn-outline-success");
+    optOut.classList.add("btn-outline-danger");
+    optOut.innerHTML = "Opt Out";
+    optOut.removeEventListener("click", optIn);
+    optOut.addEventListener("click", optOut);
+});
+
+// Opt-out of this bid process.
+document.getElementById("opt-out").addEventListener("click", optOut);
+
+function optOut() {
+    connection.invoke("OptOut").catch(function (err) {
+        return console.error(err.toString());
+    });
+    event.preventDefault();
+}
+
+function optIn() {
+    connection.invoke("OptIn").catch(function (err) {
+        return console.error(err.toString());
+    });
+    event.preventDefault();
+}
+
 // Send bid with submit button.
 document.getElementById("submit-bid").addEventListener("click", function (event) {
     sendBid();

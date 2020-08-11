@@ -56,3 +56,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+/* Team Section */
+
+.team-card {
+    height: 60vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
