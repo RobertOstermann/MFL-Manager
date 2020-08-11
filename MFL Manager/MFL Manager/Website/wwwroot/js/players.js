@@ -21,7 +21,6 @@ connection.on("SetPlayers", function (players) {
     if (players.length % 4 != 0) {
         divisions += 1;
     }
-    alert(divisions);
     var playerCards = document.getElementById("player-cards");
     for (var i = 0; i < divisions; i++) {
         var row = document.createElement("div");
