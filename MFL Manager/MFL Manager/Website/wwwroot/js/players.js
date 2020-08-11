@@ -17,17 +17,16 @@ connection.on("RemoveCookie", function () {
 // Build Player Cards Test
 
 connection.on("SetPlayers", function (players) {
-    var i, j;
     var divisions = Math.floor(players.length / 4);
     if (players.length % 4 != 0) {
         divisions += 1;
     }
     var playerCards = document.getElementById("player-cards");
-    for (i = 0; i < divisions; i++) {
+    for (var i = 0; i < divisions; i++) {
         var row = document.createElement("div");
         row.classList.add("row", "padding");
         // Add player cards to the row.
-        for (j = 0; j < 4; j++) {
+        for (var j = 0; j < 4; j++) {
             var playerNumber = j + i * 1;
             if (playerNumber >= players.length);
             // Build the column.

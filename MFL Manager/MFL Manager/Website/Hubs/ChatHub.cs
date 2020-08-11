@@ -17,7 +17,7 @@ namespace Website.Hubs
 
         private static ConcurrentDictionary<string, string> _connections = new ConcurrentDictionary<string, string>();
 
-        private static List<string> _optOuts = new List<string>();
+        private static HashSet<string> _optOutIds = new HashSet<string>();
 
         private static LinkedList<Player> _players = new LinkedList<Player>();
 
@@ -152,7 +152,7 @@ namespace Website.Hubs
 
         public async Task StartFreeAgency()
         {
-            _optOuts = new List<string>();
+            _optOutIds.Clear();
             _freeAgencyInProgress = true;
             _bidInProgress = true;
             await Clients.Caller.SendAsync("StartFreeAgency");
@@ -175,7 +175,7 @@ namespace Website.Hubs
                 if (_bidInProgress)
                 {
                     await Clients.Caller.SendAsync("GrantBidPermissions");
-                    if (_optOuts.Contains(team))
+                    if (_optOutIds.Contains(team))
                     {
                         await Clients.Caller.SendAsync("OptOut");
                     }
@@ -206,8 +206,9 @@ namespace Website.Hubs
 
         public async Task GetPreviousPlayer()
         {
-            _optOuts = new List<string>();
+            _optOutIds.Clear();
             await Clients.All.SendAsync("OptIn");
+            await Clients.All.SendAsync("UpdateOptOut", _optOutIds.ToArray());
             Player player = _node?.Previous?.Value;
             if (player != null)
             {
@@ -238,8 +239,9 @@ namespace Website.Hubs
 
         public async Task GetNextPlayer()
         {
-            _optOuts = new List<string>();
+            _optOutIds.Clear();
             await Clients.All.SendAsync("OptIn");
+            await Clients.All.SendAsync("UpdateOptOut", _optOutIds.ToArray());
             Player player = _node?.Next?.Value;
             if (player != null)
             {
@@ -312,24 +314,28 @@ namespace Website.Hubs
             }
         }
 
-        public async Task OptOut()
-        {
-            string team = GetUserTeam();
-            if (!string.IsNullOrWhiteSpace(team))
-            {
-                _optOuts.Add(team);
-                await Clients.Caller.SendAsync("OptOut");
-            }
-        }
-
         public async Task OptIn()
         {
             string team = GetUserTeam();
             if (!string.IsNullOrWhiteSpace(team))
             {
-                if (_optOuts.Remove(team))
+                if (_optOutIds.Remove(team.Replace(' ', '-')))
                 {
                     await Clients.Caller.SendAsync("OptIn");
+                    await Clients.All.SendAsync("UpdateOptOut", _optOutIds.ToArray());
+                }
+            }
+        }
+
+        public async Task OptOut()
+        {
+            string team = GetUserTeam();
+            if (!string.IsNullOrWhiteSpace(team))
+            {
+                if (_optOutIds.Add(team.Replace(' ', '-')))
+                {
+                    await Clients.Caller.SendAsync("OptOut");
+                    await Clients.All.SendAsync("UpdateOptOut", _optOutIds.ToArray());
                 }
             }
         }
