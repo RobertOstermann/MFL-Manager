@@ -26,12 +26,22 @@ connection.on("GrantMessagePermissions", function () {
 });
 
 connection.on("GrantBidPermissions", function () {
-    // Display correct button - bid / match / years
+    // Display correct button - bid/match
     BuildBidButton();
     // Enable bid options until team is selected.
     document.getElementById("opt-out").disabled = false;
     document.getElementById("bid-input").disabled = false;
     document.getElementById("submit-bid").disabled = false;
+    // Get the bid.
+    connection.invoke("GetBid");
+});
+
+connection.on("GrantMatchPermissions", function (years) {
+    // Display correct button - bid/match
+    BuildMatchButton(years);
+    // Enable bid options until team is selected.
+    document.getElementById("match-opt-out").disabled = false;
+    document.getElementById("match-button").disabled = false;
     // Get the bid.
     connection.invoke("GetBid");
 });
@@ -44,10 +54,24 @@ connection.on("RevokeMessagePermissions", function () {
 });
 
 connection.on("RevokeBidPermissions", function () {
+    // Display correct button - bid/match
+    BuildBidButton();
     // Disable bid options until team is selected.
     document.getElementById("opt-out").disabled = true;
     document.getElementById("bid-input").disabled = true;
     document.getElementById("submit-bid").disabled = true;
+    // Get the bid.
+    connection.invoke("GetBid");
+});
+
+connection.on("RevokeMatchPermissions", function (years) {
+    // Display correct button - bid/match
+    BuildMatchButton(years);
+    // Enable bid options until team is selected.
+    document.getElementById("match-opt-out").disabled = true;
+    document.getElementById("match-button").disabled = true;
+    // Get the bid.
+    connection.invoke("GetBid");
 });
 
 /*  MESSAGE */
@@ -224,7 +248,9 @@ connection.on("ReceiveBid", function (team, bid) {
         betterBid += 0.50;
     }
     document.getElementById("current-bid").innerHTML = message;
-    document.getElementById("bid-input").value = betterBid.toFixed(2);
+    if (document.contains(document.getElementById("bid-input"))) {
+        document.getElementById("bid-input").value = betterBid.toFixed(2);
+    }
 });
 
 // Send bid to the server.
@@ -289,10 +315,10 @@ function optIn() {
 /* Bid Control */
 
 function BuildBidButton() {
-    var buttonSection = document.getElementById("bid-button-section");
     if (document.contains(document.getElementById("bid-input-group"))) {
         document.getElementById("bid-input-group").remove();
     }
+    var buttonSection = document.getElementById("bid-button-section");
     // Build the input group.
     var inputGroup = document.createElement("div");
     inputGroup.classList.add("input-group", "mb-3");
@@ -350,6 +376,65 @@ function BuildBidButton() {
         </div>
 </div>
 */
+
+function BuildMatchButton(years) {
+    if (document.contains(document.getElementById("bid-input-group"))) {
+        document.getElementById("bid-input-group").remove();
+    }
+    var yearOptions = parseInt(years);
+    var buttonSection = document.getElementById("bid-button-section");
+    // Build the input group.
+    var inputGroup = document.createElement("div");
+    inputGroup.classList.add("dropdown", "mb-3");
+    inputGroup.id = "bid-input-group";
+    // Build the row and columns.
+    var row = document.createElement("div");
+    row.classList.add("row", "mb-3");
+    var colOne = document.createElement("div");
+    colOne.classList.add("col");
+    var colTwo = document.createElement("div");
+    colTwo.classList.add("col");
+    // Build the opt out button.
+    var optOutSection = document.createElement("div");
+    optOutSection.classList.add("input-group-prepend");
+    var optOutButton = document.createElement("button");
+    optOutButton.classList.add("btn", "btn-outline-danger", "btn-block", "bid-button");
+    optOutButton.type = "button";
+    optOutButton.id = "match-opt-out";
+    optOutButton.innerHTML = "Opt Out";
+    // Build the match div.
+    var dropdown = document.createElement("div");
+    dropdown.classList.add("dropdown", "mb-3");
+    dropdown.id = "bid-input-group";
+    // Build the match button.
+    var matchButton = document.createElement("button");
+    matchButton.classList.add("btn", "btn-outline-success", "btn-block", "dropdown-toggle");
+    matchButton.type = "button";
+    matchButton.id = "match-button";
+    matchButton.collapse = "toggle";
+    matchButton.innerHTML = "Match";
+    // Build the dropdown menu.
+    var matchDropdownMenu = document.createElement("div");
+    matchDropdownMenu.classList.add("dropdown-menu");
+    // Build the dropdown items.
+    for (yearOptions; yearOptions <= 4; yearOptions++) {
+        var item = document.createElement("button");
+        item.classList.add("dropdown-item");
+        item.type = "button";
+        item.id = "match-item-" + yearOptions;
+        item.innerHTML = yearOptions + " Years";
+        matchDropdownMenu.appendChild(item);
+    }
+    // Combine the elements.
+    dropdown.appendChild(matchButton);
+    dropdown.appendChild(matchDropdownMenu);
+    colOne.appendChild(optOutButton);
+    colTwo.appendChild(dropdown);
+    row.appendChild(colOne);
+    row.appendChild(colTwo);
+    inputGroup.appendChild(row);
+    buttonSection.appendChild(inputGroup);
+}
 
 /* Commissioner Control */
 

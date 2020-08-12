@@ -33,6 +33,8 @@ namespace Website.Hubs
 
         private static string _leadBidder = "None";
 
+        private static int _contractYears = 2;
+
         public void SetUpServer()
         {
             if (!_isServerSetUp)
@@ -177,17 +179,33 @@ namespace Website.Hubs
             if (!string.IsNullOrWhiteSpace(team))
             {
                 await Clients.Caller.SendAsync("GrantMessagePermissions");
+                Player player = _node?.Value;
+                // Check if team is owner of player.
                 if (_bidInProgress)
                 {
-                    await Clients.Caller.SendAsync("GrantBidPermissions");
-                    if (_optOutIds.Contains(team))
+                    if (player != null && !string.IsNullOrWhiteSpace(player.MFLTeam) && team.Equals(player.MFLTeam))
                     {
-                        await Clients.Caller.SendAsync("OptOut");
+                        await Clients.Caller.SendAsync("RevokeMatchPermissions", _contractYears);
+                    }
+                    else
+                    {
+                        await Clients.Caller.SendAsync("GrantBidPermissions");
+                        if (_optOutIds.Contains(team))
+                        {
+                            await Clients.Caller.SendAsync("OptOut");
+                        }
                     }
                 }
                 else
                 {
-                    await Clients.Caller.SendAsync("RevokeBidPermissions");
+                    if (player != null && !string.IsNullOrWhiteSpace(player.MFLTeam) && team.Equals(player.MFLTeam))
+                    {
+                        await Clients.Caller.SendAsync("GrantMatchPermissions", _contractYears);
+                    }
+                    else
+                    {
+                        await Clients.Caller.SendAsync("RevokeBidPermissions");
+                    }
                 }
             }
             else
@@ -223,7 +241,6 @@ namespace Website.Hubs
                 _leadBid = player.Salary;
                 _leadBidder = player.MFLTeam;
                 await Clients.All.SendAsync("SetPlayer", player);
-                //await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
             }
         }
 
@@ -237,7 +254,6 @@ namespace Website.Hubs
                     if (player.Signed) _bidInProgress = false;
                     else _bidInProgress = true;
                     await Clients.All.SendAsync("SetPlayer", player);
-                    //await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
                 }
             }
         }
@@ -256,7 +272,6 @@ namespace Website.Hubs
                 _leadBid = player.Salary;
                 _leadBidder = player.MFLTeam;
                 await Clients.All.SendAsync("SetPlayer", player);
-                //await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
             }
         }
 
@@ -275,10 +290,10 @@ namespace Website.Hubs
                 _leadBid = player.OriginalSalary;
                 _leadBidder = player.OriginalRights;
                 await Clients.All.SendAsync("UpdatePlayers", player);
-                await Clients.All.SendAsync("SetPlayer", player);
-                //await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
-            }
+                await Clients.All.SendAsync("SetPlayer", player);            }
         }
+
+        // SoldInitial, SoldFinal, Match(true/false)
 
         public async Task PlayerSold()
         {
@@ -286,10 +301,11 @@ namespace Website.Hubs
             if (player != null)
             {
                 _bidInProgress = false;
+                /*
                 player.Salary = _leadBid;
                 player.MFLTeam = _leadBidder;
                 player.Signed = true;
-                await Clients.All.SendAsync("UpdatePlayers", player);
+                await Clients.All.SendAsync("UpdatePlayers", player);*/
                 await Clients.All.SendAsync("SetPlayer", player);
             }
         }
