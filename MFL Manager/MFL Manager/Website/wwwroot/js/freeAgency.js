@@ -7,11 +7,10 @@ var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 connection.start().then(function () {
     connection.invoke("SetUpServer");
     connection.invoke("GetCookie");
-    connection.invoke("GetPlayer");
-    connection.invoke("GetMessages");
-    connection.invoke("GetBid");
     connection.invoke("CheckPermissions");
     connection.invoke("CheckCommissionerPermissions");
+    connection.invoke("GetPlayer");
+    connection.invoke("GetMessages");
 });
 
 connection.on("RemoveCookie", function () {
@@ -27,10 +26,14 @@ connection.on("GrantMessagePermissions", function () {
 });
 
 connection.on("GrantBidPermissions", function () {
+    // Display correct button - bid / match / years
+    BuildBidButton();
     // Enable bid options until team is selected.
     document.getElementById("opt-out").disabled = false;
     document.getElementById("bid-input").disabled = false;
     document.getElementById("submit-bid").disabled = false;
+    // Get the bid.
+    connection.invoke("GetBid");
 });
 
 connection.on("RevokeMessagePermissions", function () {
@@ -231,14 +234,6 @@ function sendBid() {
     });
 }
 
-// Send bid with enter button.
-document.getElementById("bid-input").addEventListener("keyup", function (event) {
-    if (event.keyCode == 13) {
-        sendBid();
-        event.preventDefault(); j
-    }
-});
-
 connection.on("OptIn", function () {
     // Disable bid options while team is opted out.
     document.getElementById("bid-input").disabled = false;
@@ -275,8 +270,6 @@ connection.on("UpdateOptOut", function (teams) {
     }
 });
 
-// Opt-out of this bid process.
-document.getElementById("opt-out").addEventListener("click", optOut);
 
 function optOut() {
     connection.invoke("OptOut").catch(function (err) {
@@ -292,11 +285,70 @@ function optIn() {
     event.preventDefault();
 }
 
-// Send bid with submit button.
-document.getElementById("submit-bid").addEventListener("click", function (event) {
-    sendBid();
-    event.preventDefault();
-});
+/* Bid Control */
+
+function BuildBidButton() {
+    var buttonSection = document.getElementById("bid-button-section");
+    if (document.contains(document.getElementById("bid-input-group"))) {
+        document.getElementById("bid-input-group").remove();
+    }
+    // Build the input group.
+    var inputGroup = document.createElement("div");
+    inputGroup.classList.add("input-group", "mb-3");
+    inputGroup.id = "bid-input-group";
+    // Build the opt out button.
+    var optOutSection = document.createElement("div");
+    optOutSection.classList.add("input-group-prepend");
+    var optOutButton = document.createElement("button");
+    optOutButton.classList.add("btn", "btn-outline-danger", "bid-button");
+    optOutButton.type = "button";
+    optOutButton.id = "opt-out";
+    optOutButton.innerHTML = "Opt Out";
+    optOutButton.addEventListener("click", optOut);
+    // Build the number input.
+    var number = document.createElement("input");
+    number.classList.add("form-control");
+    number.type = "number";
+    number.step = "0.50";
+    number.min = "0.00";
+    number.id = "bid-input";
+    number.addEventListener("keyup", function (event) {
+        if (event.keyCode == 13) {
+            sendBid();
+            event.preventDefault();
+        }
+    });
+    // Build the bid button.
+    var bidButtonSection = document.createElement("div");
+    bidButtonSection.classList.add("input-group-append");
+    var bidButton = document.createElement("button");
+    bidButton.classList.add("btn", "btn-outline-primary", "bid-button");
+    bidButton.type = "button";
+    bidButton.id = "submit-bid";
+    bidButton.innerHTML = "Submit Bid";
+    bidButton.addEventListener("click", function (event) {
+        sendBid();
+        event.preventDefault();
+    });
+    // Combine the elements.
+    optOutSection.appendChild(optOutButton);
+    bidButtonSection.appendChild(bidButton);
+    inputGroup.appendChild(optOutSection);
+    inputGroup.appendChild(number);
+    inputGroup.appendChild(bidButtonSection);
+    buttonSection.appendChild(inputGroup);
+}
+/*
+<div class="input-group mb-3" id="bid-input-group">
+    <div class="input-group-prepend">
+        <button class="btn btn-outline-danger bid-button" type="button" id="opt-out">Opt Out</button>
+    </div>
+    <input type="number" class="form-control" placeholder="0.00" step="0.50" min="0.00" id="bid-input">
+        <div class="input-group-append">
+            <button class="btn btn-outline-primary bid-button" type="button" id="submit-bid">Submit Bid</button>
+        </div>
+</div>
+*/
 
 /* Commissioner Control */
 
