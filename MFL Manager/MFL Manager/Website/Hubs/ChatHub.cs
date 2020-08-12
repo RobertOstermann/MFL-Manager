@@ -223,7 +223,7 @@ namespace Website.Hubs
                 _leadBid = player.Salary;
                 _leadBidder = player.MFLTeam;
                 await Clients.All.SendAsync("SetPlayer", player);
-                await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
+                //await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
             }
         }
 
@@ -237,7 +237,7 @@ namespace Website.Hubs
                     if (player.Signed) _bidInProgress = false;
                     else _bidInProgress = true;
                     await Clients.All.SendAsync("SetPlayer", player);
-                    await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
+                    //await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
                 }
             }
         }
@@ -256,7 +256,7 @@ namespace Website.Hubs
                 _leadBid = player.Salary;
                 _leadBidder = player.MFLTeam;
                 await Clients.All.SendAsync("SetPlayer", player);
-                await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
+                //await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
             }
         }
 
@@ -276,7 +276,7 @@ namespace Website.Hubs
                 _leadBidder = player.OriginalRights;
                 await Clients.All.SendAsync("UpdatePlayers", player);
                 await Clients.All.SendAsync("SetPlayer", player);
-                await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
+                //await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
             }
         }
 

@@ -197,12 +197,14 @@ document.getElementById("submit-message").addEventListener("click", function (ev
 /* PLAYER CARD */
 
 connection.on("SetPlayer", function (player) {
+    connection.invoke("CheckPermissions");
     var card = document.getElementById("bid-player-card");
     var image = document.getElementById("player-image");
     var name = document.getElementById("player-name");
     var team = document.getElementById("player-team");
     if (player.signed) {
         card.style.borderColor = "rgb(226, 0, 0)";
+        document.getElementById("bid-input").value = "";
     }
     else {
         card.style.borderColor = "";
@@ -210,7 +212,6 @@ connection.on("SetPlayer", function (player) {
     image.src = player.src;
     name.innerHTML = player.name;
     team.innerHTML = player.mflTeam;
-    connection.invoke("CheckPermissions");
 });
 
 /* BID */
