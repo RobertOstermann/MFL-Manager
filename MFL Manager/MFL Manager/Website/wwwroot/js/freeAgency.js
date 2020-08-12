@@ -403,15 +403,15 @@ function BuildMatchButton(years) {
     optOutButton.id = "match-opt-out";
     optOutButton.innerHTML = "Opt Out";
     // Build the match div.
-    var dropdown = document.createElement("div");
-    dropdown.classList.add("dropdown", "mb-3");
-    dropdown.id = "bid-input-group";
+    var matchDropdown = document.createElement("div");
+    matchDropdown.classList.add("dropdown", "mb-3");
+    matchDropdown.id = "bid-input-group";
     // Build the match button.
     var matchButton = document.createElement("button");
     matchButton.classList.add("btn", "btn-outline-success", "btn-block", "dropdown-toggle");
     matchButton.type = "button";
     matchButton.id = "match-button";
-    matchButton.collapse = "toggle";
+    matchButton.setAttribute("data-toggle", "dropdown");
     matchButton.innerHTML = "Match";
     // Build the dropdown menu.
     var matchDropdownMenu = document.createElement("div");
@@ -426,10 +426,10 @@ function BuildMatchButton(years) {
         matchDropdownMenu.appendChild(item);
     }
     // Combine the elements.
-    dropdown.appendChild(matchButton);
-    dropdown.appendChild(matchDropdownMenu);
+    matchDropdown.appendChild(matchButton);
+    matchDropdown.appendChild(matchDropdownMenu);
     colOne.appendChild(optOutButton);
-    colTwo.appendChild(dropdown);
+    colTwo.appendChild(matchDropdown);
     row.appendChild(colOne);
     row.appendChild(colTwo);
     inputGroup.appendChild(row);
