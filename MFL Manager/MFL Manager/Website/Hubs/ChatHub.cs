@@ -229,7 +229,7 @@ namespace Website.Hubs
             string team = GetUserTeam();
             if (!string.IsNullOrWhiteSpace(team))
             {
-                if (team.Equals("Storm Dynasty"))
+                if (team.Equals("Storm Dynasty") || team.Equals("Power"))
                 {
                     await Clients.Caller.SendAsync("CommissionerPermissions", _freeAgencyInProgress);
                 }
@@ -305,8 +305,8 @@ namespace Website.Hubs
                 _leadBid = player.OriginalSalary;
                 _leadBidder = player.OriginalRights;
                 _contractYears = player.ContractYears;
-                await Clients.All.SendAsync("UpdatePlayers", player);
-                await Clients.All.SendAsync("SetPlayer", player);            
+                await Clients.All.SendAsync("SetPlayer", player);
+                await Clients.All.SendAsync("UpdatePlayers", player);           
             }
         }
 
@@ -324,20 +324,20 @@ namespace Website.Hubs
                         player.Salary = _leadBid;
                         player.MFLTeam = "None";
                         player.ContractYears = _contractYears;
-                        await Clients.All.SendAsync("SetPlayer", player);
-                        await Clients.All.SendAsync("UpdatePlayers", player);
                         string information = $"No bid was placed. {player.OriginalRights} has the option to sign the player.";
                         string footer = "Player Update: " + player.Name;
                         await Clients.All.SendAsync("ReceiveMessageInformation", information, footer);
+                        await Clients.All.SendAsync("SetPlayer", player);
+                        await Clients.All.SendAsync("UpdatePlayers", player);
                     }
                     else
                     {
                         player.Signed = true;
-                        await Clients.All.SendAsync("SetPlayer", player);
-                        await Clients.All.SendAsync("UpdatePlayers", player);
                         string information = $"{_leadBidder} placing final bid and deciding contract years now.";
                         string footer = "Player Update: " + player.Name;
                         await Clients.All.SendAsync("ReceiveMessageInformation", information, footer);
+                        await Clients.All.SendAsync("SetPlayer", player);
+                        await Clients.All.SendAsync("UpdatePlayers", player);
                     }
                 }
             }

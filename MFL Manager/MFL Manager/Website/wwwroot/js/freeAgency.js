@@ -44,8 +44,6 @@ connection.on("GrantFinalBidPermissions", function () {
 });
 
 connection.on("GrantMatchPermissions", function (years) {
-    // Display correct button - bid/match
-    BuildMatchButton(years);
     // Enable bid options until team is selected.
     document.getElementById("match-opt-out").disabled = false;
     document.getElementById("match-button").disabled = false;
