@@ -317,12 +317,28 @@ namespace Website.Hubs
             {
                 if (!player.Signed)
                 {
-                    player.Signed = true;
-                    await Clients.All.SendAsync("SetPlayer", player);
-                    await Clients.All.SendAsync("UpdatePlayers", player);
-                    string information = $"{_leadBidder} placing final bid and deciding contract years now.";
-                    string footer = "Player Update: " + player.Name;
-                    await Clients.All.SendAsync("ReceiveMessageInformation", information, footer);
+                    if (player.OriginalRights.Equals(_leadBidder))
+                    {
+                        _bidInProgress = false;
+                        _matchInProgress = true;
+                        player.Salary = _leadBid;
+                        player.MFLTeam = "None";
+                        player.ContractYears = _contractYears;
+                        await Clients.All.SendAsync("SetPlayer", player);
+                        await Clients.All.SendAsync("UpdatePlayers", player);
+                        string information = $"No bid was placed. {player.OriginalRights} has the option to sign the player.";
+                        string footer = "Player Update: " + player.Name;
+                        await Clients.All.SendAsync("ReceiveMessageInformation", information, footer);
+                    }
+                    else
+                    {
+                        player.Signed = true;
+                        await Clients.All.SendAsync("SetPlayer", player);
+                        await Clients.All.SendAsync("UpdatePlayers", player);
+                        string information = $"{_leadBidder} placing final bid and deciding contract years now.";
+                        string footer = "Player Update: " + player.Name;
+                        await Clients.All.SendAsync("ReceiveMessageInformation", information, footer);
+                    }
                 }
             }
         }
@@ -488,7 +504,15 @@ namespace Website.Hubs
                     }
                     else
                     {
-                        information = $"{player.OriginalRights} does not match. {_leadBidder} secures the free agent. The final deal is {_leadBid:F} for {_contractYears} years.";
+                        if (player.Signed)
+                        {
+                            information = $"{player.OriginalRights} does not match. {_leadBidder} secures the free agent. The final deal is {_leadBid:F} for {_contractYears} years.";
+                        }
+                        else
+                        {
+                            _leadBidder = "None";
+                            information = $"{player.OriginalRights} does not sign {player.Name}. He will return to the MFL draft";
+                        }
                     }
                     player.Salary = _leadBid;
                     player.MFLTeam = _leadBidder;

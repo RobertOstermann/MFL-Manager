@@ -502,6 +502,9 @@ function BuildMatchButton(years) {
         document.getElementById("bid-input-group").remove();
     }
     var yearOptions = parseInt(years);
+    if (yearOptions < 2) {
+        yearOptions = 2;
+    }
     var buttonSection = document.getElementById("bid-button-section");
     // Build the input group.
     var inputGroup = document.createElement("div");
