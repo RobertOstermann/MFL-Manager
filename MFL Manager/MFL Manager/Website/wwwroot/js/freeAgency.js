@@ -44,6 +44,8 @@ connection.on("GrantFinalBidPermissions", function () {
 });
 
 connection.on("GrantMatchPermissions", function (years) {
+    // Display correct button - bid/match
+    BuildMatchButton(years);
     // Enable bid options until team is selected.
     document.getElementById("match-opt-out").disabled = false;
     document.getElementById("match-button").disabled = false;
@@ -264,7 +266,9 @@ connection.on("SetPlayer", function (player) {
     var team = document.getElementById("player-team");
     if (player.signed) {
         card.style.borderColor = "rgb(226, 0, 0)";
-        document.getElementById("bid-input").value = "";
+        if (document.contains(document.getElementById("bid-input"))) {
+            document.getElementById("bid-input").value = "";
+        }
     }
     else {
         card.style.borderColor = "";

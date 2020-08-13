@@ -229,7 +229,7 @@ namespace Website.Hubs
             string team = GetUserTeam();
             if (!string.IsNullOrWhiteSpace(team))
             {
-                if (team.Equals("Storm Dynasty") || team.Equals("Power"))
+                if (team.Equals("Storm Dynasty"))
                 {
                     await Clients.Caller.SendAsync("CommissionerPermissions", _freeAgencyInProgress);
                 }
