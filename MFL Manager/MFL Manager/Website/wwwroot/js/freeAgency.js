@@ -36,6 +36,13 @@ connection.on("GrantBidPermissions", function () {
     connection.invoke("GetBid");
 });
 
+connection.on("GrantFinalBidPermissions", function () {
+    // Display correct button - bid/match
+    BuildFinalBidButton();
+    // Get the bid.
+    connection.invoke("GetBid");
+});
+
 connection.on("GrantMatchPermissions", function (years) {
     // Display correct button - bid/match
     BuildMatchButton(years);
@@ -124,6 +131,35 @@ connection.on("ReceiveMessageDirect", function (user, message) {
     var cardIdentifier = document.createElement("p");
     cardIdentifier.classList.add("chat-message-identifier", "my-0");
     cardIdentifier.innerHTML = user;
+    // Combine the elements of the card.
+    cardBody.appendChild(cardText);
+    cardFooter.appendChild(cardIdentifier);
+    card.appendChild(cardBody);
+    card.appendChild(cardFooter);
+    // Add the card to the message box.
+    chatBox.appendChild(card);
+    scrollToBottom("chat-box");
+});
+
+// Receive a message from the server.
+connection.on("ReceiveMessageInformation", function (message, footer) {
+    var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    var chatBox = document.getElementById("chat-box");
+    // Build the message card.
+    var card = document.createElement("div");
+    card.classList.add("card", "border-danger", "chat-message");
+    // Body of card.
+    var cardBody = document.createElement("div");
+    cardBody.classList.add("card-body", "py-2");
+    var cardText = document.createElement("p");
+    cardText.classList.add("card-text");
+    cardText.innerHTML = msg;
+    // Footer of card.
+    var cardFooter = document.createElement("div");
+    cardFooter.classList.add("card-footer", "chat-message-footer", "py-2");
+    var cardIdentifier = document.createElement("p");
+    cardIdentifier.classList.add("chat-message-identifier", "my-0");
+    cardIdentifier.innerHTML = footer;
     // Combine the elements of the card.
     cardBody.appendChild(cardText);
     cardFooter.appendChild(cardIdentifier);
@@ -241,15 +277,32 @@ connection.on("SetPlayer", function (player) {
 /* BID */
 
 // Receive a bid from the server.
-connection.on("ReceiveBid", function (team, bid) {
+connection.on("ReceiveBid", function (team, bid, exact = false) {
     var message = team + ": " + bid.toFixed(2);
-    var betterBid = Math.round(parseFloat(bid));
-    if (betterBid <= parseFloat(bid)) {
-        betterBid += 0.50;
+    if (!exact) {
+        var betterBid = Math.round(parseFloat(bid));
+        if (betterBid <= parseFloat(bid)) {
+            betterBid += 0.50;
+        }
+        document.getElementById("current-bid").innerHTML = message;
+        if (document.contains(document.getElementById("bid-input"))) {
+            document.getElementById("bid-input").value = betterBid.toFixed(2);
+        }
     }
+    else {
+        document.getElementById("current-bid").innerHTML = message;
+        if (document.contains(document.getElementById("bid-input"))) {
+            document.getElementById("bid-input").value = bid.toFixed(2);
+        }
+    }
+});
+
+// Receive a final bid from the server.
+connection.on("ReceiveFinalBid", function (team, bid, years) {
+    var message = team + ": " + bid.toFixed(2) + " for " + years.toString() + " years";
     document.getElementById("current-bid").innerHTML = message;
     if (document.contains(document.getElementById("bid-input"))) {
-        document.getElementById("bid-input").value = betterBid.toFixed(2);
+        document.getElementById("bid-input").value = parseFloat(bid).toFixed(2);
     }
 });
 
@@ -259,6 +312,28 @@ function sendBid() {
     connection.invoke("SendBid", bid).catch(function (err) {
         return console.error(err.toString());
     });
+}
+
+// Send final bid to the server.
+function finalizeBid() {
+    var bid = parseFloat(document.getElementById("bid-input").value);
+    var years = parseInt(document.getElementById("year-input").value);
+    if (years != 0) {
+        connection.invoke("SendFinalBid", bid, years).catch(function (err) {
+            return console.error(err.toString());
+        });
+    }
+}
+
+// Match the bid or opt out.
+function matchBid(match, years) {
+    if (match) {
+        alert("Received " + years);
+        connection.invoke("MatchBid", true, years);
+    }
+    else {
+        connection.invoke("MatchBid", false, 0);
+    }
 }
 
 connection.on("OptIn", function () {
@@ -377,6 +452,63 @@ function BuildBidButton() {
 </div>
 */
 
+function BuildFinalBidButton() {
+    if (document.contains(document.getElementById("bid-input-group"))) {
+        document.getElementById("bid-input-group").remove();
+    }
+    var buttonSection = document.getElementById("bid-button-section");
+    // Build the input group.
+    var inputGroup = document.createElement("div");
+    inputGroup.classList.add("input-group", "mb-3");
+    inputGroup.id = "bid-input-group";
+    // Build the number input.
+    var number = document.createElement("input");
+    number.classList.add("form-control");
+    number.type = "number";
+    number.step = "0.50";
+    number.min = "0.00";
+    number.id = "bid-input";
+    // Build the year button.
+    var yearOptions = document.createElement("select");
+    yearOptions.classList.add("custom-select");
+    yearOptions.id = "year-input";
+    var defaultOption = document.createElement("option");
+    defaultOption.selected = true;
+    defaultOption.value = "0";
+    defaultOption.innerHTML = "Select Years";
+    var twoYears = document.createElement("option");
+    twoYears.value = "2";
+    twoYears.innerHTML = "2 Years";
+    var threeYears = document.createElement("option");
+    threeYears.value = "3";
+    threeYears.innerHTML = "3 Years";
+    var fourYears = document.createElement("option");
+    fourYears.value = "4";
+    fourYears.innerHTML = "4 Years";
+    // Build the bid button.
+    var bidButtonSection = document.createElement("div");
+    bidButtonSection.classList.add("input-group-append");
+    var bidButton = document.createElement("button");
+    bidButton.classList.add("btn", "btn-outline-primary", "bid-button");
+    bidButton.type = "button";
+    bidButton.id = "submit-bid";
+    bidButton.innerHTML = "Final Bid";
+    bidButton.addEventListener("click", function (event) {
+        finalizeBid();
+        event.preventDefault();
+    });
+    // Combine the elements.
+    yearOptions.appendChild(defaultOption);
+    yearOptions.appendChild(twoYears);
+    yearOptions.appendChild(threeYears);
+    yearOptions.appendChild(fourYears);
+    bidButtonSection.appendChild(bidButton);
+    inputGroup.appendChild(number);
+    inputGroup.appendChild(yearOptions);
+    inputGroup.appendChild(bidButtonSection);
+    buttonSection.appendChild(inputGroup);
+}
+
 function BuildMatchButton(years) {
     if (document.contains(document.getElementById("bid-input-group"))) {
         document.getElementById("bid-input-group").remove();
@@ -402,6 +534,10 @@ function BuildMatchButton(years) {
     optOutButton.type = "button";
     optOutButton.id = "match-opt-out";
     optOutButton.innerHTML = "Opt Out";
+    optOutButton.addEventListener("click", function (event) {
+        matchBid(false, 0);
+        event.preventDefault();
+    });
     // Build the match div.
     var matchDropdown = document.createElement("div");
     matchDropdown.classList.add("dropdown", "mb-3");
@@ -423,6 +559,11 @@ function BuildMatchButton(years) {
         item.type = "button";
         item.id = "match-item-" + yearOptions;
         item.innerHTML = yearOptions + " Years";
+        item.addEventListener("click", function (event) {
+            matchBid(true, yearOptions);
+            alert(yearOptions);
+            event.preventDefault();
+        });
         matchDropdownMenu.appendChild(item);
     }
     // Combine the elements.

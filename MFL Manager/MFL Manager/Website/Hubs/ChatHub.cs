@@ -29,11 +29,13 @@ namespace Website.Hubs
 
         private static bool _bidInProgress = false;
 
+        private static bool _matchInProgress = false;
+
         private static double _leadBid = 0.00;
 
         private static string _leadBidder = "None";
 
-        private static int _contractYears = 2;
+        private static int _contractYears = 0;
 
         public void SetUpServer()
         {
@@ -183,7 +185,14 @@ namespace Website.Hubs
                 // Check if team is owner of player.
                 if (_bidInProgress)
                 {
-                    if (player != null && !string.IsNullOrWhiteSpace(player.MFLTeam) && team.Equals(player.MFLTeam))
+                    if (player != null && player.Signed)
+                    {
+                        if (team.Equals(_leadBidder))
+                        {
+                            await Clients.Caller.SendAsync("GrantFinalBidPermissions");
+                        }
+                    }
+                    else if (player != null && !string.IsNullOrWhiteSpace(player.OriginalRights) && team.Equals(player.OriginalRights))
                     {
                         await Clients.Caller.SendAsync("RevokeMatchPermissions", _contractYears);
                     }
@@ -198,7 +207,7 @@ namespace Website.Hubs
                 }
                 else
                 {
-                    if (player != null && !string.IsNullOrWhiteSpace(player.MFLTeam) && team.Equals(player.MFLTeam))
+                    if (_matchInProgress && player != null && !string.IsNullOrWhiteSpace(player.OriginalRights) && team.Equals(player.OriginalRights))
                     {
                         await Clients.Caller.SendAsync("GrantMatchPermissions", _contractYears);
                     }
@@ -237,6 +246,8 @@ namespace Website.Hubs
             {
                 if (player.Signed) _bidInProgress = false;
                 else _bidInProgress = true;
+                _matchInProgress = false;
+                _contractYears = player.ContractYears;
                 _node = _node.Previous;
                 _leadBid = player.Salary;
                 _leadBidder = player.MFLTeam;
@@ -268,6 +279,8 @@ namespace Website.Hubs
             {
                 if (player.Signed) _bidInProgress = false;
                 else _bidInProgress = true;
+                _matchInProgress = false;
+                _contractYears = player.ContractYears;
                 _node = _node.Next;
                 _leadBid = player.Salary;
                 _leadBidder = player.MFLTeam;
@@ -284,29 +297,33 @@ namespace Website.Hubs
             if (player != null)
             {
                 _bidInProgress = true;
+                _matchInProgress = false;
                 player.Salary = player.OriginalSalary;
                 player.MFLTeam = player.OriginalRights;
+                player.ContractYears = 0;
                 player.Signed = false;
                 _leadBid = player.OriginalSalary;
                 _leadBidder = player.OriginalRights;
+                _contractYears = player.ContractYears;
                 await Clients.All.SendAsync("UpdatePlayers", player);
-                await Clients.All.SendAsync("SetPlayer", player);            }
+                await Clients.All.SendAsync("SetPlayer", player);            
+            }
         }
-
-        // SoldInitial, SoldFinal, Match(true/false)
 
         public async Task PlayerSold()
         {
             Player player = _node?.Value;
             if (player != null)
             {
-                _bidInProgress = false;
-                /*
-                player.Salary = _leadBid;
-                player.MFLTeam = _leadBidder;
-                player.Signed = true;
-                await Clients.All.SendAsync("UpdatePlayers", player);*/
-                await Clients.All.SendAsync("SetPlayer", player);
+                if (!player.Signed)
+                {
+                    player.Signed = true;
+                    await Clients.All.SendAsync("SetPlayer", player);
+                    await Clients.All.SendAsync("UpdatePlayers", player);
+                    string information = $"{_leadBidder} placing final bid and deciding contract years now.";
+                    string footer = "Player Update: " + player.Name;
+                    await Clients.All.SendAsync("ReceiveMessageInformation", information, footer);
+                }
             }
         }
 
@@ -381,6 +398,26 @@ namespace Website.Hubs
             }
         }
 
+        public async Task GetBid()
+        {
+            if (_contractYears == 0)
+            {
+                Player player = _node?.Value;
+                if (player != null && player.Signed)
+                {
+                    await Clients.Caller.SendAsync("ReceiveBid", _leadBidder, _leadBid, true);
+                }
+                else
+                {
+                    await Clients.Caller.SendAsync("ReceiveBid", _leadBidder, _leadBid);
+                }
+            }
+            else
+            {
+                await Clients.All.SendAsync("ReceiveFinalBid", _leadBidder, _leadBid, _contractYears);
+            }
+        }
+
         public async Task SendBid(double bid)
         {
             string team = GetUserTeam();
@@ -396,17 +433,73 @@ namespace Website.Hubs
                 {
                     //Clients.Client.SendAsync("InvalidBid");
                 }
-                if (bid == 0)
+            }
+        }
+
+        public async Task SendFinalBid(double bid, int years)
+        {
+            string team = GetUserTeam();
+            if (!string.IsNullOrWhiteSpace(team))
+            {
+                if (bid >= _leadBid)
                 {
-                    _leadBid = 0;
-                    await Clients.All.SendAsync("ReceiveBid", "Reset", _leadBid);
+                    _leadBid = bid;
+                    _leadBidder = team;
+                    _contractYears = years;
+                    Player player = _node?.Value;
+                    if (player != null)
+                    {
+                        _bidInProgress = false;
+                        _matchInProgress = true;
+                        player.Salary = _leadBid;
+                        player.MFLTeam = _leadBidder;
+                        player.ContractYears = _contractYears;
+                        player.Signed = true;
+                        await Clients.All.SendAsync("SetPlayer", player);
+                        await Clients.All.SendAsync("UpdatePlayers", player);
+                        string information = $"{_leadBidder} places a final bid of ${_leadBid:F} for {_contractYears} years.\n" +
+                            $"{player.OriginalRights} now has the option to match.";
+                        string footer = "Player Update: " + player.Name;
+                        await Clients.All.SendAsync("ReceiveMessageInformation", information, footer);
+                    }
+                }
+                else
+                {
+                    //Clients.Client.SendAsync("InvalidBid");
                 }
             }
         }
 
-        public async Task GetBid()
+        public async Task MatchBid(bool match, int years)
         {
-            await Clients.Caller.SendAsync("ReceiveBid", _leadBidder, _leadBid);
+            string team = GetUserTeam();
+            string information = string.Empty;
+            if (!string.IsNullOrWhiteSpace(team))
+            {
+                Player player = _node?.Value;
+                if (player != null)
+                {
+                    _matchInProgress = false;
+                    if (match)
+                    {
+                        _leadBidder = team;
+                        _contractYears = years;   
+                        information = $"{player.OriginalRights} matches.\nFinal Deal: {_leadBid:F} for {_contractYears} years.";
+                    }
+                    else
+                    {
+                        information = $"{player.OriginalRights} does not match. {_leadBidder} secures the free agent.\nFinal Deal: {_leadBid:F} for {_contractYears} years.";
+                    }
+                    player.Salary = _leadBid;
+                    player.MFLTeam = _leadBidder;
+                    player.ContractYears = _contractYears;
+                    player.Signed = true;
+                }
+                await Clients.All.SendAsync("SetPlayer", player);
+                await Clients.All.SendAsync("UpdatePlayers", player);
+                string footer = "Player Update: " + player.Name;
+                await Clients.All.SendAsync("ReceiveMessageInformation", information, footer);
+            }
         }
 
         // ALL

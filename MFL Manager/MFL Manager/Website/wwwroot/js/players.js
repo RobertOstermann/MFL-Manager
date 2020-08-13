@@ -57,15 +57,20 @@ connection.on("SetPlayers", function (players) {
             subtitle.classList.add("card-subtitle", "mb-2", "text-muted");
             subtitle.innerHTML = players[playerNumber].mflTeam;
             subtitle.id = players[playerNumber].id + "-mfl-team";
+            var salary = document.createElement("h5");
+            salary.classList.add("card-subtitle", "mb-2", "text-muted");
+            salary.innerHTML = players[playerNumber].salary.toFixed(2);
+            salary.id = players[playerNumber].id + "-salary";
             // Paragraph of body of card.
             var paragraph = document.createElement("p");
             paragraph.classList.add("card-text");
-            paragraph.innerHTML = "NFL Team: " +  players[playerNumber].nflTeam + "<br>Age: " + players[playerNumber].age + "<br>Salary: $" +  players[playerNumber].salary.toFixed(2) +
-                "<br>2019 Position Rank: " + players[playerNumber].previousRank + "<br>2019 Fantasy Average: " + players[playerNumber].previousAverage.toFixed(2);
+            paragraph.innerHTML = "NFL Team: " + players[playerNumber].nflTeam + "<br>Age: " + players[playerNumber].age + "<br>2019 Position Rank: "
+                + players[playerNumber].previousRank + "<br>2019 Fantasy Average: " + players[playerNumber].previousAverage.toFixed(2);
             paragraph.id = players[playerNumber].id + "-information";
             // Combine the elements of the card.
             body.appendChild(title);
             body.appendChild(subtitle);
+            body.appendChild(salary);
             body.appendChild(paragraph);
             card.appendChild(image);
             card.appendChild(body);
