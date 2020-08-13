@@ -264,7 +264,7 @@ namespace Website.Hubs
                 {
                     if (player.Signed) _bidInProgress = false;
                     else _bidInProgress = true;
-                    await Clients.All.SendAsync("SetPlayer", player);
+                    await Clients.Caller.SendAsync("SetPlayer", player);
                 }
             }
         }
@@ -471,12 +471,12 @@ namespace Website.Hubs
                         player.MFLTeam = _leadBidder;
                         player.ContractYears = _contractYears;
                         player.Signed = true;
-                        await Clients.All.SendAsync("SetPlayer", player);
-                        await Clients.All.SendAsync("UpdatePlayers", player);
                         string information = $"{_leadBidder} places a final bid of ${_leadBid:F} for {_contractYears} years." +
                             $"{player.OriginalRights} now has the option to match.";
                         string footer = "Player Update: " + player.Name;
                         await Clients.All.SendAsync("ReceiveMessageInformation", information, footer);
+                        await Clients.All.SendAsync("SetPlayer", player);
+                        await Clients.All.SendAsync("UpdatePlayers", player);
                     }
                 }
                 else
@@ -500,7 +500,7 @@ namespace Website.Hubs
                     {
                         _leadBidder = team;
                         _contractYears = years;   
-                        information = $"{player.OriginalRights} matches. The final deal is {_leadBid:F} for {_contractYears} years.";
+                        information = $"{player.OriginalRights} match. The final deal is {_leadBid:F} for {_contractYears} years.";
                     }
                     else
                     {
@@ -519,10 +519,10 @@ namespace Website.Hubs
                     player.ContractYears = _contractYears;
                     player.Signed = true;
                 }
-                await Clients.All.SendAsync("SetPlayer", player);
-                await Clients.All.SendAsync("UpdatePlayers", player);
                 string footer = "Player Update: " + player.Name;
                 await Clients.All.SendAsync("ReceiveMessageInformation", information, footer);
+                await Clients.All.SendAsync("SetPlayer", player);
+                await Clients.All.SendAsync("UpdatePlayers", player);
             }
         }
 
