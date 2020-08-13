@@ -328,8 +328,7 @@ function finalizeBid() {
 // Match the bid or opt out.
 function matchBid(match, years) {
     if (match) {
-        alert("Received " + years);
-        connection.invoke("MatchBid", true, years);
+        connection.invoke("MatchBid", true, parseInt(years));
     }
     else {
         connection.invoke("MatchBid", false, 0);
@@ -440,17 +439,6 @@ function BuildBidButton() {
     inputGroup.appendChild(bidButtonSection);
     buttonSection.appendChild(inputGroup);
 }
-/*
-<div class="input-group mb-3" id="bid-input-group">
-    <div class="input-group-prepend">
-        <button class="btn btn-outline-danger bid-button" type="button" id="opt-out">Opt Out</button>
-    </div>
-    <input type="number" class="form-control" placeholder="0.00" step="0.50" min="0.00" id="bid-input">
-        <div class="input-group-append">
-            <button class="btn btn-outline-primary bid-button" type="button" id="submit-bid">Submit Bid</button>
-        </div>
-</div>
-*/
 
 function BuildFinalBidButton() {
     if (document.contains(document.getElementById("bid-input-group"))) {
@@ -517,11 +505,11 @@ function BuildMatchButton(years) {
     var buttonSection = document.getElementById("bid-button-section");
     // Build the input group.
     var inputGroup = document.createElement("div");
-    inputGroup.classList.add("dropdown", "mb-3");
+    inputGroup.classList.add("dropdown");
     inputGroup.id = "bid-input-group";
     // Build the row and columns.
     var row = document.createElement("div");
-    row.classList.add("row", "mb-3");
+    row.classList.add("row");
     var colOne = document.createElement("div");
     colOne.classList.add("col");
     var colTwo = document.createElement("div");
@@ -553,17 +541,13 @@ function BuildMatchButton(years) {
     var matchDropdownMenu = document.createElement("div");
     matchDropdownMenu.classList.add("dropdown-menu");
     // Build the dropdown items.
-    for (yearOptions; yearOptions <= 4; yearOptions++) {
+    for (var year = yearOptions; year <= 4; year++) {
         var item = document.createElement("button");
         item.classList.add("dropdown-item");
         item.type = "button";
-        item.id = "match-item-" + yearOptions;
-        item.innerHTML = yearOptions + " Years";
-        item.addEventListener("click", function (event) {
-            matchBid(true, yearOptions);
-            alert(yearOptions);
-            event.preventDefault();
-        });
+        item.id = "match-item-" + year.toString();
+        item.value = year;
+        item.innerHTML = year + " Years";
         matchDropdownMenu.appendChild(item);
     }
     // Combine the elements.
@@ -575,6 +559,25 @@ function BuildMatchButton(years) {
     row.appendChild(colTwo);
     inputGroup.appendChild(row);
     buttonSection.appendChild(inputGroup);
+    // Add the event listeners.
+    if (document.contains(document.getElementById("match-item-2"))) {
+        document.getElementById("match-item-2").addEventListener("click", function (event) {
+            matchBid(true, 2);
+            event.preventDefault();
+        })
+    }
+    if (document.contains(document.getElementById("match-item-3"))) {
+        document.getElementById("match-item-3").addEventListener("click", function (event) {
+            matchBid(true, 3);
+            event.preventDefault();
+        })
+    }
+    if (document.contains(document.getElementById("match-item-4"))) {
+        document.getElementById("match-item-4").addEventListener("click", function (event) {
+            matchBid(true, 4);
+            event.preventDefault();
+        })
+    }
 }
 
 /* Commissioner Control */

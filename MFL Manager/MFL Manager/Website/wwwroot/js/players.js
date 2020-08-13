@@ -59,7 +59,7 @@ connection.on("SetPlayers", function (players) {
             subtitle.id = players[playerNumber].id + "-mfl-team";
             var salary = document.createElement("h5");
             salary.classList.add("card-subtitle", "mb-2", "text-muted");
-            salary.innerHTML = players[playerNumber].salary.toFixed(2);
+            salary.innerHTML = "$" + players[playerNumber].salary.toFixed(2);
             salary.id = players[playerNumber].id + "-salary";
             // Paragraph of body of card.
             var paragraph = document.createElement("p");
