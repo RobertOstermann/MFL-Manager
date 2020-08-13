@@ -58,6 +58,8 @@ connection.on("RevokeMessagePermissions", function () {
     document.getElementById("message-recipient").disabled = true;
     document.getElementById("message-input").disabled = true;
     document.getElementById("submit-message").disabled = true;
+    // Get the bid.
+    connection.invoke("GetBid");
 });
 
 connection.on("RevokeBidPermissions", function () {
