@@ -82,7 +82,7 @@ namespace Website.Hubs
             {
                 if (userTeam != null && userTeam.Equals(team))
                 {
-                    await Clients.Caller.SendAsync("SelectTeam", team.Replace(' ', '-'));
+                    await Clients.Caller.SendAsync("ServerSelectTeam", team.Replace(' ', '-'));
                 }
                 else
                 {

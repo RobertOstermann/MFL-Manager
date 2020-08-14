@@ -23,9 +23,15 @@ connection.on("UpdateTeams", function () {
     connection.invoke("GetTeams");
 })
 
+connection.on("ServerSelectTeam", function (team) {
+    var card = document.getElementById(team);
+    card.style.borderColor = "rgb(3, 235, 7)";
+});
+
 connection.on("SelectTeam", function (team) {
     var card = document.getElementById(team);
     card.style.borderColor = "rgb(3, 235, 7)";
+    window.location.href = "/FreeAgency";
 });
 
 connection.on("ReceiveSetTeam", function (team) {
