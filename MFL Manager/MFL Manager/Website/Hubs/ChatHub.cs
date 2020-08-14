@@ -471,8 +471,8 @@ namespace Website.Hubs
                         player.MFLTeam = _leadBidder;
                         player.ContractYears = _contractYears;
                         player.Signed = true;
-                        string information = $"{_leadBidder} places a final bid of ${_leadBid:F} for {_contractYears} years." +
-                            $"{player.OriginalRights} now has the option to match.";
+                        string information = $"{_leadBidder} places a final bid of ${_leadBid:F} for {_contractYears} years. {player.OriginalRights} now " +
+                                             $"has the option to match.";
                         string footer = "Player Update: " + player.Name;
                         await Clients.All.SendAsync("ReceiveMessageInformation", information, footer);
                         await Clients.All.SendAsync("SetPlayer", player);
