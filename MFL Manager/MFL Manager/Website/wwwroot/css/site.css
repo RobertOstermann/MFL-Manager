@@ -30,17 +30,17 @@ html, body {
 
 .highlight-blue {
     font-family: 'Permanent Marker', sans-serif;
-    color: #2b74ff;
+    color: #2b74ff !important;
 }
 
 .highlight-red {
     font-family: 'Permanent Marker', sans-serif;
-    color: #e20000;
+    color: #e20000 !important;
 }
 
 .highlight-white {
     font-family: 'Permanent Marker', sans-serif;
-    color: whitesmoke;
+    color: whitesmoke !important;
 }
 
 .padding {

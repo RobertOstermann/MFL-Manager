@@ -6,9 +6,37 @@
 
 <link rel="stylesheet" href="~/css/players.css">
 
+<!-- Navbar Section -->
+<header class="pb-4">
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top py-0">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-page="/Index">
+                <span class="highlight-blue">M</span><span class="highlight-red">F</span><span class="highlight-blue">L</span>
+                Free Agency
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item text-dark" id="navbar-home">
+                        <a class="nav-link" id="navbar-home-link" asp-area="" asp-page="/Index">Home</a>
+                    </li>
+                    <li class="nav-item text-dark active" id="navbar-players">
+                        <a class="nav-link highlight-blue" id="navbar-players-link" asp-area="" asp-page="/Players">Players</a>
+                    </li>
+                    <li class="nav-item text-dark" id="navbar-free-agency">
+                        <a class="nav-link" id="navbar-free-agency-link" asp-area="" asp-page="/FreeAgency">Free Agency</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
 <!--- Player Cards -->
 <div class="container-fluid padding" id="player-cards">
-    
+
 </div>
 
 <script src="~/js/players.js"></script>
