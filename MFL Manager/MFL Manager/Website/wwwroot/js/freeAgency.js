@@ -245,7 +245,7 @@ function sendMessage() {
 }
 
 document.getElementById("message-input").addEventListener("keyup", function (event) {
-    if (event.keyCode == 13) {
+    if (event.keyCode === 13) {
         sendMessage();
         event.preventDefault();
     }
@@ -419,7 +419,7 @@ function BuildBidButton() {
     number.min = "0.00";
     number.id = "bid-input";
     number.addEventListener("keyup", function (event) {
-        if (event.keyCode == 13) {
+        if (event.keyCode === 13) {
             sendBid();
             event.preventDefault();
         }
