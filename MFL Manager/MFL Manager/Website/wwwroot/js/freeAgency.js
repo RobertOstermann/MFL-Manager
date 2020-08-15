@@ -14,8 +14,8 @@ connection.start().then(function () {
 });
 
 connection.on("RemoveCookie", function () {
-    var TeamCookieDelete = "TeamCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    document.cookie = TeamCookieDelete;
+    var teamCookieDelete = "TeamCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = teamCookieDelete;
 });
 
 connection.on("GrantMessagePermissions", function () {
@@ -274,6 +274,7 @@ connection.on("SetPlayer", function (player) {
         card.style.borderColor = "";
     }
     image.src = player.src;
+    image.alt = player.name + " Image";
     name.innerHTML = player.name;
     team.innerHTML = player.mflTeam;
 });
@@ -322,7 +323,7 @@ function sendBid() {
 function finalizeBid() {
     var bid = parseFloat(document.getElementById("bid-input").value);
     var years = parseInt(document.getElementById("year-input").value);
-    if (years != 0) {
+    if (years !== 0) {
         connection.invoke("SendFinalBid", bid, years).catch(function (err) {
             return console.error(err.toString());
         });
@@ -368,7 +369,7 @@ connection.on("UpdateOptOut", function (teams) {
     for (var i = 0; i < teamLabels.length; i++) {
         teamLabels[i].style.color = "";
         for (var j = 0; j < teams.length; j++) {
-            if (teamLabels[i].id == teams[j]) {
+            if (teamLabels[i].id === teams[j]) {
                 teamLabels[i].style.color = "rgb(226, 0, 0)";
             }
         }
@@ -571,19 +572,19 @@ function BuildMatchButton(years) {
         document.getElementById("match-item-2").addEventListener("click", function (event) {
             matchBid(true, 2);
             event.preventDefault();
-        })
+        });
     }
     if (document.contains(document.getElementById("match-item-3"))) {
         document.getElementById("match-item-3").addEventListener("click", function (event) {
             matchBid(true, 3);
             event.preventDefault();
-        })
+        });
     }
     if (document.contains(document.getElementById("match-item-4"))) {
         document.getElementById("match-item-4").addEventListener("click", function (event) {
             matchBid(true, 4);
             event.preventDefault();
-        })
+        });
     }
 }
 
@@ -647,7 +648,7 @@ connection.on("CommissionerPermissions", function (inProgress) {
 connection.on("StartFreeAgency", function () {
     document.getElementById("previous-player").disabled = false;
     document.getElementById("next-player").disabled = false;
-    var commissionerSection = document.getElementById("commissioner-section")
+    var commissionerSection = document.getElementById("commissioner-section");
     var previousControl = document.getElementById("control-row-two");
     var control = createInProgressFreeAgencySection();
     commissionerSection.removeChild(previousControl);

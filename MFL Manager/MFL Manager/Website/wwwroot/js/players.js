@@ -10,15 +10,15 @@ connection.start().then(function () {
 })
 
 connection.on("RemoveCookie", function () {
-    var TeamCookieDelete = "TeamCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    document.cookie = TeamCookieDelete;
+    var teamCookieDelete = "TeamCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = teamCookieDelete;
 });
 
 // Build Player Cards Test
 
 connection.on("SetPlayers", function (players) {
     var divisions = Math.floor(players.length / 4);
-    if (players.length % 4 != 0) {
+    if (players.length % 4 !== 0) {
         divisions += 1;
     }
     var playerCards = document.getElementById("player-cards");
@@ -45,6 +45,7 @@ connection.on("SetPlayers", function (players) {
             var image = document.createElement("img");
             image.classList.add("card-img-top");
             image.src = players[playerNumber].src;
+            image.alt = players[playerNumber].name + " Image";
             // Body of card.
             var body = document.createElement("div");
             body.classList.add("card-body");
@@ -59,7 +60,11 @@ connection.on("SetPlayers", function (players) {
             subtitle.id = players[playerNumber].id + "-mfl-team";
             var salary = document.createElement("h5");
             salary.classList.add("card-subtitle", "mb-2", "text-muted");
-            salary.innerHTML = "$" + players[playerNumber].salary.toFixed(2);
+            if (players[playerNumber].contractYears === 0) {
+                salary.innerHTML = "$" + players[playerNumber].salary.toFixed(2);
+            } else {
+                salary.innerHTML = "$" + players[playerNumber].salary.toFixed(2) + " for " + players[playerNumber].contractYears + " years.";
+            }
             salary.id = players[playerNumber].id + "-salary";
             // Paragraph of body of card.
             var paragraph = document.createElement("p");
@@ -83,9 +88,16 @@ connection.on("SetPlayers", function (players) {
 
 connection.on("UpdatePlayers", function (player) {
     document.getElementById(player.id + "-mfl-team").innerHTML = player.mflTeam;
-    document.getElementById(player.id + "-information").innerHTML = "NFL Team: " + player.nflTeam + "<br>Age: " + player.age + "<br>Salary: $" + player.salary.toFixed(2) +
-        "<br>2019 Position Rank: " + player.previousRank + "<br>2019 Fantasy Average: " + player.previousAverage.toFixed(2);
+    if (player.contractYears === 0) {
+        document.getElementById(player.id + "-salary").innerHTML = "$" + player.salary.toFixed(2);
+    } else {
+        document.getElementById(player.id + "-salary").innerHTML = "$" + player.salary.toFixed(2) + " for " + player.contractYears + " years.";
+    }
+    document.getElementById(player.id + "-information").innerHTML = "NFL Team: " + player.nflTeam + "<br>Age: " + player.age + "<br>2019 Position Rank: "
+        + player.previousRank + "<br>2019 Fantasy Average: " + player.previousAverage.toFixed(2);
     if (player.signed) {
         document.getElementById(player.id).style.borderColor = "rgb(226, 0, 0)";
+    } else {
+        document.getElementById(player.id).style.borderColor = "";
     }
 });

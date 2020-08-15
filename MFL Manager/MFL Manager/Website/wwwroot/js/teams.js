@@ -10,13 +10,13 @@ connection.start().then(function () {
 })
 
 connection.on("SetCookie", function (team) {
-    var TeamCookie = "TeamCookie=" + team;
-    document.cookie = TeamCookie;
+    var teamCookie = "TeamCookie=" + team;
+    document.cookie = teamCookie;
 })
 
 connection.on("RemoveCookie", function () {
-    var TeamCookieDelete = "TeamCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-    document.cookie = TeamCookieDelete;
+    var teamCookieDelete = "TeamCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+    document.cookie = teamCookieDelete;
 })
 
 connection.on("UpdateTeams", function () {
@@ -46,8 +46,8 @@ connection.on("ReceiveRemoveTeam", function (team) {
 
 function selectTeam(team) {
     var card = document.getElementById(team);
-    if (card.style.borderColor != "rgb(3, 235, 7)") {
-        if (card.style.borderColor != "rgb(226, 0, 0)") {
+    if (card.style.borderColor !== "rgb(3, 235, 7)") {
+        if (card.style.borderColor !== "rgb(226, 0, 0)") {
             connection.invoke("SetTeam", team).catch(function (err) {
                 return console.error(err.toString());
             });

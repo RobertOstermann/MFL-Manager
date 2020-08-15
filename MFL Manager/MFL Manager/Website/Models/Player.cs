@@ -14,11 +14,11 @@ namespace Website.Models
 
         public string Src { get; set; }
 
-        public string MFLTeam { get; set; }
+        public string MflTeam { get; set; }
 
         public string OriginalRights { get; set; }
 
-        public string NFLTeam { get; set; }
+        public string NflTeam { get; set; }
 
         public int Age { get; set; }
 
@@ -39,9 +39,9 @@ namespace Website.Models
             Name = player.Replace('-', ' ');
             Id = player.Replace(' ', '-');
             Src = src;
-            MFLTeam = mflTeam;
+            MflTeam = mflTeam;
             OriginalRights = mflTeam;
-            NFLTeam = nflTeam;
+            NflTeam = nflTeam;
             Age = age;
             Salary = salary;
             OriginalSalary = salary;

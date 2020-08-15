@@ -1,41 +1,39 @@
-﻿using Microsoft.AspNetCore.Http.Connections.Features;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SignalR;
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Policy;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http.Connections.Features;
+using Microsoft.AspNetCore.SignalR;
 using Website.Models;
 
 namespace Website.Hubs
 {
     public class ChatHub : Hub
     {
-        private static bool _isServerSetUp = false;
+        private static bool _isServerSetUp;
 
-        private static ConcurrentDictionary<string, string> _connections = new ConcurrentDictionary<string, string>();
+        private static readonly ConcurrentDictionary<string, string> Connections = new ConcurrentDictionary<string, string>();
 
-        private static HashSet<string> _optOutIds = new HashSet<string>();
+        private static readonly HashSet<string> OptOutIds = new HashSet<string>();
 
-        private static LinkedList<Player> _players = new LinkedList<Player>();
+        private static readonly LinkedList<Player> Players = new LinkedList<Player>();
 
         private static LinkedListNode<Player> _node;
 
-        private static readonly Queue<Message> _messages = new Queue<Message>();
+        private static readonly Queue<Message> Messages = new Queue<Message>();
 
-        private static bool _freeAgencyInProgress = false;
+        private static bool _freeAgencyInProgress;
 
-        private static bool _bidInProgress = false;
+        private static bool _bidInProgress;
 
-        private static bool _matchInProgress = false;
+        private static bool _matchInProgress;
 
-        private static double _leadBid = 0.00;
+        private static double _leadBid;
 
         private static string _leadBidder = "None";
 
-        private static int _contractYears = 0;
+        private static int _contractYears;
 
         public void SetUpServer()
         {
@@ -52,7 +50,7 @@ namespace Website.Hubs
             if (!string.IsNullOrWhiteSpace(teamId))
             {
                 string team = teamId.Replace('-', ' ');
-                if (_connections.TryAdd(team, Context.ConnectionId))
+                if (Connections.TryAdd(team, Context.ConnectionId))
                 {
                     await Clients.Others.SendAsync("UpdateTeams");
                 }
@@ -68,7 +66,7 @@ namespace Website.Hubs
             string team = GetUserTeam();
             if (team != null)
             {
-                _connections.TryRemove(team, out string connection);
+                Connections.TryRemove(team, out _);
             }
             return base.OnDisconnectedAsync(exception);
         }
@@ -78,7 +76,7 @@ namespace Website.Hubs
         public async Task GetTeams()
         {
             string userTeam = GetUserTeam();
-            foreach (string team in _connections.Keys)
+            foreach (string team in Connections.Keys)
             {
                 if (userTeam != null && userTeam.Equals(team))
                 {
@@ -96,7 +94,7 @@ namespace Website.Hubs
             string team = teamId.Replace('-', ' ');
             if (GetUserTeam() == null)
             {
-                if (_connections.TryAdd(team, Context.ConnectionId))
+                if (Connections.TryAdd(team, Context.ConnectionId))
                 {
                     await Clients.Others.SendAsync("ReceiveSetTeam", teamId);
                     await Clients.Caller.SendAsync("SelectTeam", teamId);
@@ -108,7 +106,7 @@ namespace Website.Hubs
         public async Task RemoveTeam(string teamId)
         {
             string team = teamId.Replace('-', ' ');
-            if (_connections.TryRemove(team, out string connection))
+            if (Connections.TryRemove(team, out _))
             {
                 await Clients.All.SendAsync("ReceiveRemoveTeam", teamId);
                 await Clients.Caller.SendAsync("RemoveCookie");
@@ -119,14 +117,14 @@ namespace Website.Hubs
 
         public async Task GetPlayers()
         {
-            await Clients.Caller.SendAsync("SetPlayers", _players.ToArray());
+            await Clients.Caller.SendAsync("SetPlayers", Players.ToArray());
         }
 
         private void CreatePlayers()
         {
-            if (_players.Count == 0)
+            var players = new List<Player>();
+            if (Players.Count == 0)
             {
-                List<Player> players = new List<Player>();
                 players.Add(new Player("Aaron Jones", "/images/players/Aaron Jones.jpg", "Tornados", "Packers", 7.91, 2, 18.39, 25));
                 players.Add(new Player("Chris Godwin", "/images/players/Chris Godwin.jpg", "Penguins", "Buccaneers", 8.16, 2, 16.65, 24));
                 players.Add(new Player("Ezekiel Elliot", "/images/players/Ezekiel Elliot.jpg", "Bombers", "Cowboys", 13.41, 4, 18.04, 25));
@@ -144,16 +142,16 @@ namespace Website.Hubs
             }
         }
 
-        private void AddPlayerToLinkedList(Player player)
+        private static void AddPlayerToLinkedList(Player player)
         {
             if (_node == null)
             {
                 _node = new LinkedListNode<Player>(player);
-                _players.AddFirst(_node);
+                Players.AddFirst(_node);
             }
             else
             {
-                _players.AddLast(player);
+                Players.AddLast(player);
             }
         }
 
@@ -161,7 +159,7 @@ namespace Website.Hubs
 
         public async Task StartFreeAgency()
         {
-            _optOutIds.Clear();
+            OptOutIds.Clear();
             _freeAgencyInProgress = true;
             _bidInProgress = true;
             await Clients.Caller.SendAsync("StartFreeAgency");
@@ -169,7 +167,7 @@ namespace Website.Hubs
             if (player != null)
             {
                 _leadBid = player.Salary;
-                _leadBidder = player.MFLTeam;
+                _leadBidder = player.MflTeam;
                 await Clients.All.SendAsync("SetPlayer", player);
                 await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
             }
@@ -182,7 +180,6 @@ namespace Website.Hubs
             {
                 await Clients.Caller.SendAsync("GrantMessagePermissions");
                 Player player = _node?.Value;
-                // Check if team is owner of player.
                 if (_bidInProgress)
                 {
                     if (player != null && player.Signed)
@@ -199,7 +196,7 @@ namespace Website.Hubs
                     else
                     {
                         await Clients.Caller.SendAsync("GrantBidPermissions");
-                        if (_optOutIds.Contains(team))
+                        if (OptOutIds.Contains(team))
                         {
                             await Clients.Caller.SendAsync("OptOut");
                         }
@@ -238,19 +235,18 @@ namespace Website.Hubs
 
         public async Task GetPreviousPlayer()
         {
-            _optOutIds.Clear();
+            OptOutIds.Clear();
             await Clients.All.SendAsync("OptIn");
-            await Clients.All.SendAsync("UpdateOptOut", _optOutIds.ToArray());
+            await Clients.All.SendAsync("UpdateOptOut", OptOutIds.ToArray());
             Player player = _node?.Previous?.Value;
             if (player != null)
             {
-                if (player.Signed) _bidInProgress = false;
-                else _bidInProgress = true;
+                _bidInProgress = !player.Signed;
                 _matchInProgress = false;
                 _contractYears = player.ContractYears;
                 _node = _node.Previous;
                 _leadBid = player.Salary;
-                _leadBidder = player.MFLTeam;
+                _leadBidder = player.MflTeam;
                 await Clients.All.SendAsync("SetPlayer", player);
             }
         }
@@ -262,8 +258,7 @@ namespace Website.Hubs
                 Player player = _node?.Value;
                 if (player != null)
                 {
-                    if (player.Signed) _bidInProgress = false;
-                    else _bidInProgress = true;
+                    _bidInProgress = !player.Signed;
                     await Clients.Caller.SendAsync("SetPlayer", player);
                 }
             }
@@ -271,35 +266,34 @@ namespace Website.Hubs
 
         public async Task GetNextPlayer()
         {
-            _optOutIds.Clear();
+            OptOutIds.Clear();
             await Clients.All.SendAsync("OptIn");
-            await Clients.All.SendAsync("UpdateOptOut", _optOutIds.ToArray());
+            await Clients.All.SendAsync("UpdateOptOut", OptOutIds.ToArray());
             Player player = _node?.Next?.Value;
             if (player != null)
             {
-                if (player.Signed) _bidInProgress = false;
-                else _bidInProgress = true;
+                _bidInProgress = !player.Signed;
                 _matchInProgress = false;
                 _contractYears = player.ContractYears;
                 _node = _node.Next;
                 _leadBid = player.Salary;
-                _leadBidder = player.MFLTeam;
+                _leadBidder = player.MflTeam;
                 await Clients.All.SendAsync("SetPlayer", player);
             }
         }
 
         public async Task PlayerReset()
         {
-            _optOutIds.Clear();
+            OptOutIds.Clear();
             await Clients.All.SendAsync("OptIn");
-            await Clients.All.SendAsync("UpdateOptOut", _optOutIds.ToArray());
+            await Clients.All.SendAsync("UpdateOptOut", OptOutIds.ToArray());
             Player player = _node?.Value;
             if (player != null)
             {
                 _bidInProgress = true;
                 _matchInProgress = false;
                 player.Salary = player.OriginalSalary;
-                player.MFLTeam = player.OriginalRights;
+                player.MflTeam = player.OriginalRights;
                 player.ContractYears = 0;
                 player.Signed = false;
                 _leadBid = player.OriginalSalary;
@@ -322,7 +316,7 @@ namespace Website.Hubs
                         _bidInProgress = false;
                         _matchInProgress = true;
                         player.Salary = _leadBid;
-                        player.MFLTeam = "None";
+                        player.MflTeam = "None";
                         player.ContractYears = _contractYears;
                         string information = $"No bid was placed. {player.OriginalRights} has the option to sign the player.";
                         string footer = "Player Update: " + player.Name;
@@ -337,7 +331,6 @@ namespace Website.Hubs
                         string footer = "Player Update: " + player.Name;
                         await Clients.All.SendAsync("ReceiveMessageInformation", information, footer);
                         await Clients.All.SendAsync("SetPlayer", player);
-                        await Clients.All.SendAsync("UpdatePlayers", player);
                     }
                 }
             }
@@ -346,10 +339,10 @@ namespace Website.Hubs
         public async Task SendMessage(string recipient, string text)
         {
             string team = GetUserTeam();
-            Message message = new Message(team, text, recipient);
+            var message = new Message(team, text, recipient);
             if (!string.IsNullOrWhiteSpace(team) && !string.IsNullOrWhiteSpace(recipient) && !string.IsNullOrWhiteSpace(text) && !team.Equals(recipient))
             {
-                _messages.Enqueue(message);
+                Messages.Enqueue(message);
                 if (recipient.Equals("Everyone"))
                 {
                     await Clients.Others.SendAsync("ReceiveMessage", team, text);
@@ -357,7 +350,7 @@ namespace Website.Hubs
                 }
                 else
                 {
-                    if (_connections.TryGetValue(recipient, out string client))
+                    if (Connections.TryGetValue(recipient, out string client))
                     {
                         await Clients.Client(client).SendAsync("ReceiveMessageDirect", team, text);
                     }
@@ -372,7 +365,7 @@ namespace Website.Hubs
             string team = GetUserTeam();
             if (!string.IsNullOrWhiteSpace(team))
             {
-                foreach (Message message in _messages)
+                foreach (Message message in Messages)
                 {
                     if (message.Recipient.Equals("Everyone"))
                     {
@@ -393,10 +386,10 @@ namespace Website.Hubs
             string team = GetUserTeam();
             if (!string.IsNullOrWhiteSpace(team))
             {
-                if (_optOutIds.Remove(team.Replace(' ', '-')))
+                if (OptOutIds.Remove(team.Replace(' ', '-')))
                 {
                     await Clients.Caller.SendAsync("OptIn");
-                    await Clients.All.SendAsync("UpdateOptOut", _optOutIds.ToArray());
+                    await Clients.All.SendAsync("UpdateOptOut", OptOutIds.ToArray());
                 }
             }
         }
@@ -406,10 +399,10 @@ namespace Website.Hubs
             string team = GetUserTeam();
             if (!string.IsNullOrWhiteSpace(team))
             {
-                if (_optOutIds.Add(team.Replace(' ', '-')))
+                if (OptOutIds.Add(team.Replace(' ', '-')))
                 {
                     await Clients.Caller.SendAsync("OptOut");
-                    await Clients.All.SendAsync("UpdateOptOut", _optOutIds.ToArray());
+                    await Clients.All.SendAsync("UpdateOptOut", OptOutIds.ToArray());
                 }
             }
         }
@@ -445,10 +438,6 @@ namespace Website.Hubs
                     _leadBidder = team;
                     await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
                 }
-                else
-                {
-                    //Clients.Client.SendAsync("InvalidBid");
-                }
             }
         }
 
@@ -468,20 +457,16 @@ namespace Website.Hubs
                         _bidInProgress = false;
                         _matchInProgress = true;
                         player.Salary = _leadBid;
-                        player.MFLTeam = _leadBidder;
+                        player.MflTeam = _leadBidder;
                         player.ContractYears = _contractYears;
                         player.Signed = true;
                         string information = $"{_leadBidder} places a final bid of ${_leadBid:F} for {_contractYears} years. {player.OriginalRights} now " +
-                                             $"has the option to match.";
+                                             "has the option to match.";
                         string footer = "Player Update: " + player.Name;
                         await Clients.All.SendAsync("ReceiveMessageInformation", information, footer);
                         await Clients.All.SendAsync("SetPlayer", player);
                         await Clients.All.SendAsync("UpdatePlayers", player);
                     }
-                }
-                else
-                {
-                    //Clients.Client.SendAsync("InvalidBid");
                 }
             }
         }
@@ -515,12 +500,17 @@ namespace Website.Hubs
                         }
                     }
                     player.Salary = _leadBid;
-                    player.MFLTeam = _leadBidder;
+                    player.MflTeam = _leadBidder;
                     player.ContractYears = _contractYears;
                     player.Signed = true;
                 }
-                string footer = "Player Update: " + player.Name;
-                await Clients.All.SendAsync("ReceiveMessageInformation", information, footer);
+
+                if (player != null)
+                {
+                    string footer = "Player Update: " + player.Name;
+                    await Clients.All.SendAsync("ReceiveMessageInformation", information, footer);
+                }
+
                 await Clients.All.SendAsync("SetPlayer", player);
                 await Clients.All.SendAsync("UpdatePlayers", player);
             }
@@ -530,7 +520,7 @@ namespace Website.Hubs
 
         private string GetUserTeam()
         {
-            string key = _connections.FirstOrDefault(k => k.Value == Context.ConnectionId).Key;
+            string key = Connections.FirstOrDefault(k => k.Value == Context.ConnectionId).Key;
             return key;
         }
     }
