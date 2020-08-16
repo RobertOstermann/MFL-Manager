@@ -632,7 +632,7 @@ namespace Website.Hubs
                 new Player("Odell Beckham", 25.00, 1),
                 new Player("Travis Kelce", 14.00, 1)
             };
-            var team = new Team("Storm Dynasty", 0, players);
+            var team = new Team("Storm Dynasty", 2.45, players);
             Teams.Add(team);
         }
 
@@ -657,7 +657,7 @@ namespace Website.Hubs
                 new Player("JuJu Smith-Schuster", 21.99, 1),
                 new Player("Michael Thomas", 21.00, 1)
             };
-            var team = new Team("Gorillas", 0, players);
+            var team = new Team("Gorillas", 3.68, players);
             Teams.Add(team);
         }
 
@@ -670,7 +670,7 @@ namespace Website.Hubs
                 new Player("Davante Adams", 21.00, 1),
                 new Player("Adam Thielen", 17.00, 1)
             };
-            var team = new Team("Power", 0, players);
+            var team = new Team("Power", 2.45, players);
             Teams.Add(team);
         }
 
