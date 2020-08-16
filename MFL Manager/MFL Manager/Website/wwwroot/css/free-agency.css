@@ -55,7 +55,7 @@
 /* Team Section */
 
 .team-card {
-    height: 60vh;
+    height: 50vh;
     overflow-x: hidden;
     overflow-y: scroll;
 }
