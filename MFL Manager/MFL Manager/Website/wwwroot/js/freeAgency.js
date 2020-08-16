@@ -886,6 +886,10 @@ connection.on("SetTeamRoster", function (team) {
     document.getElementById("team-total-salary").innerHTML = "$" + team.totalSalary.toFixed(2);
 });
 
+connection.on("UpdateTeamRoster", function () {
+    selectTeamRoster();
+});
+
 document.getElementById("selected-team").addEventListener("change", function(event) {
     selectTeamRoster();
     event.preventDefault();
