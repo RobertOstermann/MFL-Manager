@@ -727,3 +727,28 @@ function createInProgressFreeAgencySection() {
     rowTwo.appendChild(colTwo);
     return rowTwo;
 }
+
+/* Opt Outs / Team Rosters */
+
+connection.on("SetTeamRoster", function (team) {
+    document.getElementById("team-card-header-text").innerHTML = team.name;
+    document.getElementById("team-salary").innerHTML = "$" + team.salary.toFixed(2);
+    document.getElementById("team-adjustments").innerHTML = "$" + team.salaryAdjustments.toFixed(2);
+    document.getElementById("team-total-salary").innerHTML = "$" + team.totalSalary.toFixed(2);
+});
+
+document.getElementById("selected-team").addEventListener("change", function(event) {
+    selectTeamRoster();
+    event.preventDefault();
+});
+
+function selectTeamRoster() {
+    var team = $("#selected-team").find("option:selected").text();
+    if (team === "Opt-Outs") {
+        alert(team);
+    } else {
+        connection.invoke("GetTeamRoster", team).catch(function (err) {
+            return console.error(err.toString());
+        });
+    }
+}

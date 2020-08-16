@@ -497,6 +497,19 @@ namespace Website.Hubs
             }
         }
 
+        // Team Rosters
+
+        public async Task GetTeamRoster(string team)
+        {
+            
+            await Clients.Caller.SendAsync("SetTeamRoster", GetSelectedTeamRoster(team));
+        }
+
+        private Team GetSelectedTeamRoster(string selectedTeam)
+        {
+            return Teams.FirstOrDefault(team => team.Name.Equals(selectedTeam));
+        }
+
         // ALL
 
         private string GetUserTeam()
