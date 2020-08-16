@@ -11,6 +11,7 @@ connection.start().then(function () {
     connection.invoke("CheckCommissionerPermissions");
     connection.invoke("GetPlayer");
     connection.invoke("GetMessages");
+    connection.invoke("GetOptOuts");
 });
 
 connection.on("RemoveCookie", function () {
@@ -236,7 +237,7 @@ function scrollToBottom(id) {
 }
 
 function sendMessage() {
-    var recipient = $("#message-recipient").find("option:selected").text();
+    var recipient = $("#message-recipient").find("option:selected").text().replace("'", "");
     var message = document.getElementById("message-input").value;
     connection.invoke("SendMessage", recipient, message).catch(function (err) {
         return console.error(err.toString());
@@ -730,7 +731,152 @@ function createInProgressFreeAgencySection() {
 
 /* Opt Outs / Team Rosters */
 
+connection.on("SetOptOuts", function (teams, selectedTeam) {
+    if (document.contains(document.getElementById("team-card-row"))) {
+        document.getElementById("team-card-row").remove();
+    }
+    var cardBody = document.getElementById("team-card-body");
+    var row = document.createElement("div");
+    row.classList.add("row");
+    row.id = "team-card-row";
+    var col = document.createElement("div");
+    col.classList.add("col");
+    col.id = "opt-out-teams";
+    var tornados = document.createElement("h3");
+    tornados.classList.add("pb-2");
+    tornados.id = "Tornados";
+    tornados.innerHTML = "Tornados";
+    var penguins = document.createElement("h3");
+    penguins.classList.add("pb-2");
+    penguins.id = "Penguins";
+    penguins.innerHTML = "Penguins";
+    var bombers = document.createElement("h3");
+    bombers.classList.add("pb-2");
+    bombers.id = "Bombers";
+    bombers.innerHTML = "Bombers";
+    var dactyls = document.createElement("h3");
+    dactyls.classList.add("pb-2");
+    dactyls.id = "Dactyls";
+    dactyls.innerHTML = "Dactyls";
+    var odbs = document.createElement("h3");
+    odbs.classList.add("pb-2");
+    odbs.id = "ODBs";
+    odbs.innerHTML = "ODBs";
+    var stormDynasty = document.createElement("h3");
+    stormDynasty.classList.add("pb-2");
+    stormDynasty.id = "Storm-Dynasty";
+    stormDynasty.innerHTML = "Storm Dynasty";
+    var nikeStorm = document.createElement("h3");
+    nikeStorm.classList.add("pb-2");
+    nikeStorm.id = "Nike-Storm";
+    nikeStorm.innerHTML = "Nike Storm";
+    var gorillas = document.createElement("h3");
+    gorillas.classList.add("pb-2");
+    gorillas.id = "Gorillas";
+    gorillas.innerHTML = "Gorillas";
+    var power = document.createElement("h3");
+    power.classList.add("pb-2");
+    power.id = "Power";
+    power.innerHTML = "Power";
+    var ram = document.createElement("h3");
+    ram.classList.add("pb-2");
+    ram.id = "Ram";
+    ram.innerHTML = "Ram";
+
+    col.appendChild(tornados);
+    col.appendChild(penguins);
+    col.appendChild(bombers);
+    col.appendChild(dactyls);
+    col.appendChild(odbs);
+    col.appendChild(stormDynasty);
+    col.appendChild(nikeStorm);
+    col.appendChild(gorillas);
+    col.appendChild(power);
+    col.appendChild(ram);
+    row.appendChild(col);
+    cardBody.appendChild(row);
+
+    var teamLabels = document.getElementById("opt-out-teams").children;
+    for (var i = 0; i < teamLabels.length; i++) {
+        teamLabels[i].style.color = "";
+        for (var j = 0; j < teams.length; j++) {
+            if (teamLabels[i].id === teams[j]) {
+                teamLabels[i].style.color = "rgb(226, 0, 0)";
+            }
+        }
+    }
+    document.getElementById("team-card-header-text").innerHTML = "Opt Outs";
+    if (selectedTeam === null) {
+        document.getElementById("team-salary").innerHTML = "";
+        document.getElementById("team-adjustments").innerHTML = "";
+        document.getElementById("team-total-salary").innerHTML = "";
+    } else {
+        document.getElementById("team-salary").innerHTML = "$" + selectedTeam.salary.toFixed(2);
+        document.getElementById("team-adjustments").innerHTML = "$" + selectedTeam.salaryAdjustments.toFixed(2);
+        document.getElementById("team-total-salary").innerHTML = "$" + selectedTeam.totalSalary.toFixed(2);
+    }
+});
+
 connection.on("SetTeamRoster", function (team) {
+    if (document.contains(document.getElementById("team-card-row"))) {
+        document.getElementById("team-card-row").remove();
+    }
+    var cardBody = document.getElementById("team-card-body");
+    var row = document.createElement("div");
+    row.classList.add("row");
+    row.id = "team-card-row";
+    var playerName = document.createElement("div");
+    playerName.classList.add("col-4");
+    playerName.id = "player-team-" + team.id;
+    var playerSalary = document.createElement("div");
+    playerSalary.classList.add("col-4", "text-center");
+    playerSalary.id = "salary-team-" + team.id;
+    var playerYears = document.createElement("div");
+    playerYears.classList.add("col-4", "text-right");
+    playerYears.id = "years-team-" + team.id;
+
+    var nameLabel = document.createElement("h4");
+    nameLabel.innerHTML = "Name";
+    playerName.appendChild(nameLabel);
+    var salaryLabel = document.createElement("h4");
+    salaryLabel.innerHTML = "Salary";
+    playerSalary.appendChild(salaryLabel);
+    var yearsLabel = document.createElement("h4");
+    yearsLabel.innerHTML = "Year";
+    playerYears.appendChild(yearsLabel);
+    row.appendChild(playerName);
+    row.appendChild(playerSalary);
+    row.appendChild(playerYears);
+
+    for (var i = 0; i < team.players.length; i++) {
+        var seperator = document.createElement("div");
+        seperator.classList.add("w-100");
+        row.appendChild(seperator);
+        // Build the name.
+        var nameCol = document.createElement("div");
+        nameCol.classList.add("col-4");
+        var name = document.createElement("h5");
+        name.innerHTML = team.players[i].name;
+        nameCol.appendChild(name);
+        // Build the salary.
+        var salaryCol = document.createElement("div");
+        salaryCol.classList.add("col-4", "text-center");
+        var salary = document.createElement("h5");
+        salary.innerHTML = team.players[i].salary.toFixed(2);
+        salaryCol.appendChild(salary);
+        // Build the years.
+        var yearsCol = document.createElement("div");
+        yearsCol.classList.add("col-4", "text-right");
+        var years = document.createElement("h5");
+        years.innerHTML = team.players[i].contractDate;
+        yearsCol.appendChild(years);
+        // Build the row.
+        row.appendChild(nameCol);
+        row.appendChild(salaryCol);
+        row.appendChild(yearsCol);
+    }
+    cardBody.appendChild(row);
+
     document.getElementById("team-card-header-text").innerHTML = team.name;
     document.getElementById("team-salary").innerHTML = "$" + team.salary.toFixed(2);
     document.getElementById("team-adjustments").innerHTML = "$" + team.salaryAdjustments.toFixed(2);
@@ -743,9 +889,11 @@ document.getElementById("selected-team").addEventListener("change", function(eve
 });
 
 function selectTeamRoster() {
-    var team = $("#selected-team").find("option:selected").text();
+    var team = $("#selected-team").find("option:selected").text().replace("'", "");
     if (team === "Opt-Outs") {
-        alert(team);
+        connection.invoke("GetOptOuts").catch(function (err) {
+            return console.error(err.toString());
+        });
     } else {
         connection.invoke("GetTeamRoster", team).catch(function (err) {
             return console.error(err.toString());

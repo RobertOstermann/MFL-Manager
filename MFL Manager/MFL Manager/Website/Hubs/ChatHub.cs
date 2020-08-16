@@ -499,9 +499,15 @@ namespace Website.Hubs
 
         // Team Rosters
 
+        public async Task GetOptOuts()
+        {
+            string userTeam = GetUserTeam();
+            Team selectedTeam = Teams.FirstOrDefault(team => team.Name.Equals(userTeam));
+            await Clients.Caller.SendAsync("SetOptOuts", OptOutIds.ToArray(), selectedTeam);
+        }
+
         public async Task GetTeamRoster(string team)
         {
-            
             await Clients.Caller.SendAsync("SetTeamRoster", GetSelectedTeamRoster(team));
         }
 
@@ -542,20 +548,143 @@ namespace Website.Hubs
             }
         }
 
-        private void CreateTeams()
+        private static void CreateTeams()
         {
             CreateTornados();
+            CreatePenguins();
+            CreateBombers();
+            CreateDactyls();
+            CreateOdbs();
+            CreateStormDynasty();
+            CreateNikeStorm();
+            CreateGorillas();
+            CreatePower();
+            CreateRam();
         }
+
+        #region Create Teams
 
         private static void CreateTornados()
         {
             var players = new List<Player>
             {
-                new Player("Kenyan Drake", 7.50, 2), 
+                new Player("Kenyan Drake", 7.50, 2),
                 new Player("Sony Michel", 7.00, 2)
             };
-            var tornados = new Team("Tornados", 0, players);
-            Teams.Add(tornados);
+            var team = new Team("Tornados", 0, players);
+            Teams.Add(team);
         }
+
+        private static void CreatePenguins()
+        {
+            var players = new List<Player>
+            {
+                new Player("Deshaun Watson", 10.00, 2),
+                new Player("Nick Chubb", 22.00, 2),
+                new Player("Dalvin Cook", 7.31, 1),
+                new Player("Alvin Kamara", 26.00, 1)
+            };
+            var team = new Team("Penguins", 0, players);
+            Teams.Add(team);
+        }
+
+        private static void CreateBombers()
+        {
+            var players = new List<Player>
+            {
+                new Player("Leonard Fournette", 9.13, 1),
+                new Player("Amari Cooper", 9.00, 1)
+            };
+            var team = new Team("Bombers", 0, players);
+            Teams.Add(team);
+        }
+
+        private static void CreateDactyls()
+        {
+            var players = new List<Player>
+            {
+                new Player("James Connor", 28.00, 1),
+                new Player("Christian McCaffrey", 7.64, 1),
+                new Player("Zach Ertz", 13.00, 2)
+            };
+            var team = new Team("Dactyls", 0, players);
+            Teams.Add(team);
+        }
+
+        private static void CreateOdbs()
+        {
+            var players = new List<Player>
+            {
+                new Player("Kerryon Johnson", 13.00, 2),
+                new Player("Joe Mixon", 18.00, 1),
+                new Player("DeAndre Hopkins", 24.00, 1)
+            };
+            var team = new Team("ODBs", 0, players);
+            Teams.Add(team);
+        }
+
+        private static void CreateStormDynasty()
+        {
+            var players = new List<Player>
+            {
+                new Player("Patrick Mahomes", 27.00, 2),
+                new Player("Keenan Allen", 14.00, 1),
+                new Player("Odell Beckham", 25.00, 1),
+                new Player("Travis Kelce", 14.00, 1)
+            };
+            var team = new Team("Storm Dynasty", 0, players);
+            Teams.Add(team);
+        }
+
+        private static void CreateNikeStorm()
+        {
+            var players = new List<Player>
+            {
+                new Player("Chris Carson", 9.50, 2),
+                new Player("David Johnson", 29.00, 1),
+                new Player("Stefon Diggs", 11.00, 2)
+            };
+            var team = new Team("Nike Storm", 0, players);
+            Teams.Add(team);
+        }
+
+        private static void CreateGorillas()
+        {
+            var players = new List<Player>
+            {
+                new Player("Aaron Rodgers", 23.00, 1),
+                new Player("Devonta Freeman", 14.00, 1),
+                new Player("JuJu Smith-Schuster", 21.99, 1),
+                new Player("Michael Thomas", 21.00, 1)
+            };
+            var team = new Team("Gorillas", 0, players);
+            Teams.Add(team);
+        }
+
+        private static void CreatePower()
+        {
+            var players = new List<Player>
+            {
+                new Player("Saquon Barkley", 11.02, 2),
+                new Player("David Montgomery", 7.00, 3),
+                new Player("Davante Adams", 21.00, 1),
+                new Player("Adam Thielen", 17.00, 1)
+            };
+            var team = new Team("Power", 0, players);
+            Teams.Add(team);
+        }
+
+        private static void CreateRam()
+        {
+            var players = new List<Player>
+            {
+                new Player("Todd Gurley", 8.79, 1),
+                new Player("Mike Evans", 17.00, 1)
+            };
+            var team = new Team("Ram", 0, players);
+            Teams.Add(team);
+        }
+
+        #endregion
     }
 }

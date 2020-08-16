@@ -28,6 +28,8 @@ namespace Website.Models
 
         public int ContractYears { get; set; }
 
+        public int ContractDate => ContractYears + DateTime.Now.Year - 1;
+
         public int PreviousRank { get; set; }
 
         public double PreviousAverage { get; set; }
