@@ -17,6 +17,8 @@ namespace Website.Hubs
 
         private static readonly HashSet<string> OptOutIds = new HashSet<string>();
 
+        private static readonly HashSet<Team> Teams = new HashSet<Team>();
+
         private static readonly LinkedList<Player> Players = new LinkedList<Player>();
 
         private static LinkedListNode<Player> _node;
@@ -41,6 +43,7 @@ namespace Website.Hubs
             {
                 _isServerSetUp = true;
                 CreatePlayers();
+                CreateTeams();
             }
         }
 
@@ -118,28 +121,6 @@ namespace Website.Hubs
         public async Task GetPlayers()
         {
             await Clients.Caller.SendAsync("SetPlayers", Players.ToArray());
-        }
-
-        private void CreatePlayers()
-        {
-            var players = new List<Player>();
-            if (Players.Count == 0)
-            {
-                players.Add(new Player("Aaron Jones", "/images/players/Aaron Jones.jpg", "Tornados", "Packers", 7.91, 2, 18.39, 25));
-                players.Add(new Player("Chris Godwin", "/images/players/Chris Godwin.jpg", "Penguins", "Buccaneers", 8.16, 2, 16.65, 24));
-                players.Add(new Player("Ezekiel Elliot", "/images/players/Ezekiel Elliot.jpg", "Bombers", "Cowboys", 13.41, 4, 18.04, 25));
-                players.Add(new Player("Tyreek Hill", "/images/players/Tyreek Hill.jpg", "Dactyls", "Chiefs", 7.00, 31, 13.28, 26));
-                players.Add(new Player("Julio Jones", "/images/players/Julio Jones.png", "ODBs", "Falcons", 24.00, 3, 14.97, 31));
-                players.Add(new Player("Josh Jacobs", "/images/players/Josh Jacobs.jpeg", "Storm Dynasty", "Raiders", 7.25, 18, 14.12, 22));
-                players.Add(new Player("Miles Sanders", "/images/players/Miles Sanders.jpeg", "Storm Dynasty", "Eagles", 7.00, 15, 12.23, 23));
-                players.Add(new Player("Derrick Henry", "/images/players/Derrick Henry.jpg", "Gorillas", "Titans", 7.31, 3, 19.44, 26));
-                players.Add(new Player("Lamar Jackson", "/images/players/Lamar Jackson.jpg", "Power", "Ravens", 12.91, 1, 36.40, 23));
-                players.Add(new Player("Austin Ekeler", "/images/players/Austin Ekeler.jpg", "Power", "Chargers", 7.00, 6, 16.69, 25));
-                foreach (Player player in players)
-                {
-                    AddPlayerToLinkedList(player);
-                }
-            }
         }
 
         private static void AddPlayerToLinkedList(Player player)
@@ -522,6 +503,46 @@ namespace Website.Hubs
         {
             string key = Connections.FirstOrDefault(k => k.Value == Context.ConnectionId).Key;
             return key;
+        }
+
+        // Server Initialization
+
+        private void CreatePlayers()
+        {
+            var players = new List<Player>();
+            if (Players.Count == 0)
+            {
+                players.Add(new Player("Aaron Jones", "/images/players/Aaron Jones.jpg", "Tornados", "Packers", 7.91, 2, 18.39, 25));
+                players.Add(new Player("Chris Godwin", "/images/players/Chris Godwin.jpg", "Penguins", "Buccaneers", 8.16, 2, 16.65, 24));
+                players.Add(new Player("Ezekiel Elliot", "/images/players/Ezekiel Elliot.jpg", "Bombers", "Cowboys", 13.41, 4, 18.04, 25));
+                players.Add(new Player("Tyreek Hill", "/images/players/Tyreek Hill.jpg", "Dactyls", "Chiefs", 7.00, 31, 13.28, 26));
+                players.Add(new Player("Julio Jones", "/images/players/Julio Jones.png", "ODBs", "Falcons", 24.00, 3, 14.97, 31));
+                players.Add(new Player("Josh Jacobs", "/images/players/Josh Jacobs.jpeg", "Storm Dynasty", "Raiders", 7.25, 18, 14.12, 22));
+                players.Add(new Player("Miles Sanders", "/images/players/Miles Sanders.jpeg", "Storm Dynasty", "Eagles", 7.00, 15, 12.23, 23));
+                players.Add(new Player("Derrick Henry", "/images/players/Derrick Henry.jpg", "Gorillas", "Titans", 7.31, 3, 19.44, 26));
+                players.Add(new Player("Lamar Jackson", "/images/players/Lamar Jackson.jpg", "Power", "Ravens", 12.91, 1, 36.40, 23));
+                players.Add(new Player("Austin Ekeler", "/images/players/Austin Ekeler.jpg", "Power", "Chargers", 7.00, 6, 16.69, 25));
+                foreach (Player player in players)
+                {
+                    AddPlayerToLinkedList(player);
+                }
+            }
+        }
+
+        private void CreateTeams()
+        {
+            CreateTornados();
+        }
+
+        private static void CreateTornados()
+        {
+            var players = new List<Player>
+            {
+                new Player("Kenyan Drake", 7.50, 2), 
+                new Player("Sony Michel", 7.00, 2)
+            };
+            var tornados = new Team("Tornados", 0, players);
+            Teams.Add(tornados);
         }
     }
 }

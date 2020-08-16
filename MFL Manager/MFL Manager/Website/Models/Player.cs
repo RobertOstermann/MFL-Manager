@@ -34,6 +34,20 @@ namespace Website.Models
 
         public bool Signed { get; set; }
 
+
+        /// <summary>
+        /// Free Agent player.
+        /// </summary>
+        /// <param name="player">Player name or id</param>
+        /// <param name="src">Image source</param>
+        /// <param name="mflTeam">MFL Team</param>
+        /// <param name="nflTeam">NFL Team</param>
+        /// <param name="salary">Salary</param>
+        /// <param name="previousRank">Previous year rank by total points</param>
+        /// <param name="previousAverage">Previous year average points</param>
+        /// <param name="age">Player age</param>
+        /// <param name="years">Contract years</param>
+        /// <param name="signed">Status of signed to team</param>
         public Player(string player, string src, string mflTeam, string nflTeam, double salary, int previousRank, double previousAverage, int age, int years = 0, bool signed = false)
         {
             Name = player.Replace('-', ' ');
@@ -49,6 +63,21 @@ namespace Website.Models
             PreviousRank = previousRank;
             PreviousAverage = previousAverage;
             Signed = signed;
+        }
+
+        /// <summary>
+        /// Rostered player.
+        /// </summary>
+        /// <param name="player">Player name of id</param>
+        /// <param name="salary">Salary</param>
+        /// <param name="years">Contract years</param>
+        /// <param name="team">MFL Team</param>
+        public Player(string player, double salary, int years)
+        {
+            Name = player.Replace('-', ' ');
+            Id = player.Replace(' ', '-');
+            Salary = salary;
+            ContractYears = years;
         }
     }
 }
