@@ -169,6 +169,14 @@ namespace Website.Hubs
                         {
                             await Clients.Caller.SendAsync("GrantFinalBidPermissions");
                         }
+                        else if (!string.IsNullOrWhiteSpace(player.OriginalRights) && team.Equals(player.OriginalRights))
+                        {
+                            await Clients.Caller.SendAsync("RevokeMatchPermissions", _contractYears);
+                        }
+                        else
+                        {
+                            await Clients.Caller.SendAsync("RevokeBidPermissions");
+                        }
                     }
                     else if (player != null && !string.IsNullOrWhiteSpace(player.OriginalRights) && team.Equals(player.OriginalRights))
                     {
