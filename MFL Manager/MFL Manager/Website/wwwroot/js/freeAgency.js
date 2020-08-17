@@ -604,7 +604,7 @@ connection.on("CommissionerPermissions", function (inProgress) {
     colTwo.classList.add("col");
     // Build the previous player button.
     var previousPlayer = document.createElement("button");
-    previousPlayer.classList.add("btn", "btn-outline-dark", "btn-block", "commissioner-button");
+    previousPlayer.classList.add("btn", "btn-outline-dark", "btn-block", "h-100", "commissioner-button");
     previousPlayer.type = "button";
     previousPlayer.id = "previous-player";
     previousPlayer.innerHTML = "Previous Player";
@@ -617,7 +617,7 @@ connection.on("CommissionerPermissions", function (inProgress) {
     });
     // Build the next player button.
     var nextPlayer = document.createElement("button");
-    nextPlayer.classList.add("btn", "btn-outline-dark", "btn-block", "commissioner-button");
+    nextPlayer.classList.add("btn", "btn-outline-dark", "btn-block", "h-100", "commissioner-button");
     nextPlayer.type = "button";
     nextPlayer.id = "next-player";
     nextPlayer.innerHTML = "Next Player";
