@@ -1,7 +1,6 @@
 ﻿/* Welcome */
 
 .welcome {
-    width: 75%;
     margin: 0 auto;
     padding-top: 2rem;
 }
@@ -24,13 +23,8 @@
 }
 
 .card {
-    width: 15rem;
+    max-width: 15rem;
     border-width: .2rem;
-}
-
-.card-padding {
-    padding-left: 3rem;
-    padding-right: 3rem;
 }
 
 .card a {

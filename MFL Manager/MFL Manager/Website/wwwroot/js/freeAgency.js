@@ -829,7 +829,7 @@ connection.on("SetTeamRoster", function (team) {
     playerName.classList.add("col-4", "py-0");
     playerName.id = "player-team-" + team.id;
     var playerSalary = document.createElement("div");
-    playerSalary.classList.add("col-4", "text-center", "py-0");
+    playerSalary.classList.add("col-4", "text-right", "py-0");
     playerSalary.id = "salary-team-" + team.id;
     var playerYears = document.createElement("div");
     playerYears.classList.add("col-4", "text-right", "py-0");
@@ -857,19 +857,19 @@ connection.on("SetTeamRoster", function (team) {
         row.appendChild(seperator);
         // Build the name.
         var nameCol = document.createElement("div");
-        nameCol.classList.add("col-4", "py-1");
+        nameCol.classList.add("col-4", "py-1", "team-card-text");
         var name = document.createElement("h5");
         name.innerHTML = team.players[i].name;
         nameCol.appendChild(name);
         // Build the salary.
         var salaryCol = document.createElement("div");
-        salaryCol.classList.add("col-4", "text-center", "py-1");
+        salaryCol.classList.add("col-4", "text-right", "py-1", "team-card-text");
         var salary = document.createElement("h5");
         salary.innerHTML = "$" + team.players[i].salary.toFixed(2);
         salaryCol.appendChild(salary);
         // Build the years.
         var yearsCol = document.createElement("div");
-        yearsCol.classList.add("col-4", "text-right", "py-1");
+        yearsCol.classList.add("col-4", "text-right", "py-1", "team-card-text");
         var years = document.createElement("h5");
         years.innerHTML = team.players[i].contractDate;
         yearsCol.appendChild(years);

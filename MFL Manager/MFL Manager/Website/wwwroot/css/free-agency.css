@@ -58,4 +58,17 @@
     height: 50vh;
     overflow-x: hidden;
     overflow-y: scroll;
+    overflow-wrap: normal;
+}
+
+.team-card-text {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.h4 {
+    font-size: 1.50rem;
+}
+
+.h5 {
+    font-size: 1.25rem;
 }
