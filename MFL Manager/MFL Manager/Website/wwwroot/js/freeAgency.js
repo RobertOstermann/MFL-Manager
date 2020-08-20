@@ -368,10 +368,12 @@ connection.on("OptOut", function () {
 connection.on("UpdateOptOut", function (teams) {
     var teamLabels = document.getElementById("opt-out-teams").children;
     for (var i = 0; i < teamLabels.length; i++) {
-        teamLabels[i].style.color = "";
+        teamLabels[i].style.textDecorationColor = "";
+        teamLabels[i].style.textDecorationLine = "";
         for (var j = 0; j < teams.length; j++) {
             if (teamLabels[i].id === teams[j]) {
-                teamLabels[i].style.color = "rgb(226, 0, 0)";
+                teamLabels[i].style.textDecorationColor = "rgb(226, 0, 0)";
+                teamLabels[i].style.textDecorationLine = "line-through";
             }
         }
     }
