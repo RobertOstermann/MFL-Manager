@@ -7,21 +7,21 @@ connection.start().then(function () {
     connection.invoke("SetUpServer");
     connection.invoke("GetCookie");
     connection.invoke("GetTeams");
-})
+});
 
 connection.on("SetCookie", function (team) {
     var teamCookie = "TeamCookie=" + team;
     document.cookie = teamCookie;
-})
+});
 
 connection.on("RemoveCookie", function () {
     var teamCookieDelete = "TeamCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
     document.cookie = teamCookieDelete;
-})
+});
 
 connection.on("UpdateTeams", function () {
     connection.invoke("GetTeams");
-})
+});
 
 connection.on("ServerSelectTeam", function (team) {
     var card = document.getElementById(team);
@@ -42,7 +42,7 @@ connection.on("ReceiveSetTeam", function (team) {
 connection.on("ReceiveRemoveTeam", function (team) {
     var card = document.getElementById(team);
     card.style.borderColor = "";
-})
+});
 
 function selectTeam(team) {
     var card = document.getElementById(team);

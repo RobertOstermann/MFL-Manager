@@ -752,10 +752,10 @@ connection.on("SetOptOuts", function (teams, selectedTeam) {
     penguins.classList.add("pb-2");
     penguins.id = "Penguins";
     penguins.innerHTML = "Penguins";
-    var bombers = document.createElement("h4");
-    bombers.classList.add("pb-2");
-    bombers.id = "Bombers";
-    bombers.innerHTML = "Bombers";
+    var pigeonBoys = document.createElement("h4");
+    pigeonBoys.classList.add("pb-2");
+    pigeonBoys.id = "Pigeon-Boys";
+    pigeonBoys.innerHTML = "Pigeon Boys";
     var dactyls = document.createElement("h4");
     dactyls.classList.add("pb-2");
     dactyls.id = "Dactyls";
@@ -787,7 +787,7 @@ connection.on("SetOptOuts", function (teams, selectedTeam) {
 
     col.appendChild(tornados);
     col.appendChild(penguins);
-    col.appendChild(bombers);
+    col.appendChild(pigeonBoys);
     col.appendChild(dactyls);
     col.appendChild(odbs);
     col.appendChild(stormDynasty);

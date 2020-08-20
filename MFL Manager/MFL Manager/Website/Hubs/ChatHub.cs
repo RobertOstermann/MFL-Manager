@@ -566,7 +566,7 @@ namespace Website.Hubs
             {
                 players.Add(new Player("Aaron Jones", "/images/players/Aaron Jones.jpg", "Tornados", "Packers", 7.91, 2, 18.39, 25));
                 players.Add(new Player("Chris Godwin", "/images/players/Chris Godwin.jpg", "Penguins", "Buccaneers", 8.16, 2, 16.65, 24));
-                players.Add(new Player("Ezekiel Elliot", "/images/players/Ezekiel Elliot.jpg", "Bombers", "Cowboys", 13.41, 4, 18.04, 25));
+                players.Add(new Player("Ezekiel Elliot", "/images/players/Ezekiel Elliot.jpg", "Pigeon Boys", "Cowboys", 13.41, 4, 18.04, 25));
                 players.Add(new Player("Tyreek Hill", "/images/players/Tyreek Hill.jpg", "Dactyls", "Chiefs", 7.00, 31, 13.28, 26));
                 players.Add(new Player("Julio Jones", "/images/players/Julio Jones.png", "ODBs", "Falcons", 24.00, 3, 14.97, 31));
                 players.Add(new Player("Josh Jacobs", "/images/players/Josh Jacobs.jpeg", "Storm Dynasty", "Raiders", 7.25, 18, 14.12, 22));
@@ -585,7 +585,7 @@ namespace Website.Hubs
         {
             CreateTornados();
             CreatePenguins();
-            CreateBombers();
+            CreatePigeonBoys();
             CreateDactyls();
             CreateOdbs();
             CreateStormDynasty();
@@ -621,14 +621,14 @@ namespace Website.Hubs
             Teams.Add(team);
         }
 
-        private static void CreateBombers()
+        private static void CreatePigeonBoys()
         {
             var players = new List<Player>
             {
                 new Player("Leonard Fournette", 9.13, 1),
                 new Player("Amari Cooper", 9.00, 1)
             };
-            var team = new Team("Bombers", 0, players);
+            var team = new Team("Pigeon Boys", 0, players);
             Teams.Add(team);
         }
 

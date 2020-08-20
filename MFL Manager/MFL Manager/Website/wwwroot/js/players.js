@@ -7,7 +7,7 @@ connection.start().then(function () {
     connection.invoke("SetUpServer");
     connection.invoke("GetCookie");
     connection.invoke("GetPlayers");
-})
+});
 
 connection.on("RemoveCookie", function () {
     var teamCookieDelete = "TeamCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
@@ -84,7 +84,7 @@ connection.on("SetPlayers", function (players) {
         }
         playerCards.appendChild(row);
     }
-})
+});
 
 connection.on("UpdatePlayers", function (player) {
     document.getElementById(player.id + "-mfl-team").innerHTML = player.mflTeam;
