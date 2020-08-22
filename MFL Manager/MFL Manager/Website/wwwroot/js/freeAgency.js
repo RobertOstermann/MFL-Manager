@@ -768,10 +768,10 @@ connection.on("SetOptOuts", function (teams, selectedTeam) {
     stormDynasty.classList.add("pb-2");
     stormDynasty.id = "Storm-Dynasty";
     stormDynasty.innerHTML = "Storm Dynasty";
-    var nikeStorm = document.createElement("h4");
-    nikeStorm.classList.add("pb-2");
-    nikeStorm.id = "Nike-Storm";
-    nikeStorm.innerHTML = "Nike Storm";
+    var mudDogs = document.createElement("h4");
+    mudDogs.classList.add("pb-2");
+    mudDogs.id = "Mud-Dogs";
+    mudDogs.innerHTML = "Mud Dogs";
     var gorillas = document.createElement("h4");
     gorillas.classList.add("pb-2");
     gorillas.id = "Gorillas";
@@ -791,7 +791,7 @@ connection.on("SetOptOuts", function (teams, selectedTeam) {
     col.appendChild(dactyls);
     col.appendChild(odbs);
     col.appendChild(stormDynasty);
-    col.appendChild(nikeStorm);
+    col.appendChild(mudDogs);
     col.appendChild(gorillas);
     col.appendChild(power);
     col.appendChild(ram);
