@@ -589,7 +589,7 @@ namespace Website.Hubs
             CreateDactyls();
             CreateOdbs();
             CreateStormDynasty();
-            CreateNikeStorm();
+            CreateMudDogs();
             CreateGorillas();
             CreatePower();
             CreateRam();
@@ -669,7 +669,7 @@ namespace Website.Hubs
             Teams.Add(team);
         }
 
-        private static void CreateNikeStorm()
+        private static void CreateMudDogs()
         {
             var players = new List<Player>
             {
@@ -677,7 +677,7 @@ namespace Website.Hubs
                 new Player("David Johnson", 29.00, 1),
                 new Player("Stefon Diggs", 11.00, 2)
             };
-            var team = new Team("Nike Storm", 0, players);
+            var team = new Team("Mud Dogs", 0, players);
             Teams.Add(team);
         }
 
