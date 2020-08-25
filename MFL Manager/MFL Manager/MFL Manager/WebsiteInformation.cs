@@ -40,7 +40,7 @@ namespace MFL_Manager
             uxLeagueURL.Text = @"https://www54.myfantasyleague.com/2020/export?TYPE=league&L=30916&APIKEY=&JSON=1";
             uxPlayerURL.Text = @"https://www54.myfantasyleague.com/2020/export?TYPE=players&L=30916&APIKEY=&DETAILS=&SINCE=&PLAYERS=&JSON=1";
             uxSalaryURL.Text = @"https://www54.myfantasyleague.com/2020/export?TYPE=salaries&L=30916&APIKEY=&JSON=1";
-            uxRosterURL.Text = @"https://www54.myfantasyleague.com/2020/export?TYPE=rosters&L=30916&APIKEY=&FRANCHISE=&JSON=1";
+            uxRosterURL.Text = @"https://www54.myfantasyleague.com/2020/export?TYPE=rosters&L=30916&APIKEY=&FRANCHISE=&W=&JSON=1";
             uxPlayerProfileURL.Text = @"https://api.myfantasyleague.com/2020/export?TYPE=playerProfile";
         }
         /// <summary>

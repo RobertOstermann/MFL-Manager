@@ -7,6 +7,7 @@ using System.Security.Principal;
 using MFL_Manager.Models.ApiResponses.League;
 using MFL_Manager.Models.ApiResponses.Players;
 using MFL_Manager.Models.ApiResponses.Players.Player_Profile;
+using MFL_Manager.Models.ApiResponses.Roster;
 using MFL_Manager.Models.ApiResponses.Salary;
 using MFL_Manager.Models.CustomResponeses;
 using MFL_Manager.Repositories.Interface;
@@ -200,7 +201,7 @@ namespace MFL_Manager.Repositories.Implementation
             return salaries;
         }
 
-        public IEnumerable<Salary> GetRostersFromApi(Uri uri)
+        public IEnumerable<RosterFranchise> GetRostersFromApi(Uri uri)
         {
             if (uri == null)
                 throw new ArgumentException("Player request null in MFL Repository");
@@ -210,7 +211,11 @@ namespace MFL_Manager.Repositories.Implementation
             if (string.IsNullOrWhiteSpace(response))
                 return null;
 
-            throw new NotImplementedException();
+            var data = JsonConvert.DeserializeObject<RosterRequest>(response);
+
+            IEnumerable<RosterFranchise> rosters = data.Roster.Franchise;
+
+            return rosters;
         }
 
         #endregion

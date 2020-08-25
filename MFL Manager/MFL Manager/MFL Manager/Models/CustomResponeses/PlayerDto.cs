@@ -11,8 +11,6 @@ namespace MFL_Manager.Models.CustomResponeses
 
         public string NFLTeam { get; set; }
 
-        public string MFLTeam { get; set; }
-
         public int MFLTeamID { get; set; }
 
         public bool Roster { get; set; }

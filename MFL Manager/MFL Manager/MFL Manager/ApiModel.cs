@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MFL_Manager.Models.ApiResponses.League;
 
 namespace MFL_Manager
 {
@@ -83,6 +84,31 @@ namespace MFL_Manager
 
                     public int Division { get; set; }
                 }
+            }
+        }
+
+        /// <summary>
+        /// MFL Roster JSON
+        /// Provides - Team Roster, Contract Year
+        /// </summary>
+        public ApiRosterObject Rosters { get; set; }
+
+        public class ApiRosterObject
+        {
+            public List<ApiRosterFranchiseObject> Franchise { get; set; }
+
+            public class ApiRosterFranchiseObject
+            {
+                public List<ApiRosterPlayerObject> Player { get; set; }
+
+                public class ApiRosterPlayerObject
+                {
+                    public int Id { get; set; }
+
+                    public string ContractYear { get; set; }
+                }
+
+                public int Id { get; set; }
             }
         }
     }

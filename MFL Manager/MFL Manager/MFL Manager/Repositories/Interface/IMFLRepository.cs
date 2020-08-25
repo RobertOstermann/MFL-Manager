@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using MFL_Manager.Models.ApiResponses.League;
 using MFL_Manager.Models.ApiResponses.Players;
 using MFL_Manager.Models.ApiResponses.Players.Player_Profile;
+using MFL_Manager.Models.ApiResponses.Roster;
 using MFL_Manager.Models.ApiResponses.Salary;
 using MFL_Manager.Models.CustomResponeses;
 
@@ -26,7 +27,7 @@ namespace MFL_Manager.Repositories.Interface
 
         IEnumerable<Salary> GetSalariesFromApi(Uri uri);
 
-        IEnumerable<Salary> GetRostersFromApi(Uri uri);
+        IEnumerable<RosterFranchise> GetRostersFromApi(Uri uri);
 
         IEnumerable<PlayerDto> GetPlayersFromFile();
 

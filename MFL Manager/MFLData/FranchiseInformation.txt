@@ -1,11 +1,11 @@
 Name,Owner,Id,DivisionId,Division,Salary,CapHit
 Tornados,,1,0,AFC,14.5,0
-Penguins,,2,0,AFC,65.31,0
-Bombers,,3,0,AFC,18.130000000000003,0
+Mud Dogs,,2,0,AFC,65.31,0
+Pigeon Boys,,3,0,AFC,18.130000000000003,0
 Dactyls,,4,0,AFC,48.64,0
 ODB's,,5,0,AFC,55,0
 Storm Dynasty,,6,1,NFC,80,0
-Nike Storm,,7,1,NFC,49.5,0
-Gorillas,,8,1,NFC,79.99,0
-Power,,9,1,NFC,86.02,0
+Benchwarmers,,7,1,NFC,49.5,0
+Gorillas,,8,1,NFC,49.989999999999995,0
+Power,,9,1,NFC,75.02,4.9
 Shit Squad,,10,1,NFC,25.79,0

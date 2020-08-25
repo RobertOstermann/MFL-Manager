@@ -98,6 +98,10 @@
     <Compile Include="Models\ApiResponses\Players\Player Profile\PlayerProfilePlayer.cs" />
     <Compile Include="Models\ApiResponses\Players\Player Profile\PlayerProfileRequest.cs" />
     <Compile Include="Models\ApiResponses\Players\PlayerRequest.cs" />
+    <Compile Include="Models\ApiResponses\Roster\RosterFranchise.cs" />
+    <Compile Include="Models\ApiResponses\Roster\RosterPlayer.cs" />
+    <Compile Include="Models\ApiResponses\Roster\Roster.cs" />
+    <Compile Include="Models\ApiResponses\Roster\RosterRequest.cs" />
     <Compile Include="Models\ApiResponses\Salary\LeagueUnit.cs" />
     <Compile Include="Models\ApiResponses\Salary\SalaryRequest.cs" />
     <Compile Include="Models\ApiResponses\Salary\Salary.cs" />
@@ -186,5 +190,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -71,16 +71,23 @@ namespace MFL_Manager
             }
         }
 
-        public static List<XmlNode> LoadRosterInformation(string url)
+        /// <summary>
+        /// Loads the roster information from the MFL website.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public static async Task<List<ApiModel.ApiRosterObject.ApiRosterFranchiseObject>> LoadRosterInformation(string url)
         {
-            List<XmlNode> franchiseList = new List<XmlNode>();
-            XmlDocument document = new XmlDocument();
-            document.Load(url);
-            foreach (XmlNode node in document.DocumentElement)
+            using (HttpResponseMessage response = await ApiAssistant.ApiClient.GetAsync(url))
             {
-                franchiseList.Add(node);
+                if (response.IsSuccessStatusCode)
+                {
+                    ApiModel rosterModel = await response.Content.ReadAsAsync<ApiModel>();
+                    return rosterModel.Rosters.Franchise;
+                }
+
+                throw new Exception(response.ReasonPhrase);
             }
-            return franchiseList;
         }
     }
 }

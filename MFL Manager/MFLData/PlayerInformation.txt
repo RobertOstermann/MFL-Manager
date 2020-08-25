@@ -1,976 +1,989 @@
-Name,Id,NFLTeam,MFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,Age,Weight,Height,ADP,FantasyProsRanking,ByeWeek,PreviousScores,ProjectedScores
-"Bills, Buffalo",501,BUF,,0,False,,6.52,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Colts, Indianapolis",502,IND,,0,False,,6.05,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Dolphins, Miami",503,MIA,,0,False,,4.96,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Patriots, New England",504,NEP,,0,False,,6.64,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Jets, New York",505,NYJ,,0,False,,5.31,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Bengals, Cincinnati",506,CIN,,0,False,,4.8,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Browns, Cleveland",507,CLE,,0,False,,6.77,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Titans, Tennessee",508,TEN,,0,False,,5.92,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Jaguars, Jacksonville",509,JAC,,0,False,,8.48,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Steelers, Pittsburgh",510,PIT,,0,False,,6.01,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Broncos, Denver",511,DEN,,0,False,,6.68,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Chiefs, Kansas City",512,KCC,,0,False,,5.83,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Raiders, Las Vegas",513,LVR,,0,False,,3.9,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Chargers, Los Angeles",514,LAC,,0,False,,6.93,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Seahawks, Seattle",515,SEA,,0,False,,6.08,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Cowboys, Dallas",516,DAL,,0,False,,6.5,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Giants, New York",517,NYG,,0,False,,5.02,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Eagles, Philadelphia",518,PHI,,0,False,,6.35,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Cardinals, Arizona",519,ARI,,0,False,,5.13,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Redskins, Washington",520,WAS,,0,False,,5.2,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Bears, Chicago",521,CHI,,0,False,,9.95,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Lions, Detroit",522,DET,,0,False,,5.09,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Packers, Green Bay",523,GBP,,0,False,,5.65,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Vikings, Minnesota",524,MIN,,0,False,,7.26,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Buccaneers, Tampa Bay",525,TBB,,0,False,,4.91,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Falcons, Atlanta",526,ATL,,0,False,,5.74,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Panthers, Carolina",527,CAR,,0,False,,5.54,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Rams, Los Angeles",528,LAR,,0,False,,7.98,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Saints, New Orleans",529,NOS,,0,False,,6.68,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"49ers, San Francisco",530,SFO,,0,False,,5.02,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Ravens, Baltimore",531,BAL,,0,False,,7.6,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Texans, Houston",532,HOU,,0,False,,6.86,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Vinatieri, Adam",2842,FA,,0,False,,5.19,Kicker,47,212lbs,"6' 0""",N/A,0,0,0,0
-"Nix, Roosevelt",4397,IND,,0,False,,2.06,Running Back,28,248lbs,"5' 11""",N/A,0,0,0,0
-"Brees, Drew",4925,NOS,,0,False,,15.32,Quarterback,41,209lbs,"6' 0""",N/A,0,0,0,0
-"Brady, Tom",5848,TBB,,0,False,,13.45,Quarterback,42,225lbs,"6' 4""",N/A,0,0,0,0
-"McCown, Josh",6589,FA,,0,False,,5.93,Quarterback,41,218lbs,"6' 4""",N/A,0,0,0,0
-"Bryant, Matt",6789,FA,,0,False,,3.29,Kicker,45,203lbs,"5' 9""",N/A,0,0,0,0
-"Witten, Jason",6997,LVR,,0,False,,1.72,Tight End,38,263lbs,"6' 6""",N/A,0,0,0,0
-"Manning, Eli",7391,FA,,0,False,,7.23,Quarterback,39,218lbs,"6' 5""",N/A,0,0,0,0
-"Fitzgerald, Larry",7393,ARI,,0,False,,5.32,Wide Receiver,36,218lbs,"6' 3""",N/A,0,0,0,0
-"Rivers, Philip",7394,IND,,0,False,,11.4,Quarterback,38,228lbs,"6' 5""",N/A,0,0,0,0
-"Roethlisberger, Ben",7401,PIT,,0,False,,14.6,Quarterback,38,240lbs,"6' 5""",N/A,0,0,0,0
-"Watson, Ben",7422,FA,,0,False,,1.72,Tight End,39,255lbs,"6' 3""",N/A,0,0,0,0
-"Schaub, Matt",7480,ATL,,0,False,,5.93,Quarterback,39,245lbs,"6' 6""",N/A,0,0,0,0
-"Smith, Alex",7813,WAS,,0,False,,5.93,Quarterback,36,213lbs,"6' 4""",N/A,0,0,0,0
-"Rodgers, Aaron",7836,GBP,,8,True,2020,23,Quarterback,36,225lbs,"6' 2""",N/A,0,0,0,0
-"Nugent, Mike",7859,FA,,0,False,,2.39,Kicker,38,190lbs,"5' 10""",N/A,0,0,0,0
-"Gore, Frank",7877,NYJ,,0,False,,2.3,Running Back,37,212lbs,"5' 9""",N/A,0,0,0,0
-"Sproles, Darren",7942,FA,,0,False,,2.06,Running Back,37,190lbs,"5' 6""",N/A,0,0,0,0
-"Fitzpatrick, Ryan",8062,MIA,,0,False,,6.29,Quarterback,37,228lbs,"6' 2""",N/A,0,0,0,0
-"Gould, Robbie",8153,SFO,,0,False,,5.13,Kicker,37,190lbs,"6' 0""",N/A,0,0,0,0
-"Davis, Vernon",8247,FA,,0,False,,1.72,Tight End,36,248lbs,"6' 3""",N/A,0,0,0,0
-"Lewis, Marcedes",8269,GBP,,0,False,,1.72,Tight End,36,267lbs,"6' 6""",N/A,0,0,0,0
-"Gostkowski, Stephen",8359,FA,,0,False,,5.64,Kicker,36,215lbs,"6' 1""",N/A,0,0,0,0
-"Walker, Delanie",8416,FA,,0,False,,3.74,Tight End,35,248lbs,"6' 2""",N/A,0,0,0,0
-"Peterson, Adrian",8658,WAS,,0,False,,4.01,Running Back,35,220lbs,"6' 1""",N/A,0,0,0,0
-"Lynch, Marshawn",8670,FA,,0,False,,5.84,Running Back,34,215lbs,"5' 11""",N/A,0,0,0,0
-"Ginn Jr., Ted",8673,CHI,,0,False,,3.39,Wide Receiver,35,180lbs,"5' 11""",N/A,0,0,0,0
-"Olsen, Greg",8687,SEA,,0,False,,2.75,Tight End,35,255lbs,"6' 5""",N/A,0,0,0,0
-"Stanton, Drew",8712,FA,,0,False,,5.93,Quarterback,36,226lbs,"6' 3""",N/A,0,0,0,0
-"Crosby, Mason",8742,GBP,,0,False,,5.37,Kicker,35,207lbs,"6' 1""",N/A,0,0,0,0
-"Folk, Nick",8851,FA,,0,False,,4.42,Kicker,35,222lbs,"6' 1""",N/A,0,0,0,0
-"Prater, Matt",8930,DET,,0,False,,5.07,Kicker,35,201lbs,"5' 10""",N/A,0,0,0,0
-"Moore, Matt",8944,KCC,,0,False,,5.93,Quarterback,35,219lbs,"6' 3""",N/A,0,0,0,0
-"Flacco, Joe",9064,NYJ,,0,False,,6.5,Quarterback,35,245lbs,"6' 6""",N/A,0,0,0,0
-"Henne, Chad",9073,KCC,,0,False,,5.93,Quarterback,35,222lbs,"6' 3""",N/A,0,0,0,0
-"Jackson, DeSean",9075,PHI,,0,False,,4.33,Wide Receiver,33,175lbs,"5' 10""",N/A,0,0,0,0
-"Ryan, Matt",9099,ATL,,0,False,,17.05,Quarterback,35,217lbs,"6' 4""",N/A,0,0,0,0
-"Slater, Matt",9200,NEP,,0,False,,3.35,Wide Receiver,34,195lbs,"5' 11""",N/A,0,0,0,0
-"Garcon, Pierre",9250,FA,,0,False,,5.28,Wide Receiver,33,211lbs,"6' 0""",N/A,0,0,0,0
-"Amendola, Danny",9308,DET,,0,False,,3.35,Wide Receiver,34,185lbs,"5' 11""",N/A,0,0,0,0
-"Hauschka, Steven",9319,BUF,,0,False,,4.33,Kicker,35,210lbs,"6' 4""",N/A,0,0,0,0
-"Crabtree, Michael",9427,FA,,0,False,,3.35,Wide Receiver,32,215lbs,"6' 1""",N/A,0,0,0,0
-"Stafford, Matthew",9431,DET,,0,False,,8.74,Quarterback,32,220lbs,"6' 3""",N/A,0,0,0,0
-"Harvin, Percy",9441,FA,,0,False,,3.35,Wide Receiver,32,184lbs,"5' 11""",N/A,0,0,0,0
-"McCoy, LeSean",9448,FA,,0,False,,4.32,Running Back,32,210lbs,"5' 11""",N/A,0,0,0,0
-"Cook, Jared",9474,NOS,,0,False,,5.52,Tight End,33,254lbs,"6' 5""",N/A,0,0,0,0
-"Wallace, Mike",9525,FA,,0,False,,3.35,Wide Receiver,33,200lbs,"6' 0""",N/A,0,0,0,0
-"Edelman, Julian",9662,NEP,,0,False,,7.8,Wide Receiver,34,198lbs,"5' 10""",N/A,0,0,0,0
-"Succop, Ryan",9686,FA,,0,False,,4.63,Kicker,33,218lbs,"6' 2""",N/A,0,0,0,0
-"Gano, Graham",9694,CAR,,0,False,,4.96,Kicker,33,202lbs,"6' 2""",N/A,0,0,0,0
-"Daniel, Chase",9706,DET,,0,False,,5.93,Quarterback,33,225lbs,"6' 0""",N/A,0,0,0,0
-"Hoyer, Brian",9714,NEP,,0,False,,5.93,Quarterback,34,216lbs,"6' 2""",N/A,0,0,0,0
-"Bradford, Sam",9817,FA,,0,False,,6.5,Quarterback,32,224lbs,"6' 4""",N/A,0,0,0,0
-"Bryant, Dez",9823,FA,,0,False,,3.43,Wide Receiver,31,220lbs,"6' 2""",N/A,0,0,0,0
-"Tate, Golden",9831,NYG,,0,False,,3.86,Wide Receiver,31,191lbs,"5' 11""",N/A,0,0,0,0
-"LaFell, Brandon",9843,FA,,0,False,,3.35,Wide Receiver,33,210lbs,"6' 3""",N/A,0,0,0,0
-"Thomas, Demaryius",9884,FA,,0,False,,3.35,Wide Receiver,32,225lbs,"6' 3""",N/A,0,0,0,0
-"Blount, LeGarrette",9898,FA,,0,False,,3.05,Running Back,33,247lbs,"6' 0""",N/A,0,0,0,0
-"McCoy, Colt",9899,NYG,,0,False,,5.93,Quarterback,33,212lbs,"6' 1""",N/A,0,0,0,0
-"Gronkowski, Rob",9902,TBB,,0,False,,1.72,Tight End,31,268lbs,"6' 6""",N/A,0,0,0,0
-"Dickson, Ed",9912,FA,,0,False,,1.72,Tight End,32,250lbs,"6' 4""",N/A,0,0,0,0
-"Sanders, Emmanuel",9918,NOS,,0,False,,4.65,Wide Receiver,33,180lbs,"5' 11""",N/A,0,0,0,0
-"Roberts, Andre",9921,BUF,,0,False,,3.35,Wide Receiver,32,195lbs,"5' 11""",N/A,0,0,0,0
-"Graham, Jimmy",9925,CHI,,0,False,,3.05,Tight End,33,265lbs,"6' 7""",N/A,0,0,0,0
-"Brown, Antonio",9988,FA*,,0,False,,9.51,Wide Receiver,32,185lbs,"5' 10""",N/A,0,0,0,0
-"Webb, Joe",9992,FA,,0,False,,5.93,Quarterback,33,230lbs,"6' 4""",N/A,0,0,0,0
-"Ivory, Chris",10077,FA,,0,False,,2.27,Running Back,32,223lbs,"6' 0""",N/A,0,0,0,0
-"Green, A.J.",10261,CIN,,0,False,2019,21,Wide Receiver,31,210lbs,"6' 4""",N/A,0,0,0,0
-"Gabbert, Blaine",10262,TBB,,0,False,,5.93,Quarterback,30,235lbs,"6' 4""",N/A,0,0,0,0
-"Jones, Julio",10271,ATL,,0,False,2019,24,Wide Receiver,31,220lbs,"6' 3""",N/A,0,0,0,0
-"Newton, Cam",10273,NEP,,0,False,,16.04,Quarterback,31,245lbs,"6' 5""",N/A,0,0,0,0
-"Ingram, Mark",10276,BAL,,0,False,,6.97,Running Back,30,215lbs,"5' 9""",N/A,0,0,0,0
-"Kaepernick, Colin",10297,FA*,,0,False,,5.93,Quarterback,32,230lbs,"6' 4""",N/A,0,0,0,0
-"Rodgers, Jacquizz",10300,FA,,0,False,,2.06,Running Back,30,195lbs,"5' 7""",N/A,0,0,0,0
-"Cobb, Randall",10308,HOU,,0,False,,3.35,Wide Receiver,29,195lbs,"5' 10""",N/A,0,0,0,0
-"Rudolph, Kyle",10312,MIN,,0,False,,3.51,Tight End,30,265lbs,"6' 6""",N/A,0,0,0,0
-"Dalton, Andy",10313,DAL,,0,False,,7.85,Quarterback,32,220lbs,"6' 2""",N/A,0,0,0,0
-"Kendricks, Lance",10318,FA,,0,False,,1.72,Tight End,32,250lbs,"6' 3""",N/A,0,0,0,0
-"Stocker, Luke",10354,FA,,0,False,,1.72,Tight End,32,253lbs,"6' 5""",N/A,0,0,0,0
-"Jones, Taiwan",10368,BUF,,0,False,,2.06,Running Back,31,195lbs,"6' 0""",N/A,0,0,0,0
-"Powell, Bilal",10369,FA,,0,False,,2.06,Running Back,31,204lbs,"5' 10""",N/A,0,0,0,0
-"Sherman, Anthony",10378,KCC,,0,False,,2.06,Running Back,31,242lbs,"5' 10""",N/A,0,0,0,0
-"Lewis, Dion",10389,NYG,,0,False,,3.56,Running Back,29,195lbs,"5' 8""",N/A,0,0,0,0
-"Smith, Lee",10398,BUF,,0,False,,1.72,Tight End,32,265lbs,"6' 6""",N/A,0,0,0,0
-"Clay, Charles",10409,FA,,0,False,,1.72,Tight End,31,246lbs,"6' 3""",N/A,0,0,0,0
-"Harris, Dwayne",10410,FA,,0,False,,3.35,Wide Receiver,32,215lbs,"5' 10""",N/A,0,0,0,0
-"Robinson, Aldrick",10412,FA,,0,False,,3.35,Wide Receiver,31,185lbs,"5' 10""",N/A,0,0,0,0
-"Taylor, Tyrod",10413,LAC,,0,False,,5.93,Quarterback,30,217lbs,"6' 1""",N/A,0,0,0,0
-"Green, Virgil",10432,LAC,,0,False,,1.72,Tight End,31,255lbs,"6' 5""",N/A,0,0,0,0
-"Forbath, Kai",10487,DAL,,0,False,,4.11,Kicker,32,197lbs,"5' 11""",N/A,0,0,0,0
-"Pryor, Terrelle",10500,FA,,0,False,,3.35,Wide Receiver,31,228lbs,"6' 4""",N/A,0,0,0,0
-"Bailey, Dan",10506,MIN,,0,False,,4.8,Kicker,32,190lbs,"6' 0""",N/A,0,0,0,0
-"Bellore, Nick",10514,SEA,,0,False,,2.06,Running Back,31,250lbs,"6' 1""",N/A,0,0,0,0
-"Luck, Andrew",10695,FA,,0,False,,5.93,Quarterback,30,240lbs,"6' 4""",N/A,0,0,0,0
-"Griffin III, Robert",10696,BAL,,0,False,,5.93,Quarterback,30,213lbs,"6' 2""",N/A,0,0,0,0
-"Tannehill, Ryan",10697,TEN,,0,False,,5.93,Quarterback,31,217lbs,"6' 4""",N/A,0,0,0,0
-"Foles, Nick",10699,CHI,,0,False,,7.07,Quarterback,31,243lbs,"6' 6""",N/A,0,0,0,0
-"Cousins, Kirk",10700,MIN,,0,False,,11.06,Quarterback,31,202lbs,"6' 3""",N/A,0,0,0,0
-"Wilson, Russell",10703,SEA,,0,False,,14.38,Quarterback,31,215lbs,"5' 11""",N/A,0,0,0,0
-"Miller, Lamar",10708,FA,,0,False,,2.06,Running Back,29,221lbs,"5' 10""",N/A,0,0,0,0
-"Martin, Doug",10709,FA,,0,False,,2.06,Running Back,31,210lbs,"5' 9""",N/A,0,0,0,0
-"Turbin, Robert",10714,FA,,0,False,,2.06,Running Back,30,225lbs,"5' 10""",N/A,0,0,0,0
-"Floyd, Michael",10721,FA,,0,False,,3.35,Wide Receiver,30,220lbs,"6' 2""",N/A,0,0,0,0
-"Jeffery, Alshon",10722,PHI,,0,False,,6.38,Wide Receiver,30,218lbs,"6' 3""",N/A,0,0,0,0
-"Sanu, Mohamed",10723,NEP,,0,False,,3.68,Wide Receiver,30,210lbs,"6' 2""",N/A,0,0,0,0
-"Hilton, T.Y.",10729,IND,,0,False,,7.76,Wide Receiver,30,183lbs,"5' 10""",N/A,0,0,0,0
-"Wright, Jarius",10734,FA,,0,False,,3.35,Wide Receiver,30,191lbs,"5' 10""",N/A,0,0,0,0
-"Benjamin, Travis",10737,SFO,,0,False,,3.35,Wide Receiver,30,175lbs,"5' 10""",N/A,0,0,0,0
-"Jones, Marvin",10738,DET,,0,False,,5.17,Wide Receiver,30,199lbs,"6' 2""",N/A,0,0,0,0
-"Allen, Dwayne",10742,FA,,0,False,,1.72,Tight End,30,260lbs,"6' 4""",N/A,0,0,0,0
-"Ellison, Rhett",10838,FA,,0,False,,1.72,Tight End,31,255lbs,"6' 5""",N/A,0,0,0,0
-"Bullock, Randy",10862,CIN,,0,False,,2.39,Kicker,30,210lbs,"5' 9""",N/A,0,0,0,0
-"Zuerlein, Greg",10868,DAL,,0,False,,6.46,Kicker,32,191lbs,"6' 0""",N/A,0,0,0,0
-"Morris, Alfred",10870,FA,,0,False,,2.06,Running Back,31,222lbs,"5' 10""",N/A,0,0,0,0
-"Bolden, Brandon",10932,NEP,,0,False,,2.06,Running Back,30,220lbs,"5' 11""",N/A,0,0,0,0
-"Tanney, Alex",10935,NYG,,0,False,,5.93,Quarterback,32,208lbs,"6' 3""",N/A,0,0,0,0
-"Carrier, Derek",10940,LVR,,0,False,,1.72,Tight End,29,240lbs,"6' 3""",N/A,0,0,0,0
-"Keenum, Case",10948,CLE,,0,False,,5.93,Quarterback,32,215lbs,"6' 1""",N/A,0,0,0,0
-"Thompson, Deonte",10956,FA,,0,False,,3.35,Wide Receiver,31,204lbs,"6' 0""",N/A,0,0,0,0
-"Gordon, Josh",10960,FA,,0,False,,6.04,Wide Receiver,29,225lbs,"6' 3""",N/A,0,0,0,0
-"Beasley, Cole",10973,BUF,,0,False,,3.35,Wide Receiver,31,174lbs,"5' 8""",N/A,0,0,0,0
-"Tucker, Justin",10976,BAL,,0,False,,5.9,Kicker,30,183lbs,"6' 1""",N/A,0,0,0,0
-"Hogan, Chris",10983,FA,,0,False,,3.35,Wide Receiver,31,210lbs,"6' 1""",N/A,0,0,0,0
-"Olawale, Jamize",10985,DAL,,0,False,,2.06,Running Back,31,242lbs,"6' 1""",N/A,0,0,0,0
-"Celek, Garrett",11007,FA,,0,False,,1.72,Tight End,32,252lbs,"6' 5""",N/A,0,0,0,0
-"Brinkley, Beau",11065,TEN,,0,False,,0,Tight End,30,260lbs,"6' 4""",N/A,0,0,0,0
-"Kearse, Jermaine",11076,FA,,0,False,,3.35,Wide Receiver,30,210lbs,"6' 1""",N/A,0,0,0,0
-"DiMarco, Patrick",11100,BUF,,0,False,,2.06,Running Back,31,234lbs,"6' 1""",N/A,0,0,0,0
-"Develin, James",11101,FA,,0,False,,2.06,Running Back,31,255lbs,"6' 3""",N/A,0,0,0,0
-"Bellamy, Josh",11104,NYJ,,0,False,,3.35,Wide Receiver,31,208lbs,"6' 0""",N/A,0,0,0,0
-"Smith, Geno",11150,SEA,,0,False,,5.93,Quarterback,29,221lbs,"6' 3""",N/A,0,0,0,0
-"Barkley, Matt",11151,BUF,,0,False,,5.93,Quarterback,29,234lbs,"6' 2""",N/A,0,0,0,0
-"Glennon, Mike",11152,JAC,,0,False,,5.93,Quarterback,30,225lbs,"6' 7""",N/A,0,0,0,0
-"Ellington, Andre",11175,FA,,0,False,,2.06,Running Back,31,200lbs,"5' 9""",N/A,0,0,0,0
-"Barner, Kenjon",11177,FA,,0,False,,2.06,Running Back,31,195lbs,"5' 9""",N/A,0,0,0,0
-"Burkhead, Rex",11182,NEP,,0,False,,2.06,Running Back,30,215lbs,"5' 10""",N/A,0,0,0,0
-"Thompson, Chris",11186,JAC,,0,False,,2.27,Running Back,29,195lbs,"5' 8""",N/A,0,0,0,0
-"Riddick, Theo",11188,FA,,0,False,,2.06,Running Back,29,201lbs,"5' 9""",N/A,0,0,0,0
-"Bell, Le'Veon",11192,NYJ,,0,False,2019,32,Running Back,28,225lbs,"6' 1""",N/A,0,0,0,0
-"Bernard, Giovani",11193,CIN,,0,False,,2.06,Running Back,28,205lbs,"5' 9""",N/A,0,0,0,0
-"Ware, Spencer",11199,FA,,0,False,,2.06,Running Back,28,229lbs,"5' 10""",N/A,0,0,0,0
-"Williams, Terrance",11211,FA,,0,False,,3.35,Wide Receiver,30,210lbs,"6' 2""",N/A,0,0,0,0
-"Hunter, Justin",11212,FA,,0,False,,3.35,Wide Receiver,29,203lbs,"6' 4""",N/A,0,0,0,0
-"Austin, Tavon",11213,FA,,0,False,,3.35,Wide Receiver,29,185lbs,"5' 8""",N/A,0,0,0,0
-"Allen, Keenan",11222,LAC,,6,True,2020,14,Wide Receiver,28,211lbs,"6' 2""",N/A,0,0,0,0
-"Patterson, Cordarrelle",11225,CHI,,0,False,,3.35,Wide Receiver,29,228lbs,"6' 2""",N/A,0,0,0,0
-"Stills, Kenny",11227,HOU,,0,False,,3.84,Wide Receiver,28,202lbs,"6' 1""",N/A,0,0,0,0
-"Woods, Robert",11228,LAR,,0,False,,7.91,Wide Receiver,28,195lbs,"6' 0""",N/A,0,0,0,0
-"Hopkins, DeAndre",11232,ARI,,5,True,2020,24,Wide Receiver,28,212lbs,"6' 1""",N/A,0,0,0,0
-"Shepard, Russell",11237,FA,,0,False,,3.35,Wide Receiver,29,194lbs,"6' 0""",N/A,0,0,0,0
-"Goodwin, Marquise",11239,PHI,,0,False,,4.01,Wide Receiver,29,185lbs,"5' 9""",N/A,0,0,0,0
-"Kelce, Travis",11244,KCC,,6,True,2020,14,Tight End,30,260lbs,"6' 5""",N/A,0,0,0,0
-"Ertz, Zach",11247,PHI,,4,True,2021,13,Tight End,29,250lbs,"6' 5""",N/A,0,0,0,0
-"Reed, Jordan",11248,FA,,0,False,,3.23,Tight End,30,242lbs,"6' 2""",N/A,0,0,0,0
-"Eifert, Tyler",11250,JAC,,0,False,,2.05,Tight End,29,255lbs,"6' 6""",N/A,0,0,0,0
-"Toilolo, Levine",11252,NYG,,0,False,,1.72,Tight End,28,268lbs,"6' 8""",N/A,0,0,0,0
-"McDonald, Vance",11257,PIT,,0,False,,4.96,Tight End,30,267lbs,"6' 4""",N/A,0,0,0,0
-"Fells, Darren",11337,HOU,,0,False,,1.72,Tight End,34,270lbs,"6' 7""",N/A,0,0,0,0
-"Tavecchio, Giorgio",11339,FA,,0,False,,4.86,Kicker,30,180lbs,"5' 10""",N/A,0,0,0,0
-"Juszczyk, Kyle",11367,SFO,,0,False,,2.06,Running Back,29,235lbs,"6' 1""",N/A,0,0,0,0
-"Willson, Luke",11381,SEA,,0,False,,1.72,Tight End,30,255lbs,"6' 5""",N/A,0,0,0,0
-"Hopkins, Dustin",11387,WAS,,0,False,,3.83,Kicker,29,205lbs,"6' 2""",N/A,0,0,0,0
-"Murray, Latavius",11390,NOS,,0,False,,5.37,Running Back,30,230lbs,"6' 3""",N/A,0,0,0,0
-"Griffin, Ryan",11399,NYJ,,0,False,,1.72,Tight End,30,255lbs,"6' 6""",N/A,0,0,0,0
-"Butler, Brice",11406,FA,,0,False,,3.35,Wide Receiver,30,211lbs,"6' 3""",N/A,0,0,0,0
-"Griffin, Ryan",11441,TBB,,0,False,,5.93,Quarterback,30,210lbs,"6' 5""",N/A,0,0,0,0
-"Harris, Demetrius",11448,CHI,,0,False,,1.72,Tight End,28,230lbs,"6' 7""",N/A,0,0,0,0
-"Anderson, C.J.",11454,FA,,0,False,,2.06,Running Back,29,225lbs,"5' 8""",N/A,0,0,0,0
-"Brown, Jaron",11456,FA,,0,False,,3.35,Wide Receiver,30,204lbs,"6' 3""",N/A,0,0,0,0
-"Line, Zach",11474,FA,,0,False,,2.06,Running Back,30,233lbs,"6' 1""",N/A,0,0,0,0
-"Doyle, Jack",11516,IND,,0,False,,2.99,Tight End,30,262lbs,"6' 6""",N/A,0,0,0,0
-"Hill, Josh",11529,NOS,,0,False,,1.72,Tight End,30,250lbs,"6' 5""",N/A,0,0,0,0
-"Bridgewater, Teddy",11640,CAR,,0,False,,5.93,Quarterback,27,215lbs,"6' 2""",N/A,0,0,0,0
-"Bortles, Blake",11642,FA,,0,False,,5.93,Quarterback,28,236lbs,"6' 5""",N/A,0,0,0,0
-"McCarron, A.J.",11643,HOU,,0,False,,5.93,Quarterback,29,215lbs,"6' 3""",N/A,0,0,0,0
-"Carr, Derek",11644,LVR,,0,False,,10.51,Quarterback,29,210lbs,"6' 3""",N/A,0,0,0,0
-"Thomas, Logan",11647,WAS,,0,False,,1.72,Tight End,29,250lbs,"6' 6""",N/A,0,0,0,0
-"Hill, Jeremy",11654,FA,,0,False,,2.06,Running Back,27,230lbs,"6' 1""",N/A,0,0,0,0
-"Hyde, Carlos",11657,SEA,,0,False,,3.14,Running Back,29,229lbs,"6' 0""",N/A,0,0,0,0
-"Thomas, De'Anthony",11659,BAL,,0,False,,3.35,Wide Receiver,27,176lbs,"5' 8""",N/A,0,0,0,0
-"Freeman, Devonta",11660,FA*,,8,True,2020,14,Running Back,28,206lbs,"5' 8""",N/A,0,0,0,0
-"Crowell, Isaiah",11668,FA,,0,False,,2.06,Running Back,27,225lbs,"5' 11""",N/A,0,0,0,0
-"Watkins, Sammy",11670,KCC,,0,False,,5.19,Wide Receiver,27,211lbs,"6' 1""",N/A,0,0,0,0
-"Evans, Mike",11671,TBB,,10,True,2020,17,Wide Receiver,26,231lbs,"6' 5""",N/A,0,0,0,0
-"Lee, Marqise",11672,NEP,,0,False,,3.35,Wide Receiver,28,196lbs,"6' 0""",N/A,0,0,0,0
-"Benjamin, Kelvin",11673,FA,,0,False,,4.57,Wide Receiver,29,245lbs,"6' 5""",N/A,0,0,0,0
-"Cooks, Brandin",11674,HOU,,0,False,,8.04,Wide Receiver,26,183lbs,"5' 10""",N/A,0,0,0,0
-"Adams, Davante",11675,GBP,,9,True,2020,21,Wide Receiver,27,215lbs,"6' 1""",N/A,0,0,0,0
-"Matthews, Jordan",11676,FA,,0,False,,3.35,Wide Receiver,28,215lbs,"6' 3""",N/A,0,0,0,0
-"Moncrief, Donte",11677,FA,,0,False,,4.92,Wide Receiver,26,216lbs,"6' 2""",N/A,0,0,0,0
-"Robinson, Allen",11678,CHI,,0,False,,7.23,Wide Receiver,26,211lbs,"6' 3""",N/A,0,0,0,0
-"Beckham, Odell",11679,CLE,,6,True,2020,25,Wide Receiver,27,198lbs,"5' 11""",N/A,0,0,0,0
-"Landry, Jarvis",11680,CLE,,0,False,,5.74,Wide Receiver,27,196lbs,"5' 11""",N/A,0,0,0,0
-"Richardson, Paul",11681,FA,,0,False,,3.35,Wide Receiver,28,183lbs,"6' 0""",N/A,0,0,0,0
-"Jones, T.J.",11686,FA,,0,False,,3.35,Wide Receiver,28,190lbs,"6' 0""",N/A,0,0,0,0
-"Bryant, Martavis",11688,FA,,0,False,,3.35,Wide Receiver,28,210lbs,"6' 4""",N/A,0,0,0,0
-"Ellington, Bruce",11689,FA,,0,False,,3.35,Wide Receiver,28,200lbs,"5' 9""",N/A,0,0,0,0
-"Ebron, Eric",11695,PIT,,0,False,,3.63,Tight End,27,253lbs,"6' 4""",N/A,0,0,0,0
-"Seferian-Jenkins, Austin",11697,FA,,0,False,,2.99,Tight End,27,262lbs,"6' 5""",N/A,0,0,0,0
-"Grimble, Xavier",11701,IND,,0,False,,1.72,Tight End,27,261lbs,"6' 4""",N/A,0,0,0,0
-"Burton, Trey",11705,IND,,0,False,,4.07,Tight End,28,235lbs,"6' 3""",N/A,0,0,0,0
-"White, James",11747,NEP,,0,False,,5.59,Running Back,28,205lbs,"5' 10""",N/A,0,0,0,0
-"Latimer, Cody",11758,WAS,,0,False,,3.35,Wide Receiver,27,222lbs,"6' 1""",N/A,0,0,0,0
-"Garoppolo, Jimmy",11760,SFO,,0,False,,9.3,Quarterback,28,225lbs,"6' 2""",N/A,0,0,0,0
-"McKinnon, Jerick",11761,SFO,,0,False,,3.5,Running Back,28,205lbs,"5' 9""",N/A,0,0,0,0
-"Brown, John",11783,BUF,,0,False,,3.9,Wide Receiver,30,178lbs,"5' 11""",N/A,0,0,0,0
-"Rodgers, Richard",11785,WAS,,0,False,,1.72,Tight End,28,257lbs,"6' 4""",N/A,0,0,0,0
-"Grant, Ryan",11812,FA,,0,False,,3.35,Wide Receiver,29,195lbs,"6' 0""",N/A,0,0,0,0
-"Blue, Alfred",11834,FA,,0,False,,2.06,Running Back,29,225lbs,"6' 2""",N/A,0,0,0,0
-"Fales, David",11835,NYJ,,0,False,,5.93,Quarterback,29,210lbs,"6' 2""",N/A,0,0,0,0
-"Enunwa, Quincy",11850,NYJ,,0,False,,3.43,Wide Receiver,28,225lbs,"6' 2""",N/A,0,0,0,0
-"Gilbert, Garrett",11854,CLE,,0,False,,5.93,Quarterback,29,230lbs,"6' 4""",N/A,0,0,0,0
-"Williams, Damien",11886,KCC,,0,False,,8.33,Running Back,28,224lbs,"5' 11""",N/A,0,0,0,0
-"Wilson, Albert",11890,MIA,,0,False,,3.35,Wide Receiver,28,195lbs,"5' 9""",N/A,0,0,0,0
-"Fluellen, David",11894,FA,,0,False,,2.06,Running Back,28,224lbs,"5' 11""",N/A,0,0,0,0
-"Hurns, Allen",11925,MIA,,0,False,,3.35,Wide Receiver,28,195lbs,"6' 1""",N/A,0,0,0,0
-"Fowler, Bennie",11931,FA,,0,False,,3.35,Wide Receiver,29,212lbs,"6' 1""",N/A,0,0,0,0
-"Boswell, Chris",11936,PIT,,0,False,,4.65,Kicker,30,185lbs,"6' 2""",N/A,0,0,0,0
-"Thielen, Adam",11938,MIN,,9,True,2020,17,Wide Receiver,29,200lbs,"6' 2""",N/A,0,0,0,0
-"Santos, Cairo",11945,FA,,0,False,,4.11,Kicker,28,160lbs,"5' 8""",N/A,0,0,0,0
-"McManus, Brandon",11947,DEN,,0,False,,4.59,Kicker,28,201lbs,"6' 3""",N/A,0,0,0,0
-"Snead, Willie",11951,BAL,,0,False,,3.35,Wide Receiver,27,200lbs,"5' 11""",N/A,0,0,0,0
-"Inman, Dontrelle",11957,FA,,0,False,,3.35,Wide Receiver,31,205lbs,"6' 3""",N/A,0,0,0,0
-"Perry, Senorise",11964,TEN,,0,False,,2.06,Running Back,28,210lbs,"6' 0""",N/A,0,0,0,0
-"Parkey, Cody",11966,FA,,0,False,,2.39,Kicker,28,190lbs,"6' 0""",N/A,0,0,0,0
-"Gabriel, Taylor",11975,FA,,0,False,,3.35,Wide Receiver,29,165lbs,"5' 8""",N/A,0,0,0,0
-"Smith, Keith",12040,ATL,,0,False,,2.06,Running Back,28,240lbs,"6' 0""",N/A,0,0,0,0
-"West, Charcandrick",12098,FA,,0,False,,2.06,Running Back,29,205lbs,"5' 10""",N/A,0,0,0,0
-"Brate, Cameron",12110,TBB,,0,False,,1.72,Tight End,29,245lbs,"6' 5""",N/A,0,0,0,0
-"Simonson, Scott",12138,FA,,0,False,,1.72,Tight End,28,261lbs,"6' 5""",N/A,0,0,0,0
-"Winston, Jameis",12140,NOS,,0,False,,11.69,Quarterback,26,231lbs,"6' 4""",N/A,0,0,0,0
-"Mariota, Marcus",12141,LVR,,0,False,,8.52,Quarterback,26,222lbs,"6' 4""",N/A,0,0,0,0
-"Hundley, Brett",12142,ARI,,0,False,,5.93,Quarterback,27,226lbs,"6' 3""",N/A,0,0,0,0
-"Mannion, Sean",12145,MIN,,0,False,,5.93,Quarterback,28,230lbs,"6' 6""",N/A,0,0,0,0
-"Gurley, Todd",12150,ATL,,10,True,2020,8.79,Running Back,25,227lbs,"6' 1""",N/A,0,0,0,0
-"Gordon, Melvin",12151,DEN,,0,False,,8.21,Running Back,27,215lbs,"6' 1""",N/A,0,0,0,0
-"Coleman, Tevin",12152,SFO,,0,False,,6.04,Running Back,27,210lbs,"6' 1""",N/A,0,0,0,0
-"Yeldon, T.J.",12153,BUF,,0,False,,2.06,Running Back,26,223lbs,"6' 1""",N/A,0,0,0,0
-"Ajayi, Jay",12154,FA,,0,False,,2.06,Running Back,27,223lbs,"6' 0""",N/A,0,0,0,0
-"Abdullah, Ameer",12155,MIN,,0,False,,2.06,Running Back,27,203lbs,"5' 9""",N/A,0,0,0,0
-"Johnson, Duke",12157,HOU,,0,False,,5.44,Running Back,26,210lbs,"5' 9""",N/A,0,0,0,0
-"Allen, Javorius",12159,FA,,0,False,,2.06,Running Back,28,218lbs,"6' 0""",N/A,0,0,0,0
-"Artis-Payne, Cameron",12161,FA,,0,False,,2.06,Running Back,30,215lbs,"5' 10""",N/A,0,0,0,0
-"Davis, Mike",12164,CAR,,0,False,,2.15,Running Back,27,217lbs,"5' 9""",N/A,0,0,0,0
-"Rawls, Thomas",12169,FA,,0,False,,2.06,Running Back,26,215lbs,"5' 9""",N/A,0,0,0,0
-"Johnson, David",12171,HOU,,7,True,2020,29,Running Back,28,224lbs,"6' 1""",N/A,0,0,0,0
-"Cooper, Amari",12175,DAL,,3,True,2020,9,Wide Receiver,26,225lbs,"6' 1""",N/A,0,0,0,0
-"Parker, DeVante",12176,MIA,,0,False,,4.13,Wide Receiver,27,216lbs,"6' 3""",N/A,0,0,0,0
-"White, Kevin",12177,FA,,0,False,,3.35,Wide Receiver,28,216lbs,"6' 3""",N/A,0,0,0,0
-"Strong, Jaelen",12179,FA,,0,False,,3.35,Wide Receiver,26,220lbs,"6' 2""",N/A,0,0,0,0
-"Agholor, Nelson",12181,LVR,,0,False,,3.35,Wide Receiver,27,198lbs,"6' 0""",N/A,0,0,0,0
-"Smith, Devin",12182,DAL,,0,False,,3.35,Wide Receiver,28,205lbs,"6' 1""",N/A,0,0,0,0
-"Crowder, Jamison",12184,NYJ,,0,False,,4.48,Wide Receiver,27,177lbs,"5' 9""",N/A,0,0,0,0
-"Hardy, Justin",12185,FA,,0,False,,3.35,Wide Receiver,28,192lbs,"5' 10""",N/A,0,0,0,0
-"Diggs, Stefon",12186,BUF,,7,True,2021,11,Wide Receiver,26,191lbs,"6' 0""",N/A,0,0,0,0
-"Lockett, Tyler",12187,SEA,,0,False,,7.37,Wide Receiver,27,182lbs,"5' 10""",N/A,0,0,0,0
-"Dorsett, Phillip",12188,SEA,,0,False,,3.35,Wide Receiver,27,192lbs,"5' 10""",N/A,0,0,0,0
-"Perriman, Breshad",12197,NYJ,,0,False,,3.35,Wide Receiver,26,215lbs,"6' 2""",N/A,0,0,0,0
-"Funchess, Devin",12205,GBP,,0,False,,4.26,Wide Receiver,26,225lbs,"6' 4""",N/A,0,0,0,0
-"Williams, Maxx",12206,ARI,,0,False,,1.72,Tight End,26,252lbs,"6' 4""",N/A,0,0,0,0
-"O'Leary, Nick",12207,FA,,0,False,,1.72,Tight End,27,252lbs,"6' 3""",N/A,0,0,0,0
-"Heuerman, Jeff",12208,DEN,,0,False,,1.72,Tight End,27,255lbs,"6' 5""",N/A,0,0,0,0
-"Koyack, Ben",12209,FA,,0,False,,1.72,Tight End,27,258lbs,"6' 5""",N/A,0,0,0,0
-"Walford, Clive",12210,FA,,0,False,,1.72,Tight End,28,252lbs,"6' 4""",N/A,0,0,0,0
-"James, Jesse",12211,DET,,0,False,,1.72,Tight End,26,250lbs,"6' 7""",N/A,0,0,0,0
-"Kroft, Tyler",12212,BUF,,0,False,,1.72,Tight End,27,252lbs,"6' 6""",N/A,0,0,0,0
-"Bell, Blake",12213,DAL,,0,False,,1.72,Tight End,28,252lbs,"6' 6""",N/A,0,0,0,0
-"Conley, Chris",12257,JAC,,0,False,,3.35,Wide Receiver,27,205lbs,"6' 3""",N/A,0,0,0,0
-"Montgomery, Ty",12261,NOS,,0,False,,2.06,Running Back,27,216lbs,"6' 0""",N/A,0,0,0,0
-"Waller, Darren",12263,LVR,,0,False,,2.33,Tight End,27,255lbs,"6' 6""",N/A,0,0,0,0
-"Zenner, Zach",12264,FA,,0,False,,2.06,Running Back,28,224lbs,"5' 11""",N/A,0,0,0,0
-"Pruitt, MyCole",12309,TEN,,0,False,,1.72,Tight End,28,245lbs,"6' 2""",N/A,0,0,0,0
-"Uzomah, C.J.",12317,CIN,,0,False,,1.72,Tight End,27,260lbs,"6' 6""",N/A,0,0,0,0
-"Nelson, J.J.",12319,FA,,0,False,,3.35,Wide Receiver,28,160lbs,"5' 10""",N/A,0,0,0,0
-"Burton, Michael",12325,NOS,,0,False,,2.06,Running Back,28,240lbs,"6' 0""",N/A,0,0,0,0
-"Boyle, Nick",12328,BAL,,0,False,,1.72,Tight End,27,270lbs,"6' 4""",N/A,0,0,0,0
-"O'Shaughnessy, James",12330,JAC,,0,False,,1.72,Tight End,28,245lbs,"6' 4""",N/A,0,0,0,0
-"Davis, Geremy",12338,DET,,0,False,,3.35,Wide Receiver,28,211lbs,"6' 3""",N/A,0,0,0,0
-"Murphy, Marcus",12367,FA,,0,False,,2.06,Running Back,28,195lbs,"5' 9""",N/A,0,0,0,0
-"Swaim, Geoff",12378,FA,,0,False,,1.72,Tight End,26,260lbs,"6' 4""",N/A,0,0,0,0
-"Siemian, Trevor",12381,FA,,0,False,,5.93,Quarterback,28,220lbs,"6' 3""",N/A,0,0,0,0
-"Brown, Malcolm",12386,LAR,,0,False,,2.06,Running Back,27,222lbs,"5' 11""",N/A,0,0,0,0
-"Williams, Tyrell",12391,LVR,,0,False,,4.1,Wide Receiver,28,205lbs,"6' 4""",N/A,0,0,0,0
-"Carter, DeAndre",12394,HOU,,0,False,,3.35,Wide Receiver,27,190lbs,"5' 8""",N/A,0,0,0,0
-"Grant, Corey",12402,FA,,0,False,,2.06,Running Back,28,203lbs,"5' 9""",N/A,0,0,0,0
-"Lambo, Josh",12417,JAC,,0,False,,4.42,Kicker,29,215lbs,"6' 0""",N/A,0,0,0,0
-"White, DeAndrew",12429,CAR,,0,False,,3.35,Wide Receiver,28,195lbs,"6' 0""",N/A,0,0,0,0
-"Myers, Jason",12437,SEA,,0,False,,4.9,Kicker,29,190lbs,"5' 10""",N/A,0,0,0,0
-"Kumerow, Jake",12443,GBP,,0,False,,3.35,Wide Receiver,28,209lbs,"6' 4""",N/A,0,0,0,0
-"Smith, Rod",12444,LVR,,0,False,,2.06,Running Back,28,236lbs,"6' 3""",N/A,0,0,0,0
-"Mostert, Raheem",12447,SFO,,0,False,,2.06,Running Back,28,205lbs,"5' 10""",N/A,0,0,0,0
-"Byrd, Damiere",12464,NEP,,0,False,,3.35,Wide Receiver,27,180lbs,"5' 9""",N/A,0,0,0,0
-"Meredith, Cameron",12465,FA,,0,False,,3.35,Wide Receiver,27,207lbs,"6' 3""",N/A,0,0,0,0
-"Roberts, Seth",12471,CAR,,0,False,,3.35,Wide Receiver,29,195lbs,"6' 2""",N/A,0,0,0,0
-"Lee, Khari",12479,ATL,,0,False,,1.72,Tight End,28,253lbs,"6' 4""",N/A,0,0,0,0
-"Humphries, Adam",12505,TEN,,0,False,,3.64,Wide Receiver,27,195lbs,"5' 11""",N/A,0,0,0,0
-"Brown, Daniel",12585,NYJ,,0,False,,1.72,Tight End,28,247lbs,"6' 5""",N/A,0,0,0,0
-"Jennings, Darius",12586,LAC,,0,False,,3.35,Wide Receiver,28,180lbs,"5' 10""",N/A,0,0,0,0
-"LaCosse, Matt",12596,NEP,,0,False,,1.84,Tight End,27,255lbs,"6' 6""",N/A,0,0,0,0
-"Winchester, James",12608,KCC,,0,False,,1.72,Tight End,30,240lbs,"6' 3""",N/A,0,0,0,0
-"Wentz, Carson",12610,PHI,,0,False,,16.13,Quarterback,27,237lbs,"6' 5""",N/A,0,0,0,0
-"Goff, Jared",12611,LAR,,0,False,,13.77,Quarterback,25,222lbs,"6' 4""",N/A,0,0,0,0
-"Lynch, Paxton",12612,PIT,,0,False,,5.93,Quarterback,26,244lbs,"6' 7""",N/A,0,0,0,0
-"Jones, Cardale",12615,FA,,0,False,,5.93,Quarterback,27,250lbs,"6' 5""",N/A,0,0,0,0
-"Brissett, Jacoby",12616,IND,,0,False,,8.09,Quarterback,27,238lbs,"6' 4""",N/A,0,0,0,0
-"Kessler, Cody",12617,FA,,0,False,,5.93,Quarterback,27,215lbs,"6' 1""",N/A,0,0,0,0
-"Prescott, Dak",12620,DAL,,0,False,,15.62,Quarterback,26,235lbs,"6' 2""",N/A,0,0,0,0
-"Allen, Brandon",12621,FA,,0,False,,5.93,Quarterback,27,209lbs,"6' 2""",N/A,0,0,0,0
-"Driskel, Jeff",12623,DEN,,0,False,,5.93,Quarterback,27,235lbs,"6' 4""",N/A,0,0,0,0
-"Elliott, Ezekiel",12625,DAL,,0,False,2019,13.41,Running Back,25,228lbs,"6' 0""",N/A,0,0,0,0
-"Henry, Derrick",12626,TEN,,0,False,,7.31,Running Back,26,247lbs,"6' 3""",N/A,0,0,0,0
-"Prosise, C.J.",12627,FA,,0,False,,2.06,Running Back,26,225lbs,"6' 1""",N/A,0,0,0,0
-"Collins, Alex",12628,FA,,0,False,,7.64,Running Back,25,208lbs,"5' 10""",N/A,0,0,0,0
-"Booker, Devontae",12629,LVR,,0,False,,2.06,Running Back,28,219lbs,"5' 11""",N/A,0,0,0,0
-"Drake, Kenyan",12630,ARI,,1,True,2021,7.5,Running Back,26,211lbs,"6' 1""",N/A,0,0,0,0
-"Perkins, Paul",12631,FA,,0,False,,2.06,Running Back,25,208lbs,"5' 11""",N/A,0,0,0,0
-"Dixon, Kenneth",12632,NYJ,,0,False,,2.06,Running Back,26,228lbs,"5' 10""",N/A,0,0,0,0
-"Howard, Jordan",12634,MIA,,0,False,,4.63,Running Back,25,224lbs,"6' 0""",N/A,0,0,0,0
-"Williams, Jonathan",12635,FA,,0,False,,2.06,Running Back,26,223lbs,"6' 0""",N/A,0,0,0,0
-"Smallwood, Wendell",12636,FA,,0,False,,2.06,Running Back,26,208lbs,"5' 10""",N/A,0,0,0,0
-"Barber, Peyton",12637,WAS,,0,False,,3.84,Running Back,26,225lbs,"5' 11""",N/A,0,0,0,0
-"Ervin, Tyler",12639,GBP,,0,False,,2.06,Running Back,26,185lbs,"5' 10""",N/A,0,0,0,0
-"Ferguson, Josh",12640,WAS,,0,False,,2.06,Running Back,27,205lbs,"5' 10""",N/A,0,0,0,0
-"Treadwell, Laquon",12645,ATL,,0,False,,3.35,Wide Receiver,25,215lbs,"6' 2""",N/A,0,0,0,0
-"Coleman, Corey",12646,NYG,,0,False,,3.35,Wide Receiver,26,185lbs,"5' 11""",N/A,0,0,0,0
-"Fuller, Will",12647,HOU,,0,False,,6.14,Wide Receiver,26,184lbs,"6' 0""",N/A,0,0,0,0
-"Doctson, Josh",12648,NYJ,,0,False,,3.35,Wide Receiver,27,205lbs,"6' 2""",N/A,0,0,0,0
-"Boyd, Tyler",12650,CIN,,0,False,,7.13,Wide Receiver,25,203lbs,"6' 2""",N/A,0,0,0,0
-"Miller, Braxton",12651,FA,,0,False,,3.35,Wide Receiver,27,215lbs,"6' 2""",N/A,0,0,0,0
-"Thomas, Michael",12652,NOS,,8,True,2020,21,Wide Receiver,27,212lbs,"6' 3""",N/A,0,0,0,0
-"Higgins, Rashard",12656,CLE,,0,False,,3.35,Wide Receiver,25,198lbs,"6' 1""",N/A,0,0,0,0
-"Sharpe, Tajae",12657,MIN,,0,False,,3.35,Wide Receiver,25,194lbs,"6' 2""",N/A,0,0,0,0
-"Shepard, Sterling",12658,NYG,,0,False,,5.28,Wide Receiver,27,196lbs,"5' 10""",N/A,0,0,0,0
-"Cooper, Pharoh",12660,CAR,,0,False,,3.35,Wide Receiver,25,208lbs,"5' 11""",N/A,0,0,0,0
-"Allison, Geronimo",12665,DET,,0,False,,4.74,Wide Receiver,26,202lbs,"6' 3""",N/A,0,0,0,0
-"Williams, Duke",12667,BUF,,0,False,,3.35,Wide Receiver,27,225lbs,"6' 3""",N/A,0,0,0,0
-"Peake, Charone",12673,FA,,0,False,,3.35,Wide Receiver,27,209lbs,"6' 2""",N/A,0,0,0,0
-"Thomas, Mike",12675,CIN,,0,False,,3.35,Wide Receiver,25,189lbs,"6' 1""",N/A,0,0,0,0
-"Henry, Hunter",12676,LAC,,0,False,,6.08,Tight End,25,250lbs,"6' 5""",N/A,0,0,0,0
-"Hooper, Austin",12677,CLE,,0,False,,4.78,Tight End,25,254lbs,"6' 4""",N/A,0,0,0,0
-"Higbee, Tyler",12678,LAR,,0,False,,1.72,Tight End,27,255lbs,"6' 6""",N/A,0,0,0,0
-"Vannett, Nick",12680,DEN,,0,False,,1.72,Tight End,27,261lbs,"6' 6""",N/A,0,0,0,0
-"Adams, Jerell",12681,FA,,0,False,,1.72,Tight End,27,254lbs,"6' 5""",N/A,0,0,0,0
-"Perkins, Joshua",12685,PHI,,0,False,,1.72,Tight End,26,223lbs,"6' 3""",N/A,0,0,0,0
-"Rogers, Eli",12731,FA,,0,False,,3.35,Wide Receiver,27,187lbs,"5' 10""",N/A,0,0,0,0
-"Moore, Chris",12773,BAL,,0,False,,3.35,Wide Receiver,27,200lbs,"6' 1""",N/A,0,0,0,0
-"Robinson, Demarcus",12785,KCC,,0,False,,3.35,Wide Receiver,25,203lbs,"6' 1""",N/A,0,0,0,0
-"DeValve, Seth",12792,FA,,0,False,,1.72,Tight End,27,245lbs,"6' 3""",N/A,0,0,0,0
-"Davis, Trevor",12800,CHI,,0,False,,3.35,Wide Receiver,27,188lbs,"6' 1""",N/A,0,0,0,0
-"Hill, Tyreek",12801,KCC,,0,False,2019,7,Wide Receiver,26,185lbs,"5' 10""",N/A,0,0,0,0
-"Janovich, Andy",12806,CLE,,0,False,,2.06,Running Back,27,238lbs,"6' 1""",N/A,0,0,0,0
-"Grant, Jakeem",12814,MIA,,0,False,,3.35,Wide Receiver,27,171lbs,"5' 7""",N/A,0,0,0,0
-"Sudfeld, Nate",12815,PHI,,0,False,,5.93,Quarterback,26,227lbs,"6' 6""",N/A,0,0,0,0
-"Rudock, Jake",12819,MIA,,0,False,,5.93,Quarterback,27,212lbs,"6' 3""",N/A,0,0,0,0
-"Vitale, Dan",12822,NEP,,0,False,,2.06,Running Back,26,239lbs,"6' 2""",N/A,0,0,0,0
-"Watt, Derek",12823,PIT,,0,False,,2.06,Running Back,27,234lbs,"6' 2""",N/A,0,0,0,0
-"Core, Cody",12824,NYG,,0,False,,3.35,Wide Receiver,26,205lbs,"6' 3""",N/A,0,0,0,0
-"Jackson, Darius",12832,IND,,0,False,,2.06,Running Back,26,230lbs,"6' 0""",N/A,0,0,0,0
-"Gathers, Rico",12833,FA,,0,False,,1.72,Tight End,26,281lbs,"6' 6""",N/A,0,0,0,0
-"Washington, Dwayne",12845,NOS,,0,False,,2.06,Running Back,26,223lbs,"6' 1""",N/A,0,0,0,0
-"Washington, DeAndre",12857,KCC,,0,False,,2.06,Running Back,27,210lbs,"5' 8""",N/A,0,0,0,0
-"Anderson, Stephen",12859,LAC,,0,False,,1.72,Tight End,27,230lbs,"6' 3""",N/A,0,0,0,0
-"Fairbairn, Ka'imi",12860,HOU,,0,False,,5.46,Kicker,26,183lbs,"6' 0""",N/A,0,0,0,0
-"Braunecker, Ben",12868,CHI,,0,False,,1.72,Tight End,26,252lbs,"6' 4""",N/A,0,0,0,0
-"Foster, D.J.",12871,ARI,,0,False,,2.06,Running Back,26,205lbs,"6' 0""",N/A,0,0,0,0
-"Jones, Andy",12873,FA,,0,False,,3.35,Wide Receiver,26,217lbs,"6' 1""",N/A,0,0,0,0
-"Kelley, Rob",12887,FA,,0,False,,2.06,Running Back,27,229lbs,"6' 0""",N/A,0,0,0,0
-"Jones, Tevin",12890,DAL,,0,False,,3.35,Wide Receiver,27,225lbs,"6' 2""",N/A,0,0,0,0
-"Travis, Ross",12898,NYJ,,0,False,,1.72,Tight End,27,248lbs,"6' 6""",N/A,0,0,0,0
-"Richard, Jalen",12912,LVR,,0,False,,2.06,Running Back,26,205lbs,"5' 8""",N/A,0,0,0,0
-"Erickson, Alex",12913,CIN,,0,False,,3.35,Wide Receiver,27,195lbs,"6' 0""",N/A,0,0,0,0
-"Holton, Johnny",12916,FA,,0,False,,3.35,Wide Receiver,28,190lbs,"6' 3""",N/A,0,0,0,0
-"Harris, Maurice",12917,NOS,,0,False,,3.35,Wide Receiver,27,205lbs,"6' 3""",N/A,0,0,0,0
-"Ham, C.J.",12923,MIN,,0,False,,2.06,Running Back,27,235lbs,"5' 11""",N/A,0,0,0,0
-"Pope, Troymaine",12929,FA,,0,False,,2.06,Running Back,26,205lbs,"5' 8""",N/A,0,0,0,0
-"Anderson, Robby",12930,CAR,,0,False,,6.98,Wide Receiver,27,190lbs,"6' 3""",N/A,0,0,0,0
-"Rogers, Chester",12934,FA,,0,False,,3.35,Wide Receiver,26,184lbs,"6' 0""",N/A,0,0,0,0
-"Manhertz, Chris",12955,CAR,,0,False,,1.72,Tight End,28,255lbs,"6' 6""",N/A,0,0,0,0
-"Lutz, Wil",12956,NOS,,0,False,,5.53,Kicker,26,184lbs,"5' 11""",N/A,0,0,0,0
-"Lengel, Matt",13044,IND,,0,False,,1.72,Tight End,29,266lbs,"6' 7""",N/A,0,0,0,0
-"Carson, Tra",13057,FA,,0,False,,2.06,Running Back,27,228lbs,"5' 11""",N/A,0,0,0,0
-"Tomlinson, Eric",13065,NYG,,0,False,,1.72,Tight End,28,263lbs,"6' 6""",N/A,0,0,0,0
-"Raymond, Kalif",13066,TEN,,0,False,,3.35,Wide Receiver,25,182lbs,"5' 8""",N/A,0,0,0,0
-"McKissic, J.D.",13108,WAS,,0,False,,2.06,Running Back,26,195lbs,"5' 10""",N/A,0,0,0,0
-"Watson, Deshaun",13113,HOU,,2,True,2021,10,Quarterback,24,215lbs,"6' 2""",N/A,0,0,0,0
-"Kizer, DeShone",13114,FA,,0,False,,5.93,Quarterback,24,235lbs,"6' 4""",N/A,0,0,0,0
-"Trubisky, Mitchell",13115,CHI,,0,False,,12.06,Quarterback,25,222lbs,"6' 3""",N/A,0,0,0,0
-"Mahomes, Patrick",13116,KCC,,6,True,2021,27,Quarterback,24,230lbs,"6' 3""",N/A,0,0,0,0
-"Dobbs, Joshua",13119,JAC,,0,False,,5.93,Quarterback,25,216lbs,"6' 3""",N/A,0,0,0,0
-"Webb, Davis",13120,BUF,,0,False,,5.93,Quarterback,25,225lbs,"6' 5""",N/A,0,0,0,0
-"Kelly, Chad",13121,IND,,0,False,,5.93,Quarterback,26,216lbs,"6' 2""",N/A,0,0,0,0
-"Rush, Cooper",13124,NYG,,0,False,,5.93,Quarterback,26,225lbs,"6' 3""",N/A,0,0,0,0
-"Beathard, C.J.",13125,SFO,,0,False,,5.93,Quarterback,26,215lbs,"6' 2""",N/A,0,0,0,0
-"Peterman, Nathan",13127,LVR,,0,False,,5.93,Quarterback,26,225lbs,"6' 2""",N/A,0,0,0,0
-"Cook, Dalvin",13128,MIN,,2,True,2020,7.31,Running Back,24,210lbs,"5' 10""",N/A,0,0,0,0
-"Fournette, Leonard",13129,JAC,,3,True,2020,9.13,Running Back,25,228lbs,"6' 0""",N/A,0,0,0,0
-"McCaffrey, Christian",13130,CAR,,4,True,2020,7.64,Running Back,24,205lbs,"5' 11""",N/A,0,0,0,0
-"Mixon, Joe",13131,CIN,,5,True,2020,18,Running Back,23,220lbs,"6' 1""",N/A,0,0,0,0
-"Kamara, Alvin",13132,NOS,,2,True,2020,26,Running Back,24,215lbs,"5' 10""",N/A,0,0,0,0
-"Perine, Samaje",13133,CIN,,0,False,,2.06,Running Back,24,240lbs,"5' 11""",N/A,0,0,0,0
-"Foreman, D'Onta",13134,FA,,0,False,,2.06,Running Back,24,236lbs,"6' 1""",N/A,0,0,0,0
-"Gallman, Wayne",13135,NYG,,0,False,,2.06,Running Back,25,217lbs,"6' 0""",N/A,0,0,0,0
-"Clement, Corey",13136,PHI,,0,False,,2.06,Running Back,25,220lbs,"5' 10""",N/A,0,0,0,0
-"Hunt, Kareem",13138,CLE,,0,False,,2.84,Running Back,24,216lbs,"5' 11""",N/A,0,0,0,0
-"Williams, Jamaal",13139,GBP,,0,False,,2.38,Running Back,25,213lbs,"6' 0""",N/A,0,0,0,0
-"Dayes, Matthew",13140,FA,,0,False,,2.06,Running Back,24,205lbs,"5' 9""",N/A,0,0,0,0
-"Logan, T.J.",13142,TBB,,0,False,,2.06,Running Back,25,195lbs,"5' 11""",N/A,0,0,0,0
-"McNichols, Jeremy",13143,FA,,0,False,,2.06,Running Back,24,205lbs,"5' 9""",N/A,0,0,0,0
-"McGuire, Elijah",13144,KCC,,0,False,,2.06,Running Back,26,214lbs,"5' 10""",N/A,0,0,0,0
-"Conner, James",13146,PIT,,4,True,2020,28,Running Back,25,233lbs,"6' 1""",N/A,0,0,0,0
-"Ogunbowale, Dare",13148,TBB,,0,False,,2.06,Running Back,26,205lbs,"5' 11""",N/A,0,0,0,0
-"Davis, Corey",13153,TEN,,0,False,,5.46,Wide Receiver,25,209lbs,"6' 3""",N/A,0,0,0,0
-"Williams, Mike",13154,LAC,,0,False,,6.8,Wide Receiver,25,220lbs,"6' 4""",N/A,0,0,0,0
-"Ross, John",13155,CIN,,0,False,,3.35,Wide Receiver,24,190lbs,"5' 11""",N/A,0,0,0,0
-"Smith-Schuster, JuJu",13156,PIT,,8,True,2020,21.99,Wide Receiver,23,215lbs,"6' 1""",N/A,0,0,0,0
-"Samuel, Curtis",13157,CAR,,0,False,,5.86,Wide Receiver,23,195lbs,"5' 11""",N/A,0,0,0,0
-"Westbrook, Dede",13158,JAC,,0,False,,5.84,Wide Receiver,26,178lbs,"6' 0""",N/A,0,0,0,0
-"Scott, Artavis",13161,IND,,0,False,,3.35,Wide Receiver,25,195lbs,"5' 11""",N/A,0,0,0,0
-"Ford, Isaiah",13162,MIA,,0,False,,3.35,Wide Receiver,24,194lbs,"6' 2""",N/A,0,0,0,0
-"Godwin, Chris",13163,TBB,,0,False,,8.16,Wide Receiver,24,209lbs,"6' 1""",N/A,0,0,0,0
-"Kupp, Cooper",13164,LAR,,0,False,,6.64,Wide Receiver,27,208lbs,"6' 2""",N/A,0,0,0,0
-"Switzer, Ryan",13165,PIT,,0,False,,3.35,Wide Receiver,25,185lbs,"5' 8""",N/A,0,0,0,0
-"Darboh, Amara",13166,PIT,,0,False,,3.35,Wide Receiver,26,215lbs,"6' 2""",N/A,0,0,0,0
-"Taylor, Taywan",13167,CLE,,0,False,,3.35,Wide Receiver,25,203lbs,"5' 11""",N/A,0,0,0,0
-"Reynolds, Josh",13168,LAR,,0,False,,3.35,Wide Receiver,25,196lbs,"6' 3""",N/A,0,0,0,0
-"Chesson, Jehu",13169,NYJ,,0,False,,3.35,Wide Receiver,26,205lbs,"6' 2""",N/A,0,0,0,0
-"Gibson, Shelton",13170,PHI,,0,False,,3.35,Wide Receiver,25,191lbs,"5' 11""",N/A,0,0,0,0
-"Brown, Noah",13172,DAL,,0,False,,3.35,Wide Receiver,23,225lbs,"6' 2""",N/A,0,0,0,0
-"Jones, Zay",13176,LVR,,0,False,,3.51,Wide Receiver,25,200lbs,"6' 2""",N/A,0,0,0,0
-"Dieter, Gehrig",13179,KCC,,0,False,,3.35,Wide Receiver,27,207lbs,"6' 3""",N/A,0,0,0,0
-"Hansen, Chad",13183,HOU,,0,False,,3.35,Wide Receiver,25,202lbs,"6' 2""",N/A,0,0,0,0
-"Howard, O.J.",13188,TBB,,0,False,,6.82,Tight End,25,251lbs,"6' 6""",N/A,0,0,0,0
-"Engram, Evan",13189,NYG,,0,False,,6.38,Tight End,25,240lbs,"6' 3""",N/A,0,0,0,0
-"Butt, Jake",13190,DEN,,0,False,,1.72,Tight End,25,250lbs,"6' 6""",N/A,0,0,0,0
-"Njoku, David",13192,CLE,,0,False,,4.48,Tight End,24,246lbs,"6' 4""",N/A,0,0,0,0
-"Smith, Jonnu",13193,TEN,,0,False,,1.72,Tight End,24,248lbs,"6' 3""",N/A,0,0,0,0
-"Sprinkle, Jeremy",13194,WAS,,0,False,,1.72,Tight End,25,255lbs,"6' 5""",N/A,0,0,0,0
-"Leggett, Jordan",13195,TBB,,0,False,,1.72,Tight End,25,258lbs,"6' 5""",N/A,0,0,0,0
-"Roberts, Michael",13197,MIA,,0,False,,1.72,Tight End,26,265lbs,"6' 5""",N/A,0,0,0,0
-"Mack, Marlon",13234,IND,,0,False,,7.5,Running Back,24,210lbs,"6' 0""",N/A,0,0,0,0
-"Malone, Josh",13235,NYJ,,0,False,,3.35,Wide Receiver,24,205lbs,"6' 3""",N/A,0,0,0,0
-"Everett, Gerald",13236,LAR,,0,False,,2.33,Tight End,26,240lbs,"6' 3""",N/A,0,0,0,0
-"Davis, Robert",13238,PHI,,0,False,,3.35,Wide Receiver,25,210lbs,"6' 3""",N/A,0,0,0,0
-"Penny, Elijhaa",13239,NYG,,0,False,,2.06,Running Back,26,250lbs,"6' 1""",N/A,0,0,0,0
-"Hill, Brian",13240,ATL,,0,False,,2.06,Running Back,24,219lbs,"6' 1""",N/A,0,0,0,0
-"Rosas, Aldrick",13241,NYG,,0,False,,4.71,Kicker,25,233lbs,"6' 3""",N/A,0,0,0,0
-"Alie-Cox, Mo",13246,IND,,0,False,,1.72,Tight End,26,267lbs,"6' 5""",N/A,0,0,0,0
-"Shaheen, Adam",13254,CHI,,0,False,,1.72,Tight End,26,270lbs,"6' 6""",N/A,0,0,0,0
-"Golladay, Kenny",13277,DET,,0,False,,7.5,Wide Receiver,26,214lbs,"6' 4""",N/A,0,0,0,0
-"Williams, Chad",13280,IND,,0,False,,3.35,Wide Receiver,25,204lbs,"6' 2""",N/A,0,0,0,0
-"Hollins, Mack",13289,MIA,,0,False,,3.35,Wide Receiver,26,221lbs,"6' 4""",N/A,0,0,0,0
-"Cohen, Tarik",13290,CHI,,0,False,,5.2,Running Back,24,181lbs,"5' 6""",N/A,0,0,0,0
-"Kittle, George",13299,SFO,,0,False,,7.26,Tight End,26,250lbs,"6' 4""",N/A,0,0,0,0
-"Elliott, Jake",13303,PHI,,0,False,,5.31,Kicker,25,167lbs,"5' 9""",N/A,0,0,0,0
-"Agnew, Jamal",13308,DET,,0,False,,0,Wide Receiver,25,190lbs,"5' 10""",N/A,0,0,0,0
-"McKenzie, Isaiah",13313,BUF,,0,False,,3.35,Wide Receiver,25,173lbs,"5' 8""",N/A,0,0,0,0
-"Saubert, Eric",13315,CHI,,0,False,,1.72,Tight End,26,253lbs,"6' 5""",N/A,0,0,0,0
-"Taylor, Trent",13316,SFO,,0,False,,3.35,Wide Receiver,26,180lbs,"5' 8""",N/A,0,0,0,0
-"Jones, Aaron",13319,GBP,,0,False,,7.91,Running Back,25,208lbs,"5' 9""",N/A,0,0,0,0
-"Armah, Alexander",13326,CAR,,0,False,,2.06,Running Back,26,255lbs,"6' 2""",N/A,0,0,0,0
-"Henderson, De'Angelo",13334,FA,,0,False,,2.06,Running Back,27,208lbs,"5' 8""",N/A,0,0,0,0
-"Gonzalez, Zane",13347,ARI,,0,False,,2.93,Kicker,25,202lbs,"6' 0""",N/A,0,0,0,0
-"Moore, David",13348,SEA,,0,False,,3.35,Wide Receiver,25,215lbs,"6' 0""",N/A,0,0,0,0
-"Butker, Harrison",13354,KCC,,0,False,,6.17,Kicker,25,205lbs,"6' 4""",N/A,0,0,0,0
-"Carson, Chris",13364,SEA,,7,True,2021,9.5,Running Back,25,222lbs,"5' 11""",N/A,0,0,0,0
-"Carr, Austin",13367,NOS,,0,False,,3.35,Wide Receiver,26,195lbs,"6' 1""",N/A,0,0,0,0
-"Carter, Cethan",13369,CIN,,0,False,,1.72,Tight End,26,248lbs,"6' 3""",N/A,0,0,0,0
-"Hogan, Krishawn",13370,NOS,,0,False,,3.35,Wide Receiver,25,217lbs,"6' 3""",N/A,0,0,0,0
-"Bolden, Victor",13375,DET,,0,False,,3.35,Wide Receiver,25,178lbs,"5' 8""",N/A,0,0,0,0
-"Patrick, Tim",13377,DEN,,0,False,,3.35,Wide Receiver,26,212lbs,"6' 4""",N/A,0,0,0,0
-"Breida, Matt",13378,MIA,,0,False,,3.92,Running Back,25,195lbs,"5' 11""",N/A,0,0,0,0
-"Seals-Jones, Ricky",13382,KCC,,0,False,,1.91,Tight End,25,243lbs,"6' 5""",N/A,0,0,0,0
-"Mizzell, Taquan",13384,NOS,,0,False,,3.35,Running Back,26,185lbs,"5' 10""",N/A,0,0,0,0
-"Johnson, Marcus",13387,IND,,0,False,,3.35,Wide Receiver,25,207lbs,"6' 1""",N/A,0,0,0,0
-"Sloter, Kyle",13389,FA,,0,False,,5.93,Quarterback,26,218lbs,"6' 5""",N/A,0,0,0,0
-"Hollister, Jacob",13391,SEA,,0,False,,1.72,Tight End,26,245lbs,"6' 4""",N/A,0,0,0,0
-"Daniels, Darrell",13396,ARI,,0,False,,1.72,Tight End,25,256lbs,"6' 3""",N/A,0,0,0,0
-"White, Tim",13398,FA,,0,False,,3.35,Wide Receiver,26,185lbs,"5' 11""",N/A,0,0,0,0
-"Koo, Younghoe",13403,ATL,,0,False,,2.39,Kicker,25,195lbs,"5' 10""",N/A,0,0,0,0
-"Ekeler, Austin",13404,LAC,,0,False,,4.51,Running Back,25,200lbs,"5' 10""",N/A,0,0,0,0
-"Adeboyejo, Quincy",13406,NEP,,0,False,,3.35,Wide Receiver,25,200lbs,"6' 3""",N/A,0,0,0,0
-"Swoopes, Tyrone",13411,FA,,0,False,,1.72,Tight End,25,254lbs,"6' 4""",N/A,0,0,0,0
-"Cole, Keelan",13412,JAC,,0,False,,3.39,Wide Receiver,27,194lbs,"6' 1""",N/A,0,0,0,0
-"Walker, P.J.",13416,CAR,,0,False,,5.93,Quarterback,25,212lbs,"5' 11""",N/A,0,0,0,0
-"Bourne, Kendrick",13418,SFO,,0,False,,3.35,Wide Receiver,24,190lbs,"6' 1""",N/A,0,0,0,0
-"Hill, Taysom",13424,NOS,,0,False,,5.93,Quarterback,29,221lbs,"6' 2""",N/A,0,0,0,0
-"Tonyan, Robert",13427,GBP,,0,False,,1.72,Tight End,26,237lbs,"6' 5""",N/A,0,0,0,0
-"Culkin, Sean",13438,FA,,0,False,,1.72,Tight End,27,255lbs,"6' 5""",N/A,0,0,0,0
-"Auclair, Antony",13445,TBB,,0,False,,1.72,Tight End,27,256lbs,"6' 6""",N/A,0,0,0,0
-"Edmunds, Trey",13452,PIT,,0,False,,2.06,Running Back,25,223lbs,"6' 2""",N/A,0,0,0,0
-"Ricard, Patrick",13455,BAL,,0,False,,2.06,Running Back,26,303lbs,"6' 3""",N/A,0,0,0,0
-"Baylis, Evan",13476,GBP,,0,False,,1.72,Tight End,26,250lbs,"6' 5""",N/A,0,0,0,0
-"Pascal, Zach",13488,IND,,0,False,,3.35,Wide Receiver,25,214lbs,"6' 2""",N/A,0,0,0,0
-"Kemp, Marcus",13503,FA,,0,False,,3.35,Wide Receiver,24,210lbs,"6' 4""",N/A,0,0,0,0
-"Hall, Marvin",13505,DET,,0,False,,3.35,Wide Receiver,27,190lbs,"5' 10""",N/A,0,0,0,0
-"Mickens, Jaydon",13510,TBB,,0,False,,3.35,Wide Receiver,26,170lbs,"5' 11""",N/A,0,0,0,0
-"Natson, JoJo",13529,CLE,,0,False,,3.35,Wide Receiver,26,153lbs,"5' 7""",N/A,0,0,0,0
-"Wilson, Bobo",13544,FA,,0,False,,3.35,Wide Receiver,25,186lbs,"5' 9""",N/A,0,0,0,0
-"Ficken, Sam",13564,NYJ,,0,False,,2.39,Kicker,27,192lbs,"6' 1""",N/A,0,0,0,0
-"Zylstra, Brandon",13585,CAR,,0,False,,3.35,Wide Receiver,27,215lbs,"6' 2""",N/A,0,0,0,0
-"Allen, Josh",13589,BUF,,0,False,,9.6,Quarterback,24,237lbs,"6' 5""",N/A,0,0,0,0
-"Mayfield, Baker",13590,CLE,,0,False,,16.5,Quarterback,25,215lbs,"6' 1""",N/A,0,0,0,0
-"Rosen, Josh",13591,MIA,,0,False,,5.93,Quarterback,23,215lbs,"6' 4""",N/A,0,0,0,0
-"Darnold, Sam",13592,NYJ,,0,False,,10.12,Quarterback,23,225lbs,"6' 3""",N/A,0,0,0,0
-"Jackson, Lamar",13593,BAL,,9,True,,30,Quarterback,23,212lbs,"6' 2""",N/A,0,0,0,0
-"Falk, Luke",13594,FA,,0,False,,5.93,Quarterback,25,215lbs,"6' 4""",N/A,0,0,0,0
-"Rudolph, Mason",13595,PIT,,0,False,,5.93,Quarterback,25,235lbs,"6' 5""",N/A,0,0,0,0
-"Barrett, J.T.",13596,PIT,,0,False,,5.93,Quarterback,25,220lbs,"6' 2""",N/A,0,0,0,0
-"White, Mike",13598,NYJ,,0,False,,5.93,Quarterback,25,218lbs,"6' 5""",N/A,0,0,0,0
-"Benkert, Kurt",13600,ATL,,0,False,,5.93,Quarterback,25,215lbs,"6' 4""",N/A,0,0,0,0
-"Lauletta, Kyle",13601,PHI,,0,False,,5.93,Quarterback,25,219lbs,"6' 2""",N/A,0,0,0,0
-"Barkley, Saquon",13604,NYG,,9,True,2021,11.02,Running Back,23,232lbs,"6' 0""",N/A,0,0,0,0
-"Guice, Derrius",13605,WAS,,0,False,,5.01,Running Back,23,225lbs,"5' 11""",N/A,0,0,0,0
-"Jones, Ronald",13606,TBB,,0,False,,4.29,Running Back,22,208lbs,"5' 11""",N/A,0,0,0,0
-"Michel, Sony",13607,NEP,,1,True,2021,7,Running Back,25,215lbs,"5' 11""",N/A,0,0,0,0
-"Penny, Rashaad",13608,SEA,,0,False,,5.23,Running Back,24,220lbs,"5' 11""",N/A,0,0,0,0
-"Chubb, Nick",13610,CLE,,2,True,2021,22,Running Back,24,227lbs,"5' 11""",N/A,0,0,0,0
-"Adams, Josh",13611,NYJ,,0,False,,2.06,Running Back,23,225lbs,"6' 2""",N/A,0,0,0,0
-"Johnson, Kerryon",13612,DET,,5,True,2021,13,Running Back,23,211lbs,"5' 11""",N/A,0,0,0,0
-"Samuels, Jaylen",13613,PIT,,0,False,,2.83,Running Back,24,225lbs,"6' 0""",N/A,0,0,0,0
-"Lindsay, Phillip",13614,DEN,,0,False,,6.7,Running Back,25,190lbs,"5' 8""",N/A,0,0,0,0
-"Scarbrough, Bo",13615,DET,,0,False,,2.06,Running Back,23,235lbs,"6' 1""",N/A,0,0,0,0
-"Walton, Mark",13616,FA,,0,False,,2.06,Running Back,23,200lbs,"5' 10""",N/A,0,0,0,0
-"Freeman, Royce",13617,DEN,,0,False,,4.87,Running Back,24,238lbs,"6' 0""",N/A,0,0,0,0
-"Kelly, John",13619,LAR,,0,False,,2.06,Running Back,23,205lbs,"5' 10""",N/A,0,0,0,0
-"Jackson, Justin",13620,LAC,,0,False,,2.71,Running Back,25,199lbs,"6' 0""",N/A,0,0,0,0
-"Ballage, Kalen",13621,MIA,,0,False,,4.07,Running Back,24,231lbs,"6' 2""",N/A,0,0,0,0
-"Hines, Nyheim",13622,IND,,0,False,,3.35,Running Back,23,196lbs,"5' 9""",N/A,0,0,0,0
-"Williams, Darrel",13623,KCC,,0,False,,2.06,Running Back,25,224lbs,"5' 11""",N/A,0,0,0,0
-"Thomas, Roc",13628,FA,,0,False,,2.06,Running Back,24,198lbs,"5' 10""",N/A,0,0,0,0
-"Ridley, Calvin",13629,ATL,,0,False,,6.86,Wide Receiver,25,190lbs,"6' 1""",N/A,0,0,0,0
-"Sutton, Courtland",13630,DEN,,0,False,,4.57,Wide Receiver,24,216lbs,"6' 4""",N/A,0,0,0,0
-"Washington, James",13631,PIT,,0,False,,3.77,Wide Receiver,24,213lbs,"5' 11""",N/A,0,0,0,0
-"Lazard, Allen",13632,GBP,,0,False,,3.35,Wide Receiver,24,227lbs,"6' 5""",N/A,0,0,0,0
-"Kirk, Christian",13633,ARI,,0,False,,6.28,Wide Receiver,23,200lbs,"5' 11""",N/A,0,0,0,0
-"Pettis, Dante",13634,SFO,,0,False,,4.84,Wide Receiver,24,195lbs,"6' 1""",N/A,0,0,0,0
-"Moore, D.J.",13635,CAR,,0,False,,6.52,Wide Receiver,23,210lbs,"6' 0""",N/A,0,0,0,0
-"Cain, Deon",13636,PIT,,0,False,,3.35,Wide Receiver,23,202lbs,"6' 2""",N/A,0,0,0,0
-"St. Brown, Equanimeous",13637,GBP,,0,False,,3.35,Wide Receiver,23,214lbs,"6' 5""",N/A,0,0,0,0
-"Berrios, Braxton",13638,NYJ,,0,False,,3.35,Wide Receiver,24,190lbs,"5' 9""",N/A,0,0,0,0
-"Miller, Anthony",13639,CHI,,0,False,,4.36,Wide Receiver,25,190lbs,"5' 11""",N/A,0,0,0,0
-"Callaway, Antonio",13640,FA,,0,False,,3.35,Wide Receiver,23,200lbs,"5' 11""",N/A,0,0,0,0
-"McCloud, Ray-Ray",13641,BUF,,0,False,,3.35,Wide Receiver,23,180lbs,"5' 10""",N/A,0,0,0,0
-"Tate, Auden",13642,CIN,,0,False,,3.35,Wide Receiver,23,228lbs,"6' 5""",N/A,0,0,0,0
-"Wims, Javon",13644,CHI,,0,False,,3.35,Wide Receiver,25,215lbs,"6' 4""",N/A,0,0,0,0
-"Smith, Tre'Quan",13645,NOS,,0,False,,3.72,Wide Receiver,24,210lbs,"6' 2""",N/A,0,0,0,0
-"Gallup, Michael",13646,DAL,,0,False,,4.19,Wide Receiver,24,205lbs,"6' 1""",N/A,0,0,0,0
-"Ateman, Marcell",13647,LVR,,0,False,,3.35,Wide Receiver,25,215lbs,"6' 4""",N/A,0,0,0,0
-"Burnett, Deontay",13648,PHI,,0,False,,3.35,Wide Receiver,22,186lbs,"6' 0""",N/A,0,0,0,0
-"Hamilton, DaeSean",13649,DEN,,0,False,,4.13,Wide Receiver,25,206lbs,"6' 1""",N/A,0,0,0,0
-"Wilson, Cedrick",13652,DAL,,0,False,,3.35,Wide Receiver,24,200lbs,"6' 2""",N/A,0,0,0,0
-"Foster, Robert",13653,BUF,,0,False,,3.35,Wide Receiver,26,196lbs,"6' 2""",N/A,0,0,0,0
-"Weah, Jester",13656,WAS,,0,False,,3.35,Wide Receiver,25,209lbs,"6' 3""",N/A,0,0,0,0
-"Moore, J'Mon",13657,CLE,,0,False,,3.35,Wide Receiver,25,205lbs,"6' 3""",N/A,0,0,0,0
-"Lasley, Jordan",13658,FA,,0,False,,3.35,Wide Receiver,23,213lbs,"6' 1""",N/A,0,0,0,0
-"Mitchell, Steven",13659,HOU,,0,False,,3.35,Wide Receiver,26,186lbs,"5' 10""",N/A,0,0,0,0
-"Coutee, Keke",13662,HOU,,0,False,,4.68,Wide Receiver,23,187lbs,"5' 11""",N/A,0,0,0,0
-"Scott, Jaleel",13663,BAL,,0,False,,3.35,Wide Receiver,25,210lbs,"6' 5""",N/A,0,0,0,0
-"Quinn, Trey",13664,WAS,,0,False,,3.35,Wide Receiver,24,200lbs,"6' 0""",N/A,0,0,0,0
-"Fountain, Daurice",13666,IND,,0,False,,3.35,Wide Receiver,24,210lbs,"6' 2""",N/A,0,0,0,0
-"Chark, D.J.",13668,JAC,,0,False,,3.35,Wide Receiver,23,198lbs,"6' 4""",N/A,0,0,0,0
-"Turner, Malik",13669,FA,,0,False,,3.35,Wide Receiver,24,202lbs,"6' 2""",N/A,0,0,0,0
-"Andrews, Mark",13671,BAL,,0,False,,4.39,Tight End,23,256lbs,"6' 4""",N/A,0,0,0,0
-"Gesicki, Mike",13672,MIA,,0,False,,2.15,Tight End,24,250lbs,"6' 6""",N/A,0,0,0,0
-"Fumagalli, Troy",13673,DEN,,0,False,,1.72,Tight End,25,248lbs,"6' 6""",N/A,0,0,0,0
-"Goedert, Dallas",13674,PHI,,0,False,,2.53,Tight End,26,256lbs,"6' 5""",N/A,0,0,0,0
-"Conklin, Tyler",13675,MIN,,0,False,,1.72,Tight End,24,254lbs,"6' 3""",N/A,0,0,0,0
-"Smythe, Durham",13676,MIA,,0,False,,1.72,Tight End,24,260lbs,"6' 6""",N/A,0,0,0,0
-"Thomas, Ian",13678,CAR,,0,False,,2,Tight End,24,260lbs,"6' 4""",N/A,0,0,0,0
-"Herndon, Chris",13679,NYJ,,0,False,,2.57,Tight End,24,253lbs,"6' 4""",N/A,0,0,0,0
-"Hurst, Hayden",13680,ATL,,0,False,,1.72,Tight End,26,260lbs,"6' 4""",N/A,0,0,0,0
-"Carlson, Daniel",13718,LVR,,0,False,,4.22,Kicker,25,215lbs,"6' 5""",N/A,0,0,0,0
-"Pineiro, Eddy",13719,CHI,,0,False,,2.39,Kicker,24,185lbs,"6' 0""",N/A,0,0,0,0
-"Jarwin, Blake",13722,DAL,,0,False,,1.72,Tight End,26,260lbs,"6' 5""",N/A,0,0,0,0
-"James, Richie",13724,SFO,,0,False,,3.35,Wide Receiver,25,176lbs,"5' 9""",N/A,0,0,0,0
-"Edmonds, Chase",13726,ARI,,0,False,,2.06,Running Back,24,205lbs,"5' 9""",N/A,0,0,0,0
-"Akins, Jordan",13753,HOU,,0,False,,1.72,Tight End,28,243lbs,"6' 4""",N/A,0,0,0,0
-"Dissly, Will",13763,SEA,,0,False,,1.78,Tight End,24,265lbs,"6' 4""",N/A,0,0,0,0
-"Smith, Ito",13768,ATL,,0,False,,3.29,Running Back,24,195lbs,"5' 9""",N/A,0,0,0,0
-"Schultz, Dalton",13772,DAL,,0,False,,1.72,Tight End,24,260lbs,"6' 5""",N/A,0,0,0,0
-"Watson, Justin",13776,TBB,,0,False,,3.35,Wide Receiver,25,215lbs,"6' 3""",N/A,0,0,0,0
-"Wilkins, Jordan",13789,IND,,0,False,,2.06,Running Back,26,216lbs,"6' 1""",N/A,0,0,0,0
-"Valdes-Scantling, Marquez",13793,GBP,,0,False,,5.04,Wide Receiver,25,206lbs,"6' 4""",N/A,0,0,0,0
-"Ratley, Damion",13794,CLE,,0,False,,3.35,Wide Receiver,25,200lbs,"6' 2""",N/A,0,0,0,0
-"Cantrell, Dylan",13807,ARI,,0,False,,3.35,Tight End,26,226lbs,"6' 3""",N/A,0,0,0,0
-"Gage, Russell",13809,ATL,,0,False,,3.35,Wide Receiver,24,184lbs,"6' 0""",N/A,0,0,0,0
-"Scott, Boston",13814,PHI,,0,False,,2.06,Running Back,25,203lbs,"5' 6""",N/A,0,0,0,0
-"Cannon, Trenton",13816,NYJ,,0,False,,2.06,Running Back,25,185lbs,"5' 11""",N/A,0,0,0,0
-"Thomas, Jordan",13819,HOU,,0,False,,1.72,Tight End,23,277lbs,"6' 5""",N/A,0,0,0,0
-"Etling, Danny",13824,ATL,,0,False,,3.35,Quarterback,26,220lbs,"6' 3""",N/A,0,0,0,0
-"McGough, Alex",13825,HOU,,0,False,,5.93,Quarterback,24,214lbs,"6' 3""",N/A,0,0,0,0
-"Sanders, Jason",13832,MIA,,0,False,,2.39,Kicker,24,186lbs,"5' 11""",N/A,0,0,0,0
-"Bawden, Nick",13838,DET,,0,False,,2.06,Running Back,24,245lbs,"6' 2""",N/A,0,0,0,0
-"Woodside, Logan",13846,TEN,,0,False,,5.93,Quarterback,25,213lbs,"6' 1""",N/A,0,0,0,0
-"Izzo, Ryan",13847,NEP,,0,False,,1.72,Tight End,24,255lbs,"6' 5""",N/A,0,0,0,0
-"Nall, Ryan",13849,CHI,,0,False,,2.06,Running Back,24,232lbs,"6' 2""",N/A,0,0,0,0
-"Edwards, Gus",13850,BAL,,0,False,,2.06,Running Back,25,238lbs,"6' 1""",N/A,0,0,0,0
-"Hollister, Cody",13851,TEN,,0,False,,3.35,Wide Receiver,26,216lbs,"6' 4""",N/A,0,0,0,0
-"Yelder, Deon",13857,KCC,,0,False,,1.72,Tight End,25,255lbs,"6' 4""",N/A,0,0,0,0
-"Cracraft, River",13862,FA,,0,False,,3.35,Wide Receiver,25,198lbs,"6' 0""",N/A,0,0,0,0
-"Pringle, Byron",13863,KCC,,0,False,,3.35,Wide Receiver,26,203lbs,"6' 1""",N/A,0,0,0,0
-"Ward, Greg",13864,PHI,,0,False,,3.35,Wide Receiver,25,190lbs,"5' 11""",N/A,0,0,0,0
-"Boone, Mike",13868,MIN,,0,False,,2.06,Running Back,25,206lbs,"5' 10""",N/A,0,0,0,0
-"Hilliard, Dontrell",13871,CLE,,0,False,,2.06,Running Back,25,202lbs,"5' 11""",N/A,0,0,0,0
-"Boyle, Tim",13873,GBP,,0,False,,5.93,Quarterback,25,232lbs,"6' 4""",N/A,0,0,0,0
-"Wilson, Shaun",13874,TEN,,0,False,,2.06,Running Back,24,185lbs,"5' 9""",N/A,0,0,0,0
-"Vedvik, Kaare",13877,BUF,,0,False,,2.39,Kicker,26,210lbs,"6' 3""",N/A,0,0,0,0
-"Board, C.J.",13878,JAC,,0,False,,3.35,Wide Receiver,26,181lbs,"6' 1""",N/A,0,0,0,0
-"Allen, Kyle",13879,WAS,,0,False,,5.93,Quarterback,24,210lbs,"6' 3""",N/A,0,0,0,0
-"Arnold, Dan",13880,ARI,,0,False,,1.72,Tight End,25,220lbs,"6' 6""",N/A,0,0,0,0
-"Kirkwood, Keith",13882,CAR,,0,False,,3.35,Wide Receiver,26,210lbs,"6' 3""",N/A,0,0,0,0
-"Smith, Vyncint",13884,NYJ,,0,False,,3.35,Wide Receiver,24,202lbs,"6' 3""",N/A,0,0,0,0
-"Croom, Jason",13890,BUF,,0,False,,1.72,Tight End,26,246lbs,"6' 5""",N/A,0,0,0,0
-"Sherfield, Trent",13893,ARI,,0,False,,3.35,Wide Receiver,24,205lbs,"6' 1""",N/A,0,0,0,0
-"Sims, Cam",13895,WAS,,0,False,,3.35,Wide Receiver,24,220lbs,"6' 5""",N/A,0,0,0,0
-"Joseph, Greg",13898,TEN,,0,False,,4.42,Kicker,25,208lbs,"6' 0""",N/A,0,0,0,0
-"Bertolet, Taylor",13900,FA,,0,False,,2.39,Kicker,27,188lbs,"5' 9""",N/A,0,0,0,0
-"Maher, Brett",13909,NYJ,,0,False,,5.19,Kicker,30,190lbs,"6' 0""",N/A,0,0,0,0
-"Powell, Brandon",13910,ATL,,0,False,,3.35,Wide Receiver,23,188lbs,"5' 8""",N/A,0,0,0,0
-"Batson, Cameron",13912,TEN,,0,False,,3.35,Wide Receiver,24,175lbs,"5' 8""",N/A,0,0,0,0
-"Howell, Buddy",13916,HOU,,0,False,,2.06,Running Back,24,218lbs,"6' 1""",N/A,0,0,0,0
-"Firkser, Anthony",13919,TEN,,0,False,,1.72,Tight End,25,246lbs,"6' 2""",N/A,0,0,0,0
-"Mundt, Johnny",13940,LAR,,0,False,,1.72,Tight End,25,233lbs,"6' 4""",N/A,0,0,0,0
-"Turner, De'Lance",13958,FA,,0,False,,2.06,Running Back,24,214lbs,"5' 11""",N/A,0,0,0,0
-"Dawkins, Dalyn",13961,TEN,,0,False,,2.06,Running Back,25,183lbs,"5' 7""",N/A,0,0,0,0
-"Hodge, KhaDarel",13963,CLE,,0,False,,3.35,Wide Receiver,25,205lbs,"6' 2""",N/A,0,0,0,0
-"Mullens, Nick",13968,SFO,,0,False,,5.93,Quarterback,25,210lbs,"6' 1""",N/A,0,0,0,0
-"Badgley, Mike",13980,LAC,,0,False,,5.23,Kicker,24,183lbs,"5' 10""",N/A,0,0,0,0
-"Dwelley, Ross",13988,SFO,,0,False,,1.72,Tight End,25,235lbs,"6' 5""",N/A,0,0,0,0
-"Scott, Da'Mari",13990,NYG,,0,False,,0,Wide Receiver,24,205lbs,"6' 0""",N/A,0,0,0,0
-"Brown, Pharaoh",13994,CLE,,0,False,,1.72,Tight End,26,258lbs,"6' 6""",N/A,0,0,0,0
-"Beebe, Chad",13999,MIN,,0,False,,3.35,Wide Receiver,26,183lbs,"5' 10""",N/A,0,0,0,0
-"Wilson, Jeffery",14017,SFO,,0,False,,2.06,Running Back,24,213lbs,"6' 0""",N/A,0,0,0,0
-"Lacy, Chris",14045,DET,,0,False,,3.35,Wide Receiver,24,206lbs,"6' 3""",N/A,0,0,0,0
-"Murray, Kyler",14056,ARI,,0,False,,14.21,Quarterback,22,207lbs,"5' 10""",N/A,0,0,0,0
-"Lock, Drew",14057,DEN,,0,False,,5.93,Quarterback,23,228lbs,"6' 4""",N/A,0,0,0,0
-"Haskins, Dwayne",14058,WAS,,0,False,,5.93,Quarterback,23,231lbs,"6' 3""",N/A,0,0,0,0
-"Jones, Daniel",14059,NYG,,0,False,,5.93,Quarterback,23,220lbs,"6' 5""",N/A,0,0,0,0
-"Jackson, Tyree",14060,FA,,0,False,,5.93,Quarterback,23,249lbs,"6' 7""",N/A,0,0,0,0
-"McSorley, Trace",14061,BAL,,0,False,,5.93,Quarterback,24,202lbs,"6' 0""",N/A,0,0,0,0
-"Grier, Will",14062,CAR,,0,False,,5.93,Quarterback,25,220lbs,"6' 1""",N/A,0,0,0,0
-"Stidham, Jarrett",14063,NEP,,0,False,,5.93,Quarterback,23,215lbs,"6' 3""",N/A,0,0,0,0
-"Thorson, Clayton",14064,DAL,,0,False,,5.93,Quarterback,24,222lbs,"6' 4""",N/A,0,0,0,0
-"Rypien, Brett",14065,DEN,,0,False,,5.93,Quarterback,24,202lbs,"6' 2""",N/A,0,0,0,0
-"Minshew, Gardner",14067,JAC,,0,False,,5.93,Quarterback,24,225lbs,"6' 1""",N/A,0,0,0,0
-"Finley, Ryan",14068,CIN,,0,False,,5.93,Quarterback,25,207lbs,"6' 4""",N/A,0,0,0,0
-"Stick, Easton",14069,LAC,,0,False,,5.93,Quarterback,24,217lbs,"6' 1""",N/A,0,0,0,0
-"Blough, David",14070,DET,,0,False,,5.93,Quarterback,24,200lbs,"6' 0""",N/A,0,0,0,0
-"Montgomery, David",14071,CHI,,9,True,2022,7,Running Back,23,222lbs,"5' 10""",N/A,0,0,0,0
-"Snell, Benny",14072,PIT,,0,False,,2.06,Running Back,22,224lbs,"5' 10""",N/A,0,0,0,0
-"Jacobs, Josh",14073,LVR,,0,False,,7.25,Running Back,22,220lbs,"5' 10""",N/A,0,0,0,0
-"Williams, Dexter",14074,GBP,,0,False,,2.06,Running Back,23,212lbs,"5' 11""",N/A,0,0,0,0
-"Harris, Damien",14075,NEP,,0,False,,3.05,Running Back,23,213lbs,"5' 11""",N/A,0,0,0,0
-"Williams, Trayveon",14076,CIN,,0,False,,2.06,Running Back,22,206lbs,"5' 8""",N/A,0,0,0,0
-"Weber, Mike",14077,FA,,0,False,,2.06,Running Back,22,211lbs,"5' 10""",N/A,0,0,0,0
-"Higdon, Karan",14078,HOU,,0,False,,2.06,Running Back,50,206lbs,"5' 9""",N/A,0,0,0,0
-"Sanders, Miles",14079,PHI,,0,False,,4.69,Running Back,23,211lbs,"5' 11""",N/A,0,0,0,0
-"Singletary, Devin",14080,BUF,,0,False,,2.3,Running Back,22,203lbs,"5' 7""",N/A,0,0,0,0
-"Gaskin, Myles",14081,MIA,,0,False,,2.06,Running Back,23,200lbs,"5' 10""",N/A,0,0,0,0
-"Love, Bryce",14082,WAS,,0,False,,2.06,Running Back,23,200lbs,"5' 9""",N/A,0,0,0,0
-"Homer, Travis",14083,SEA,,0,False,,2.06,Running Back,21,202lbs,"5' 10""",N/A,0,0,0,0
-"Holyfield, Elijah",14084,PHI,,0,False,,2.06,Running Back,22,215lbs,"5' 10""",N/A,0,0,0,0
-"Pollard, Tony",14085,DAL,,0,False,,2.06,Running Back,23,215lbs,"6' 0""",N/A,0,0,0,0
-"Hill, Justice",14086,BAL,,0,False,,2.44,Running Back,22,200lbs,"5' 10""",N/A,0,0,0,0
-"Henderson, Darrell",14087,LAR,,0,False,,4.36,Running Back,22,208lbs,"5' 8""",N/A,0,0,0,0
-"Anderson, Rodney",14088,CIN,,0,False,,2.06,Running Back,23,224lbs,"6' 0""",N/A,0,0,0,0
-"Moore, Jalin",14092,NYJ,,0,False,,2.06,Running Back,24,212lbs,"5' 10""",N/A,0,0,0,0
-"Armstead, Ryquell",14093,JAC,,0,False,,2.06,Running Back,23,220lbs,"5' 11""",N/A,0,0,0,0
-"Scarlett, Jordan",14094,CAR,,0,False,,2.06,Running Back,25,210lbs,"5' 11""",N/A,0,0,0,0
-"Johnson, Ty",14095,DET,,0,False,,2.06,Running Back,22,210lbs,"5' 10""",N/A,0,0,0,0
-"Ozigbo, Devine",14096,JAC,,0,False,,2.06,Running Back,23,225lbs,"6' 0""",N/A,0,0,0,0
-"Ollison, Qadree",14097,ATL,,0,False,,2.06,Running Back,23,225lbs,"6' 2""",N/A,0,0,0,0
-"Crockett, Damarea",14098,GBP,,0,False,,2.06,Running Back,22,225lbs,"5' 11""",N/A,0,0,0,0
-"Hall, Darrin",14099,FA,,0,False,,2.06,Running Back,23,217lbs,"6' 0""",N/A,0,0,0,0
-"Harry, N'Keal",14101,NEP,,0,False,,3.59,Wide Receiver,22,225lbs,"6' 4""",N/A,0,0,0,0
-"Metcalf, DK",14102,SEA,,0,False,,3.55,Wide Receiver,22,229lbs,"6' 4""",N/A,0,0,0,0
-"Ridley, Riley",14103,CHI,,0,False,,3.35,Wide Receiver,24,199lbs,"6' 1""",N/A,0,0,0,0
-"Brown, A.J.",14104,TEN,,0,False,,3.35,Wide Receiver,23,226lbs,"6' 1""",N/A,0,0,0,0
-"Brown, Marquise",14105,BAL,,0,False,,3.35,Wide Receiver,23,170lbs,"5' 9""",N/A,0,0,0,0
-"Butler, Hakeem",14106,ARI,,0,False,,3.35,Wide Receiver,24,227lbs,"6' 5""",N/A,0,0,0,0
-"Arcega-Whiteside, JJ",14107,PHI,,0,False,,3.35,Wide Receiver,23,225lbs,"6' 2""",N/A,0,0,0,0
-"Dortch, Greg",14108,LAR,,0,False,,3.35,Wide Receiver,22,173lbs,"5' 7""",N/A,0,0,0,0
-"McLaurin, Terry",14109,WAS,,0,False,,3.35,Wide Receiver,24,210lbs,"6' 0""",N/A,0,0,0,0
-"Sills, David",14110,NYG,,0,False,,3.35,Wide Receiver,24,211lbs,"6' 3""",N/A,0,0,0,0
-"Lodge, DaMarkus",14111,CIN,,0,False,,3.35,Wide Receiver,23,202lbs,"6' 2""",N/A,0,0,0,0
-"Campbell, Parris",14112,IND,,0,False,,3.47,Wide Receiver,23,208lbs,"6' 0""",N/A,0,0,0,0
-"Hardman, Mecole",14113,KCC,,0,False,,3.35,Wide Receiver,22,187lbs,"5' 10""",N/A,0,0,0,0
-"Harmon, Kelvin",14114,WAS,,0,False,,3.35,Wide Receiver,23,215lbs,"6' 2""",N/A,0,0,0,0
-"Hall, Emanuel",14115,WAS,,0,False,,3.35,Wide Receiver,23,201lbs,"6' 2""",N/A,0,0,0,0
-"Hurd, Jalen",14116,SFO,,0,False,,3.35,Wide Receiver,24,230lbs,"6' 4""",N/A,0,0,0,0
-"Johnson, Tyron",14117,LAC,,0,False,,3.35,Wide Receiver,24,193lbs,"6' 1""",N/A,0,0,0,0
-"Humphrey, Lil'Jordan",14118,NOS,,0,False,,3.35,Wide Receiver,22,225lbs,"6' 4""",N/A,0,0,0,0
-"Johnson, Anthony",14119,PIT,,0,False,,3.35,Wide Receiver,25,209lbs,"6' 2""",N/A,0,0,0,0
-"Jennings, Gary",14120,MIA,,0,False,,3.35,Wide Receiver,23,216lbs,"6' 1""",N/A,0,0,0,0
-"Isabella, Andy",14121,ARI,,0,False,,3.35,Wide Receiver,23,188lbs,"5' 9""",N/A,0,0,0,0
-"Slayton, Darius",14122,NYG,,0,False,,3.35,Wide Receiver,23,194lbs,"6' 2""",N/A,0,0,0,0
-"Renfrow, Hunter",14123,LVR,,0,False,,3.35,Wide Receiver,24,185lbs,"5' 10""",N/A,0,0,0,0
-"Johnson, KeeSean",14124,ARI,,0,False,,3.35,Wide Receiver,23,201lbs,"6' 1""",N/A,0,0,0,0
-"Boykin, Miles",14125,BAL,,0,False,,3.35,Wide Receiver,23,220lbs,"6' 4""",N/A,0,0,0,0
-"Williams, Preston",14126,MIA,,0,False,,3.35,Wide Receiver,23,218lbs,"6' 5""",N/A,0,0,0,0
-"Meyers, Jakobi",14127,NEP,,0,False,,3.35,Wide Receiver,23,200lbs,"6' 2""",N/A,0,0,0,0
-"Mitchell, Dillon",14129,MIN,,0,False,,3.35,Wide Receiver,23,202lbs,"6' 1""",N/A,0,0,0,0
-"Wesley, Antoine",14130,BAL,,0,False,,3.35,Wide Receiver,22,206lbs,"6' 4""",N/A,0,0,0,0
-"Morgan, Stanley",14131,CIN,,0,False,,3.35,Wide Receiver,22,205lbs,"6' 0""",N/A,0,0,0,0
-"Custis, Jamal",14132,FA,,0,False,,3.35,Wide Receiver,24,213lbs,"6' 5""",N/A,0,0,0,0
-"Dixon, Johnnie",14134,ARI,,0,False,,3.35,Wide Receiver,25,198lbs,"5' 11""",N/A,0,0,0,0
-"Samuel, Deebo",14136,SFO,,0,False,,3.81,Wide Receiver,24,215lbs,"6' 0""",N/A,0,0,0,0
-"Fant, Noah",14137,DEN,,0,False,,2.41,Tight End,22,249lbs,"6' 4""",N/A,0,0,0,0
-"Hockenson, T.J.",14138,DET,,0,False,,2.63,Tight End,23,247lbs,"6' 5""",N/A,0,0,0,0
-"Mack, Alize",14139,FA,,0,False,,1.72,Tight End,23,249lbs,"6' 4""",N/A,0,0,0,0
-"Sternberger, Jace",14140,GBP,,0,False,,1.72,Tight End,24,251lbs,"6' 4""",N/A,0,0,0,0
-"Smith Jr., Irv",14141,MIN,,0,False,,1.72,Tight End,21,242lbs,"6' 2""",N/A,0,0,0,0
-"Smith, Kaden",14142,NYG,,0,False,,1.72,Tight End,23,249lbs,"6' 5""",N/A,0,0,0,0
-"Knox, Dawson",14143,BUF,,0,False,,1.72,Tight End,23,254lbs,"6' 4""",N/A,0,0,0,0
-"Nauta, Isaac",14144,DET,,0,False,,1.72,Tight End,23,246lbs,"6' 3""",N/A,0,0,0,0
-"Wilson, Caleb",14145,WAS,,0,False,,1.72,Tight End,24,240lbs,"6' 4""",N/A,0,0,0,0
-"Sample, Drew",14146,CIN,,0,False,,1.72,Tight End,24,258lbs,"6' 5""",N/A,0,0,0,0
-"Barnes, Alex",14191,FA,,0,False,,2.06,Running Back,23,226lbs,"6' 0""",N/A,0,0,0,0
-"Williams, James",14192,FA,,0,False,,0,Running Back,50,205lbs,"6' 0""",N/A,0,0,0,0
-"Wade, Christian",14194,BUF,,0,False,,2.06,Running Back,29,185lbs,"5' 7""",N/A,0,0,0,0
-"Warring, Kahale",14195,HOU,,0,False,,1.72,Tight End,23,252lbs,"6' 5""",N/A,0,0,0,0
-"Johnson, Diontae",14208,PIT,,0,False,,3.35,Wide Receiver,24,183lbs,"5' 10""",N/A,0,0,0,0
-"Oliver, Josh",14209,JAC,,0,False,,1.72,Tight End,23,249lbs,"6' 5""",N/A,0,0,0,0
-"Mattison, Alexander",14223,MIN,,0,False,,2.06,Running Back,22,220lbs,"5' 11""",N/A,0,0,0,0
-"Wesco, Trevon",14231,NYJ,,0,False,,1.72,Tight End,24,267lbs,"6' 3""",N/A,0,0,0,0
-"Moreau, Foster",14239,LVR,,0,False,,1.72,Tight End,23,250lbs,"6' 4""",N/A,0,0,0,0
-"Gentry, Zach",14240,PIT,,0,False,,1.72,Tight End,23,265lbs,"6' 8""",N/A,0,0,0,0
-"Gay, Matt",14244,TBB,,0,False,,3.38,Kicker,26,232lbs,"6' 0""",N/A,0,0,0,0
-"Seibert, Austin",14258,CLE,,0,False,,2.39,Kicker,23,211lbs,"5' 9""",N/A,0,0,0,0
-"Fulgham, Travis",14265,DET,,0,False,,3.35,Wide Receiver,24,215lbs,"6' 2""",N/A,0,0,0,0
-"Winfree, Juwann",14267,DEN,,0,False,,3.35,Wide Receiver,23,215lbs,"6' 3""",N/A,0,0,0,0
-"Green, Marcus",14277,PHI,,0,False,,3.35,Wide Receiver,23,191lbs,"5' 8""",N/A,0,0,0,0
-"Miller, Scott",14280,TBB,,0,False,,3.35,Wide Receiver,22,166lbs,"5' 11""",N/A,0,0,0,0
-"Thompson, Darwin",14284,KCC,,0,False,,2.06,Running Back,23,200lbs,"5' 8""",N/A,0,0,0,0
-"Gillaspia, Cullen",14287,HOU,,0,False,,2.06,Running Back,25,235lbs,"6' 2""",N/A,0,0,0,0
-"Whyte, Kerrith",14289,PIT,,0,False,,2.06,Running Back,23,200lbs,"5' 10""",N/A,0,0,0,0
-"Sweeney, Tommy",14294,BUF,,0,False,,1.72,Tight End,25,251lbs,"6' 5""",N/A,0,0,0,0
-"Cox, Chandler",14295,MIA,,0,False,,2.06,Running Back,23,240lbs,"6' 1""",N/A,0,0,0,0
-"Ursua, John",14297,SEA,,0,False,,3.35,Wide Receiver,26,182lbs,"5' 10""",N/A,0,0,0,0
-"Godwin, Terry",14298,JAC,,0,False,,3.35,Wide Receiver,23,185lbs,"5' 11""",N/A,0,0,0,0
-"Johnson, Olabisi",14305,MIN,,0,False,,3.35,Wide Receiver,23,203lbs,"6' 0""",N/A,0,0,0,0
-"Butler, Emmanuel",14313,NOS,,0,False,,3.35,Wide Receiver,23,220lbs,"6' 4""",N/A,0,0,0,0
-"Anderson, Bruce",14314,IND,,0,False,,2.06,Running Back,23,210lbs,"5' 11""",N/A,0,0,0,0
-"Dulin, Ashton",14315,IND,,0,False,,3.35,Wide Receiver,23,215lbs,"6' 1""",N/A,0,0,0,0
-"Hart, Penny",14316,SEA,,0,False,,3.35,Wide Receiver,24,182lbs,"5' 8""",N/A,0,0,0,0
-"Doss, Keelan",14317,LVR,,0,False,,3.35,Wide Receiver,24,215lbs,"6' 3""",N/A,0,0,0,0
-"Ferguson, Jazz",14318,FA,,0,False,,3.35,Wide Receiver,23,228lbs,"6' 5""",N/A,0,0,0,0
-"Beck, Andrew",14319,DEN,,0,False,,1.72,Tight End,24,255lbs,"6' 3""",N/A,0,0,0,0
-"Thompson, Cody",14321,SEA,,0,False,,3.35,Wide Receiver,24,205lbs,"6' 2""",N/A,0,0,0,0
-"Raymond, Dax",14324,FA,,0,False,,1.72,Tight End,25,255lbs,"6' 5""",N/A,0,0,0,0
-"White Jr., Reggie",14329,FA,,0,False,,3.35,Wide Receiver,24,212lbs,"6' 2""",N/A,0,0,0,0
-"Shepherd, Darrius",14330,GBP,,0,False,,3.35,Wide Receiver,24,186lbs,"5' 11""",N/A,0,0,0,0
-"Johnson, D'Ernest",14331,CLE,,0,False,,2.06,Running Back,24,208lbs,"5' 10""",N/A,0,0,0,0
-"Conrad, C.J.",14332,FA,,0,False,,1.72,Tight End,24,247lbs,"6' 4""",N/A,0,0,0,0
-"Hills, Wes",14333,DET,,0,False,,2.06,Running Back,25,218lbs,"6' 0""",N/A,0,0,0,0
-"Fry, Elliott",14335,TBB,,0,False,,0,Kicker,25,189lbs,"6' 0""",N/A,0,0,0,0
-"Johnson, Jon'Vea",14336,DAL,,0,False,,3.35,Wide Receiver,24,195lbs,"6' 0""",N/A,0,0,0,0
-"Guyton, Jalen",14337,LAC,,0,False,,3.35,Wide Receiver,23,212lbs,"6' 1""",N/A,0,0,0,0
-"Hilliman, Jon",14338,NYG,,0,False,,2.06,Running Back,24,226lbs,"6' 0""",N/A,0,0,0,0
-"Grayson, Cyril",14339,TBB,,0,False,,3.35,Wide Receiver,26,178lbs,"5' 11""",N/A,0,0,0,0
-"Parham, Donald",14341,LAC,,0,False,,1.72,Tight End,50,240lbs,"6' 8""",N/A,0,0,0,0
-"Blake, Christian",14342,ATL,,0,False,,0,Wide Receiver,24,181lbs,"6' 1""",N/A,0,0,0,0
-"Dolegala, Jacob",14344,CIN,,0,False,,5.93,Quarterback,50,235lbs,"6' 6""",N/A,0,0,0,0
-"Hyman, Ishmael",14348,CAR,,0,False,,3.35,Wide Receiver,24,196lbs,"6' 0""",N/A,0,0,0,0
-"Chunn, Jordan",14350,DAL,,0,False,,2.06,Running Back,25,230lbs,"6' 0""",N/A,0,0,0,0
-"Brown, Fred",14352,DEN,,0,False,,3.35,Wide Receiver,26,195lbs,"6' 1""",N/A,0,0,0,0
-"Browning, Jake",14358,MIN,,0,False,,5.93,Quarterback,24,210lbs,"6' 2""",N/A,0,0,0,0
-"Johnson, Jakob",14359,NEP,,0,False,,2.06,Running Back,25,255lbs,"6' 3""",N/A,0,0,0,0
-"Patton, Andre",14365,LAC,,0,False,,3.35,Wide Receiver,26,200lbs,"6' 2""",N/A,0,0,0,0
-"Hudson, Tanner",14370,TBB,,0,False,,1.72,Tight End,25,239lbs,"6' 5""",N/A,0,0,0,0
-"Holtz, J.P.",14372,CHI,,0,False,,1.72,Tight End,26,255lbs,"6' 3""",N/A,0,0,0,0
-"Willis, Damion",14373,CIN,,0,False,,3.35,Wide Receiver,23,204lbs,"6' 3""",N/A,0,0,0,0
-"Ingold, Alec",14420,LVR,,0,False,,2.06,Running Back,24,240lbs,"6' 1""",N/A,0,0,0,0
-"Bonnafon, Reggie",14435,CAR,,0,False,,2.06,Running Back,24,215lbs,"6' 0""",N/A,0,0,0,0
-"Walker, Michael",14440,JAC,,0,False,,0,Wide Receiver,23,194lbs,"5' 11""",N/A,0,0,0,0
-"Davis, Felton",14450,FA,,0,False,,3.35,Wide Receiver,23,211lbs,"6' 3""",N/A,0,0,0,0
-"Graham, Jaeden",14464,ATL,,0,False,,1.72,Tight End,24,250lbs,"6' 4""",N/A,0,0,0,0
-"Brooks-James, Tony",14465,MIN,,0,False,,0,Running Back,25,179lbs,"5' 9""",N/A,0,0,0,0
-"Bryant, Ventell",14481,DAL,,0,False,,0,Wide Receiver,23,205lbs,"6' 3""",N/A,0,0,0,0
-"Montgomery, D.J.",14486,CLE,,0,False,,3.35,Wide Receiver,23,201lbs,"6' 1""",N/A,0,0,0,0
-"Carlson, Stephen",14488,CLE,,0,False,,0,Tight End,23,240lbs,"6' 4""",N/A,0,0,0,0
-"Benson, Trinity",14499,DEN,,0,False,,3.35,Wide Receiver,23,180lbs,"6' 0""",N/A,0,0,0,0
-"Anderson, Drew",14510,ARI,,0,False,,5.93,Quarterback,24,221lbs,"6' 4""",N/A,0,0,0,0
-"Moore, Jason",14545,LAC,,0,False,,3.35,Wide Receiver,25,213lbs,"6' 2""",N/A,0,0,0,0
-"Webster, Nsimba",14549,LAR,,0,False,,3.35,Wide Receiver,24,180lbs,"5' 10""",N/A,0,0,0,0
-"Blasingame, Khari",14552,TEN,,0,False,,0,Running Back,24,233lbs,"6' 0""",N/A,0,0,0,0
-"Hollins, Alexander",14554,MIN,,0,False,,0,Wide Receiver,23,166lbs,"6' 1""",N/A,0,0,0,0
-"Olszewski, Gunner",14555,NEP,,0,False,,3.35,Wide Receiver,23,190lbs,"6' 0""",N/A,0,0,0,0
-"Harris, Deonte",14558,NOS,,0,False,,3.35,Wide Receiver,22,170lbs,"5' 6""",N/A,0,0,0,0
-"Wesley, Alex",14560,CHI,,0,False,,3.35,Wide Receiver,24,191lbs,"6' 0""",N/A,0,0,0,0
-"Spencer, Diontae",14565,DEN,,0,False,,3.35,Wide Receiver,28,170lbs,"5' 8""",N/A,0,0,0,0
-"Lovett, John",14591,KCC,,0,False,,1.72,Tight End,24,225lbs,"6' 3""",N/A,0,0,0,0
-"Zaccheaus, Olamide",14592,ATL,,0,False,,3.35,Wide Receiver,22,190lbs,"5' 8""",N/A,0,0,0,0
-"Slye, Joey",14600,CAR,,0,False,,2.39,Kicker,24,213lbs,"5' 11""",N/A,0,0,0,0
-"Laird, Patrick",14612,MIA,,0,False,,2.06,Running Back,24,205lbs,"6' 0""",N/A,0,0,0,0
-"Sims, Steven",14613,WAS,,0,False,,0,Wide Receiver,23,190lbs,"5' 10""",N/A,0,0,0,0
-"Hodges, Devlin",14618,PIT,,0,False,,5.93,Quarterback,24,210lbs,"6' 1""",N/A,0,0,0,0
-"Ta'amu, Jordan",14622,KCC,,0,False,,0,Quarterback,22,221lbs,"6' 3""",N/A,0,0,0,0
-"Hentges, Hale",14654,WAS,,0,False,,1.72,Tight End,23,245lbs,"6' 4""",N/A,0,0,0,0
-"McLaughlin, Chase",14717,IND,,0,False,,2.39,Kicker,24,190lbs,"6' 0""",N/A,0,0,0,0
-"Reynolds, Craig",14727,ATL,,0,False,,0,Running Back,24,215lbs,"5' 11""",N/A,0,0,0,0
-"Horsted, Jesper",14752,CHI,,0,False,,0,Tight End,23,237lbs,"6' 3""",N/A,0,0,0,0
-"Gafford, Rico",14760,LVR,,0,False,,0,Wide Receiver,24,185lbs,"5' 10""",N/A,0,0,0,0
-"Burrow, Joe",14777,CIN,,0,False,,0,Quarterback,23,216lbs,"6' 4""",N/A,0,0,0,0
-"Tagovailoa, Tua",14778,MIA,,0,False,,0,Quarterback,22,218lbs,"6' 1""",N/A,0,0,0,0
-"Herbert, Justin",14779,LAC,,0,False,,0,Quarterback,22,237lbs,"6' 6""",N/A,0,0,0,0
-"Eason, Jacob",14780,IND,,0,False,,0,Quarterback,22,227lbs,"6' 6""",N/A,0,0,0,0
-"Fromm, Jake",14781,BUF,,0,False,,0,Quarterback,21,222lbs,"6' 2""",N/A,0,0,0,0
-"Love, Jordan",14782,GBP,,0,False,,0,Quarterback,21,220lbs,"6' 4""",N/A,0,0,0,0
-"Hurts, Jalen",14783,PHI,,0,False,,0,Quarterback,21,218lbs,"6' 2""",N/A,0,0,0,0
-"Montez, Steven",14784,WAS,,0,False,,0,Quarterback,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Stanley, Nate",14785,MIN,,0,False,,0,Quarterback,22,243lbs,"6' 4""",N/A,0,0,0,0
-"Patterson, Shea",14786,FA,,0,False,,0,Quarterback,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Gordon, Anthony",14787,SEA,,0,False,,0,Quarterback,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Lewerke, Brian",14788,NEP,,0,False,,0,Quarterback,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Huntley, Tyler",14789,BAL,,0,False,,0,Quarterback,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Morgan, James",14790,NYJ,,0,False,,0,Quarterback,23,213lbs,"6' 4""",N/A,0,0,0,0
-"Fine, Mason",14791,FA,,0,False,,0,Quarterback,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Perkins, Bryce",14792,LAR,,0,False,,0,Quarterback,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Luton, Jake",14793,JAC,,0,False,,0,Quarterback,24,236lbs,"6' 6""",N/A,0,0,0,0
-"McDonald, Cole",14794,TEN,,0,False,,0,Quarterback,22,220lbs,"6' 4""",N/A,0,0,0,0
-"Bryant, Kelly",14795,FA,,0,False,,0,Quarterback,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Neal, Riley",14796,DEN,,0,False,,0,Quarterback,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Swift, D'Andre",14797,DET,,0,False,,0,Running Back,21,211lbs,"5' 10""",N/A,0,0,0,0
-"Moss, Zack",14798,BUF,,0,False,,0,Running Back,22,215lbs,"5' 10""",N/A,0,0,0,0
-"Akers, Cam",14799,LAR,,0,False,,0,Running Back,21,212lbs,"5' 11""",N/A,0,0,0,0
-"Dobbins, J.K.",14800,BAL,,0,False,,0,Running Back,21,214lbs,"5' 10""",N/A,0,0,0,0
-"Benjamin, Eno",14801,ARI,,0,False,,0,Running Back,20,210lbs,"5' 10""",N/A,0,0,0,0
-"Taylor, Jonathan",14802,IND,,0,False,,0,Running Back,21,221lbs,"5' 11""",N/A,0,0,0,0
-"Edwards-Helaire, Clyde",14803,KCC,,0,False,,0,Running Back,21,209lbs,"5' 8""",N/A,0,0,0,0
-"McFarland, Anthony",14804,PIT,,0,False,,0,Running Back,50,198lbs,"5' 9""",N/A,0,0,0,0
-"Dillon, AJ",14805,GBP,,0,False,,0,Running Back,22,250lbs,"6' 1""",N/A,0,0,0,0
-"Perine, Lamical",14806,NYJ,,0,False,,0,Running Back,22,220lbs,"5' 11""",N/A,0,0,0,0
-"Kelley, Joshua",14807,LAC,,0,False,,0,Running Back,22,219lbs,"5' 11""",N/A,0,0,0,0
-"Evans, Darrynton",14808,TEN,,0,False,,0,Running Back,22,200lbs,"5' 11""",N/A,0,0,0,0
-"Smith, Rodney",14809,CAR,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Vaughn, Ke'Shawn",14810,TBB,,0,False,,0,Running Back,23,215lbs,"5' 10""",N/A,0,0,0,0
-"Ahmed, Salvon",14811,SFO,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Anderson, Darius",14812,DAL,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Robinson, James",14813,JAC,,0,False,,0,Running Back,21,220lbs,"5' 10""",N/A,0,0,0,0
-"Herrien, Brian",14814,CLE,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Dallas, DeeJay",14815,SEA,,0,False,,0,Running Back,21,214lbs,"5' 10""",N/A,0,0,0,0
-"Warren, Michael",14816,PHI,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Taylor, Patrick",14817,GBP,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Jones, Xavier",14818,LAR,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Feaster, Tavien",14819,JAC,,0,False,,0,Running Back,22,215lbs,"5' 11""",N/A,0,0,0,0
-"Leake, Javon",14820,NYG,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Hasty, JaMycal",14821,SFO,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Corbin, Reggie",14822,FA,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Dowdle, Rico",14823,DAL,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Phillips, Scottie",14824,HOU,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Conkrite, Jordan",14825,FA,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Pierce, Artavis",14826,CHI,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Taylor, J.J.",14827,NEP,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Jones, Tony",14828,NOS,,0,False,,0,Running Back,50,224lbs,"5' 11""",N/A,0,0,0,0
-"LeMay, Benny",14829,CLE,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Bellamy, LaVante",14830,DEN,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Killins Jr., Adrian",14831,PHI,,0,False,,0,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Lamb, CeeDee",14832,DAL,,0,False,,0,Wide Receiver,21,189lbs,"6' 2""",N/A,0,0,0,0
-"Jeudy, Jerry",14833,DEN,,0,False,,0,Wide Receiver,21,192lbs,"6' 1""",N/A,0,0,0,0
-"Ruggs, Henry",14834,LVR,,0,False,,0,Wide Receiver,21,190lbs,"6' 0""",N/A,0,0,0,0
-"Higgins, Tee",14835,CIN,,0,False,,0,Wide Receiver,21,210lbs,"6' 4""",N/A,0,0,0,0
-"Jefferson, Justin",14836,MIN,,0,False,,0,Wide Receiver,21,192lbs,"6' 3""",N/A,0,0,0,0
-"Hamler, KJ",14837,DEN,,0,False,,0,Wide Receiver,21,176lbs,"5' 9""",N/A,0,0,0,0
-"Shenault, Laviska",14838,JAC,,0,False,,0,Wide Receiver,21,220lbs,"6' 2""",N/A,0,0,0,0
-"Reagor, Jalen",14839,PHI,,0,False,,0,Wide Receiver,21,195lbs,"5' 11""",N/A,0,0,0,0
-"Aiyuk, Brandon",14840,SFO,,0,False,,0,Wide Receiver,22,206lbs,"6' 1""",N/A,0,0,0,0
-"Claypool, Chase",14841,PIT,,0,False,,0,Wide Receiver,22,227lbs,"6' 4""",N/A,0,0,0,0
-"Pittman, Michael",14842,IND,,0,False,,0,Wide Receiver,22,220lbs,"6' 4""",N/A,0,0,0,0
-"Bowden, Lynn",14843,LVR,,0,False,,0,Running Back,22,201lbs,"6' 0""",N/A,0,0,0,0
-"Edwards, Bryan",14844,LVR,,0,False,,0,Wide Receiver,21,215lbs,"6' 3""",N/A,0,0,0,0
-"Davis, Gabriel",14845,BUF,,0,False,,0,Wide Receiver,21,213lbs,"6' 3""",N/A,0,0,0,0
-"Mims, Denzel",14846,NYJ,,0,False,,0,Wide Receiver,22,208lbs,"6' 3""",N/A,0,0,0,0
-"Duvernay, Devin",14847,BAL,,0,False,,0,Wide Receiver,22,210lbs,"5' 11""",N/A,0,0,0,0
-"Proche, James",14848,BAL,,0,False,,0,Wide Receiver,23,193lbs,"6' 0""",N/A,0,0,0,0
-"Hodgins, Isaiah",14849,BUF,,0,False,,0,Wide Receiver,21,209lbs,"6' 4""",N/A,0,0,0,0
-"Cephus, Quintez",14850,DET,,0,False,,0,Wide Receiver,22,205lbs,"6' 1""",N/A,0,0,0,0
-"Hill, K.J.",14851,LAC,,0,False,,0,Wide Receiver,22,197lbs,"6' 0""",N/A,0,0,0,0
-"Gibson, Antonio",14852,WAS,,0,False,,0,Running Back,50,221lbs,"6' 2""",N/A,0,0,0,0
-"Johnson, Collin",14853,JAC,,0,False,,0,Wide Receiver,22,215lbs,"6' 6""",N/A,0,0,0,0
-"Victor, Binjimen",14854,NYG,,0,False,,0,Wide Receiver,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Mack, Austin",14855,NYG,,0,False,,0,Wide Receiver,50,215lbs,"6' 2""",N/A,0,0,0,0
-"Davis, Quartney",14856,MIN,,0,False,,0,Wide Receiver,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Peoples-Jones, Donovan",14857,CLE,,0,False,,0,Wide Receiver,21,208lbs,"6' 2""",N/A,0,0,0,0
-"Jefferson, Van",14858,LAR,,0,False,,0,Wide Receiver,23,197lbs,"6' 2""",N/A,0,0,0,0
-"Jackson, Trishton",14859,LAR,,0,False,,0,Wide Receiver,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Jennings, Jauan",14860,SFO,,0,False,,0,Wide Receiver,23,214lbs,"6' 3""",N/A,0,0,0,0
-"Johnson, Juwan",14861,NOS,,0,False,,0,Wide Receiver,23,231lbs,"6' 4""",N/A,0,0,0,0
-"Reed, Joe",14862,LAC,,0,False,,0,Wide Receiver,22,215lbs,"6' 1""",N/A,0,0,0,0
-"Gandy-Golden, Antonio",14863,WAS,,0,False,,0,Wide Receiver,22,220lbs,"6' 4""",N/A,0,0,0,0
-"Johnson, Tyler",14864,TBB,,0,False,,0,Wide Receiver,21,205lbs,"6' 2""",N/A,0,0,0,0
-"Swain, Freddie",14865,SEA,,0,False,,0,Wide Receiver,21,199lbs,"6' 0""",N/A,0,0,0,0
-"Thomas, Jeff",14866,NEP,,0,False,,0,Wide Receiver,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Kmet, Cole",14867,CHI,,0,False,,0,Tight End,21,258lbs,"6' 6""",N/A,0,0,0,0
-"Hopkins, Brycen",14868,LAR,,0,False,,0,Tight End,23,245lbs,"6' 5""",N/A,0,0,0,0
-"Moss, Thaddeus",14869,WAS,,0,False,,0,Tight End,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Trautman, Adam",14870,NOS,,0,False,,0,Tight End,23,253lbs,"6' 6""",N/A,0,0,0,0
-"Parkinson, Colby",14871,SEA,,0,False,,0,Tight End,21,251lbs,"6' 7""",N/A,0,0,0,0
-"Pinkney, Jared",14872,ATL,,0,False,,0,Tight End,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Okwuegbunam, Albert",14873,DEN,,0,False,,0,Tight End,22,255lbs,"6' 5""",N/A,0,0,0,0
-"Bryant, Hunter",14874,DET,,0,False,,0,Tight End,50,0lbs,"0' 0""",N/A,0,0,0,0
-"Bryant, Harrison",14875,CLE,,0,False,,0,Tight End,22,240lbs,"6' 5""",N/A,0,0,0,0
-"Deguara, Josiah",14876,GBP,,0,False,,0,Tight End,23,240lbs,"6' 3""",N/A,0,0,0,0
-"Blankenship, Rodrigo",14912,IND,,0,False,,0,Kicker,23,191lbs,"6' 1""",N/A,0,0,0,0
-"Hajrullahu, Lirim",14914,LAR,,0,False,,0,Kicker,30,205lbs,"5' 11""",N/A,0,0,0,0
-"MacGinnis, Austin",14915,LAR,,0,False,,0,Kicker,25,185lbs,"5' 10""",N/A,0,0,0,0
-"Patrick, Jacques",14917,CIN,,0,False,,0,Running Back,23,236lbs,"6' 3""",N/A,0,0,0,0
-"Asiasi, Devin",14936,NEP,,0,False,,0,Tight End,22,260lbs,"6' 3""",N/A,0,0,0,0
-"Keene, Dalton",14939,NEP,,0,False,,0,Tight End,21,251lbs,"6' 4""",N/A,0,0,0,0
-"Rohrwasser, Justin",14965,NEP,,0,False,,0,Kicker,23,230lbs,"6' 3""",N/A,0,0,0,0
-"Hightower, John",14969,PHI,,0,False,,0,Wide Receiver,24,172lbs,"6' 2""",N/A,0,0,0,0
-"Coulter, Isaiah",14972,HOU,,0,False,,0,Wide Receiver,50,190lbs,"6' 3""",N/A,0,0,0,0
-"Huntley, Jason",14973,DET,,0,False,,0,Running Back,22,193lbs,"5' 9""",N/A,0,0,0,0
-"Mooney, Darnell",14974,CHI,,0,False,,0,Wide Receiver,22,172lbs,"5' 11""",N/A,0,0,0,0
-"Osborn, K.J.",14977,MIN,,0,False,,0,Wide Receiver,23,200lbs,"6' 0""",N/A,0,0,0,0
-"Bass, Tyler",14983,BUF,,0,False,,0,Kicker,23,185lbs,"5' 10""",N/A,0,0,0,0
-"Woerner, Charlie",14984,SFO,,0,False,,0,Tight End,22,245lbs,"6' 5""",N/A,0,0,0,0
-"Watkins, Quez",14992,PHI,,0,False,,0,Wide Receiver,22,190lbs,"6' 2""",N/A,0,0,0,0
-"Davis, Tyler",14996,JAC,,0,False,,0,Tight End,23,250lbs,"6' 4""",N/A,0,0,0,0
-"Patmon, Dezmon",14998,IND,,0,False,,0,Wide Receiver,21,220lbs,"6' 4""",N/A,0,0,0,0
-"DiNucci, Ben",15008,DAL,,0,False,,0,Quarterback,23,210lbs,"6' 3""",N/A,0,0,0,0
-"Stevens, Tommy",15017,NOS,,0,False,,0,Quarterback,23,235lbs,"6' 5""",N/A,0,0,0,0
-"Calais, Raymond",15021,TBB,,0,False,,0,Running Back,22,185lbs,"5' 9""",N/A,0,0,0,0
-"Perry, Malcolm",15022,MIA,,0,False,,0,Running Back,23,190lbs,"5' 9""",N/A,0,0,0,0
-"Sloman, Sam",15024,LAR,,0,False,,0,Kicker,22,205lbs,"5' 8""",N/A,0,0,0,0
-"Sullivan, Stephen",15026,SEA,,0,False,,0,Tight End,23,242lbs,"6' 5""",N/A,0,0,0,0
-"Cleveland, Tyrie",15027,DEN,,0,False,,0,Wide Receiver,22,205lbs,"6' 2""",N/A,0,0,0,0
-"Begelton, Reggie",15033,GBP,,0,False,,0,Wide Receiver,26,200lbs,"6' 2""",N/A,0,0,0,0
-"Callaway, Marquez",15034,NOS,,0,False,,0,Wide Receiver,22,204lbs,"6' 2""",N/A,0,0,0,0
-"Wolford, John",15035,LAR,,0,False,,0,Quarterback,24,200lbs,"6' 1""",N/A,0,0,0,0
-"Smith, J'mar",15036,NEP,,0,False,,0,Quarterback,23,218lbs,"6' 1""",N/A,0,0,0,0
-"Lipscomb, Kalija",15037,KCC,,0,False,,0,Wide Receiver,22,200lbs,"6' 1""",N/A,0,0,0,0
-"Bayless, Omar",15038,CAR,,0,False,,0,Wide Receiver,23,207lbs,"6' 3""",N/A,0,0,0,0
-"Parker, Aaron",15039,DAL,,0,False,,0,Wide Receiver,22,191lbs,"6' 3""",N/A,0,0,0,0
-"Williams, Ty'Son",15040,BAL,,0,False,,0,Running Back,23,220lbs,"6' 0""",N/A,0,0,0,0
-"Cager, Lawrence",15041,NYJ,,0,False,,0,Wide Receiver,22,220lbs,"6' 5""",N/A,0,0,0,0
-"Ward, Jonathan",15042,ARI,,0,False,,0,Running Back,22,202lbs,"6' 0""",N/A,0,0,0,0
-"Hastings, Will",15043,NEP,,0,False,,0,Wide Receiver,23,174lbs,"5' 10""",N/A,0,0,0,0
-"Scarlett, Cameron",15044,TEN,,0,False,,0,Running Back,23,216lbs,"6' 1""",N/A,0,0,0,0
-"Breeland, Jacob",15045,BAL,,0,False,,0,Tight End,22,250lbs,"6' 5""",N/A,0,0,0,0
-"Merritt, Kirk",15046,MIA,,0,False,,0,Wide Receiver,23,210lbs,"6' 0""",N/A,0,0,0,0
-"Campbell, George",15048,NYJ,,0,False,,0,Wide Receiver,23,183lbs,"6' 4""",N/A,0,0,0,0
-"Taumoepeau, Charlie",15050,DAL,,0,False,,0,Tight End,22,245lbs,"6' 3""",N/A,0,0,0,0
+Name,Id,NFLTeam,MFLTeamID,Roster,ContractYear,Salary,Position,Age,Weight,Height,ADP,FantasyProsRanking,ByeWeek,PreviousScores,ProjectedScores
+"Bills, Buffalo",501,BUF,0,False,,7.6,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Colts, Indianapolis",502,IND,0,False,,6.35,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Dolphins, Miami",503,MIA,0,False,,4.91,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Patriots, New England",504,NEP,0,False,,7.26,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Jets, New York",505,NYJ,0,False,,5.65,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Bengals, Cincinnati",506,CIN,0,False,,4.8,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Browns, Cleveland",507,CLE,0,False,,5.74,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Titans, Tennessee",508,TEN,0,False,,6.08,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Jaguars, Jacksonville",509,JAC,0,False,,5.2,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Steelers, Pittsburgh",510,PIT,0,False,,8.48,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Broncos, Denver",511,DEN,0,False,,6.52,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Chiefs, Kansas City",512,KCC,0,False,,6.77,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Raiders, Las Vegas",513,LVR,0,False,,4.96,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Chargers, Los Angeles",514,LAC,0,False,,6.5,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Seahawks, Seattle",515,SEA,0,False,,6.01,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Cowboys, Dallas",516,DAL,0,False,,5.83,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Giants, New York",517,NYG,0,False,,3.9,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Eagles, Philadelphia",518,PHI,0,False,,6.64,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Cardinals, Arizona",519,ARI,0,False,,5.02,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"FootballTeam, Washington",520,WAS,0,False,,5.31,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Bears, Chicago",521,CHI,0,False,,6.86,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Lions, Detroit",522,DET,0,False,,5.13,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Packers, Green Bay",523,GBP,0,False,,5.92,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Vikings, Minnesota",524,MIN,0,False,,6.68,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Buccaneers, Tampa Bay",525,TBB,0,False,,6.05,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Falcons, Atlanta",526,ATL,0,False,,5.09,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Panthers, Carolina",527,CAR,0,False,,5.02,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Rams, Los Angeles",528,LAR,0,False,,6.68,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Saints, New Orleans",529,NOS,0,False,,6.93,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"49ers, San Francisco",530,SFO,0,False,,9.95,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Ravens, Baltimore",531,BAL,0,False,,7.98,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Texans, Houston",532,HOU,0,False,,5.54,Defense,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Vinatieri, Adam",2842,FA,0,False,,2.39,Kicker,47,212lbs,"6' 0""",N/A,0,0,0,0
+"Nix, Roosevelt",4397,IND,0,False,,2.06,Running Back,28,248lbs,"5' 11""",N/A,0,0,0,0
+"Brees, Drew",4925,NOS,0,False,,15.32,Quarterback,41,209lbs,"6' 0""",N/A,0,0,0,0
+"Brady, Tom",5848,TBB,0,False,,14.21,Quarterback,43,225lbs,"6' 4""",N/A,0,0,0,0
+"McCown, Josh",6589,FA,0,False,,5.93,Quarterback,41,218lbs,"6' 4""",N/A,0,0,0,0
+"Bryant, Matt",6789,FA,0,False,,2.39,Kicker,45,203lbs,"5' 9""",N/A,0,0,0,0
+"Witten, Jason",6997,LVR,0,False,,1.72,Tight End,38,263lbs,"6' 6""",N/A,0,0,0,0
+"Manning, Eli",7391,FA,0,False,,5.93,Quarterback,39,218lbs,"6' 5""",N/A,0,0,0,0
+"Fitzgerald, Larry",7393,ARI,0,False,,3.43,Wide Receiver,36,218lbs,"6' 3""",N/A,0,0,0,0
+"Rivers, Philip",7394,IND,0,False,,8.74,Quarterback,38,228lbs,"6' 5""",N/A,0,0,0,0
+"Roethlisberger, Ben",7401,PIT,0,False,,13.77,Quarterback,38,240lbs,"6' 5""",N/A,0,0,0,0
+"Watson, Ben",7422,FA,0,False,,1.72,Tight End,39,255lbs,"6' 3""",N/A,0,0,0,0
+"Schaub, Matt",7480,ATL,0,False,,5.93,Quarterback,39,245lbs,"6' 6""",N/A,0,0,0,0
+"Smith, Alex",7813,WAS,0,False,,5.93,Quarterback,36,213lbs,"6' 4""",N/A,0,0,0,0
+"Rodgers, Aaron",7836,GBP,0,False,,12.91,Quarterback,36,225lbs,"6' 2""",N/A,0,0,0,0
+"Nugent, Mike",7859,FA,0,False,,2.39,Kicker,38,190lbs,"5' 10""",N/A,0,0,0,0
+"Gore, Frank",7877,NYJ,0,False,,2.06,Running Back,37,212lbs,"5' 9""",N/A,0,0,0,0
+"Sproles, Darren",7942,FA,0,False,,2.06,Running Back,37,190lbs,"5' 6""",N/A,0,0,0,0
+"Fitzpatrick, Ryan",8062,MIA,0,False,,7.07,Quarterback,37,228lbs,"6' 2""",N/A,0,0,0,0
+"Gould, Robbie",8153,SFO,0,False,,5.53,Kicker,37,190lbs,"6' 0""",N/A,0,0,0,0
+"Davis, Vernon",8247,FA,0,False,,1.72,Tight End,36,248lbs,"6' 3""",N/A,0,0,0,0
+"Lewis, Marcedes",8269,GBP,0,False,,1.72,Tight End,36,267lbs,"6' 6""",N/A,0,0,0,0
+"Gostkowski, Stephen",8359,FA,0,False,,2.39,Kicker,36,215lbs,"6' 1""",N/A,0,0,0,0
+"Walker, Delanie",8416,FA,0,False,,1.72,Tight End,36,248lbs,"6' 2""",N/A,0,0,0,0
+"Peterson, Adrian",8658,WAS,0,False,,3.5,Running Back,35,220lbs,"6' 1""",N/A,0,0,0,0
+"Lynch, Marshawn",8670,FA,0,False,,2.06,Running Back,34,215lbs,"5' 11""",N/A,0,0,0,0
+"Ginn Jr., Ted",8673,CHI,0,False,,3.35,Wide Receiver,35,180lbs,"5' 11""",N/A,0,0,0,0
+"Olsen, Greg",8687,SEA,0,False,,2.53,Tight End,35,255lbs,"6' 5""",N/A,0,0,0,0
+"Stanton, Drew",8712,FA,0,False,,5.93,Quarterback,36,226lbs,"6' 3""",N/A,0,0,0,0
+"Crosby, Mason",8742,GBP,0,False,,4.96,Kicker,35,207lbs,"6' 1""",N/A,0,0,0,0
+"Folk, Nick",8851,FA,0,False,,2.39,Kicker,35,222lbs,"6' 1""",N/A,0,0,0,0
+"Prater, Matt",8930,DET,0,False,,5.37,Kicker,36,201lbs,"5' 10""",N/A,0,0,0,0
+"Moore, Matt",8944,KCC,0,False,,5.93,Quarterback,36,219lbs,"6' 3""",N/A,0,0,0,0
+"Flacco, Joe",9064,NYJ,0,False,,5.93,Quarterback,35,245lbs,"6' 6""",N/A,0,0,0,0
+"Henne, Chad",9073,KCC,0,False,,5.93,Quarterback,35,222lbs,"6' 3""",N/A,0,0,0,0
+"Jackson, DeSean",9075,PHI,0,False,,3.86,Wide Receiver,33,175lbs,"5' 10""",N/A,0,0,0,0
+"Ryan, Matt",9099,ATL,0,False,,16.04,Quarterback,35,217lbs,"6' 4""",N/A,0,0,0,0
+"Slater, Matt",9200,NEP,0,False,,3.35,Wide Receiver,34,195lbs,"5' 11""",N/A,0,0,0,0
+"Garcon, Pierre",9250,FA,0,False,,3.35,Wide Receiver,34,211lbs,"6' 0""",N/A,0,0,0,0
+"Amendola, Danny",9308,DET,0,False,,3.35,Wide Receiver,34,185lbs,"5' 11""",N/A,0,0,0,0
+"Hauschka, Steven",9319,BUF,0,False,,4.63,Kicker,35,210lbs,"6' 4""",N/A,0,0,0,0
+"Crabtree, Michael",9427,FA,0,False,,3.35,Wide Receiver,32,215lbs,"6' 1""",N/A,0,0,0,0
+"Stafford, Matthew",9431,DET,0,False,,14.6,Quarterback,32,220lbs,"6' 3""",N/A,0,0,0,0
+"Harvin, Percy",9441,FA,0,False,,3.35,Wide Receiver,32,184lbs,"5' 11""",N/A,0,0,0,0
+"McCoy, LeSean",9448,TBB,0,False,,2.06,Running Back,32,210lbs,"5' 11""",N/A,0,0,0,0
+"Cook, Jared",9474,NOS,0,False,,6.08,Tight End,33,254lbs,"6' 5""",N/A,0,0,0,0
+"Wallace, Mike",9525,FA,0,False,,3.35,Wide Receiver,34,200lbs,"6' 0""",N/A,0,0,0,0
+"Edelman, Julian",9662,NEP,0,False,,5.52,Wide Receiver,34,198lbs,"5' 10""",N/A,0,0,0,0
+"Succop, Ryan",9686,FA,0,False,,2.39,Kicker,33,218lbs,"6' 2""",N/A,0,0,0,0
+"Gano, Graham",9694,NYG,0,False,,2.39,Kicker,33,202lbs,"6' 2""",N/A,0,0,0,0
+"Daniel, Chase",9706,DET,0,False,,5.93,Quarterback,33,225lbs,"6' 0""",N/A,0,0,0,0
+"Hoyer, Brian",9714,NEP,0,False,,5.93,Quarterback,34,216lbs,"6' 2""",N/A,0,0,0,0
+"Bradford, Sam",9817,FA,0,False,,6.5,Quarterback,32,224lbs,"6' 4""",N/A,0,0,0,0
+"Bryant, Dez",9823,FA*,0,False,,3.35,Wide Receiver,31,220lbs,"6' 2""",N/A,0,0,0,0
+"Tate, Golden",9831,NYG,0,False,,4.33,Wide Receiver,32,191lbs,"5' 11""",N/A,0,0,0,0
+"LaFell, Brandon",9843,FA,0,False,,3.35,Wide Receiver,33,210lbs,"6' 3""",N/A,0,0,0,0
+"Thomas, Demaryius",9884,FA,0,False,,3.35,Wide Receiver,32,225lbs,"6' 3""",N/A,0,0,0,0
+"Blount, LeGarrette",9898,FA,0,False,,2.06,Running Back,33,247lbs,"6' 0""",N/A,0,0,0,0
+"McCoy, Colt",9899,NYG,0,False,,5.93,Quarterback,33,212lbs,"6' 1""",N/A,0,0,0,0
+"Gronkowski, Rob",9902,TBB,0,False,,4.07,Tight End,31,268lbs,"6' 6""",N/A,0,0,0,0
+"Dickson, Ed",9912,FA,0,False,,1.72,Tight End,33,250lbs,"6' 4""",N/A,0,0,0,0
+"Sanders, Emmanuel",9918,NOS,0,False,,4.74,Wide Receiver,33,180lbs,"5' 11""",N/A,0,0,0,0
+"Roberts, Andre",9921,BUF,0,False,,3.35,Wide Receiver,32,195lbs,"5' 11""",N/A,0,0,0,0
+"Graham, Jimmy",9925,CHI,0,False,,1.72,Tight End,33,265lbs,"6' 7""",N/A,0,0,0,0
+"Brown, Antonio",9988,FA*,0,False,,3.35,Wide Receiver,32,185lbs,"5' 10""",N/A,0,0,0,0
+"Webb, Joe",9992,FA,0,False,,5.93,Quarterback,33,230lbs,"6' 4""",N/A,0,0,0,0
+"Ivory, Chris",10077,FA,0,False,,2.06,Running Back,32,223lbs,"6' 0""",N/A,0,0,0,0
+"Green, A.J.",10261,CIN,0,False,,5.74,Wide Receiver,32,210lbs,"6' 4""",N/A,0,0,0,0
+"Gabbert, Blaine",10262,TBB,0,False,,5.93,Quarterback,30,235lbs,"6' 4""",N/A,0,0,0,0
+"Jones, Julio",10271,ATL,0,False,,10.45,Wide Receiver,31,220lbs,"6' 3""",N/A,0,0,0,0
+"Newton, Cam",10273,NEP,0,False,,11.06,Quarterback,31,245lbs,"6' 5""",N/A,0,0,0,0
+"Ingram, Mark",10276,BAL,0,False,,7.25,Running Back,30,215lbs,"5' 9""",N/A,0,0,0,0
+"Kaepernick, Colin",10297,FA*,0,False,,5.93,Quarterback,32,230lbs,"6' 4""",N/A,0,0,0,0
+"Rodgers, Jacquizz",10300,FA,0,False,,2.06,Running Back,30,195lbs,"5' 7""",N/A,0,0,0,0
+"Cobb, Randall",10308,HOU,0,False,,3.35,Wide Receiver,30,195lbs,"5' 10""",N/A,0,0,0,0
+"Rudolph, Kyle",10312,MIN,0,False,,1.91,Tight End,30,265lbs,"6' 6""",N/A,0,0,0,0
+"Dalton, Andy",10313,DAL,0,False,,5.93,Quarterback,32,220lbs,"6' 2""",N/A,0,0,0,0
+"Kendricks, Lance",10318,FA,0,False,,1.72,Tight End,32,250lbs,"6' 3""",N/A,0,0,0,0
+"Stocker, Luke",10354,ATL,0,False,,1.72,Tight End,32,253lbs,"6' 5""",N/A,0,0,0,0
+"Jones, Taiwan",10368,BUF,0,False,,2.06,Running Back,32,195lbs,"6' 0""",N/A,0,0,0,0
+"Powell, Bilal",10369,FA,0,False,,2.06,Running Back,31,204lbs,"5' 10""",N/A,0,0,0,0
+"Sherman, Anthony",10378,KCC,0,False,,2.06,Running Back,31,242lbs,"5' 10""",N/A,0,0,0,0
+"Lewis, Dion",10389,NYG,0,False,,2.06,Running Back,29,195lbs,"5' 8""",N/A,0,0,0,0
+"Smith, Lee",10398,BUF,0,False,,1.72,Tight End,32,265lbs,"6' 6""",N/A,0,0,0,0
+"Clay, Charles",10409,FA,0,False,,1.72,Tight End,31,246lbs,"6' 3""",N/A,0,0,0,0
+"Harris, Dwayne",10410,FA,0,False,,3.35,Wide Receiver,32,215lbs,"5' 10""",N/A,0,0,0,0
+"Robinson, Aldrick",10412,FA,0,False,,3.35,Wide Receiver,31,185lbs,"5' 10""",N/A,0,0,0,0
+"Taylor, Tyrod",10413,LAC,0,False,,6.5,Quarterback,31,217lbs,"6' 1""",N/A,0,0,0,0
+"Green, Virgil",10432,LAC,0,False,,1.72,Tight End,32,255lbs,"6' 5""",N/A,0,0,0,0
+"Forbath, Kai",10487,FA,0,False,,2.39,Kicker,32,197lbs,"5' 11""",N/A,0,0,0,0
+"Pryor, Terrelle",10500,FA,0,False,,3.35,Wide Receiver,31,228lbs,"6' 4""",N/A,0,0,0,0
+"Bailey, Dan",10506,MIN,0,False,,5.07,Kicker,32,190lbs,"6' 0""",N/A,0,0,0,0
+"Bellore, Nick",10514,SEA,0,False,,2.06,Running Back,31,250lbs,"6' 1""",N/A,0,0,0,0
+"Luck, Andrew",10695,FA,0,False,,5.93,Quarterback,30,240lbs,"6' 4""",N/A,0,0,0,0
+"Griffin III, Robert",10696,BAL,0,False,,5.93,Quarterback,30,213lbs,"6' 2""",N/A,0,0,0,0
+"Tannehill, Ryan",10697,TEN,0,False,,10.51,Quarterback,32,217lbs,"6' 4""",N/A,0,0,0,0
+"Foles, Nick",10699,CHI,0,False,,6.29,Quarterback,31,243lbs,"6' 6""",N/A,0,0,0,0
+"Cousins, Kirk",10700,MIN,0,False,,10.12,Quarterback,32,202lbs,"6' 3""",N/A,0,0,0,0
+"Wilson, Russell",10703,SEA,0,False,,17.05,Quarterback,31,215lbs,"5' 11""",N/A,0,0,0,0
+"Miller, Lamar",10708,NEP,0,False,,2.06,Running Back,29,221lbs,"5' 10""",N/A,0,0,0,0
+"Martin, Doug",10709,FA,0,False,,2.06,Running Back,31,210lbs,"5' 9""",N/A,0,0,0,0
+"Turbin, Robert",10714,FA,0,False,,2.06,Running Back,30,225lbs,"5' 10""",N/A,0,0,0,0
+"Floyd, Michael",10721,FA,0,False,,3.35,Wide Receiver,30,220lbs,"6' 2""",N/A,0,0,0,0
+"Jeffery, Alshon",10722,PHI,0,False,,3.35,Wide Receiver,30,218lbs,"6' 3""",N/A,0,0,0,0
+"Sanu, Mohamed",10723,NEP,0,False,,3.39,Wide Receiver,31,210lbs,"6' 2""",N/A,0,0,0,0
+"Hilton, T.Y.",10729,IND,0,False,,6.8,Wide Receiver,30,183lbs,"5' 10""",N/A,0,0,0,0
+"Wright, Jarius",10734,FA,0,False,,3.35,Wide Receiver,30,191lbs,"5' 10""",N/A,0,0,0,0
+"Benjamin, Travis",10737,SFO,0,False,,3.35,Wide Receiver,30,175lbs,"5' 10""",N/A,0,0,0,0
+"Jones, Marvin",10738,DET,0,False,,5.46,Wide Receiver,30,199lbs,"6' 2""",N/A,0,0,0,0
+"Allen, Dwayne",10742,FA,0,False,,1.72,Tight End,30,260lbs,"6' 4""",N/A,0,0,0,0
+"Ellison, Rhett",10838,FA,0,False,,1.72,Tight End,31,255lbs,"6' 5""",N/A,0,0,0,0
+"Bullock, Randy",10862,CIN,0,False,,3.83,Kicker,30,210lbs,"5' 9""",N/A,0,0,0,0
+"Zuerlein, Greg",10868,DAL,0,False,,5.64,Kicker,32,191lbs,"6' 0""",N/A,0,0,0,0
+"Morris, Alfred",10870,FA,0,False,,2.06,Running Back,31,222lbs,"5' 10""",N/A,0,0,0,0
+"Bolden, Brandon",10932,NEP,0,False,,2.06,Running Back,30,220lbs,"5' 11""",N/A,0,0,0,0
+"Tanney, Alex",10935,NYG,0,False,,5.93,Quarterback,32,208lbs,"6' 3""",N/A,0,0,0,0
+"Carrier, Derek",10940,LVR,0,False,,1.72,Tight End,30,240lbs,"6' 3""",N/A,0,0,0,0
+"Keenum, Case",10948,CLE,0,False,,5.93,Quarterback,32,215lbs,"6' 1""",N/A,0,0,0,0
+"Thompson, Deonte",10956,FA,0,False,,3.35,Wide Receiver,31,204lbs,"6' 0""",N/A,0,0,0,0
+"Gordon, Josh",10960,FA,0,False,,3.35,Wide Receiver,29,225lbs,"6' 3""",N/A,0,0,0,0
+"Beasley, Cole",10973,BUF,0,False,,3.35,Wide Receiver,31,174lbs,"5' 8""",N/A,0,0,0,0
+"Tucker, Justin",10976,BAL,0,False,,6.17,Kicker,30,183lbs,"6' 1""",N/A,0,0,0,0
+"Hogan, Chris",10983,NYJ,0,False,,3.35,Wide Receiver,31,210lbs,"6' 1""",N/A,0,0,0,0
+"Olawale, Jamize",10985,DAL,0,False,,2.06,Running Back,31,242lbs,"6' 1""",N/A,0,0,0,0
+"Celek, Garrett",11007,FA,0,False,,1.72,Tight End,32,252lbs,"6' 5""",N/A,0,0,0,0
+"Brinkley, Beau",11065,TEN,0,False,,1.72,Tight End,30,260lbs,"6' 4""",N/A,0,0,0,0
+"Kearse, Jermaine",11076,FA,0,False,,3.35,Wide Receiver,30,210lbs,"6' 1""",N/A,0,0,0,0
+"DiMarco, Patrick",11100,BUF,0,False,,2.06,Running Back,31,234lbs,"6' 1""",N/A,0,0,0,0
+"Develin, James",11101,FA,0,False,,2.06,Running Back,32,255lbs,"6' 3""",N/A,0,0,0,0
+"Bellamy, Josh",11104,NYJ,0,False,,3.35,Wide Receiver,31,208lbs,"6' 0""",N/A,0,0,0,0
+"Smith, Geno",11150,SEA,0,False,,5.93,Quarterback,29,221lbs,"6' 3""",N/A,0,0,0,0
+"Barkley, Matt",11151,BUF,0,False,,5.93,Quarterback,29,234lbs,"6' 2""",N/A,0,0,0,0
+"Glennon, Mike",11152,JAC,0,False,,5.93,Quarterback,30,225lbs,"6' 7""",N/A,0,0,0,0
+"Ellington, Andre",11175,FA,0,False,,2.06,Running Back,31,200lbs,"5' 9""",N/A,0,0,0,0
+"Barner, Kenjon",11177,BAL,0,False,,2.06,Running Back,31,195lbs,"5' 9""",N/A,0,0,0,0
+"Burkhead, Rex",11182,NEP,0,False,,2.06,Running Back,30,215lbs,"5' 10""",N/A,0,0,0,0
+"Thompson, Chris",11186,JAC,0,False,,2.3,Running Back,29,195lbs,"5' 8""",N/A,0,0,0,0
+"Riddick, Theo",11188,LVR,0,False,,2.06,Running Back,29,201lbs,"5' 9""",N/A,0,0,0,0
+"Bell, Le'Veon",11192,NYJ,0,False,,6.97,Running Back,28,225lbs,"6' 1""",N/A,0,0,0,0
+"Bernard, Giovani",11193,CIN,0,False,,2.06,Running Back,28,205lbs,"5' 9""",N/A,0,0,0,0
+"Ware, Spencer",11199,FA,0,False,,2.06,Running Back,28,229lbs,"5' 10""",N/A,0,0,0,0
+"Williams, Terrance",11211,FA,0,False,,3.35,Wide Receiver,30,210lbs,"6' 2""",N/A,0,0,0,0
+"Hunter, Justin",11212,FA,0,False,,3.35,Wide Receiver,29,203lbs,"6' 4""",N/A,0,0,0,0
+"Austin, Tavon",11213,SFO,0,False,,3.35,Wide Receiver,29,185lbs,"5' 8""",N/A,0,0,0,0
+"Allen, Keenan",11222,LAC,6,True,2020,14,Wide Receiver,28,211lbs,"6' 2""",N/A,0,0,0,0
+"Patterson, Cordarrelle",11225,CHI,0,False,,3.35,Wide Receiver,29,228lbs,"6' 2""",N/A,0,0,0,0
+"Stills, Kenny",11227,HOU,0,False,,3.84,Wide Receiver,28,202lbs,"6' 1""",N/A,0,0,0,0
+"Woods, Robert",11228,LAR,0,False,,6.98,Wide Receiver,28,195lbs,"6' 0""",N/A,0,0,0,0
+"Hopkins, DeAndre",11232,ARI,5,True,2020,24,Wide Receiver,28,212lbs,"6' 1""",N/A,0,0,0,0
+"Shepard, Russell",11237,FA,0,False,,3.35,Wide Receiver,29,194lbs,"6' 0""",N/A,0,0,0,0
+"Goodwin, Marquise",11239,PHI,0,False,,3.35,Wide Receiver,29,185lbs,"5' 9""",N/A,0,0,0,0
+"Kelce, Travis",11244,KCC,6,True,2020,14,Tight End,30,260lbs,"6' 5""",N/A,0,0,0,0
+"Ertz, Zach",11247,PHI,4,True,2021,13,Tight End,29,250lbs,"6' 5""",N/A,0,0,0,0
+"Reed, Jordan",11248,SFO,0,False,,1.72,Tight End,30,242lbs,"6' 2""",N/A,0,0,0,0
+"Eifert, Tyler",11250,JAC,0,False,,2.05,Tight End,29,255lbs,"6' 6""",N/A,0,0,0,0
+"Toilolo, Levine",11252,NYG,0,False,,1.72,Tight End,29,268lbs,"6' 8""",N/A,0,0,0,0
+"McDonald, Vance",11257,PIT,0,False,,1.72,Tight End,30,267lbs,"6' 4""",N/A,0,0,0,0
+"Fells, Darren",11337,HOU,0,False,,1.72,Tight End,34,270lbs,"6' 7""",N/A,0,0,0,0
+"Tavecchio, Giorgio",11339,FA,0,False,,2.39,Kicker,30,180lbs,"5' 10""",N/A,0,0,0,0
+"Juszczyk, Kyle",11367,SFO,0,False,,2.06,Running Back,29,235lbs,"6' 1""",N/A,0,0,0,0
+"Willson, Luke",11381,SEA,0,False,,1.72,Tight End,30,255lbs,"6' 5""",N/A,0,0,0,0
+"Hopkins, Dustin",11387,WAS,0,False,,4.22,Kicker,29,205lbs,"6' 2""",N/A,0,0,0,0
+"Murray, Latavius",11390,NOS,0,False,,4.32,Running Back,30,230lbs,"6' 3""",N/A,0,0,0,0
+"Griffin, Ryan",11399,NYJ,0,False,,1.72,Tight End,30,255lbs,"6' 6""",N/A,0,0,0,0
+"Butler, Brice",11406,FA,0,False,,3.35,Wide Receiver,30,211lbs,"6' 3""",N/A,0,0,0,0
+"Griffin, Ryan",11441,TBB,0,False,,5.93,Quarterback,30,210lbs,"6' 5""",N/A,0,0,0,0
+"Harris, Demetrius",11448,CHI,0,False,,1.72,Tight End,29,230lbs,"6' 7""",N/A,0,0,0,0
+"Anderson, C.J.",11454,FA,0,False,,2.06,Running Back,29,225lbs,"5' 8""",N/A,0,0,0,0
+"Brown, Jaron",11456,SFO,0,False,,3.35,Wide Receiver,30,204lbs,"6' 3""",N/A,0,0,0,0
+"Line, Zach",11474,FA,0,False,,2.06,Running Back,30,233lbs,"6' 1""",N/A,0,0,0,0
+"Doyle, Jack",11516,IND,0,False,,2.63,Tight End,30,262lbs,"6' 6""",N/A,0,0,0,0
+"Hill, Josh",11529,NOS,0,False,,1.72,Tight End,30,250lbs,"6' 5""",N/A,0,0,0,0
+"Bridgewater, Teddy",11640,CAR,0,False,,8.52,Quarterback,27,215lbs,"6' 2""",N/A,0,0,0,0
+"Bortles, Blake",11642,FA,0,False,,5.93,Quarterback,28,236lbs,"6' 5""",N/A,0,0,0,0
+"McCarron, A.J.",11643,HOU,0,False,,5.93,Quarterback,29,215lbs,"6' 3""",N/A,0,0,0,0
+"Carr, Derek",11644,LVR,0,False,,7.85,Quarterback,29,210lbs,"6' 3""",N/A,0,0,0,0
+"Thomas, Logan",11647,WAS,0,False,,1.72,Tight End,29,250lbs,"6' 6""",N/A,0,0,0,0
+"Hill, Jeremy",11654,FA,0,False,,2.06,Running Back,27,230lbs,"6' 1""",N/A,0,0,0,0
+"Hyde, Carlos",11657,SEA,0,False,,2.27,Running Back,29,229lbs,"6' 0""",N/A,0,0,0,0
+"Thomas, De'Anthony",11659,BAL,0,False,,3.35,Wide Receiver,27,176lbs,"5' 8""",N/A,0,0,0,0
+"Freeman, Devonta",11660,FA*,0,False,,2.06,Running Back,28,206lbs,"5' 8""",N/A,0,0,0,0
+"Crowell, Isaiah",11668,FA,0,False,,2.06,Running Back,27,225lbs,"5' 11""",N/A,0,0,0,0
+"Watkins, Sammy",11670,KCC,0,False,,3.59,Wide Receiver,27,211lbs,"6' 1""",N/A,0,0,0,0
+"Evans, Mike",11671,TBB,10,True,2020,17,Wide Receiver,27,231lbs,"6' 5""",N/A,0,0,0,0
+"Lee, Marqise",11672,NEP,0,False,,3.35,Wide Receiver,28,196lbs,"6' 0""",N/A,0,0,0,0
+"Benjamin, Kelvin",11673,FA,0,False,,3.35,Wide Receiver,29,245lbs,"6' 5""",N/A,0,0,0,0
+"Cooks, Brandin",11674,HOU,0,False,,4.92,Wide Receiver,26,183lbs,"5' 10""",N/A,0,0,0,0
+"Adams, Davante",11675,GBP,9,True,2020,21,Wide Receiver,27,215lbs,"6' 1""",N/A,0,0,0,0
+"Matthews, Jordan",11676,FA,0,False,,3.35,Wide Receiver,28,215lbs,"6' 3""",N/A,0,0,0,0
+"Moncrief, Donte",11677,FA,0,False,,3.35,Wide Receiver,27,216lbs,"6' 2""",N/A,0,0,0,0
+"Robinson, Allen",11678,CHI,0,False,,10.09,Wide Receiver,27,211lbs,"6' 3""",N/A,0,0,0,0
+"Beckham, Odell",11679,CLE,6,True,2020,25,Wide Receiver,27,198lbs,"5' 11""",N/A,0,0,0,0
+"Landry, Jarvis",11680,CLE,0,False,,5.86,Wide Receiver,27,196lbs,"5' 11""",N/A,0,0,0,0
+"Richardson, Paul",11681,FA,0,False,,3.35,Wide Receiver,28,183lbs,"6' 0""",N/A,0,0,0,0
+"Jones, T.J.",11686,FA,0,False,,3.35,Wide Receiver,28,190lbs,"6' 0""",N/A,0,0,0,0
+"Bryant, Martavis",11688,FA,0,False,,3.35,Wide Receiver,28,210lbs,"6' 4""",N/A,0,0,0,0
+"Ellington, Bruce",11689,FA,0,False,,3.35,Wide Receiver,29,200lbs,"5' 9""",N/A,0,0,0,0
+"Ebron, Eric",11695,PIT,0,False,,2.57,Tight End,27,253lbs,"6' 4""",N/A,0,0,0,0
+"Seferian-Jenkins, Austin",11697,FA,0,False,,1.72,Tight End,27,262lbs,"6' 5""",N/A,0,0,0,0
+"Grimble, Xavier",11701,IND,0,False,,1.72,Tight End,27,261lbs,"6' 4""",N/A,0,0,0,0
+"Burton, Trey",11705,IND,0,False,,1.72,Tight End,28,235lbs,"6' 3""",N/A,0,0,0,0
+"White, James",11747,NEP,0,False,,5.2,Running Back,28,205lbs,"5' 10""",N/A,0,0,0,0
+"Latimer, Cody",11758,FA,0,False,,3.35,Wide Receiver,27,222lbs,"6' 1""",N/A,0,0,0,0
+"Garoppolo, Jimmy",11760,SFO,0,False,,9.6,Quarterback,28,225lbs,"6' 2""",N/A,0,0,0,0
+"McKinnon, Jerick",11761,SFO,0,False,,2.06,Running Back,28,205lbs,"5' 9""",N/A,0,0,0,0
+"Brown, John",11783,BUF,0,False,,5.19,Wide Receiver,30,178lbs,"5' 11""",N/A,0,0,0,0
+"Rodgers, Richard",11785,WAS,0,False,,1.72,Tight End,28,257lbs,"6' 4""",N/A,0,0,0,0
+"Grant, Ryan",11812,FA,0,False,,3.35,Wide Receiver,29,195lbs,"6' 0""",N/A,0,0,0,0
+"Blue, Alfred",11834,FA,0,False,,2.06,Running Back,29,225lbs,"6' 2""",N/A,0,0,0,0
+"Fales, David",11835,NYJ,0,False,,5.93,Quarterback,29,210lbs,"6' 2""",N/A,0,0,0,0
+"Enunwa, Quincy",11850,FA,0,False,,3.35,Wide Receiver,28,225lbs,"6' 2""",N/A,0,0,0,0
+"Gilbert, Garrett",11854,CLE,0,False,,5.93,Quarterback,29,230lbs,"6' 4""",N/A,0,0,0,0
+"Williams, Damien",11886,KCC,0,False,,2.06,Running Back,28,224lbs,"5' 11""",N/A,0,0,0,0
+"Wilson, Albert",11890,MIA,0,False,,3.35,Wide Receiver,28,195lbs,"5' 9""",N/A,0,0,0,0
+"Fluellen, David",11894,FA,0,False,,2.06,Running Back,28,224lbs,"5' 11""",N/A,0,0,0,0
+"Hurns, Allen",11925,MIA,0,False,,3.35,Wide Receiver,28,195lbs,"6' 1""",N/A,0,0,0,0
+"Fowler, Bennie",11931,NOS,0,False,,3.35,Wide Receiver,29,212lbs,"6' 1""",N/A,0,0,0,0
+"Boswell, Chris",11936,PIT,0,False,,4.8,Kicker,30,185lbs,"6' 2""",N/A,0,0,0,0
+"Thielen, Adam",11938,MIN,9,True,2020,17,Wide Receiver,30,200lbs,"6' 2""",N/A,0,0,0,0
+"Santos, Cairo",11945,CHI,0,False,,2.39,Kicker,28,160lbs,"5' 8""",N/A,0,0,0,0
+"McManus, Brandon",11947,DEN,0,False,,4.9,Kicker,29,201lbs,"6' 3""",N/A,0,0,0,0
+"Snead, Willie",11951,BAL,0,False,,3.35,Wide Receiver,27,200lbs,"5' 11""",N/A,0,0,0,0
+"Inman, Dontrelle",11957,WAS,0,False,,3.35,Wide Receiver,31,205lbs,"6' 3""",N/A,0,0,0,0
+"Catanzaro, Chandler",11960,FA,0,False,,4.08,Kicker,29,200lbs,"6' 3""",N/A,0,0,0,0
+"Perry, Senorise",11964,TEN,0,False,,2.06,Running Back,28,210lbs,"6' 0""",N/A,0,0,0,0
+"Parkey, Cody",11966,FA,0,False,,2.39,Kicker,28,190lbs,"6' 0""",N/A,0,0,0,0
+"Gabriel, Taylor",11975,FA,0,False,,3.35,Wide Receiver,29,165lbs,"5' 8""",N/A,0,0,0,0
+"Smith, Keith",12040,ATL,0,False,,2.06,Running Back,28,240lbs,"6' 0""",N/A,0,0,0,0
+"West, Charcandrick",12098,FA,0,False,,2.06,Running Back,29,205lbs,"5' 10""",N/A,0,0,0,0
+"Brate, Cameron",12110,TBB,0,False,,1.72,Tight End,29,245lbs,"6' 5""",N/A,0,0,0,0
+"Simonson, Scott",12138,FA,0,False,,1.72,Tight End,28,261lbs,"6' 5""",N/A,0,0,0,0
+"Winston, Jameis",12140,NOS,0,False,,5.93,Quarterback,26,231lbs,"6' 4""",N/A,0,0,0,0
+"Mariota, Marcus",12141,LVR,0,False,,5.93,Quarterback,26,222lbs,"6' 4""",N/A,0,0,0,0
+"Hundley, Brett",12142,ARI,0,False,,5.93,Quarterback,27,226lbs,"6' 3""",N/A,0,0,0,0
+"Mannion, Sean",12145,MIN,0,False,,5.93,Quarterback,28,230lbs,"6' 6""",N/A,0,0,0,0
+"Gurley, Todd",12150,ATL,10,True,2020,8.79,Running Back,26,227lbs,"6' 1""",N/A,0,0,0,0
+"Gordon, Melvin",12151,DEN,0,False,,7.64,Running Back,27,215lbs,"6' 1""",N/A,0,0,0,0
+"Coleman, Tevin",12152,SFO,0,False,,4.63,Running Back,27,210lbs,"6' 1""",N/A,0,0,0,0
+"Yeldon, T.J.",12153,BUF,0,False,,2.06,Running Back,26,223lbs,"6' 1""",N/A,0,0,0,0
+"Ajayi, Jay",12154,FA,0,False,,2.06,Running Back,27,223lbs,"6' 0""",N/A,0,0,0,0
+"Abdullah, Ameer",12155,MIN,0,False,,2.06,Running Back,27,203lbs,"5' 9""",N/A,0,0,0,0
+"Johnson, Duke",12157,HOU,0,False,,3.84,Running Back,26,210lbs,"5' 9""",N/A,0,0,0,0
+"Allen, Javorius",12159,FA,0,False,,2.06,Running Back,28,218lbs,"6' 0""",N/A,0,0,0,0
+"Artis-Payne, Cameron",12161,FA,0,False,,2.06,Running Back,30,215lbs,"5' 10""",N/A,0,0,0,0
+"Davis, Mike",12164,CAR,0,False,,2.06,Running Back,27,217lbs,"5' 9""",N/A,0,0,0,0
+"Rawls, Thomas",12169,FA,0,False,,2.06,Running Back,27,215lbs,"5' 9""",N/A,0,0,0,0
+"Johnson, David",12171,HOU,7,True,2020,29,Running Back,28,224lbs,"6' 1""",N/A,0,0,0,0
+"Cooper, Amari",12175,DAL,3,True,2020,9,Wide Receiver,26,225lbs,"6' 1""",N/A,0,0,0,0
+"Parker, DeVante",12176,MIA,0,False,,6.64,Wide Receiver,27,216lbs,"6' 3""",N/A,0,0,0,0
+"White, Kevin",12177,FA,0,False,,3.35,Wide Receiver,28,216lbs,"6' 3""",N/A,0,0,0,0
+"Strong, Jaelen",12179,FA,0,False,,3.35,Wide Receiver,26,220lbs,"6' 2""",N/A,0,0,0,0
+"Agholor, Nelson",12181,LVR,0,False,,3.35,Wide Receiver,27,198lbs,"6' 0""",N/A,0,0,0,0
+"Smith, Devin",12182,DAL,0,False,,3.35,Wide Receiver,28,205lbs,"6' 1""",N/A,0,0,0,0
+"Crowder, Jamison",12184,NYJ,0,False,,5.32,Wide Receiver,27,177lbs,"5' 9""",N/A,0,0,0,0
+"Hardy, Justin",12185,FA,0,False,,3.35,Wide Receiver,28,192lbs,"5' 10""",N/A,0,0,0,0
+"Diggs, Stefon",12186,BUF,7,True,2021,11,Wide Receiver,26,191lbs,"6' 0""",N/A,0,0,0,0
+"Lockett, Tyler",12187,SEA,0,False,,7.8,Wide Receiver,27,182lbs,"5' 10""",N/A,0,0,0,0
+"Dorsett, Phillip",12188,SEA,0,False,,3.35,Wide Receiver,27,192lbs,"5' 10""",N/A,0,0,0,0
+"Perriman, Breshad",12197,NYJ,0,False,,4.19,Wide Receiver,26,215lbs,"6' 2""",N/A,0,0,0,0
+"Funchess, Devin",12205,GBP,0,False,,3.35,Wide Receiver,26,225lbs,"6' 4""",N/A,0,0,0,0
+"Williams, Maxx",12206,ARI,0,False,,1.72,Tight End,26,252lbs,"6' 4""",N/A,0,0,0,0
+"O'Leary, Nick",12207,LVR,0,False,,1.72,Tight End,27,252lbs,"6' 3""",N/A,0,0,0,0
+"Heuerman, Jeff",12208,FA,0,False,,1.72,Tight End,27,255lbs,"6' 5""",N/A,0,0,0,0
+"Koyack, Ben",12209,FA,0,False,,1.72,Tight End,27,258lbs,"6' 5""",N/A,0,0,0,0
+"Walford, Clive",12210,FA,0,False,,1.72,Tight End,28,252lbs,"6' 4""",N/A,0,0,0,0
+"James, Jesse",12211,DET,0,False,,1.72,Tight End,26,250lbs,"6' 7""",N/A,0,0,0,0
+"Kroft, Tyler",12212,BUF,0,False,,1.72,Tight End,27,252lbs,"6' 6""",N/A,0,0,0,0
+"Bell, Blake",12213,DAL,0,False,,1.72,Tight End,29,252lbs,"6' 6""",N/A,0,0,0,0
+"Conley, Chris",12257,JAC,0,False,,3.35,Wide Receiver,27,205lbs,"6' 3""",N/A,0,0,0,0
+"Montgomery, Ty",12261,NOS,0,False,,2.06,Running Back,27,216lbs,"6' 0""",N/A,0,0,0,0
+"Waller, Darren",12263,LVR,0,False,,5.52,Tight End,27,255lbs,"6' 6""",N/A,0,0,0,0
+"Zenner, Zach",12264,FA,0,False,,2.06,Running Back,28,224lbs,"5' 11""",N/A,0,0,0,0
+"Pruitt, MyCole",12309,TEN,0,False,,1.72,Tight End,28,245lbs,"6' 2""",N/A,0,0,0,0
+"Uzomah, C.J.",12317,CIN,0,False,,1.78,Tight End,27,260lbs,"6' 6""",N/A,0,0,0,0
+"Nelson, J.J.",12319,SFO,0,False,,3.35,Wide Receiver,28,160lbs,"5' 10""",N/A,0,0,0,0
+"Burton, Michael",12325,NOS,0,False,,2.06,Running Back,28,240lbs,"6' 0""",N/A,0,0,0,0
+"Boyle, Nick",12328,BAL,0,False,,1.72,Tight End,27,270lbs,"6' 4""",N/A,0,0,0,0
+"O'Shaughnessy, James",12330,JAC,0,False,,1.72,Tight End,28,245lbs,"6' 4""",N/A,0,0,0,0
+"Davis, Geremy",12338,DET,0,False,,3.35,Wide Receiver,28,211lbs,"6' 3""",N/A,0,0,0,0
+"Murphy, Marcus",12367,FA,0,False,,2.06,Running Back,28,195lbs,"5' 9""",N/A,0,0,0,0
+"Swaim, Geoff",12378,TEN,0,False,,1.72,Tight End,26,260lbs,"6' 4""",N/A,0,0,0,0
+"Siemian, Trevor",12381,TEN,0,False,,5.93,Quarterback,28,220lbs,"6' 3""",N/A,0,0,0,0
+"Brown, Malcolm",12386,LAR,0,False,,2.06,Running Back,27,222lbs,"5' 11""",N/A,0,0,0,0
+"Williams, Tyrell",12391,LVR,0,False,,3.35,Wide Receiver,28,205lbs,"6' 4""",N/A,0,0,0,0
+"Carter, DeAndre",12394,HOU,0,False,,3.35,Wide Receiver,27,190lbs,"5' 8""",N/A,0,0,0,0
+"Grant, Corey",12402,FA,0,False,,2.06,Running Back,28,203lbs,"5' 9""",N/A,0,0,0,0
+"Lambo, Josh",12417,JAC,0,False,,4.59,Kicker,29,215lbs,"6' 0""",N/A,0,0,0,0
+"White, DeAndrew",12429,FA,0,False,,3.35,Wide Receiver,28,195lbs,"6' 0""",N/A,0,0,0,0
+"Myers, Jason",12437,SEA,0,False,,4.86,Kicker,29,190lbs,"5' 10""",N/A,0,0,0,0
+"Kumerow, Jake",12443,GBP,0,False,,3.35,Wide Receiver,28,209lbs,"6' 4""",N/A,0,0,0,0
+"Smith, Rod",12444,LVR,0,False,,2.06,Running Back,28,236lbs,"6' 3""",N/A,0,0,0,0
+"Mostert, Raheem",12447,SFO,0,False,,6.04,Running Back,28,205lbs,"5' 10""",N/A,0,0,0,0
+"Byrd, Damiere",12464,NEP,0,False,,3.35,Wide Receiver,27,180lbs,"5' 9""",N/A,0,0,0,0
+"Meredith, Cameron",12465,FA,0,False,,3.35,Wide Receiver,27,207lbs,"6' 3""",N/A,0,0,0,0
+"Roberts, Seth",12471,CAR,0,False,,3.35,Wide Receiver,29,195lbs,"6' 2""",N/A,0,0,0,0
+"Lee, Khari",12479,ATL,0,False,,1.72,Tight End,28,253lbs,"6' 4""",N/A,0,0,0,0
+"Humphries, Adam",12505,TEN,0,False,,3.35,Wide Receiver,27,195lbs,"5' 11""",N/A,0,0,0,0
+"Brown, Daniel",12585,NYJ,0,False,,1.72,Tight End,28,247lbs,"6' 5""",N/A,0,0,0,0
+"Jennings, Darius",12586,LAC,0,False,,3.35,Wide Receiver,28,180lbs,"5' 10""",N/A,0,0,0,0
+"LaCosse, Matt",12596,NEP,0,False,,1.72,Tight End,27,255lbs,"6' 6""",N/A,0,0,0,0
+"Winchester, James",12608,KCC,0,False,,1.72,Tight End,31,240lbs,"6' 3""",N/A,0,0,0,0
+"Wentz, Carson",12610,PHI,0,False,,14.38,Quarterback,27,237lbs,"6' 5""",N/A,0,0,0,0
+"Goff, Jared",12611,LAR,0,False,,13.45,Quarterback,25,222lbs,"6' 4""",N/A,0,0,0,0
+"Lynch, Paxton",12612,PIT,0,False,,5.93,Quarterback,26,244lbs,"6' 7""",N/A,0,0,0,0
+"Jones, Cardale",12615,FA,0,False,,5.93,Quarterback,27,250lbs,"6' 5""",N/A,0,0,0,0
+"Brissett, Jacoby",12616,IND,0,False,,5.93,Quarterback,27,238lbs,"6' 4""",N/A,0,0,0,0
+"Kessler, Cody",12617,FA,0,False,,5.93,Quarterback,27,215lbs,"6' 1""",N/A,0,0,0,0
+"Prescott, Dak",12620,DAL,0,False,,17.61,Quarterback,27,235lbs,"6' 2""",N/A,0,0,0,0
+"Allen, Brandon",12621,CIN,0,False,,5.93,Quarterback,27,209lbs,"6' 2""",N/A,0,0,0,0
+"Driskel, Jeff",12623,DEN,0,False,,5.93,Quarterback,27,235lbs,"6' 4""",N/A,0,0,0,0
+"Elliott, Ezekiel",12625,DAL,0,False,,13.41,Running Back,25,228lbs,"6' 0""",N/A,0,0,0,0
+"Henry, Derrick",12626,TEN,0,False,,11.67,Running Back,26,247lbs,"6' 3""",N/A,0,0,0,0
+"Prosise, C.J.",12627,FA,0,False,,2.06,Running Back,26,225lbs,"6' 1""",N/A,0,0,0,0
+"Collins, Alex",12628,FA,0,False,,2.06,Running Back,26,208lbs,"5' 10""",N/A,0,0,0,0
+"Booker, Devontae",12629,LVR,0,False,,2.06,Running Back,28,219lbs,"5' 11""",N/A,0,0,0,0
+"Drake, Kenyan",12630,ARI,1,True,2021,7.5,Running Back,26,211lbs,"6' 1""",N/A,0,0,0,0
+"Perkins, Paul",12631,FA,0,False,,2.06,Running Back,25,208lbs,"5' 11""",N/A,0,0,0,0
+"Dixon, Kenneth",12632,FA,0,False,,2.06,Running Back,26,228lbs,"5' 10""",N/A,0,0,0,0
+"Howard, Jordan",12634,MIA,0,False,,5.23,Running Back,25,224lbs,"6' 0""",N/A,0,0,0,0
+"Williams, Jonathan",12635,DET,0,False,,2.06,Running Back,26,223lbs,"6' 0""",N/A,0,0,0,0
+"Smallwood, Wendell",12636,PIT,0,False,,2.06,Running Back,26,208lbs,"5' 10""",N/A,0,0,0,0
+"Barber, Peyton",12637,WAS,0,False,,2.06,Running Back,26,225lbs,"5' 11""",N/A,0,0,0,0
+"Ervin, Tyler",12639,GBP,0,False,,2.06,Running Back,26,185lbs,"5' 10""",N/A,0,0,0,0
+"Ferguson, Josh",12640,FA,0,False,,2.06,Running Back,27,205lbs,"5' 10""",N/A,0,0,0,0
+"Treadwell, Laquon",12645,ATL,0,False,,3.35,Wide Receiver,25,215lbs,"6' 2""",N/A,0,0,0,0
+"Coleman, Corey",12646,NYG,0,False,,3.35,Wide Receiver,26,185lbs,"5' 11""",N/A,0,0,0,0
+"Fuller, Will",12647,HOU,0,False,,6.04,Wide Receiver,26,184lbs,"6' 0""",N/A,0,0,0,0
+"Doctson, Josh",12648,NYJ,0,False,,3.35,Wide Receiver,27,205lbs,"6' 2""",N/A,0,0,0,0
+"Boyd, Tyler",12650,CIN,0,False,,6.14,Wide Receiver,25,203lbs,"6' 2""",N/A,0,0,0,0
+"Miller, Braxton",12651,FA,0,False,,3.35,Wide Receiver,27,215lbs,"6' 2""",N/A,0,0,0,0
+"Thomas, Michael",12652,NOS,8,True,2020,21,Wide Receiver,27,212lbs,"6' 3""",N/A,0,0,0,0
+"Higgins, Rashard",12656,CLE,0,False,,3.35,Wide Receiver,25,198lbs,"6' 1""",N/A,0,0,0,0
+"Sharpe, Tajae",12657,MIN,0,False,,3.35,Wide Receiver,25,194lbs,"6' 2""",N/A,0,0,0,0
+"Shepard, Sterling",12658,NYG,0,False,,5.17,Wide Receiver,27,196lbs,"5' 10""",N/A,0,0,0,0
+"Cooper, Pharoh",12660,CAR,0,False,,3.35,Wide Receiver,25,208lbs,"5' 11""",N/A,0,0,0,0
+"Allison, Geronimo",12665,DET,0,False,,3.35,Wide Receiver,26,202lbs,"6' 3""",N/A,0,0,0,0
+"Williams, Duke",12667,BUF,0,False,,3.35,Wide Receiver,27,225lbs,"6' 3""",N/A,0,0,0,0
+"Peake, Charone",12673,FA,0,False,,3.35,Wide Receiver,27,209lbs,"6' 2""",N/A,0,0,0,0
+"Thomas, Mike",12675,CIN,0,False,,3.35,Wide Receiver,26,189lbs,"6' 1""",N/A,0,0,0,0
+"Henry, Hunter",12676,LAC,0,False,,4.96,Tight End,25,250lbs,"6' 5""",N/A,0,0,0,0
+"Hooper, Austin",12677,CLE,0,False,,3.63,Tight End,25,254lbs,"6' 4""",N/A,0,0,0,0
+"Higbee, Tyler",12678,LAR,0,False,,6.38,Tight End,27,255lbs,"6' 6""",N/A,0,0,0,0
+"Vannett, Nick",12680,DEN,0,False,,1.72,Tight End,27,261lbs,"6' 6""",N/A,0,0,0,0
+"Adams, Jerell",12681,BAL,0,False,,1.72,Tight End,27,254lbs,"6' 5""",N/A,0,0,0,0
+"Perkins, Joshua",12685,PHI,0,False,,1.72,Tight End,27,223lbs,"6' 3""",N/A,0,0,0,0
+"Rogers, Eli",12731,FA,0,False,,3.35,Wide Receiver,27,187lbs,"5' 10""",N/A,0,0,0,0
+"Moore, Chris",12773,BAL,0,False,,3.35,Wide Receiver,27,200lbs,"6' 1""",N/A,0,0,0,0
+"Robinson, Demarcus",12785,KCC,0,False,,3.35,Wide Receiver,25,203lbs,"6' 1""",N/A,0,0,0,0
+"DeValve, Seth",12792,FA,0,False,,1.72,Tight End,27,245lbs,"6' 3""",N/A,0,0,0,0
+"Davis, Trevor",12800,CHI,0,False,,3.35,Wide Receiver,27,188lbs,"6' 1""",N/A,0,0,0,0
+"Hill, Tyreek",12801,KCC,0,False,,10.55,Wide Receiver,26,185lbs,"5' 10""",N/A,0,0,0,0
+"Janovich, Andy",12806,CLE,0,False,,2.06,Running Back,27,238lbs,"6' 1""",N/A,0,0,0,0
+"Grant, Jakeem",12814,MIA,0,False,,3.35,Wide Receiver,27,171lbs,"5' 7""",N/A,0,0,0,0
+"Sudfeld, Nate",12815,PHI,0,False,,5.93,Quarterback,26,227lbs,"6' 6""",N/A,0,0,0,0
+"Rudock, Jake",12819,FA,0,False,,5.93,Quarterback,27,212lbs,"6' 3""",N/A,0,0,0,0
+"Vitale, Dan",12822,NEP,0,False,,2.06,Running Back,26,239lbs,"6' 2""",N/A,0,0,0,0
+"Watt, Derek",12823,PIT,0,False,,2.06,Running Back,27,234lbs,"6' 2""",N/A,0,0,0,0
+"Core, Cody",12824,NYG,0,False,,3.35,Wide Receiver,26,205lbs,"6' 3""",N/A,0,0,0,0
+"Jackson, Darius",12832,FA,0,False,,2.06,Running Back,26,230lbs,"6' 0""",N/A,0,0,0,0
+"Gathers, Rico",12833,FA,0,False,,1.72,Tight End,26,281lbs,"6' 6""",N/A,0,0,0,0
+"Washington, Dwayne",12845,NOS,0,False,,2.06,Running Back,26,223lbs,"6' 1""",N/A,0,0,0,0
+"Washington, DeAndre",12857,KCC,0,False,,2.38,Running Back,27,210lbs,"5' 8""",N/A,0,0,0,0
+"Anderson, Stephen",12859,LAC,0,False,,1.72,Tight End,27,230lbs,"6' 3""",N/A,0,0,0,0
+"Fairbairn, Ka'imi",12860,HOU,0,False,,5.19,Kicker,26,183lbs,"6' 0""",N/A,0,0,0,0
+"Braunecker, Ben",12868,FA,0,False,,1.72,Tight End,26,252lbs,"6' 4""",N/A,0,0,0,0
+"Foster, D.J.",12871,ARI,0,False,,2.06,Running Back,26,205lbs,"6' 0""",N/A,0,0,0,0
+"Jones, Andy",12873,FA,0,False,,3.35,Wide Receiver,26,217lbs,"6' 1""",N/A,0,0,0,0
+"Kelley, Rob",12887,FA,0,False,,2.06,Running Back,27,229lbs,"6' 0""",N/A,0,0,0,0
+"Jones, Tevin",12890,DAL,0,False,,3.35,Wide Receiver,27,225lbs,"6' 2""",N/A,0,0,0,0
+"Travis, Ross",12898,NYJ,0,False,,1.72,Tight End,27,248lbs,"6' 6""",N/A,0,0,0,0
+"Richard, Jalen",12912,LVR,0,False,,2.06,Running Back,26,205lbs,"5' 8""",N/A,0,0,0,0
+"Erickson, Alex",12913,CIN,0,False,,3.35,Wide Receiver,27,195lbs,"6' 0""",N/A,0,0,0,0
+"Holton, Johnny",12916,FA,0,False,,3.35,Wide Receiver,29,190lbs,"6' 3""",N/A,0,0,0,0
+"Harris, Maurice",12917,FA,0,False,,3.35,Wide Receiver,27,205lbs,"6' 3""",N/A,0,0,0,0
+"Ham, C.J.",12923,MIN,0,False,,2.06,Running Back,27,235lbs,"5' 11""",N/A,0,0,0,0
+"Pope, Troymaine",12929,FA,0,False,,2.06,Running Back,26,205lbs,"5' 8""",N/A,0,0,0,0
+"Anderson, Robby",12930,CAR,0,False,,3.84,Wide Receiver,27,190lbs,"6' 3""",N/A,0,0,0,0
+"Rogers, Chester",12934,MIA,0,False,,3.35,Wide Receiver,26,184lbs,"6' 0""",N/A,0,0,0,0
+"Manhertz, Chris",12955,CAR,0,False,,1.72,Tight End,28,255lbs,"6' 6""",N/A,0,0,0,0
+"Lutz, Wil",12956,NOS,0,False,,5.9,Kicker,26,184lbs,"5' 11""",N/A,0,0,0,0
+"Lengel, Matt",13044,FA,0,False,,1.72,Tight End,29,266lbs,"6' 7""",N/A,0,0,0,0
+"Carson, Tra",13057,FA,0,False,,2.06,Running Back,27,228lbs,"5' 11""",N/A,0,0,0,0
+"Tomlinson, Eric",13065,NYG,0,False,,1.72,Tight End,28,263lbs,"6' 6""",N/A,0,0,0,0
+"Raymond, Kalif",13066,TEN,0,False,,3.35,Wide Receiver,26,182lbs,"5' 8""",N/A,0,0,0,0
+"McKissic, J.D.",13108,WAS,0,False,,2.06,Running Back,26,195lbs,"5' 10""",N/A,0,0,0,0
+"Watson, Deshaun",13113,HOU,2,True,2021,10,Quarterback,24,215lbs,"6' 2""",N/A,0,0,0,0
+"Kizer, DeShone",13114,FA,0,False,,5.93,Quarterback,24,235lbs,"6' 4""",N/A,0,0,0,0
+"Trubisky, Mitchell",13115,CHI,0,False,,5.93,Quarterback,26,222lbs,"6' 3""",N/A,0,0,0,0
+"Mahomes, Patrick",13116,KCC,6,True,2021,27,Quarterback,24,230lbs,"6' 3""",N/A,0,0,0,0
+"Dobbs, Joshua",13119,JAC,0,False,,5.93,Quarterback,25,216lbs,"6' 3""",N/A,0,0,0,0
+"Webb, Davis",13120,BUF,0,False,,5.93,Quarterback,25,225lbs,"6' 5""",N/A,0,0,0,0
+"Kelly, Chad",13121,IND,0,False,,5.93,Quarterback,26,216lbs,"6' 2""",N/A,0,0,0,0
+"Rush, Cooper",13124,NYG,0,False,,5.93,Quarterback,26,225lbs,"6' 3""",N/A,0,0,0,0
+"Beathard, C.J.",13125,SFO,0,False,,5.93,Quarterback,26,215lbs,"6' 2""",N/A,0,0,0,0
+"Peterman, Nathan",13127,LVR,0,False,,5.93,Quarterback,26,225lbs,"6' 2""",N/A,0,0,0,0
+"Cook, Dalvin",13128,MIN,2,True,2020,7.31,Running Back,25,210lbs,"5' 10""",N/A,0,0,0,0
+"Fournette, Leonard",13129,JAC,3,True,2020,9.13,Running Back,25,228lbs,"6' 0""",N/A,0,0,0,0
+"McCaffrey, Christian",13130,CAR,4,True,2020,7.64,Running Back,24,205lbs,"5' 11""",N/A,0,0,0,0
+"Mixon, Joe",13131,CIN,5,True,2020,18,Running Back,24,220lbs,"6' 1""",N/A,0,0,0,0
+"Kamara, Alvin",13132,NOS,2,True,2020,26,Running Back,25,215lbs,"5' 10""",N/A,0,0,0,0
+"Perine, Samaje",13133,CIN,0,False,,2.06,Running Back,24,240lbs,"5' 11""",N/A,0,0,0,0
+"Foreman, D'Onta",13134,FA,0,False,,2.06,Running Back,24,236lbs,"6' 1""",N/A,0,0,0,0
+"Gallman, Wayne",13135,NYG,0,False,,2.06,Running Back,25,217lbs,"6' 0""",N/A,0,0,0,0
+"Clement, Corey",13136,PHI,0,False,,2.06,Running Back,25,220lbs,"5' 10""",N/A,0,0,0,0
+"Hunt, Kareem",13138,CLE,0,False,,5.59,Running Back,25,216lbs,"5' 11""",N/A,0,0,0,0
+"Williams, Jamaal",13139,GBP,0,False,,2.06,Running Back,25,213lbs,"6' 0""",N/A,0,0,0,0
+"Dayes, Matthew",13140,FA,0,False,,2.06,Running Back,24,205lbs,"5' 9""",N/A,0,0,0,0
+"Logan, T.J.",13142,TBB,0,False,,2.06,Running Back,25,195lbs,"5' 11""",N/A,0,0,0,0
+"McNichols, Jeremy",13143,FA,0,False,,2.06,Running Back,24,205lbs,"5' 9""",N/A,0,0,0,0
+"McGuire, Elijah",13144,KCC,0,False,,2.06,Running Back,26,214lbs,"5' 10""",N/A,0,0,0,0
+"Conner, James",13146,PIT,4,True,2020,28,Running Back,25,233lbs,"6' 1""",N/A,0,0,0,0
+"Ogunbowale, Dare",13148,TBB,0,False,,2.06,Running Back,26,205lbs,"5' 11""",N/A,0,0,0,0
+"Davis, Corey",13153,TEN,0,False,,3.35,Wide Receiver,25,209lbs,"6' 3""",N/A,0,0,0,0
+"Williams, Mike",13154,LAC,0,False,,5.04,Wide Receiver,25,220lbs,"6' 4""",N/A,0,0,0,0
+"Ross, John",13155,CIN,0,False,,3.35,Wide Receiver,24,190lbs,"5' 11""",N/A,0,0,0,0
+"Smith-Schuster, JuJu",13156,PIT,8,True,2020,21.99,Wide Receiver,23,215lbs,"6' 1""",N/A,0,0,0,0
+"Samuel, Curtis",13157,CAR,0,False,,4.57,Wide Receiver,24,195lbs,"5' 11""",N/A,0,0,0,0
+"Westbrook, Dede",13158,JAC,0,False,,3.35,Wide Receiver,26,178lbs,"6' 0""",N/A,0,0,0,0
+"Scott, Artavis",13161,IND,0,False,,3.35,Wide Receiver,25,195lbs,"5' 11""",N/A,0,0,0,0
+"Ford, Isaiah",13162,MIA,0,False,,3.35,Wide Receiver,24,194lbs,"6' 2""",N/A,0,0,0,0
+"Godwin, Chris",13163,TBB,0,False,,9.79,Wide Receiver,24,209lbs,"6' 1""",N/A,0,0,0,0
+"Kupp, Cooper",13164,LAR,0,False,,7.76,Wide Receiver,27,208lbs,"6' 2""",N/A,0,0,0,0
+"Switzer, Ryan",13165,PIT,0,False,,3.35,Wide Receiver,25,185lbs,"5' 8""",N/A,0,0,0,0
+"Darboh, Amara",13166,PIT,0,False,,3.35,Wide Receiver,26,215lbs,"6' 2""",N/A,0,0,0,0
+"Taylor, Taywan",13167,CLE,0,False,,3.35,Wide Receiver,25,203lbs,"5' 11""",N/A,0,0,0,0
+"Reynolds, Josh",13168,LAR,0,False,,3.35,Wide Receiver,25,196lbs,"6' 3""",N/A,0,0,0,0
+"Chesson, Jehu",13169,NYJ,0,False,,3.35,Wide Receiver,26,205lbs,"6' 2""",N/A,0,0,0,0
+"Gibson, Shelton",13170,FA,0,False,,3.35,Wide Receiver,25,191lbs,"5' 11""",N/A,0,0,0,0
+"Brown, Noah",13172,DAL,0,False,,3.35,Wide Receiver,23,225lbs,"6' 2""",N/A,0,0,0,0
+"Jones, Zay",13176,LVR,0,False,,3.35,Wide Receiver,25,200lbs,"6' 2""",N/A,0,0,0,0
+"Dieter, Gehrig",13179,KCC,0,False,,3.35,Wide Receiver,27,207lbs,"6' 3""",N/A,0,0,0,0
+"Hansen, Chad",13183,HOU,0,False,,3.35,Wide Receiver,25,202lbs,"6' 2""",N/A,0,0,0,0
+"Howard, O.J.",13188,TBB,0,False,,2.33,Tight End,25,251lbs,"6' 6""",N/A,0,0,0,0
+"Engram, Evan",13189,NYG,0,False,,4.48,Tight End,25,240lbs,"6' 3""",N/A,0,0,0,0
+"Butt, Jake",13190,DEN,0,False,,1.72,Tight End,25,250lbs,"6' 6""",N/A,0,0,0,0
+"Njoku, David",13192,CLE,0,False,,1.72,Tight End,24,246lbs,"6' 4""",N/A,0,0,0,0
+"Smith, Jonnu",13193,TEN,0,False,,3.51,Tight End,25,248lbs,"6' 3""",N/A,0,0,0,0
+"Sprinkle, Jeremy",13194,WAS,0,False,,1.72,Tight End,26,255lbs,"6' 5""",N/A,0,0,0,0
+"Leggett, Jordan",13195,FA,0,False,,1.72,Tight End,25,258lbs,"6' 5""",N/A,0,0,0,0
+"Roberts, Michael",13197,FA,0,False,,1.72,Tight End,26,265lbs,"6' 5""",N/A,0,0,0,0
+"Mack, Marlon",13234,IND,0,False,,3.92,Running Back,24,210lbs,"6' 0""",N/A,0,0,0,0
+"Malone, Josh",13235,NYJ,0,False,,3.35,Wide Receiver,24,205lbs,"6' 3""",N/A,0,0,0,0
+"Everett, Gerald",13236,LAR,0,False,,2,Tight End,26,240lbs,"6' 3""",N/A,0,0,0,0
+"Davis, Robert",13238,PHI,0,False,,3.35,Wide Receiver,25,210lbs,"6' 3""",N/A,0,0,0,0
+"Penny, Elijhaa",13239,NYG,0,False,,2.06,Running Back,27,250lbs,"6' 1""",N/A,0,0,0,0
+"Hill, Brian",13240,ATL,0,False,,2.06,Running Back,24,219lbs,"6' 1""",N/A,0,0,0,0
+"Rosas, Aldrick",13241,FA,0,False,,4.08,Kicker,25,233lbs,"6' 3""",N/A,0,0,0,0
+"Alie-Cox, Mo",13246,IND,0,False,,1.72,Tight End,26,267lbs,"6' 5""",N/A,0,0,0,0
+"Shaheen, Adam",13254,MIA,0,False,,1.72,Tight End,26,270lbs,"6' 6""",N/A,0,0,0,0
+"Golladay, Kenny",13277,DET,0,False,,9.67,Wide Receiver,26,214lbs,"6' 4""",N/A,0,0,0,0
+"Williams, Chad",13280,IND,0,False,,3.35,Wide Receiver,25,204lbs,"6' 2""",N/A,0,0,0,0
+"Hollins, Mack",13289,MIA,0,False,,3.35,Wide Receiver,26,221lbs,"6' 4""",N/A,0,0,0,0
+"Cohen, Tarik",13290,CHI,0,False,,4.51,Running Back,25,181lbs,"5' 6""",N/A,0,0,0,0
+"Kittle, George",13299,SFO,0,False,,8.52,Tight End,26,250lbs,"6' 4""",N/A,0,0,0,0
+"Elliott, Jake",13303,PHI,0,False,,5.31,Kicker,25,167lbs,"5' 9""",N/A,0,0,0,0
+"Agnew, Jamal",13308,DET,0,False,,3.35,Wide Receiver,25,190lbs,"5' 10""",N/A,0,0,0,0
+"McKenzie, Isaiah",13313,BUF,0,False,,3.35,Wide Receiver,25,173lbs,"5' 8""",N/A,0,0,0,0
+"Saubert, Eric",13315,CHI,0,False,,1.72,Tight End,26,253lbs,"6' 5""",N/A,0,0,0,0
+"Taylor, Trent",13316,SFO,0,False,,3.35,Wide Receiver,26,180lbs,"5' 8""",N/A,0,0,0,0
+"Jones, Aaron",13319,GBP,0,False,,8.21,Running Back,25,208lbs,"5' 9""",N/A,0,0,0,0
+"Armah, Alexander",13326,CAR,0,False,,2.06,Running Back,26,255lbs,"6' 2""",N/A,0,0,0,0
+"Henderson, De'Angelo",13334,FA,0,False,,2.06,Running Back,27,208lbs,"5' 8""",N/A,0,0,0,0
+"Gonzalez, Zane",13347,ARI,0,False,,5.23,Kicker,25,202lbs,"6' 0""",N/A,0,0,0,0
+"Moore, David",13348,SEA,0,False,,3.35,Wide Receiver,25,215lbs,"6' 0""",N/A,0,0,0,0
+"Butker, Harrison",13354,KCC,0,False,,6.46,Kicker,25,205lbs,"6' 4""",N/A,0,0,0,0
+"Carson, Chris",13364,SEA,7,True,2021,9.5,Running Back,25,222lbs,"5' 11""",N/A,0,0,0,0
+"Carr, Austin",13367,NOS,0,False,,3.35,Wide Receiver,26,195lbs,"6' 1""",N/A,0,0,0,0
+"Carter, Cethan",13369,CIN,0,False,,1.72,Tight End,26,248lbs,"6' 3""",N/A,0,0,0,0
+"Hogan, Krishawn",13370,TEN,0,False,,3.35,Wide Receiver,25,217lbs,"6' 3""",N/A,0,0,0,0
+"Bolden, Victor",13375,DET,0,False,,3.35,Wide Receiver,25,178lbs,"5' 8""",N/A,0,0,0,0
+"Patrick, Tim",13377,DEN,0,False,,3.35,Wide Receiver,26,212lbs,"6' 4""",N/A,0,0,0,0
+"Breida, Matt",13378,MIA,0,False,,5.01,Running Back,25,195lbs,"5' 11""",N/A,0,0,0,0
+"Seals-Jones, Ricky",13382,KCC,0,False,,1.72,Tight End,25,243lbs,"6' 5""",N/A,0,0,0,0
+"Mizzell, Taquan",13384,FA,0,False,,3.35,Running Back,26,185lbs,"5' 10""",N/A,0,0,0,0
+"Johnson, Marcus",13387,IND,0,False,,3.35,Wide Receiver,26,207lbs,"6' 1""",N/A,0,0,0,0
+"Sloter, Kyle",13389,FA,0,False,,5.93,Quarterback,26,218lbs,"6' 5""",N/A,0,0,0,0
+"Hollister, Jacob",13391,SEA,0,False,,1.72,Tight End,26,245lbs,"6' 4""",N/A,0,0,0,0
+"Daniels, Darrell",13396,ARI,0,False,,1.72,Tight End,25,256lbs,"6' 3""",N/A,0,0,0,0
+"White, Tim",13398,FA,0,False,,3.35,Wide Receiver,26,185lbs,"5' 11""",N/A,0,0,0,0
+"Koo, Younghoe",13403,ATL,0,False,,5.13,Kicker,26,195lbs,"5' 10""",N/A,0,0,0,0
+"Ekeler, Austin",13404,LAC,0,False,,8.04,Running Back,25,200lbs,"5' 10""",N/A,0,0,0,0
+"Adeboyejo, Quincy",13406,NEP,0,False,,3.35,Wide Receiver,25,200lbs,"6' 3""",N/A,0,0,0,0
+"Swoopes, Tyrone",13411,FA,0,False,,1.72,Tight End,25,254lbs,"6' 4""",N/A,0,0,0,0
+"Cole, Keelan",13412,JAC,0,False,,3.35,Wide Receiver,27,194lbs,"6' 1""",N/A,0,0,0,0
+"Walker, P.J.",13416,CAR,0,False,,5.93,Quarterback,25,212lbs,"5' 11""",N/A,0,0,0,0
+"Bourne, Kendrick",13418,SFO,0,False,,3.35,Wide Receiver,25,190lbs,"6' 1""",N/A,0,0,0,0
+"Hill, Taysom",13424,NOS,0,False,,5.93,Quarterback,30,221lbs,"6' 2""",N/A,0,0,0,0
+"Tonyan, Robert",13427,GBP,0,False,,1.72,Tight End,26,237lbs,"6' 5""",N/A,0,0,0,0
+"Culkin, Sean",13438,FA,0,False,,1.72,Tight End,27,255lbs,"6' 5""",N/A,0,0,0,0
+"Auclair, Antony",13445,TBB,0,False,,1.72,Tight End,27,256lbs,"6' 6""",N/A,0,0,0,0
+"Edmunds, Trey",13452,PIT,0,False,,2.06,Running Back,25,223lbs,"6' 2""",N/A,0,0,0,0
+"Ricard, Patrick",13455,BAL,0,False,,2.06,Running Back,26,303lbs,"6' 3""",N/A,0,0,0,0
+"Baylis, Evan",13476,GBP,0,False,,1.72,Tight End,26,250lbs,"6' 5""",N/A,0,0,0,0
+"Pascal, Zach",13488,IND,0,False,,3.35,Wide Receiver,25,214lbs,"6' 2""",N/A,0,0,0,0
+"Kemp, Marcus",13503,KCC,0,False,,3.35,Wide Receiver,25,210lbs,"6' 4""",N/A,0,0,0,0
+"Hall, Marvin",13505,DET,0,False,,3.35,Wide Receiver,27,190lbs,"5' 10""",N/A,0,0,0,0
+"Mickens, Jaydon",13510,TBB,0,False,,3.35,Wide Receiver,26,170lbs,"5' 11""",N/A,0,0,0,0
+"Natson, JoJo",13529,CLE,0,False,,3.35,Wide Receiver,26,153lbs,"5' 7""",N/A,0,0,0,0
+"Wilson, Bobo",13544,FA,0,False,,3.35,Wide Receiver,25,186lbs,"5' 9""",N/A,0,0,0,0
+"Ficken, Sam",13564,NYJ,0,False,,2.39,Kicker,27,192lbs,"6' 1""",N/A,0,0,0,0
+"Zylstra, Brandon",13585,CAR,0,False,,3.35,Wide Receiver,27,215lbs,"6' 2""",N/A,0,0,0,0
+"Allen, Josh",13589,BUF,0,False,,15.62,Quarterback,24,237lbs,"6' 5""",N/A,0,0,0,0
+"Mayfield, Baker",13590,CLE,0,False,,11.69,Quarterback,25,215lbs,"6' 1""",N/A,0,0,0,0
+"Rosen, Josh",13591,MIA,0,False,,5.93,Quarterback,23,215lbs,"6' 4""",N/A,0,0,0,0
+"Darnold, Sam",13592,NYJ,0,False,,9.3,Quarterback,23,225lbs,"6' 3""",N/A,0,0,0,0
+"Jackson, Lamar",13593,BAL,9,True,,26,Quarterback,23,212lbs,"6' 2""",N/A,0,0,0,0
+"Falk, Luke",13594,FA,0,False,,5.93,Quarterback,25,215lbs,"6' 4""",N/A,0,0,0,0
+"Rudolph, Mason",13595,PIT,0,False,,5.93,Quarterback,25,235lbs,"6' 5""",N/A,0,0,0,0
+"Barrett, J.T.",13596,FA,0,False,,5.93,Quarterback,25,220lbs,"6' 2""",N/A,0,0,0,0
+"White, Mike",13598,NYJ,0,False,,5.93,Quarterback,25,218lbs,"6' 5""",N/A,0,0,0,0
+"Benkert, Kurt",13600,ATL,0,False,,5.93,Quarterback,25,215lbs,"6' 4""",N/A,0,0,0,0
+"Lauletta, Kyle",13601,FA,0,False,,5.93,Quarterback,25,219lbs,"6' 2""",N/A,0,0,0,0
+"Barkley, Saquon",13604,NYG,9,True,2021,11.02,Running Back,23,232lbs,"6' 0""",N/A,0,0,0,0
+"Guice, Derrius",13605,FA,0,False,,2.06,Running Back,23,225lbs,"5' 11""",N/A,0,0,0,0
+"Jones, Ronald",13606,TBB,0,False,,5.84,Running Back,23,208lbs,"5' 11""",N/A,0,0,0,0
+"Michel, Sony",13607,NEP,1,True,2021,7,Running Back,25,215lbs,"5' 11""",N/A,0,0,0,0
+"Penny, Rashaad",13608,SEA,0,False,,2.06,Running Back,24,220lbs,"5' 11""",N/A,0,0,0,0
+"Chubb, Nick",13610,CLE,2,True,2021,22,Running Back,24,227lbs,"5' 11""",N/A,0,0,0,0
+"Adams, Josh",13611,NYJ,0,False,,2.06,Running Back,23,225lbs,"6' 2""",N/A,0,0,0,0
+"Johnson, Kerryon",13612,DET,5,True,2021,13,Running Back,23,211lbs,"5' 11""",N/A,0,0,0,0
+"Samuels, Jaylen",13613,PIT,0,False,,2.06,Running Back,24,225lbs,"6' 0""",N/A,0,0,0,0
+"Lindsay, Phillip",13614,DEN,0,False,,4.29,Running Back,26,190lbs,"5' 8""",N/A,0,0,0,0
+"Scarbrough, Bo",13615,DET,0,False,,2.06,Running Back,23,235lbs,"6' 1""",N/A,0,0,0,0
+"Walton, Mark",13616,FA,0,False,,2.06,Running Back,23,200lbs,"5' 10""",N/A,0,0,0,0
+"Freeman, Royce",13617,DEN,0,False,,2.06,Running Back,24,238lbs,"6' 0""",N/A,0,0,0,0
+"Kelly, John",13619,LAR,0,False,,2.06,Running Back,23,205lbs,"5' 10""",N/A,0,0,0,0
+"Jackson, Justin",13620,LAC,0,False,,2.71,Running Back,25,199lbs,"6' 0""",N/A,0,0,0,0
+"Ballage, Kalen",13621,MIA,0,False,,2.06,Running Back,24,231lbs,"6' 2""",N/A,0,0,0,0
+"Hines, Nyheim",13622,IND,0,False,,3.05,Running Back,23,196lbs,"5' 9""",N/A,0,0,0,0
+"Williams, Darrel",13623,KCC,0,False,,2.06,Running Back,25,224lbs,"5' 11""",N/A,0,0,0,0
+"Thomas, Roc",13628,FA,0,False,,2.06,Running Back,24,198lbs,"5' 10""",N/A,0,0,0,0
+"Ridley, Calvin",13629,ATL,0,False,,7.5,Wide Receiver,25,190lbs,"6' 1""",N/A,0,0,0,0
+"Sutton, Courtland",13630,DEN,0,False,,7.13,Wide Receiver,24,216lbs,"6' 4""",N/A,0,0,0,0
+"Washington, James",13631,PIT,0,False,,3.51,Wide Receiver,24,213lbs,"5' 11""",N/A,0,0,0,0
+"Lazard, Allen",13632,GBP,0,False,,3.77,Wide Receiver,24,227lbs,"6' 5""",N/A,0,0,0,0
+"Kirk, Christian",13633,ARI,0,False,,4.68,Wide Receiver,23,200lbs,"5' 11""",N/A,0,0,0,0
+"Pettis, Dante",13634,SFO,0,False,,3.35,Wide Receiver,24,195lbs,"6' 1""",N/A,0,0,0,0
+"Moore, D.J.",13635,CAR,0,False,,8.74,Wide Receiver,23,210lbs,"6' 0""",N/A,0,0,0,0
+"Cain, Deon",13636,PIT,0,False,,3.35,Wide Receiver,24,202lbs,"6' 2""",N/A,0,0,0,0
+"St. Brown, Equanimeous",13637,GBP,0,False,,3.35,Wide Receiver,23,214lbs,"6' 5""",N/A,0,0,0,0
+"Berrios, Braxton",13638,NYJ,0,False,,3.35,Wide Receiver,24,190lbs,"5' 9""",N/A,0,0,0,0
+"Miller, Anthony",13639,CHI,0,False,,4.84,Wide Receiver,25,190lbs,"5' 11""",N/A,0,0,0,0
+"Callaway, Antonio",13640,FA,0,False,,3.35,Wide Receiver,23,200lbs,"5' 11""",N/A,0,0,0,0
+"McCloud, Ray-Ray",13641,PIT,0,False,,3.35,Wide Receiver,23,180lbs,"5' 10""",N/A,0,0,0,0
+"Tate, Auden",13642,CIN,0,False,,3.35,Wide Receiver,23,228lbs,"6' 5""",N/A,0,0,0,0
+"Wims, Javon",13644,CHI,0,False,,3.35,Wide Receiver,25,215lbs,"6' 4""",N/A,0,0,0,0
+"Smith, Tre'Quan",13645,NOS,0,False,,3.35,Wide Receiver,24,210lbs,"6' 2""",N/A,0,0,0,0
+"Gallup, Michael",13646,DAL,0,False,,6.38,Wide Receiver,24,205lbs,"6' 1""",N/A,0,0,0,0
+"Ateman, Marcell",13647,LVR,0,False,,3.35,Wide Receiver,25,215lbs,"6' 4""",N/A,0,0,0,0
+"Burnett, Deontay",13648,PHI,0,False,,3.35,Wide Receiver,22,186lbs,"6' 0""",N/A,0,0,0,0
+"Hamilton, DaeSean",13649,DEN,0,False,,3.35,Wide Receiver,25,206lbs,"6' 1""",N/A,0,0,0,0
+"Wilson, Cedrick",13652,DAL,0,False,,3.35,Wide Receiver,24,200lbs,"6' 2""",N/A,0,0,0,0
+"Foster, Robert",13653,BUF,0,False,,3.35,Wide Receiver,26,196lbs,"6' 2""",N/A,0,0,0,0
+"Weah, Jester",13656,WAS,0,False,,3.35,Wide Receiver,25,209lbs,"6' 3""",N/A,0,0,0,0
+"Moore, J'Mon",13657,CLE,0,False,,3.35,Wide Receiver,25,205lbs,"6' 3""",N/A,0,0,0,0
+"Lasley, Jordan",13658,FA,0,False,,3.35,Wide Receiver,23,213lbs,"6' 1""",N/A,0,0,0,0
+"Mitchell, Steven",13659,HOU,0,False,,3.35,Wide Receiver,26,186lbs,"5' 10""",N/A,0,0,0,0
+"Coutee, Keke",13662,HOU,0,False,,3.35,Wide Receiver,23,187lbs,"5' 11""",N/A,0,0,0,0
+"Scott, Jaleel",13663,BAL,0,False,,3.35,Wide Receiver,25,210lbs,"6' 5""",N/A,0,0,0,0
+"Quinn, Trey",13664,WAS,0,False,,3.35,Wide Receiver,24,200lbs,"6' 0""",N/A,0,0,0,0
+"Fountain, Daurice",13666,IND,0,False,,3.35,Wide Receiver,24,210lbs,"6' 2""",N/A,0,0,0,0
+"Chark, D.J.",13668,JAC,0,False,,7.37,Wide Receiver,23,198lbs,"6' 4""",N/A,0,0,0,0
+"Turner, Malik",13669,GBP,0,False,,3.35,Wide Receiver,24,202lbs,"6' 2""",N/A,0,0,0,0
+"Andrews, Mark",13671,BAL,0,False,,7.06,Tight End,23,256lbs,"6' 4""",N/A,0,0,0,0
+"Gesicki, Mike",13672,MIA,0,False,,4.39,Tight End,24,250lbs,"6' 6""",N/A,0,0,0,0
+"Fumagalli, Troy",13673,DEN,0,False,,1.72,Tight End,25,248lbs,"6' 6""",N/A,0,0,0,0
+"Goedert, Dallas",13674,PHI,0,False,,2.99,Tight End,26,256lbs,"6' 5""",N/A,0,0,0,0
+"Conklin, Tyler",13675,MIN,0,False,,1.72,Tight End,25,254lbs,"6' 3""",N/A,0,0,0,0
+"Smythe, Durham",13676,MIA,0,False,,1.72,Tight End,25,260lbs,"6' 6""",N/A,0,0,0,0
+"Thomas, Ian",13678,CAR,0,False,,2.41,Tight End,24,260lbs,"6' 4""",N/A,0,0,0,0
+"Herndon, Chris",13679,NYJ,0,False,,2.75,Tight End,24,253lbs,"6' 4""",N/A,0,0,0,0
+"Hurst, Hayden",13680,ATL,0,False,,4.78,Tight End,27,260lbs,"6' 4""",N/A,0,0,0,0
+"Carlson, Daniel",13718,LVR,0,False,,4.42,Kicker,25,215lbs,"6' 5""",N/A,0,0,0,0
+"Pineiro, Eddy",13719,CHI,0,False,,3.29,Kicker,24,185lbs,"6' 0""",N/A,0,0,0,0
+"Jarwin, Blake",13722,DAL,0,False,,3.74,Tight End,26,260lbs,"6' 5""",N/A,0,0,0,0
+"James, Richie",13724,SFO,0,False,,3.35,Wide Receiver,25,176lbs,"5' 9""",N/A,0,0,0,0
+"Edmonds, Chase",13726,ARI,0,False,,3.14,Running Back,24,205lbs,"5' 9""",N/A,0,0,0,0
+"Akins, Jordan",13753,HOU,0,False,,1.72,Tight End,28,243lbs,"6' 4""",N/A,0,0,0,0
+"Dissly, Will",13763,SEA,0,False,,1.84,Tight End,24,265lbs,"6' 4""",N/A,0,0,0,0
+"Smith, Ito",13768,ATL,0,False,,2.06,Running Back,24,195lbs,"5' 9""",N/A,0,0,0,0
+"Schultz, Dalton",13772,DAL,0,False,,1.72,Tight End,24,260lbs,"6' 5""",N/A,0,0,0,0
+"Watson, Justin",13776,TBB,0,False,,3.35,Wide Receiver,25,215lbs,"6' 3""",N/A,0,0,0,0
+"Wilkins, Jordan",13789,IND,0,False,,2.06,Running Back,26,216lbs,"6' 1""",N/A,0,0,0,0
+"Valdes-Scantling, Marquez",13793,GBP,0,False,,3.35,Wide Receiver,25,206lbs,"6' 4""",N/A,0,0,0,0
+"Ratley, Damion",13794,CLE,0,False,,3.35,Wide Receiver,25,200lbs,"6' 2""",N/A,0,0,0,0
+"Cantrell, Dylan",13807,ARI,0,False,,1.72,Tight End,26,226lbs,"6' 3""",N/A,0,0,0,0
+"Gage, Russell",13809,ATL,0,False,,3.35,Wide Receiver,24,184lbs,"6' 0""",N/A,0,0,0,0
+"Scott, Boston",13814,PHI,0,False,,3.02,Running Back,25,203lbs,"5' 6""",N/A,0,0,0,0
+"Cannon, Trenton",13816,CAR,0,False,,2.06,Running Back,26,185lbs,"5' 11""",N/A,0,0,0,0
+"Thomas, Jordan",13819,HOU,0,False,,1.72,Tight End,24,277lbs,"6' 5""",N/A,0,0,0,0
+"Etling, Danny",13824,SEA,0,False,,5.93,Quarterback,26,220lbs,"6' 3""",N/A,0,0,0,0
+"McGough, Alex",13825,HOU,0,False,,5.93,Quarterback,24,214lbs,"6' 3""",N/A,0,0,0,0
+"Sanders, Jason",13832,MIA,0,False,,2.93,Kicker,24,186lbs,"5' 11""",N/A,0,0,0,0
+"Bawden, Nick",13838,DET,0,False,,2.06,Running Back,24,245lbs,"6' 2""",N/A,0,0,0,0
+"Woodside, Logan",13846,TEN,0,False,,5.93,Quarterback,25,213lbs,"6' 1""",N/A,0,0,0,0
+"Izzo, Ryan",13847,NEP,0,False,,1.72,Tight End,24,255lbs,"6' 5""",N/A,0,0,0,0
+"Nall, Ryan",13849,CHI,0,False,,2.06,Running Back,24,232lbs,"6' 2""",N/A,0,0,0,0
+"Edwards, Gus",13850,BAL,0,False,,2.06,Running Back,25,238lbs,"6' 1""",N/A,0,0,0,0
+"Hollister, Cody",13851,TEN,0,False,,3.35,Wide Receiver,26,216lbs,"6' 4""",N/A,0,0,0,0
+"Yelder, Deon",13857,KCC,0,False,,1.72,Tight End,25,255lbs,"6' 4""",N/A,0,0,0,0
+"Cracraft, River",13862,FA,0,False,,3.35,Wide Receiver,25,198lbs,"6' 0""",N/A,0,0,0,0
+"Pringle, Byron",13863,KCC,0,False,,3.35,Wide Receiver,26,203lbs,"6' 1""",N/A,0,0,0,0
+"Ward, Greg",13864,PHI,0,False,,3.35,Wide Receiver,25,190lbs,"5' 11""",N/A,0,0,0,0
+"Boone, Mike",13868,MIN,0,False,,2.06,Running Back,25,206lbs,"5' 10""",N/A,0,0,0,0
+"Hilliard, Dontrell",13871,CLE,0,False,,2.06,Running Back,25,202lbs,"5' 11""",N/A,0,0,0,0
+"Boyle, Tim",13873,GBP,0,False,,5.93,Quarterback,25,232lbs,"6' 4""",N/A,0,0,0,0
+"Wilson, Shaun",13874,FA,0,False,,2.06,Running Back,24,185lbs,"5' 9""",N/A,0,0,0,0
+"Vedvik, Kaare",13877,CAR,0,False,,2.39,Kicker,26,210lbs,"6' 3""",N/A,0,0,0,0
+"Board, C.J.",13878,NYG,0,False,,3.35,Wide Receiver,26,181lbs,"6' 1""",N/A,0,0,0,0
+"Allen, Kyle",13879,WAS,0,False,,5.93,Quarterback,24,210lbs,"6' 3""",N/A,0,0,0,0
+"Arnold, Dan",13880,ARI,0,False,,1.72,Tight End,25,220lbs,"6' 6""",N/A,0,0,0,0
+"Kirkwood, Keith",13882,CAR,0,False,,3.35,Wide Receiver,26,210lbs,"6' 3""",N/A,0,0,0,0
+"Smith, Vyncint",13884,NYJ,0,False,,3.35,Wide Receiver,24,202lbs,"6' 3""",N/A,0,0,0,0
+"Croom, Jason",13890,BUF,0,False,,1.72,Tight End,26,246lbs,"6' 5""",N/A,0,0,0,0
+"Sherfield, Trent",13893,ARI,0,False,,3.35,Wide Receiver,24,205lbs,"6' 1""",N/A,0,0,0,0
+"Sims, Cam",13895,WAS,0,False,,3.35,Wide Receiver,24,220lbs,"6' 5""",N/A,0,0,0,0
+"Joseph, Greg",13898,TEN,0,False,,3.38,Kicker,26,208lbs,"6' 0""",N/A,0,0,0,0
+"Bertolet, Taylor",13900,FA,0,False,,2.39,Kicker,27,188lbs,"5' 9""",N/A,0,0,0,0
+"Maher, Brett",13909,NYJ,0,False,,4.11,Kicker,30,190lbs,"6' 0""",N/A,0,0,0,0
+"Powell, Brandon",13910,ATL,0,False,,3.35,Wide Receiver,23,188lbs,"5' 8""",N/A,0,0,0,0
+"Batson, Cameron",13912,TEN,0,False,,3.35,Wide Receiver,24,175lbs,"5' 8""",N/A,0,0,0,0
+"Howell, Buddy",13916,HOU,0,False,,2.06,Running Back,24,218lbs,"6' 1""",N/A,0,0,0,0
+"Firkser, Anthony",13919,TEN,0,False,,1.72,Tight End,25,246lbs,"6' 2""",N/A,0,0,0,0
+"Mundt, Johnny",13940,LAR,0,False,,1.72,Tight End,25,233lbs,"6' 4""",N/A,0,0,0,0
+"Turner, De'Lance",13958,FA,0,False,,2.06,Running Back,25,214lbs,"5' 11""",N/A,0,0,0,0
+"Dawkins, Dalyn",13961,FA,0,False,,2.06,Running Back,25,183lbs,"5' 7""",N/A,0,0,0,0
+"Hodge, KhaDarel",13963,CLE,0,False,,3.35,Wide Receiver,25,205lbs,"6' 2""",N/A,0,0,0,0
+"Mullens, Nick",13968,SFO,0,False,,5.93,Quarterback,25,210lbs,"6' 1""",N/A,0,0,0,0
+"Badgley, Mike",13980,LAC,0,False,,5.19,Kicker,25,183lbs,"5' 10""",N/A,0,0,0,0
+"Dwelley, Ross",13988,SFO,0,False,,1.72,Tight End,25,235lbs,"6' 5""",N/A,0,0,0,0
+"Scott, Da'Mari",13990,NYG,0,False,,3.35,Wide Receiver,25,205lbs,"6' 0""",N/A,0,0,0,0
+"Brown, Pharaoh",13994,CLE,0,False,,1.72,Tight End,26,258lbs,"6' 6""",N/A,0,0,0,0
+"Beebe, Chad",13999,MIN,0,False,,3.35,Wide Receiver,26,183lbs,"5' 10""",N/A,0,0,0,0
+"Wilson, Jeffery",14017,SFO,0,False,,2.06,Running Back,24,213lbs,"6' 0""",N/A,0,0,0,0
+"Lacy, Chris",14045,DET,0,False,,3.35,Wide Receiver,24,206lbs,"6' 3""",N/A,0,0,0,0
+"Murray, Kyler",14056,ARI,0,False,,16.5,Quarterback,23,207lbs,"5' 10""",N/A,0,0,0,0
+"Lock, Drew",14057,DEN,0,False,,7.23,Quarterback,23,228lbs,"6' 4""",N/A,0,0,0,0
+"Haskins, Dwayne",14058,WAS,0,False,,6.03,Quarterback,23,231lbs,"6' 3""",N/A,0,0,0,0
+"Jones, Daniel",14059,NYG,0,False,,12.06,Quarterback,23,220lbs,"6' 5""",N/A,0,0,0,0
+"Jackson, Tyree",14060,FA,0,False,,5.93,Quarterback,23,249lbs,"6' 7""",N/A,0,0,0,0
+"McSorley, Trace",14061,BAL,0,False,,5.93,Quarterback,25,202lbs,"6' 0""",N/A,0,0,0,0
+"Grier, Will",14062,CAR,0,False,,5.93,Quarterback,25,220lbs,"6' 1""",N/A,0,0,0,0
+"Stidham, Jarrett",14063,NEP,0,False,,5.93,Quarterback,24,215lbs,"6' 3""",N/A,0,0,0,0
+"Thorson, Clayton",14064,DAL,0,False,,5.93,Quarterback,24,222lbs,"6' 4""",N/A,0,0,0,0
+"Rypien, Brett",14065,DEN,0,False,,5.93,Quarterback,24,202lbs,"6' 2""",N/A,0,0,0,0
+"Minshew, Gardner",14067,JAC,0,False,,8.09,Quarterback,24,225lbs,"6' 1""",N/A,0,0,0,0
+"Finley, Ryan",14068,CIN,0,False,,5.93,Quarterback,25,207lbs,"6' 4""",N/A,0,0,0,0
+"Stick, Easton",14069,LAC,0,False,,5.93,Quarterback,24,217lbs,"6' 1""",N/A,0,0,0,0
+"Blough, David",14070,DET,0,False,,5.93,Quarterback,25,200lbs,"6' 0""",N/A,0,0,0,0
+"Montgomery, David",14071,CHI,8,True,2022,7,Running Back,23,222lbs,"5' 10""",N/A,0,0,0,0
+"Snell, Benny",14072,PIT,0,False,,2.06,Running Back,22,224lbs,"5' 10""",N/A,0,0,0,0
+"Jacobs, Josh",14073,LVR,0,False,,8.33,Running Back,22,220lbs,"5' 10""",N/A,0,0,0,0
+"Williams, Dexter",14074,GBP,0,False,,2.06,Running Back,23,212lbs,"5' 11""",N/A,0,0,0,0
+"Harris, Damien",14075,NEP,0,False,,4.01,Running Back,23,213lbs,"5' 11""",N/A,0,0,0,0
+"Williams, Trayveon",14076,CIN,0,False,,2.06,Running Back,22,206lbs,"5' 8""",N/A,0,0,0,0
+"Weber, Mike",14077,FA,0,False,,2.06,Running Back,23,211lbs,"5' 10""",N/A,0,0,0,0
+"Higdon, Karan",14078,HOU,0,False,,2.06,Running Back,50,206lbs,"5' 9""",N/A,0,0,0,0
+"Sanders, Miles",14079,PHI,0,False,,8.55,Running Back,23,211lbs,"5' 11""",N/A,0,0,0,0
+"Singletary, Devin",14080,BUF,0,False,,5.37,Running Back,22,203lbs,"5' 7""",N/A,0,0,0,0
+"Gaskin, Myles",14081,MIA,0,False,,2.06,Running Back,23,200lbs,"5' 10""",N/A,0,0,0,0
+"Love, Bryce",14082,WAS,0,False,,2.15,Running Back,23,200lbs,"5' 9""",N/A,0,0,0,0
+"Homer, Travis",14083,SEA,0,False,,2.06,Running Back,22,202lbs,"5' 10""",N/A,0,0,0,0
+"Holyfield, Elijah",14084,PHI,0,False,,2.06,Running Back,22,215lbs,"5' 10""",N/A,0,0,0,0
+"Pollard, Tony",14085,DAL,0,False,,3.35,Running Back,23,215lbs,"6' 0""",N/A,0,0,0,0
+"Hill, Justice",14086,BAL,0,False,,2.06,Running Back,22,200lbs,"5' 10""",N/A,0,0,0,0
+"Henderson, Darrell",14087,LAR,0,False,,4.36,Running Back,23,208lbs,"5' 8""",N/A,0,0,0,0
+"Anderson, Rodney",14088,FA,0,False,,2.06,Running Back,23,224lbs,"6' 0""",N/A,0,0,0,0
+"Moore, Jalin",14092,FA,0,False,,2.06,Running Back,24,212lbs,"5' 10""",N/A,0,0,0,0
+"Armstead, Ryquell",14093,JAC,0,False,,2.06,Running Back,23,220lbs,"5' 11""",N/A,0,0,0,0
+"Scarlett, Jordan",14094,FA,0,False,,2.06,Running Back,25,210lbs,"5' 11""",N/A,0,0,0,0
+"Johnson, Ty",14095,DET,0,False,,2.06,Running Back,22,210lbs,"5' 10""",N/A,0,0,0,0
+"Ozigbo, Devine",14096,JAC,0,False,,2.06,Running Back,23,225lbs,"6' 0""",N/A,0,0,0,0
+"Ollison, Qadree",14097,ATL,0,False,,2.06,Running Back,23,225lbs,"6' 2""",N/A,0,0,0,0
+"Crockett, Damarea",14098,GBP,0,False,,2.06,Running Back,22,225lbs,"5' 11""",N/A,0,0,0,0
+"Hall, Darrin",14099,FA,0,False,,2.06,Running Back,23,217lbs,"6' 0""",N/A,0,0,0,0
+"Harry, N'Keal",14101,NEP,0,False,,3.68,Wide Receiver,22,225lbs,"6' 4""",N/A,0,0,0,0
+"Metcalf, DK",14102,SEA,0,False,,7.23,Wide Receiver,22,229lbs,"6' 4""",N/A,0,0,0,0
+"Ridley, Riley",14103,CHI,0,False,,3.35,Wide Receiver,24,199lbs,"6' 1""",N/A,0,0,0,0
+"Brown, A.J.",14104,TEN,0,False,,8.22,Wide Receiver,23,226lbs,"6' 1""",N/A,0,0,0,0
+"Brown, Marquise",14105,BAL,0,False,,6.52,Wide Receiver,23,170lbs,"5' 9""",N/A,0,0,0,0
+"Butler, Hakeem",14106,ARI,0,False,,3.35,Wide Receiver,24,227lbs,"6' 5""",N/A,0,0,0,0
+"Arcega-Whiteside, JJ",14107,PHI,0,False,,3.35,Wide Receiver,23,225lbs,"6' 2""",N/A,0,0,0,0
+"Dortch, Greg",14108,FA,0,False,,3.35,Wide Receiver,22,173lbs,"5' 7""",N/A,0,0,0,0
+"McLaurin, Terry",14109,WAS,0,False,,8.04,Wide Receiver,24,210lbs,"6' 0""",N/A,0,0,0,0
+"Sills, David",14110,NYG,0,False,,3.35,Wide Receiver,24,211lbs,"6' 3""",N/A,0,0,0,0
+"Lodge, DaMarkus",14111,CIN,0,False,,3.35,Wide Receiver,23,202lbs,"6' 2""",N/A,0,0,0,0
+"Campbell, Parris",14112,IND,0,False,,3.72,Wide Receiver,23,208lbs,"6' 0""",N/A,0,0,0,0
+"Hardman, Mecole",14113,KCC,0,False,,4.26,Wide Receiver,22,187lbs,"5' 10""",N/A,0,0,0,0
+"Harmon, Kelvin",14114,WAS,0,False,,3.35,Wide Receiver,23,215lbs,"6' 2""",N/A,0,0,0,0
+"Hall, Emanuel",14115,WAS,0,False,,3.35,Wide Receiver,23,201lbs,"6' 2""",N/A,0,0,0,0
+"Hurd, Jalen",14116,SFO,0,False,,3.35,Wide Receiver,24,230lbs,"6' 4""",N/A,0,0,0,0
+"Johnson, Tyron",14117,LAC,0,False,,3.35,Wide Receiver,24,193lbs,"6' 1""",N/A,0,0,0,0
+"Humphrey, Lil'Jordan",14118,NOS,0,False,,3.35,Wide Receiver,22,225lbs,"6' 4""",N/A,0,0,0,0
+"Johnson, Anthony",14119,PIT,0,False,,3.35,Wide Receiver,25,209lbs,"6' 2""",N/A,0,0,0,0
+"Jennings, Gary",14120,MIA,0,False,,3.35,Wide Receiver,23,216lbs,"6' 1""",N/A,0,0,0,0
+"Isabella, Andy",14121,ARI,0,False,,3.35,Wide Receiver,23,188lbs,"5' 9""",N/A,0,0,0,0
+"Slayton, Darius",14122,NYG,0,False,,5.28,Wide Receiver,23,194lbs,"6' 2""",N/A,0,0,0,0
+"Renfrow, Hunter",14123,LVR,0,False,,3.55,Wide Receiver,24,185lbs,"5' 10""",N/A,0,0,0,0
+"Johnson, KeeSean",14124,ARI,0,False,,3.35,Wide Receiver,23,201lbs,"6' 1""",N/A,0,0,0,0
+"Boykin, Miles",14125,BAL,0,False,,3.35,Wide Receiver,23,220lbs,"6' 4""",N/A,0,0,0,0
+"Williams, Preston",14126,MIA,0,False,,4.01,Wide Receiver,23,218lbs,"6' 5""",N/A,0,0,0,0
+"Meyers, Jakobi",14127,NEP,0,False,,3.35,Wide Receiver,23,200lbs,"6' 2""",N/A,0,0,0,0
+"Mitchell, Dillon",14129,MIN,0,False,,3.35,Wide Receiver,23,202lbs,"6' 1""",N/A,0,0,0,0
+"Wesley, Antoine",14130,BAL,0,False,,3.35,Wide Receiver,22,206lbs,"6' 4""",N/A,0,0,0,0
+"Morgan, Stanley",14131,CIN,0,False,,3.35,Wide Receiver,22,205lbs,"6' 0""",N/A,0,0,0,0
+"Custis, Jamal",14132,FA,0,False,,3.35,Wide Receiver,24,213lbs,"6' 5""",N/A,0,0,0,0
+"Dixon, Johnnie",14134,ARI,0,False,,3.35,Wide Receiver,25,198lbs,"5' 11""",N/A,0,0,0,0
+"Samuel, Deebo",14136,SFO,0,False,,4.36,Wide Receiver,24,215lbs,"6' 0""",N/A,0,0,0,0
+"Fant, Noah",14137,DEN,0,False,,3.23,Tight End,22,249lbs,"6' 4""",N/A,0,0,0,0
+"Hockenson, T.J.",14138,DET,0,False,,3.05,Tight End,23,247lbs,"6' 5""",N/A,0,0,0,0
+"Mack, Alize",14139,FA,0,False,,1.72,Tight End,23,249lbs,"6' 4""",N/A,0,0,0,0
+"Sternberger, Jace",14140,GBP,0,False,,2.33,Tight End,24,251lbs,"6' 4""",N/A,0,0,0,0
+"Smith Jr., Irv",14141,MIN,0,False,,2.15,Tight End,22,242lbs,"6' 2""",N/A,0,0,0,0
+"Smith, Kaden",14142,NYG,0,False,,1.72,Tight End,23,249lbs,"6' 5""",N/A,0,0,0,0
+"Knox, Dawson",14143,BUF,0,False,,2.05,Tight End,23,254lbs,"6' 4""",N/A,0,0,0,0
+"Nauta, Isaac",14144,DET,0,False,,1.72,Tight End,23,246lbs,"6' 3""",N/A,0,0,0,0
+"Wilson, Caleb",14145,PHI,0,False,,1.72,Tight End,24,240lbs,"6' 4""",N/A,0,0,0,0
+"Sample, Drew",14146,CIN,0,False,,1.72,Tight End,24,258lbs,"6' 5""",N/A,0,0,0,0
+"Barnes, Alex",14191,FA,0,False,,2.06,Running Back,23,226lbs,"6' 0""",N/A,0,0,0,0
+"Williams, James",14192,FA,0,False,,2.06,Running Back,50,205lbs,"6' 0""",N/A,0,0,0,0
+"Wade, Christian",14194,BUF,0,False,,2.06,Running Back,29,185lbs,"5' 7""",N/A,0,0,0,0
+"Warring, Kahale",14195,HOU,0,False,,1.72,Tight End,23,252lbs,"6' 5""",N/A,0,0,0,0
+"Johnson, Diontae",14208,PIT,0,False,,5.84,Wide Receiver,24,183lbs,"5' 10""",N/A,0,0,0,0
+"Oliver, Josh",14209,JAC,0,False,,1.72,Tight End,23,249lbs,"6' 5""",N/A,0,0,0,0
+"Mattison, Alexander",14223,MIN,0,False,,3.56,Running Back,22,220lbs,"5' 11""",N/A,0,0,0,0
+"Wesco, Trevon",14231,NYJ,0,False,,1.72,Tight End,24,267lbs,"6' 3""",N/A,0,0,0,0
+"Moreau, Foster",14239,LVR,0,False,,1.72,Tight End,23,250lbs,"6' 4""",N/A,0,0,0,0
+"Gentry, Zach",14240,PIT,0,False,,1.72,Tight End,23,265lbs,"6' 8""",N/A,0,0,0,0
+"Gay, Matt",14244,TBB,0,False,,5.46,Kicker,26,232lbs,"6' 0""",N/A,0,0,0,0
+"Seibert, Austin",14258,CLE,0,False,,4.65,Kicker,23,211lbs,"5' 9""",N/A,0,0,0,0
+"Fulgham, Travis",14265,PHI,0,False,,3.35,Wide Receiver,24,215lbs,"6' 2""",N/A,0,0,0,0
+"Winfree, Juwann",14267,DEN,0,False,,3.35,Wide Receiver,23,215lbs,"6' 3""",N/A,0,0,0,0
+"Green, Marcus",14277,PHI,0,False,,3.35,Wide Receiver,24,191lbs,"5' 8""",N/A,0,0,0,0
+"Miller, Scott",14280,TBB,0,False,,3.35,Wide Receiver,23,166lbs,"5' 11""",N/A,0,0,0,0
+"Thompson, Darwin",14284,KCC,0,False,,2.06,Running Back,23,200lbs,"5' 8""",N/A,0,0,0,0
+"Gillaspia, Cullen",14287,HOU,0,False,,2.06,Running Back,25,235lbs,"6' 2""",N/A,0,0,0,0
+"Whyte, Kerrith",14289,PIT,0,False,,2.06,Running Back,23,200lbs,"5' 10""",N/A,0,0,0,0
+"Sweeney, Tommy",14294,BUF,0,False,,1.72,Tight End,25,251lbs,"6' 5""",N/A,0,0,0,0
+"Cox, Chandler",14295,MIA,0,False,,2.06,Running Back,24,240lbs,"6' 1""",N/A,0,0,0,0
+"Ursua, John",14297,SEA,0,False,,3.35,Wide Receiver,26,182lbs,"5' 10""",N/A,0,0,0,0
+"Godwin, Terry",14298,JAC,0,False,,3.35,Wide Receiver,23,185lbs,"5' 11""",N/A,0,0,0,0
+"Johnson, Olabisi",14305,MIN,0,False,,3.35,Wide Receiver,23,203lbs,"6' 0""",N/A,0,0,0,0
+"Butler, Emmanuel",14313,NOS,0,False,,3.35,Wide Receiver,23,220lbs,"6' 4""",N/A,0,0,0,0
+"Anderson, Bruce",14314,IND,0,False,,2.06,Running Back,23,210lbs,"5' 11""",N/A,0,0,0,0
+"Dulin, Ashton",14315,IND,0,False,,3.35,Wide Receiver,23,215lbs,"6' 1""",N/A,0,0,0,0
+"Hart, Penny",14316,SEA,0,False,,3.35,Wide Receiver,24,182lbs,"5' 8""",N/A,0,0,0,0
+"Doss, Keelan",14317,LVR,0,False,,3.35,Wide Receiver,24,215lbs,"6' 3""",N/A,0,0,0,0
+"Ferguson, Jazz",14318,FA,0,False,,3.35,Wide Receiver,23,228lbs,"6' 5""",N/A,0,0,0,0
+"Beck, Andrew",14319,DEN,0,False,,1.72,Tight End,24,255lbs,"6' 3""",N/A,0,0,0,0
+"Thompson, Cody",14321,SEA,0,False,,3.35,Wide Receiver,24,205lbs,"6' 2""",N/A,0,0,0,0
+"Raymond, Dax",14324,PIT,0,False,,1.72,Tight End,25,255lbs,"6' 5""",N/A,0,0,0,0
+"White Jr., Reggie",14329,FA,0,False,,3.35,Wide Receiver,24,212lbs,"6' 2""",N/A,0,0,0,0
+"Shepherd, Darrius",14330,GBP,0,False,,3.35,Wide Receiver,24,186lbs,"5' 11""",N/A,0,0,0,0
+"Johnson, D'Ernest",14331,CLE,0,False,,2.06,Running Back,24,208lbs,"5' 10""",N/A,0,0,0,0
+"Conrad, C.J.",14332,FA,0,False,,1.72,Tight End,24,247lbs,"6' 4""",N/A,0,0,0,0
+"Hills, Wes",14333,DET,0,False,,2.06,Running Back,25,218lbs,"6' 0""",N/A,0,0,0,0
+"Fry, Elliott",14335,TBB,0,False,,2.39,Kicker,25,189lbs,"6' 0""",N/A,0,0,0,0
+"Johnson, Jon'Vea",14336,DAL,0,False,,3.35,Wide Receiver,24,195lbs,"6' 0""",N/A,0,0,0,0
+"Guyton, Jalen",14337,LAC,0,False,,3.35,Wide Receiver,23,212lbs,"6' 1""",N/A,0,0,0,0
+"Hilliman, Jon",14338,FA,0,False,,2.06,Running Back,24,226lbs,"6' 0""",N/A,0,0,0,0
+"Grayson, Cyril",14339,TBB,0,False,,3.35,Wide Receiver,26,178lbs,"5' 11""",N/A,0,0,0,0
+"Parham, Donald",14341,LAC,0,False,,1.72,Tight End,50,240lbs,"6' 8""",N/A,0,0,0,0
+"Blake, Christian",14342,ATL,0,False,,3.35,Wide Receiver,24,181lbs,"6' 1""",N/A,0,0,0,0
+"Dolegala, Jacob",14344,CIN,0,False,,5.93,Quarterback,50,235lbs,"6' 6""",N/A,0,0,0,0
+"Hyman, Ishmael",14348,CAR,0,False,,3.35,Wide Receiver,25,196lbs,"6' 0""",N/A,0,0,0,0
+"Chunn, Jordan",14350,FA,0,False,,2.06,Running Back,25,230lbs,"6' 0""",N/A,0,0,0,0
+"Brown, Fred",14352,DEN,0,False,,3.35,Wide Receiver,26,195lbs,"6' 1""",N/A,0,0,0,0
+"Keizer, Nick",14356,KCC,0,False,,1.72,Tight End,25,251lbs,"6' 4""",N/A,0,0,0,0
+"Browning, Jake",14358,MIN,0,False,,5.93,Quarterback,24,210lbs,"6' 2""",N/A,0,0,0,0
+"Johnson, Jakob",14359,NEP,0,False,,2.06,Running Back,25,255lbs,"6' 3""",N/A,0,0,0,0
+"Patton, Andre",14365,ARI,0,False,,3.35,Wide Receiver,26,200lbs,"6' 2""",N/A,0,0,0,0
+"Hudson, Tanner",14370,TBB,0,False,,1.72,Tight End,25,239lbs,"6' 5""",N/A,0,0,0,0
+"Holtz, J.P.",14372,CHI,0,False,,1.72,Tight End,26,255lbs,"6' 3""",N/A,0,0,0,0
+"Willis, Damion",14373,CIN,0,False,,3.35,Wide Receiver,23,204lbs,"6' 3""",N/A,0,0,0,0
+"Ingold, Alec",14420,LVR,0,False,,2.06,Running Back,24,240lbs,"6' 1""",N/A,0,0,0,0
+"Bonnafon, Reggie",14435,CAR,0,False,,2.06,Running Back,24,215lbs,"6' 0""",N/A,0,0,0,0
+"Walker, Michael",14440,JAC,0,False,,3.35,Wide Receiver,23,194lbs,"5' 11""",N/A,0,0,0,0
+"Davis, Felton",14450,FA,0,False,,3.35,Wide Receiver,23,211lbs,"6' 3""",N/A,0,0,0,0
+"Graham, Jaeden",14464,ATL,0,False,,1.72,Tight End,24,250lbs,"6' 4""",N/A,0,0,0,0
+"Brooks-James, Tony",14465,MIN,0,False,,2.06,Running Back,25,179lbs,"5' 9""",N/A,0,0,0,0
+"Bryant, Ventell",14481,DAL,0,False,,3.35,Wide Receiver,24,205lbs,"6' 3""",N/A,0,0,0,0
+"Montgomery, D.J.",14486,CLE,0,False,,3.35,Wide Receiver,23,201lbs,"6' 1""",N/A,0,0,0,0
+"Carlson, Stephen",14488,CLE,0,False,,1.72,Tight End,23,240lbs,"6' 4""",N/A,0,0,0,0
+"Benson, Trinity",14499,DEN,0,False,,3.35,Wide Receiver,23,180lbs,"6' 0""",N/A,0,0,0,0
+"Anderson, Drew",14510,FA,0,False,,5.93,Quarterback,24,221lbs,"6' 4""",N/A,0,0,0,0
+"Baugh, Marcus",14517,WAS,0,False,,1.72,Tight End,25,245lbs,"6' 4""",N/A,0,0,0,0
+"Moore, Jason",14545,LAC,0,False,,3.35,Wide Receiver,25,213lbs,"6' 2""",N/A,0,0,0,0
+"Webster, Nsimba",14549,LAR,0,False,,3.35,Wide Receiver,24,180lbs,"5' 10""",N/A,0,0,0,0
+"Blasingame, Khari",14552,TEN,0,False,,2.06,Running Back,24,233lbs,"6' 0""",N/A,0,0,0,0
+"Hollins, Alexander",14554,MIN,0,False,,3.35,Wide Receiver,23,166lbs,"6' 1""",N/A,0,0,0,0
+"Olszewski, Gunner",14555,NEP,0,False,,3.35,Wide Receiver,23,190lbs,"6' 0""",N/A,0,0,0,0
+"Harris, Deonte",14558,NOS,0,False,,3.35,Wide Receiver,22,170lbs,"5' 6""",N/A,0,0,0,0
+"Wesley, Alex",14560,FA,0,False,,3.35,Wide Receiver,24,191lbs,"6' 0""",N/A,0,0,0,0
+"Spencer, Diontae",14565,DEN,0,False,,3.35,Wide Receiver,28,170lbs,"5' 8""",N/A,0,0,0,0
+"Lovett, John",14591,GBP,0,False,,1.72,Tight End,24,225lbs,"6' 3""",N/A,0,0,0,0
+"Zaccheaus, Olamide",14592,ATL,0,False,,3.35,Wide Receiver,23,190lbs,"5' 8""",N/A,0,0,0,0
+"Slye, Joey",14600,CAR,0,False,,4.71,Kicker,24,213lbs,"5' 11""",N/A,0,0,0,0
+"Laird, Patrick",14612,MIA,0,False,,2.06,Running Back,25,205lbs,"6' 0""",N/A,0,0,0,0
+"Sims, Steven",14613,WAS,0,False,,3.35,Wide Receiver,23,190lbs,"5' 10""",N/A,0,0,0,0
+"Hodges, Devlin",14618,PIT,0,False,,5.93,Quarterback,24,210lbs,"6' 1""",N/A,0,0,0,0
+"Ta'amu, Jordan",14622,KCC,0,False,,5.93,Quarterback,22,221lbs,"6' 3""",N/A,0,0,0,0
+"Hentges, Hale",14654,WAS,0,False,,1.72,Tight End,24,245lbs,"6' 4""",N/A,0,0,0,0
+"McLaughlin, Chase",14717,IND,0,False,,4.42,Kicker,24,190lbs,"6' 0""",N/A,0,0,0,0
+"Reynolds, Craig",14727,FA,0,False,,2.06,Running Back,24,215lbs,"5' 11""",N/A,0,0,0,0
+"Horsted, Jesper",14752,CHI,0,False,,1.72,Tight End,23,237lbs,"6' 3""",N/A,0,0,0,0
+"Gafford, Rico",14760,LVR,0,False,,3.35,Wide Receiver,24,185lbs,"5' 10""",N/A,0,0,0,0
+"Burrow, Joe",14777,CIN,0,False,,11.4,Quarterback,23,216lbs,"6' 4""",N/A,0,0,0,0
+"Tagovailoa, Tua",14778,MIA,0,False,,5.93,Quarterback,22,218lbs,"6' 1""",N/A,0,0,0,0
+"Herbert, Justin",14779,LAC,0,False,,5.93,Quarterback,22,237lbs,"6' 6""",N/A,0,0,0,0
+"Eason, Jacob",14780,IND,0,False,,5.93,Quarterback,22,227lbs,"6' 6""",N/A,0,0,0,0
+"Fromm, Jake",14781,BUF,0,False,,5.93,Quarterback,22,222lbs,"6' 2""",N/A,0,0,0,0
+"Love, Jordan",14782,GBP,0,False,,5.93,Quarterback,21,220lbs,"6' 4""",N/A,0,0,0,0
+"Hurts, Jalen",14783,PHI,0,False,,5.93,Quarterback,22,218lbs,"6' 2""",N/A,0,0,0,0
+"Montez, Steven",14784,WAS,0,False,,5.93,Quarterback,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Stanley, Nate",14785,MIN,0,False,,5.93,Quarterback,23,243lbs,"6' 4""",N/A,0,0,0,0
+"Patterson, Shea",14786,FA,0,False,,5.93,Quarterback,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Gordon, Anthony",14787,SEA,0,False,,5.93,Quarterback,22,210lbs,"6' 3""",N/A,0,0,0,0
+"Lewerke, Brian",14788,NEP,0,False,,5.93,Quarterback,23,212lbs,"6' 3""",N/A,0,0,0,0
+"Huntley, Tyler",14789,BAL,0,False,,5.93,Quarterback,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Morgan, James",14790,NYJ,0,False,,5.93,Quarterback,23,213lbs,"6' 4""",N/A,0,0,0,0
+"Fine, Mason",14791,FA,0,False,,5.93,Quarterback,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Perkins, Bryce",14792,LAR,0,False,,5.93,Quarterback,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Luton, Jake",14793,JAC,0,False,,5.93,Quarterback,24,236lbs,"6' 6""",N/A,0,0,0,0
+"McDonald, Cole",14794,FA,0,False,,5.93,Quarterback,22,220lbs,"6' 4""",N/A,0,0,0,0
+"Bryant, Kelly",14795,FA,0,False,,5.93,Quarterback,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Neal, Riley",14796,FA,0,False,,5.93,Quarterback,23,225lbs,"6' 6""",N/A,0,0,0,0
+"Swift, D'Andre",14797,DET,0,False,,6.89,Running Back,21,211lbs,"5' 10""",N/A,0,0,0,0
+"Moss, Zack",14798,BUF,0,False,,4.69,Running Back,22,215lbs,"5' 10""",N/A,0,0,0,0
+"Akers, Cam",14799,LAR,0,False,,5.44,Running Back,21,212lbs,"5' 11""",N/A,0,0,0,0
+"Dobbins, J.K.",14800,BAL,0,False,,4.87,Running Back,21,214lbs,"5' 10""",N/A,0,0,0,0
+"Benjamin, Eno",14801,ARI,0,False,,2.06,Running Back,20,210lbs,"5' 10""",N/A,0,0,0,0
+"Taylor, Jonathan",14802,IND,0,False,,7.5,Running Back,21,221lbs,"5' 11""",N/A,0,0,0,0
+"Edwards-Helaire, Clyde",14803,KCC,0,False,,11.02,Running Back,21,209lbs,"5' 8""",N/A,0,0,0,0
+"McFarland, Anthony",14804,PIT,0,False,,2.06,Running Back,21,198lbs,"5' 9""",N/A,0,0,0,0
+"Dillon, AJ",14805,GBP,0,False,,2.83,Running Back,22,250lbs,"6' 1""",N/A,0,0,0,0
+"Perine, Lamical",14806,NYJ,0,False,,2.06,Running Back,22,220lbs,"5' 11""",N/A,0,0,0,0
+"Kelley, Joshua",14807,LAC,0,False,,2.06,Running Back,22,219lbs,"5' 11""",N/A,0,0,0,0
+"Evans, Darrynton",14808,TEN,0,False,,2.06,Running Back,22,200lbs,"5' 11""",N/A,0,0,0,0
+"Smith, Rodney",14809,FA,0,False,,2.06,Running Back,24,210lbs,"5' 11""",N/A,0,0,0,0
+"Vaughn, Ke'Shawn",14810,TBB,0,False,,2.44,Running Back,23,215lbs,"5' 10""",N/A,0,0,0,0
+"Ahmed, Salvon",14811,SFO,0,False,,2.06,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Anderson, Darius",14812,DAL,0,False,,2.06,Running Back,22,212lbs,"5' 11""",N/A,0,0,0,0
+"Robinson, James",14813,JAC,0,False,,2.06,Running Back,22,220lbs,"5' 10""",N/A,0,0,0,0
+"Herrien, Brian",14814,FA,0,False,,2.06,Running Back,22,210lbs,"6' 0""",N/A,0,0,0,0
+"Dallas, DeeJay",14815,SEA,0,False,,2.06,Running Back,21,214lbs,"5' 10""",N/A,0,0,0,0
+"Warren, Michael",14816,PHI,0,False,,2.06,Running Back,21,224lbs,"5' 11""",N/A,0,0,0,0
+"Taylor, Patrick",14817,GBP,0,False,,2.06,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Jones, Xavier",14818,LAR,0,False,,2.06,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Feaster, Tavien",14819,FA,0,False,,2.06,Running Back,22,215lbs,"5' 11""",N/A,0,0,0,0
+"Leake, Javon",14820,NYG,0,False,,2.06,Running Back,22,206lbs,"6' 0""",N/A,0,0,0,0
+"Hasty, JaMycal",14821,SFO,0,False,,2.06,Running Back,23,205lbs,"5' 9""",N/A,0,0,0,0
+"Corbin, Reggie",14822,FA,0,False,,2.06,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Dowdle, Rico",14823,DAL,0,False,,2.06,Running Back,22,215lbs,"6' 0""",N/A,0,0,0,0
+"Phillips, Scottie",14824,HOU,0,False,,2.06,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Conkrite, Jordan",14825,FA,0,False,,2.06,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Pierce, Artavis",14826,CHI,0,False,,2.06,Running Back,24,208lbs,"5' 11""",N/A,0,0,0,0
+"Taylor, J.J.",14827,NEP,0,False,,2.06,Running Back,22,185lbs,"5' 6""",N/A,0,0,0,0
+"Jones, Tony",14828,NOS,0,False,,2.06,Running Back,50,224lbs,"5' 11""",N/A,0,0,0,0
+"LeMay, Benny",14829,CLE,0,False,,2.06,Running Back,22,218lbs,"5' 9""",N/A,0,0,0,0
+"Bellamy, LaVante",14830,DEN,0,False,,2.06,Running Back,23,188lbs,"5' 9""",N/A,0,0,0,0
+"Killins Jr., Adrian",14831,PHI,0,False,,2.06,Running Back,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Lamb, CeeDee",14832,DAL,0,False,,4.65,Wide Receiver,21,189lbs,"6' 2""",N/A,0,0,0,0
+"Jeudy, Jerry",14833,DEN,0,False,,4.1,Wide Receiver,21,192lbs,"6' 1""",N/A,0,0,0,0
+"Ruggs, Henry",14834,LVR,0,False,,3.9,Wide Receiver,21,190lbs,"6' 0""",N/A,0,0,0,0
+"Higgins, Tee",14835,CIN,0,False,,3.35,Wide Receiver,21,210lbs,"6' 4""",N/A,0,0,0,0
+"Jefferson, Justin",14836,MIN,0,False,,4.13,Wide Receiver,21,192lbs,"6' 3""",N/A,0,0,0,0
+"Hamler, KJ",14837,DEN,0,False,,3.35,Wide Receiver,21,176lbs,"5' 9""",N/A,0,0,0,0
+"Shenault, Laviska",14838,JAC,0,False,,3.47,Wide Receiver,21,220lbs,"6' 2""",N/A,0,0,0,0
+"Reagor, Jalen",14839,PHI,0,False,,4.48,Wide Receiver,21,195lbs,"5' 11""",N/A,0,0,0,0
+"Aiyuk, Brandon",14840,SFO,0,False,,3.81,Wide Receiver,22,206lbs,"6' 1""",N/A,0,0,0,0
+"Claypool, Chase",14841,PIT,0,False,,3.35,Wide Receiver,22,227lbs,"6' 4""",N/A,0,0,0,0
+"Pittman, Michael",14842,IND,0,False,,3.64,Wide Receiver,22,220lbs,"6' 4""",N/A,0,0,0,0
+"Bowden, Lynn",14843,LVR,0,False,,2.06,Running Back,22,201lbs,"6' 0""",N/A,0,0,0,0
+"Edwards, Bryan",14844,LVR,0,False,,3.35,Wide Receiver,21,215lbs,"6' 3""",N/A,0,0,0,0
+"Davis, Gabriel",14845,BUF,0,False,,3.35,Wide Receiver,21,213lbs,"6' 3""",N/A,0,0,0,0
+"Mims, Denzel",14846,NYJ,0,False,,3.35,Wide Receiver,22,208lbs,"6' 3""",N/A,0,0,0,0
+"Duvernay, Devin",14847,BAL,0,False,,3.35,Wide Receiver,22,210lbs,"5' 11""",N/A,0,0,0,0
+"Proche, James",14848,BAL,0,False,,3.35,Wide Receiver,23,193lbs,"6' 0""",N/A,0,0,0,0
+"Hodgins, Isaiah",14849,BUF,0,False,,3.35,Wide Receiver,21,209lbs,"6' 4""",N/A,0,0,0,0
+"Cephus, Quintez",14850,DET,0,False,,3.35,Wide Receiver,22,205lbs,"6' 1""",N/A,0,0,0,0
+"Hill, K.J.",14851,LAC,0,False,,3.35,Wide Receiver,22,197lbs,"6' 0""",N/A,0,0,0,0
+"Gibson, Antonio",14852,WAS,0,False,,4.07,Running Back,22,221lbs,"6' 2""",N/A,0,0,0,0
+"Johnson, Collin",14853,JAC,0,False,,3.35,Wide Receiver,22,215lbs,"6' 6""",N/A,0,0,0,0
+"Victor, Binjimen",14854,NYG,0,False,,3.35,Wide Receiver,23,199lbs,"6' 4""",N/A,0,0,0,0
+"Mack, Austin",14855,NYG,0,False,,3.35,Wide Receiver,50,215lbs,"6' 2""",N/A,0,0,0,0
+"Davis, Quartney",14856,MIN,0,False,,3.35,Wide Receiver,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Peoples-Jones, Donovan",14857,CLE,0,False,,3.35,Wide Receiver,21,208lbs,"6' 2""",N/A,0,0,0,0
+"Jefferson, Van",14858,LAR,0,False,,3.35,Wide Receiver,24,197lbs,"6' 2""",N/A,0,0,0,0
+"Jackson, Trishton",14859,LAR,0,False,,3.35,Wide Receiver,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Jennings, Jauan",14860,SFO,0,False,,3.35,Wide Receiver,23,214lbs,"6' 3""",N/A,0,0,0,0
+"Johnson, Juwan",14861,NOS,0,False,,3.35,Wide Receiver,23,231lbs,"6' 4""",N/A,0,0,0,0
+"Reed, Joe",14862,LAC,0,False,,3.35,Wide Receiver,22,215lbs,"6' 1""",N/A,0,0,0,0
+"Gandy-Golden, Antonio",14863,WAS,0,False,,3.35,Wide Receiver,22,220lbs,"6' 4""",N/A,0,0,0,0
+"Johnson, Tyler",14864,TBB,0,False,,3.35,Wide Receiver,22,205lbs,"6' 2""",N/A,0,0,0,0
+"Swain, Freddie",14865,SEA,0,False,,3.35,Wide Receiver,22,199lbs,"6' 0""",N/A,0,0,0,0
+"Thomas, Jeff",14866,NEP,0,False,,3.35,Wide Receiver,23,180lbs,"5' 10""",N/A,0,0,0,0
+"Kmet, Cole",14867,CHI,0,False,,1.72,Tight End,21,258lbs,"6' 6""",N/A,0,0,0,0
+"Hopkins, Brycen",14868,LAR,0,False,,1.72,Tight End,23,245lbs,"6' 5""",N/A,0,0,0,0
+"Moss, Thaddeus",14869,WAS,0,False,,1.72,Tight End,22,249lbs,"6' 3""",N/A,0,0,0,0
+"Trautman, Adam",14870,NOS,0,False,,1.72,Tight End,23,253lbs,"6' 6""",N/A,0,0,0,0
+"Parkinson, Colby",14871,SEA,0,False,,1.72,Tight End,21,251lbs,"6' 7""",N/A,0,0,0,0
+"Pinkney, Jared",14872,ATL,0,False,,1.72,Tight End,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Okwuegbunam, Albert",14873,DEN,0,False,,1.72,Tight End,22,255lbs,"6' 5""",N/A,0,0,0,0
+"Bryant, Hunter",14874,DET,0,False,,1.72,Tight End,50,0lbs,"0' 0""",N/A,0,0,0,0
+"Bryant, Harrison",14875,CLE,0,False,,1.72,Tight End,22,240lbs,"6' 5""",N/A,0,0,0,0
+"Deguara, Josiah",14876,GBP,0,False,,1.72,Tight End,23,240lbs,"6' 3""",N/A,0,0,0,0
+"Blankenship, Rodrigo",14912,IND,0,False,,2.39,Kicker,23,191lbs,"6' 1""",N/A,0,0,0,0
+"Hajrullahu, Lirim",14914,LAR,0,False,,2.39,Kicker,30,205lbs,"5' 11""",N/A,0,0,0,0
+"MacGinnis, Austin",14915,LAR,0,False,,2.39,Kicker,25,185lbs,"5' 10""",N/A,0,0,0,0
+"Patrick, Jacques",14917,CIN,0,False,,2.06,Running Back,23,236lbs,"6' 3""",N/A,0,0,0,0
+"Asiasi, Devin",14936,NEP,0,False,,1.72,Tight End,23,260lbs,"6' 3""",N/A,0,0,0,0
+"Keene, Dalton",14939,NEP,0,False,,1.72,Tight End,21,251lbs,"6' 4""",N/A,0,0,0,0
+"Rohrwasser, Justin",14965,NEP,0,False,,4.33,Kicker,23,230lbs,"6' 3""",N/A,0,0,0,0
+"Hightower, John",14969,PHI,0,False,,3.35,Wide Receiver,24,172lbs,"6' 2""",N/A,0,0,0,0
+"Coulter, Isaiah",14972,HOU,0,False,,3.35,Wide Receiver,50,190lbs,"6' 3""",N/A,0,0,0,0
+"Huntley, Jason",14973,DET,0,False,,2.06,Running Back,22,193lbs,"5' 9""",N/A,0,0,0,0
+"Mooney, Darnell",14974,CHI,0,False,,3.35,Wide Receiver,22,172lbs,"5' 11""",N/A,0,0,0,0
+"Osborn, K.J.",14977,MIN,0,False,,3.35,Wide Receiver,23,200lbs,"6' 0""",N/A,0,0,0,0
+"Bass, Tyler",14983,BUF,0,False,,2.39,Kicker,23,185lbs,"5' 10""",N/A,0,0,0,0
+"Woerner, Charlie",14984,SFO,0,False,,1.72,Tight End,22,245lbs,"6' 5""",N/A,0,0,0,0
+"Watkins, Quez",14992,PHI,0,False,,3.35,Wide Receiver,22,190lbs,"6' 2""",N/A,0,0,0,0
+"Davis, Tyler",14996,JAC,0,False,,1.72,Tight End,23,250lbs,"6' 4""",N/A,0,0,0,0
+"Patmon, Dezmon",14998,IND,0,False,,3.35,Wide Receiver,22,220lbs,"6' 4""",N/A,0,0,0,0
+"DiNucci, Ben",15008,DAL,0,False,,5.93,Quarterback,23,210lbs,"6' 3""",N/A,0,0,0,0
+"Stevens, Tommy",15017,NOS,0,False,,5.93,Quarterback,23,235lbs,"6' 5""",N/A,0,0,0,0
+"Calais, Raymond",15021,TBB,0,False,,2.06,Running Back,22,185lbs,"5' 9""",N/A,0,0,0,0
+"Perry, Malcolm",15022,MIA,0,False,,2.06,Running Back,23,190lbs,"5' 9""",N/A,0,0,0,0
+"Sloman, Sam",15024,LAR,0,False,,2.39,Kicker,22,205lbs,"5' 8""",N/A,0,0,0,0
+"Sullivan, Stephen",15026,SEA,0,False,,1.72,Tight End,23,242lbs,"6' 5""",N/A,0,0,0,0
+"Cleveland, Tyrie",15027,DEN,0,False,,3.35,Wide Receiver,22,205lbs,"6' 2""",N/A,0,0,0,0
+"Begelton, Reggie",15033,GBP,0,False,,3.35,Wide Receiver,26,200lbs,"6' 2""",N/A,0,0,0,0
+"Callaway, Marquez",15034,NOS,0,False,,3.35,Wide Receiver,22,204lbs,"6' 2""",N/A,0,0,0,0
+"Wolford, John",15035,LAR,0,False,,5.93,Quarterback,24,200lbs,"6' 1""",N/A,0,0,0,0
+"Smith, J'mar",15036,FA,0,False,,5.93,Quarterback,23,218lbs,"6' 1""",N/A,0,0,0,0
+"Lipscomb, Kalija",15037,KCC,0,False,,3.35,Wide Receiver,22,200lbs,"6' 1""",N/A,0,0,0,0
+"Bayless, Omar",15038,CAR,0,False,,3.35,Wide Receiver,23,207lbs,"6' 3""",N/A,0,0,0,0
+"Parker, Aaron",15039,DAL,0,False,,3.35,Wide Receiver,22,191lbs,"6' 3""",N/A,0,0,0,0
+"Williams, Ty'Son",15040,BAL,0,False,,2.06,Running Back,23,220lbs,"6' 0""",N/A,0,0,0,0
+"Cager, Lawrence",15041,NYJ,0,False,,3.35,Wide Receiver,23,220lbs,"6' 5""",N/A,0,0,0,0
+"Ward, Jonathan",15042,ARI,0,False,,2.06,Running Back,22,202lbs,"6' 0""",N/A,0,0,0,0
+"Hastings, Will",15043,NEP,0,False,,3.35,Wide Receiver,24,174lbs,"5' 10""",N/A,0,0,0,0
+"Scarlett, Cameron",15044,TEN,0,False,,2.06,Running Back,23,216lbs,"6' 1""",N/A,0,0,0,0
+"Breeland, Jacob",15045,BAL,0,False,,1.72,Tight End,22,250lbs,"6' 5""",N/A,0,0,0,0
+"Merritt, Kirk",15046,MIA,0,False,,3.35,Wide Receiver,23,210lbs,"6' 0""",N/A,0,0,0,0
+"Campbell, George",15048,NYJ,0,False,,3.35,Wide Receiver,23,183lbs,"6' 4""",N/A,0,0,0,0
+"Taumoepeau, Charlie",15050,DAL,0,False,,1.72,Tight End,22,245lbs,"6' 3""",N/A,0,0,0,0
+"Stewart, Darrell",15052,FA,0,False,,3.35,Wide Receiver,24,216lbs,"6' 2""",N/A,0,0,0,0
+"Rowland, Chris",15053,ATL,0,False,,3.35,Wide Receiver,22,180lbs,"5' 8""",N/A,0,0,0,0
+"Ricci, Giovanni",15054,CAR,0,False,,1.72,Tight End,23,240lbs,"6' 3""",N/A,0,0,0,0
+"Chisena, Dan",15057,MIN,0,False,,3.35,Wide Receiver,23,202lbs,"6' 3""",N/A,0,0,0,0
+"Streveler, Chris",15060,ARI,0,False,,5.93,Quarterback,25,215lbs,"6' 3""",N/A,0,0,0,0
+"Ross, Devin",15064,NEP,0,False,,3.35,Wide Receiver,25,185lbs,"5' 11""",N/A,0,0,0,0
+"Edwards, Earnest",15065,LAR,0,False,,3.35,Wide Receiver,22,175lbs,"5' 10""",N/A,0,0,0,0
+"Wolf, Eli",15066,BAL,0,False,,0,Tight End,23,236lbs,"6' 4""",N/A,0,0,0,0
+"Fuller, Aaron",15069,SEA,0,False,,0,Wide Receiver,22,188lbs,"5' 11""",N/A,0,0,0,0
+"Fortson, Jody",15070,KCC,0,False,,0,Wide Receiver,24,230lbs,"6' 6""",N/A,0,0,0,0

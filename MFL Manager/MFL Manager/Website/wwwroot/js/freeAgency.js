@@ -748,10 +748,10 @@ connection.on("SetOptOuts", function (teams, selectedTeam) {
     tornados.classList.add("pb-2");
     tornados.id = "Tornados";
     tornados.innerHTML = "Tornados";
-    var penguins = document.createElement("h4");
-    penguins.classList.add("pb-2");
-    penguins.id = "Penguins";
-    penguins.innerHTML = "Penguins";
+    var mudDogs = document.createElement("h4");
+    mudDogs.classList.add("pb-2");
+    mudDogs.id = "Mud-Dogs";
+    mudDogs.innerHTML = "Mud Dogs";
     var pigeonBoys = document.createElement("h4");
     pigeonBoys.classList.add("pb-2");
     pigeonBoys.id = "Pigeon-Boys";
@@ -768,10 +768,10 @@ connection.on("SetOptOuts", function (teams, selectedTeam) {
     stormDynasty.classList.add("pb-2");
     stormDynasty.id = "Storm-Dynasty";
     stormDynasty.innerHTML = "Storm Dynasty";
-    var mudDogs = document.createElement("h4");
-    mudDogs.classList.add("pb-2");
-    mudDogs.id = "Mud-Dogs";
-    mudDogs.innerHTML = "Mud Dogs";
+    var benchwarmers = document.createElement("h4");
+    benchwarmers.classList.add("pb-2");
+    benchwarmers.id = "Benchwarmers";
+    benchwarmers.innerHTML = "Benchwarmers";
     var gorillas = document.createElement("h4");
     gorillas.classList.add("pb-2");
     gorillas.id = "Gorillas";
@@ -786,12 +786,12 @@ connection.on("SetOptOuts", function (teams, selectedTeam) {
     ram.innerHTML = "Ram";
 
     col.appendChild(tornados);
-    col.appendChild(penguins);
+    col.appendChild(mudDogs);
     col.appendChild(pigeonBoys);
     col.appendChild(dactyls);
     col.appendChild(odbs);
     col.appendChild(stormDynasty);
-    col.appendChild(mudDogs);
+    col.appendChild(benchwarmers);
     col.appendChild(gorillas);
     col.appendChild(power);
     col.appendChild(ram);

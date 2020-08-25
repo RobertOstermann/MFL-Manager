@@ -73,7 +73,7 @@ namespace MFL_Manager
                     Uri playerProfileUri = new Uri(websiteInformation.PlayerProfileUrl);
                     Uri rosterUri = new Uri(websiteInformation.RosterUrl);
 
-                    _mflController.GetApiInformation(playerUri, franchiseUri, salaryUri, playerProfileUri);
+                    _mflController.GetApiInformation(playerUri, franchiseUri, salaryUri, rosterUri, playerProfileUri);
 
                     SetDivisionDropDownItems();
 
