@@ -565,7 +565,7 @@ namespace Website.Hubs
             if (Players.Count == 0)
             {
                 players.Add(new Player("Aaron Jones", "/images/players/Aaron Jones.jpg", "Tornados", "Packers", 7.91, 2, 18.39, 25));
-                players.Add(new Player("Chris Godwin", "/images/players/Chris Godwin.jpg", "Penguins", "Buccaneers", 8.16, 2, 16.65, 24));
+                players.Add(new Player("Chris Godwin", "/images/players/Chris Godwin.jpg", "Mud Dogs", "Buccaneers", 8.16, 2, 16.65, 24));
                 players.Add(new Player("Ezekiel Elliot", "/images/players/Ezekiel Elliot.jpg", "Pigeon Boys", "Cowboys", 13.41, 4, 18.04, 25));
                 players.Add(new Player("Tyreek Hill", "/images/players/Tyreek Hill.jpg", "Dactyls", "Chiefs", 7.00, 31, 13.28, 26));
                 players.Add(new Player("Julio Jones", "/images/players/Julio Jones.png", "ODBs", "Falcons", 24.00, 3, 14.97, 31));
@@ -584,12 +584,12 @@ namespace Website.Hubs
         private static void CreateTeams()
         {
             CreateTornados();
-            CreatePenguins();
+            CreateMudDogs();
             CreatePigeonBoys();
             CreateDactyls();
             CreateOdbs();
             CreateStormDynasty();
-            CreateMudDogs();
+            CreateBenchwarmers();
             CreateGorillas();
             CreatePower();
             CreateRam();
@@ -608,7 +608,7 @@ namespace Website.Hubs
             Teams.Add(team);
         }
 
-        private static void CreatePenguins()
+        private static void CreateMudDogs()
         {
             var players = new List<Player>
             {
@@ -617,7 +617,7 @@ namespace Website.Hubs
                 new Player("Dalvin Cook", 7.31, 1),
                 new Player("Alvin Kamara", 26.00, 1)
             };
-            var team = new Team("Penguins", 0, players);
+            var team = new Team("Mud Dogs", 0, players);
             Teams.Add(team);
         }
 
@@ -669,7 +669,7 @@ namespace Website.Hubs
             Teams.Add(team);
         }
 
-        private static void CreateMudDogs()
+        private static void CreateBenchwarmers()
         {
             var players = new List<Player>
             {
@@ -677,7 +677,7 @@ namespace Website.Hubs
                 new Player("David Johnson", 29.00, 1),
                 new Player("Stefon Diggs", 11.00, 2)
             };
-            var team = new Team("Mud Dogs", 0, players);
+            var team = new Team("Benchwarmers", 0, players);
             Teams.Add(team);
         }
 
