@@ -685,12 +685,11 @@ namespace Website.Hubs
         {
             var players = new List<Player>
             {
-                new Player("Aaron Rodgers", 23.00, 1),
-                new Player("Devonta Freeman", 14.00, 1),
+                new Player("David Montgomery", 7.00, 3),
                 new Player("JuJu Smith-Schuster", 21.99, 1),
                 new Player("Michael Thomas", 21.00, 1)
             };
-            var team = new Team("Gorillas", 3.68, players);
+            var team = new Team("Gorillas", 14.18, players);
             Teams.Add(team);
         }
 
@@ -699,11 +698,10 @@ namespace Website.Hubs
             var players = new List<Player>
             {
                 new Player("Saquon Barkley", 11.02, 2),
-                new Player("David Montgomery", 7.00, 3),
                 new Player("Davante Adams", 21.00, 1),
                 new Player("Adam Thielen", 17.00, 1)
             };
-            var team = new Team("Power", 2.45, players);
+            var team = new Team("Power", 4.90, players);
             Teams.Add(team);
         }
 
