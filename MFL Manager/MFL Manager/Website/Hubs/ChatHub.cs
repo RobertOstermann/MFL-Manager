@@ -648,11 +648,10 @@ namespace Website.Hubs
         {
             var players = new List<Player>
             {
-                new Player("Kerryon Johnson", 13.00, 2),
                 new Player("Joe Mixon", 18.00, 1),
                 new Player("DeAndre Hopkins", 24.00, 1)
             };
-            var team = new Team("ODBs", 0, players);
+            var team = new Team("ODBs", 4.55, players);
             Teams.Add(team);
         }
 
@@ -661,11 +660,9 @@ namespace Website.Hubs
             var players = new List<Player>
             {
                 new Player("Patrick Mahomes", 27.00, 2),
-                new Player("Keenan Allen", 14.00, 1),
-                new Player("Odell Beckham", 25.00, 1),
                 new Player("Travis Kelce", 14.00, 1)
             };
-            var team = new Team("Storm Dynasty", 2.45, players);
+            var team = new Team("Storm Dynasty", 13.74, players);
             Teams.Add(team);
         }
 
@@ -674,10 +671,10 @@ namespace Website.Hubs
             var players = new List<Player>
             {
                 new Player("Chris Carson", 9.50, 2),
-                new Player("David Johnson", 29.00, 1),
+                new Player("Keenan Allen", 14.00, 1),
                 new Player("Stefon Diggs", 11.00, 2)
             };
-            var team = new Team("Benchwarmers", 0, players);
+            var team = new Team("Benchwarmers", 7.61, players);
             Teams.Add(team);
         }
 
