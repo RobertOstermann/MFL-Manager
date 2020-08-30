@@ -423,11 +423,15 @@ namespace Website.Hubs
             string team = GetUserTeam();
             if (!string.IsNullOrWhiteSpace(team))
             {
-                if (bid > _leadBid)
+                Player player = _node?.Value;
+                if (player != null)
                 {
-                    _leadBid = bid;
-                    _leadBidder = team;
-                    await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
+                    if (bid > _leadBid || (player.OriginalRights.Equals(_leadBidder) && bid >= _leadBid))
+                    {
+                        _leadBid = bid;
+                        _leadBidder = team;
+                        await Clients.All.SendAsync("ReceiveBid", _leadBidder, _leadBid);
+                    }
                 }
             }
         }
@@ -564,16 +568,19 @@ namespace Website.Hubs
             var players = new List<Player>();
             if (Players.Count == 0)
             {
-                players.Add(new Player("Aaron Jones", "/images/players/Aaron Jones.jpg", "Tornados", "Packers", 7.91, 2, 18.39, 25));
-                players.Add(new Player("Chris Godwin", "/images/players/Chris Godwin.jpg", "Mud Dogs", "Buccaneers", 8.16, 2, 16.65, 24));
                 players.Add(new Player("Ezekiel Elliot", "/images/players/Ezekiel Elliot.jpg", "Pigeon Boys", "Cowboys", 13.41, 4, 18.04, 25));
-                players.Add(new Player("Tyreek Hill", "/images/players/Tyreek Hill.jpg", "Dactyls", "Chiefs", 7.00, 31, 13.28, 26));
+                players.Add(new Player("Josh Jacobs", "/images/players/Josh Jacobs.jpeg", "Benchwarmers", "Raiders", 7.25, 18, 14.12, 22));
+                players.Add(new Player("George Kittle", "/images/players/George Kittle.jpg", "Gorillas", "49ers", 7.26, 2, 12.86, 26));
+                players.Add(new Player("Aaron Jones", "/images/players/Aaron Jones.jpg", "Tornados", "Packers", 7.91, 2, 18.39, 25));
+                players.Add(new Player("Lamar Jackson", "/images/players/Lamar Jackson.jpg", "Power", "Ravens", 12.91, 1, 36.40, 23));
                 players.Add(new Player("Julio Jones", "/images/players/Julio Jones.png", "ODBs", "Falcons", 24.00, 3, 14.97, 31));
-                players.Add(new Player("Josh Jacobs", "/images/players/Josh Jacobs.jpeg", "Storm Dynasty", "Raiders", 7.25, 18, 14.12, 22));
+                players.Add(new Player("Austin Ekeler", "/images/players/Austin Ekeler.jpg", "Power", "Chargers", 7.00, 6, 16.69, 25));
+                players.Add(new Player("Chris Godwin", "/images/players/Chris Godwin.jpg", "ODBs", "Buccaneers", 8.16, 2, 16.65, 24));
+                players.Add(new Player("Tyreek Hill", "/images/players/Tyreek Hill.jpg", "Dactyls", "Chiefs", 7.00, 31, 13.28, 26));
+                players.Add(new Player("Kenny Golladay", "/images/players/Kenny Golladay.jpeg", "Ram", "Lions", 7.50, 6, 13.59, 26));
                 players.Add(new Player("Miles Sanders", "/images/players/Miles Sanders.jpeg", "Storm Dynasty", "Eagles", 7.00, 15, 12.23, 23));
                 players.Add(new Player("Derrick Henry", "/images/players/Derrick Henry.jpg", "Gorillas", "Titans", 7.31, 3, 19.44, 26));
-                players.Add(new Player("Lamar Jackson", "/images/players/Lamar Jackson.jpg", "Power", "Ravens", 12.91, 1, 36.40, 23));
-                players.Add(new Player("Austin Ekeler", "/images/players/Austin Ekeler.jpg", "Power", "Chargers", 7.00, 6, 16.69, 25));
+                players.Add(new Player("Drew Lock", "/images/players/Drew Lock.jpg", "Dactyls", "Broncos", 7.00, 36, 22.04, 23));
                 foreach (Player player in players)
                 {
                     AddPlayerToLinkedList(player);
